@@ -1,0 +1,127 @@
+{
+  "experiment": "AIP-MATRIX-FIT-001",
+  "status": "frozen-before-adapter",
+  "frozen_at": "2026-08-22",
+  "positive_control": {
+    "id": "valid_constrained_mapping",
+    "requirement": "Every case must preserve AIP signature and chain validity so a rejection cannot be explained by credential forgery.",
+    "expected": "The harness reports only the claim-specific constrained result and never upgrades it from an adjacent successful row."
+  },
+  "cases": [
+    {
+      "id": "wrong_presenter",
+      "title": "Wrong Presenter",
+      "matrix_row": "presenter",
+      "situation": {
+        "aip_chain_valid": true,
+        "leaf_subject": "aip:key:agent-a",
+        "live_presenter": "aip:key:agent-b",
+        "external_proof_of_possession_present": false
+      },
+      "expected_mapping_result": "DECLARED-GAP",
+      "expected_row_outcome": "unsupported",
+      "expected_permitted_conclusion": "The bearer has a valid chain; AIP alone does not establish that the live presenter is the leaf subject.",
+      "prohibited_conclusions": [
+        "The presenter is authenticated as aip:key:agent-a.",
+        "AIP failed merely because it accurately declared this limitation."
+      ],
+      "source_refs": [
+        "aip-01:sections-4.8,5.3,appendix-A-R4"
+      ]
+    },
+    {
+      "id": "same_control_verifier",
+      "title": "Same-Control Verifier",
+      "matrix_row": "independence",
+      "situation": {
+        "aip_chain_valid": true,
+        "completion_signature_valid": true,
+        "attestation_signature_valid": true,
+        "executor_control_domain": "org-example",
+        "verifier_control_domain": "org-example",
+        "control_domain_provenance_verified": true
+      },
+      "expected_mapping_result": "AMBIGUOUS",
+      "expected_row_outcome": "indeterminate",
+      "expected_permitted_conclusion": "A named verifier signed the block; AIP draft-01 does not establish organizational independence.",
+      "prohibited_conclusions": [
+        "Different signing keys make the verifier independent.",
+        "A Level 2 or Level 3 label proves control-domain separation."
+      ],
+      "source_refs": [
+        "aip-01:section-8.2",
+        "principal-binding-06:section-33-same-party-evidence-open-issue"
+      ]
+    },
+    {
+      "id": "stale_unverifiable_completion",
+      "title": "Stale/Unverifiable Completion",
+      "matrix_row": "provenance",
+      "situation": {
+        "aip_chain_valid": true,
+        "completion_signature_valid": true,
+        "completion_status": "completed",
+        "verification_status": "peer_verified",
+        "result_hash_valid": true,
+        "underlying_evidence": {
+          "reference_present": true,
+          "freshness_within_relying_bound": false,
+          "verify_outcome": "unverifiable",
+          "detail": "fetch_failed"
+        }
+      },
+      "expected_mapping_result": "AMBIGUOUS",
+      "expected_row_outcome": "indeterminate",
+      "expected_warrant_outcome": "unverifiable",
+      "expected_permitted_conclusion": "The signed completion and result hash are intact, but the underlying evidence could not be established as current or checkable.",
+      "prohibited_conclusions": [
+        "Unverifiable evidence was rejected on its merits.",
+        "A peer_verified label proves the evidence check succeeded.",
+        "A valid completion signature proves the claimed execution occurred correctly."
+      ],
+      "source_refs": [
+        "aip-01:sections-8.1,8.2,8.3",
+        "minority-prophet-claim-warrant:verify_outcome-unverifiable"
+      ]
+    },
+    {
+      "id": "a2a_mcp_action_swap",
+      "title": "A2A to MCP Action Swap",
+      "matrix_row": "action",
+      "reused_border_case": {
+        "experiment": "A2A-MCP-CROSSING-001",
+        "id": "change_mcp_tool_or_payload",
+        "mutation": "the MCP tool name or its arguments differ from what the authority named",
+        "role": "The crossing is where an authority for action X can become an invocation of action Y without either side seeing an anomaly.",
+        "source_commit": "a61b6ad96485e249ddb1ddde7fa30908e0b6250d",
+        "source_blob_sha256": "eea9a7c5ca0e0d90ca308401c9408f0187721c5edeb4a46bffaf2a0484ca12d1"
+      },
+      "situation": {
+        "aip_chain_valid": true,
+        "aip_simple_tool": "interop.echo",
+        "observed_mcp_tool": "interop.echo",
+        "authorized_arguments": {
+          "message": "hello"
+        },
+        "observed_arguments": {
+          "message": "goodbye"
+        },
+        "aip_exact_argument_digest_present": false,
+        "border_exact_argument_digest_present": true
+      },
+      "expected_mapping_result": "UNREPRESENTED",
+      "expected_row_outcome": "unsupported",
+      "expected_border_reference_outcome": "unsatisfied",
+      "expected_permitted_conclusion": "The tool remains in AIP scope, but AIP draft-01 does not establish that the observed MCP arguments are the exact payload authorized by the A2A task.",
+      "prohibited_conclusions": [
+        "A valid AIP chain proves the exact cross-protocol payload was authorized.",
+        "A matching tool name makes different arguments the same action."
+      ],
+      "source_refs": [
+        "aip-01:sections-3.4.1,4.6,6.1,6.2",
+        "border-crossing-cases:change_mcp_tool_or_payload",
+        "border-crossing-receipt:argument_digest"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "experiment": "AIP-MATRIX-FIT-001",
+  "frozen_at": "2026-08-22",
+  "hash_algorithm": "sha256",
+  "sources": [
+    {
+      "id": "aip-01",
+      "kind": "ietf-internet-draft",
+      "title": "Agent Identity Protocol (AIP): Verifiable Delegation for AI Agent Systems",
+      "revision": "draft-prakash-aip-01",
+      "published": "2026-08-19",
+      "url": "https://www.ietf.org/archive/id/draft-prakash-aip-01.txt",
+      "sha256": "214c245c38ae534b9162acd8590ec80fd2969c8254d798eb8c082a9c1774f5e5",
+      "bytes": 47474,
+      "scope": "source draft under evaluation"
+    },
+    {
+      "id": "principal-binding-06",
+      "kind": "ietf-internet-draft",
+      "title": "Security Principal and Verifier Binding for Agent Communication Protocols",
+      "revision": "draft-bu-agentproto-security-principal-binding-06",
+      "published": "2026-08-17",
+      "url": "https://www.ietf.org/archive/id/draft-bu-agentproto-security-principal-binding-06.txt",
+      "sha256": "4d08f60b22149f4590433a7f37d081700df27b37a457d09ca49cf018da9f5f37",
+      "bytes": 158195,
+      "scope": "evaluation vocabulary only"
+    },
+    {
+      "id": "border-crossing-cases",
+      "kind": "git-blob",
+      "repository": "https://github.com/Silentpartnercoding/minority-prophet-border",
+      "commit": "a61b6ad96485e249ddb1ddde7fa30908e0b6250d",
+      "path": "experiments/a2a-mcp-crossing-001/cases.json",
+      "sha256": "eea9a7c5ca0e0d90ca308401c9408f0187721c5edeb4a46bffaf2a0484ca12d1",
+      "scope": "frozen hostile-but-valid A2A to MCP composition cases"
+    },
+    {
+      "id": "border-crossing-receipt",
+      "kind": "git-blob",
+      "repository": "https://github.com/Silentpartnercoding/minority-prophet-border",
+      "commit": "ebe61a8774f11463bfd516266cfcbc1c7b724de8",
+      "path": "conformance/crossing_receipt.py",
+      "sha256": "ed4f9528f3acf7a48185bfc44a777bb99167d61cfef604715117bd1a60fdc71e",
+      "scope": "argument digest and exact-crossing reference behavior"
+    },
+    {
+      "id": "border-crossing-receipt-tests",
+      "kind": "git-blob",
+      "repository": "https://github.com/Silentpartnercoding/minority-prophet-border",
+      "commit": "ebe61a8774f11463bfd516266cfcbc1c7b724de8",
+      "path": "tests/test_crossing_receipt.py",
+      "sha256": "db5b04561f2c3fdf8781c4717ba65831b29cfa455d17bfc1ff836ea0ed85b3cf",
+      "scope": "reference negative-path expectations"
+    },
+    {
+      "id": "minority-prophet-claim-warrant",
+      "kind": "git-blob",
+      "repository": "https://github.com/Silentpartnercoding/minority-prophet",
+      "commit": "2f68dfc3a0673a3b273316a95cc83063c00f5c8c",
+      "path": "provenance/claim-warrant.schema.json",
+      "sha256": "4de5613b839123cbc118875417fd18db99e53912e749a54f879828f72b493e69",
+      "scope": "verified, rejected, and unverifiable evidence-check outcomes"
+    }
+  ]
+}
