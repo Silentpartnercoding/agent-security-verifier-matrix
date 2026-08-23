@@ -1,4 +1,4 @@
-"""Neutral evaluator for the frozen AIP-MATRIX-FIT-001 experiment."""
+"""Neutral evaluator for the corrected AIP-MATRIX-FIT-002 experiment."""
 
 from .evaluator import (
     EvaluationError,
@@ -6,6 +6,7 @@ from .evaluator import (
     evaluate_all,
     evaluate_case,
     verify_pinned_bytes,
+    verify_source_files,
 )
 
 __all__ = [
@@ -14,4 +15,5 @@ __all__ = [
     "evaluate_all",
     "evaluate_case",
     "verify_pinned_bytes",
+    "verify_source_files",
 ]

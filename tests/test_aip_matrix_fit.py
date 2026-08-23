@@ -7,8 +7,14 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
-from aip_matrix_fit import canonical_argument_digest, evaluate_all, verify_pinned_bytes
+from aip_matrix_fit import (
+    canonical_argument_digest,
+    evaluate_all,
+    verify_pinned_bytes,
+    verify_source_files,
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -17,8 +23,8 @@ def load(name: str) -> dict:
     return json.loads((ROOT / name).read_text(encoding="utf-8"))
 
 
-class FrozenArtifactTests(unittest.TestCase):
-    def test_matrix_has_the_eight_frozen_rows_and_required_columns(self) -> None:
+class CorrectedArtifactTests(unittest.TestCase):
+    def test_matrix_has_separate_presenter_and_freshness_rows(self) -> None:
         matrix = load("matrix.json")
         rows = matrix["rows"]
         self.assertEqual(
@@ -30,7 +36,8 @@ class FrozenArtifactTests(unittest.TestCase):
                 "Scope",
                 "Action",
                 "Provenance",
-                "Freshness",
+                "Credential Freshness",
+                "Evidence Freshness",
                 "Independence",
             ],
         )
@@ -45,6 +52,21 @@ class FrozenArtifactTests(unittest.TestCase):
         for row in rows:
             self.assertTrue(required.issubset(row), row["id"])
             self.assertIn(row["result"], matrix["report_dispositions"])
+
+    def test_artifact_participants_are_not_mapped_to_live_identity(self) -> None:
+        rows = {row["id"]: row for row in load("matrix.json")["rows"]}
+        self.assertNotIn("C-001", rows["delegation-participants"]["principal_binding_claim_ids"])
+        self.assertIn("C-001", rows["presenter"]["principal_binding_claim_ids"])
+        self.assertIn(
+            "independently authenticated",
+            " ".join(rows["delegation-participants"]["non_claims"]),
+        )
+
+    def test_scope_declares_ambient_fact_supplier_and_authentication_boundary(self) -> None:
+        rows = {row["id"]: row for row in load("matrix.json")["rows"]}
+        trust = rows["scope"]["ambient_input_trust"]
+        self.assertEqual(set(trust), {"supplier", "authentication", "decision_boundary"})
+        self.assertIn("physical", trust["authentication"])
 
     def test_four_cases_are_complete_and_keep_the_chain_valid(self) -> None:
         cases = load("cases.json")["cases"]
@@ -97,26 +119,27 @@ class EvaluatorTests(unittest.TestCase):
     def test_wrong_presenter_is_a_good_declared_gap(self) -> None:
         result = self.results["wrong_presenter"]
         self.assertEqual(result["mapping_result"], "DECLARED-GAP")
-        self.assertEqual(result["row_outcome"], "unsupported")
+        self.assertEqual(result["expected_row_outcome"], "unsupported")
+        self.assertNotIn("row_outcome", result)
         self.assertIn("aip_chain_valid", result["adjacent_successes"])
 
     def test_same_control_signature_does_not_mint_independence(self) -> None:
         result = self.results["same_control_verifier"]
         self.assertEqual(result["mapping_result"], "AMBIGUOUS")
-        self.assertEqual(result["row_outcome"], "indeterminate")
+        self.assertEqual(result["expected_row_outcome"], "indeterminate")
         self.assertIn("attestation_signature_valid", result["adjacent_successes"])
 
     def test_unverifiable_is_not_collapsed_into_rejected(self) -> None:
         result = self.results["stale_unverifiable_completion"]
         self.assertEqual(result["warrant_outcome"], "unverifiable")
         self.assertNotEqual(result["warrant_outcome"], "rejected")
-        self.assertEqual(result["row_outcome"], "indeterminate")
+        self.assertEqual(result["expected_row_outcome"], "indeterminate")
 
     def test_action_swap_preserves_scope_success_without_claim_elevation(self) -> None:
         result = self.results["a2a_mcp_action_swap"]
         self.assertIn("aip_tool_scope_satisfied", result["adjacent_successes"])
         self.assertEqual(result["mapping_result"], "UNREPRESENTED")
-        self.assertEqual(result["row_outcome"], "unsupported")
+        self.assertEqual(result["expected_row_outcome"], "unsupported")
         self.assertEqual(result["border_reference_outcome"], "unsatisfied")
         self.assertNotEqual(
             result["authorized_argument_digest"], result["observed_argument_digest"]
@@ -135,6 +158,27 @@ class EvaluatorTests(unittest.TestCase):
         self.assertFalse(verify_pinned_bytes(data, digest, len(data) + 1))
         self.assertFalse(verify_pinned_bytes(data + b"x", digest, None))
 
+    def test_source_verification_reports_skipped_passed_and_failed(self) -> None:
+        self.assertEqual(verify_source_files()["status"], "skipped")
+        data = b"locally supplied source bytes\n"
+        digest = hashlib.sha256(data).hexdigest()
+        manifest = {
+            "sources": [
+                {"id": "test-source", "sha256": digest, "bytes": len(data)}
+            ]
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "source.txt"
+            path.write_bytes(data)
+            with patch("aip_matrix_fit.evaluator._load", return_value=manifest):
+                self.assertEqual(
+                    verify_source_files({"test-source": path})["status"], "passed"
+                )
+                path.write_bytes(data + b"changed")
+                self.assertEqual(
+                    verify_source_files({"test-source": path})["status"], "failed"
+                )
+
     def test_cli_report_matches_library_report(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory) / "report.json"
@@ -147,6 +191,16 @@ class EvaluatorTests(unittest.TestCase):
             )
             self.assertEqual(completed.returncode, 0, completed.stderr)
             self.assertEqual(json.loads(output.read_text(encoding="utf-8")), self.report)
+
+    def test_cli_fails_closed_when_source_verification_is_required_but_skipped(self) -> None:
+        completed = subprocess.run(
+            [sys.executable, "-m", "aip_matrix_fit", "--require-source-verification"],
+            cwd=ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(completed.returncode, 1)
 
 
 if __name__ == "__main__":

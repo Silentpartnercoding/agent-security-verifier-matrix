@@ -1,0 +1,39 @@
+{
+  "record_version": "1",
+  "record_id": "mapping:aip-matrix-fit-002:v0.2.0",
+  "record_type": "mapping",
+  "subject": {
+    "kind": "protocol-to-verifier-matrix-mapping",
+    "id": "AIP-MATRIX-FIT-002",
+    "version": "0.2.0",
+    "source_protocol": "draft-prakash-aip-01",
+    "evaluation_vocabulary": "draft-bu-agentproto-security-principal-binding-06"
+  },
+  "provenance": {
+    "recorded_at": "2026-08-23",
+    "author_role": "harness-maintainer",
+    "source_links": [
+      {
+        "uri": "https://github.com/Silentpartnercoding/agent-security-verifier-matrix/tree/aip-matrix-fit-002-v0.2.0"
+      }
+    ]
+  },
+  "payload": {
+    "supersedes": "mapping:aip-matrix-fit-001:v0.1.0",
+    "git_tag": "aip-matrix-fit-002-v0.2.0",
+    "correction_scope": [
+      "separate artifact-named delegation participants from live presenter identity",
+      "separate credential freshness from completion-evidence freshness",
+      "emit expected_row_outcome rather than a full row-result claim",
+      "verify locally supplied source bytes with passed, failed, or skipped status",
+      "declare the supplier and authentication boundary for ambient policy facts"
+    ],
+    "claim_semantics_extended": false,
+    "artifact_hashes": {
+      "matrix.json": "053ba37c73b26e39f60db4cb73b6db15f779f752c1a3a1e06f4e822f2ba6eb74",
+      "cases.json": "1ffa48351c82eb46a61dfe2734d578de99e45a48526a486df92cf128be07b13a",
+      "sources.json": "c1a87d6944c924d4f7b3a6a529c894e67d9b50a125609b55b3d2c58966c41f07",
+      "artifacts/results.json": "63a567f248fb28e5247270ce4241708acecc7139dac2a18ecfbcf0d1ce36bd42"
+    }
+  }
+}

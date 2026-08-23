@@ -1,0 +1,63 @@
+{
+  "record_version": "1",
+  "record_id": "external-reproduction:songbo-bu:aip-matrix-fit-001:2026-08-23",
+  "record_type": "external-reproduction",
+  "subject": {
+    "kind": "mapping-release",
+    "id": "AIP-MATRIX-FIT-001",
+    "version": "0.1.0",
+    "git_commit": "8ed65b70f8933a659dcab00331d86bac40009abe"
+  },
+  "provenance": {
+    "recorded_at": "2026-08-23",
+    "author_role": "harness-maintainer-recording-external-review",
+    "external_reproducer": "Songbo Bu",
+    "source_links": [
+      {
+        "uri": "https://mailarchive.ietf.org/arch/msg/agentproto/w82kwNJkD0ZW-Bip51u45ZO8YSU/"
+      },
+      {
+        "uri": "https://mailarchive.ietf.org/arch/msg/agentproto/w82kwNJkD0ZW-Bip51u45ZO8YSU/2/",
+        "sha256": "b078907b983494f8366e76dba672003bf0bdbcba14a52830452f20d94b24d5e4"
+      }
+    ]
+  },
+  "payload": {
+    "relationship": "external-reproducer-and-reviewer",
+    "control_domain_independence": "not-established",
+    "reproducer_statements": [
+      "checked out the frozen public revision",
+      "reported all 17 tests passing",
+      "reported source-byte hashes matching",
+      "confirmed the matrix and cases were frozen before the evaluator",
+      "reported the generated result as reproducible"
+    ],
+    "maintainer_verified_facts": [
+      "the public IETF audit attachment hashes to b078907b983494f8366e76dba672003bf0bdbcba14a52830452f20d94b24d5e4",
+      "the audit names commit 8ed65b70f8933a659dcab00331d86bac40009abe",
+      "the audit contains five substantive correction requests"
+    ],
+    "reviewer_assertions_not_yet_publicly_verifiable": [
+      "registry, aggregate-result, and AIP-mapping lessons were carried into local Principal Binding -07 working text"
+    ],
+    "corrections": [
+      "separate artifact-named delegation participants from live presenter identity",
+      "separate credential freshness from completion-evidence freshness",
+      "rename emitted row_outcome to expected_row_outcome unless a full row-result record is emitted",
+      "add a normal source-byte verification command with passed, failed, and skipped reporting",
+      "identify who supplies and authenticates ambient tool, time, and depth facts"
+    ],
+    "audit_transcription_note": {
+      "field": "border-crossing-receipt-tests sha256",
+      "audit_value": "db5b04561f2c3df8781c4717ba65831b29cfa455d17bfc1ff836ea0ed85b3cf",
+      "pinned_manifest_value": "db5b04561f2c3fdf8781c4717ba65831b29cfa455d17bfc1ff836ea0ed85b3cf",
+      "effect": "the audit table value is 63 hexadecimal characters; the frozen sources.json pin remains the 64-character value and is not changed"
+    },
+    "limitations": [
+      "An external rerun is not an endorsement or certification.",
+      "Organizational or control-domain independence of the reproducer was not tested.",
+      "The reproduction does not make every v0.1 mapping label correct; the review identified corrections.",
+      "Statements about unpublished -07 text remain reviewer assertions until that revision is public."
+    ]
+  }
+}

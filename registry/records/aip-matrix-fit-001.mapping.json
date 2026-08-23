@@ -1,0 +1,32 @@
+{
+  "record_version": "1",
+  "record_id": "mapping:aip-matrix-fit-001:v0.1.0",
+  "record_type": "mapping",
+  "subject": {
+    "kind": "protocol-to-verifier-matrix-mapping",
+    "id": "AIP-MATRIX-FIT-001",
+    "version": "0.1.0",
+    "source_protocol": "draft-prakash-aip-01",
+    "evaluation_vocabulary": "draft-bu-agentproto-security-principal-binding-06"
+  },
+  "provenance": {
+    "recorded_at": "2026-08-23",
+    "author_role": "harness-maintainer",
+    "source_links": [
+      {
+        "uri": "https://github.com/Silentpartnercoding/agent-security-verifier-matrix/tree/aip-matrix-fit-001-v0.1.0"
+      }
+    ]
+  },
+  "payload": {
+    "git_commit": "8ed65b70f8933a659dcab00331d86bac40009abe",
+    "git_tag": "aip-matrix-fit-001-v0.1.0",
+    "historical_record_mutated": false,
+    "artifact_hashes": {
+      "matrix.json": "82f44e4822599aea5310fb6c778a25528505072191050b9b3c527418484afe94",
+      "cases.json": "4fae1e765e975b1d7ce48a63312b0dfcf7ad25e9adfff037af1aee2bc7af5f49",
+      "sources.json": "5ab87a1037ac64a1f0ff8ed7e660d24b8139b27cdc9f7841b636888b6dfc8582",
+      "artifacts/results.json": "d574a9b24892797a027636dd7849fc00cdc51b3ea16831b2410b03da231d3c69"
+    }
+  }
+}

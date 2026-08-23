@@ -1,4 +1,4 @@
-"""Evaluate the four frozen AIP x verifier-matrix cases.
+"""Evaluate the corrected AIP x verifier-matrix cases.
 
 This module does not implement AIP cryptography. Every negative vector keeps
 the surrounding AIP chain valid and asks only what the pinned draft permits a
@@ -67,6 +67,72 @@ def verify_pinned_bytes(data: bytes, expected_sha256: str, expected_bytes: int |
     return hashlib.sha256(data).hexdigest() == expected_sha256
 
 
+def verify_source_files(source_files: dict[str, Path] | None = None) -> dict[str, Any]:
+    """Verify locally supplied source bytes against every pin in sources.json.
+
+    No network retrieval is implicit. With no supplied files the result is
+    explicitly ``skipped``. Once any file is supplied, every pinned source must
+    be supplied and valid for the aggregate result to be ``passed``.
+    """
+    sources_document = _load(SOURCES_PATH)
+    pins = sources_document.get("sources")
+    if not isinstance(pins, list):
+        raise EvaluationError("sources must be a list")
+    supplied = source_files or {}
+    known_ids = {pin.get("id") for pin in pins}
+    unknown_ids = sorted(set(supplied) - known_ids)
+    if unknown_ids:
+        raise EvaluationError(f"unknown source ids: {', '.join(unknown_ids)}")
+
+    results: list[dict[str, Any]] = []
+    for pin in pins:
+        source_id = pin.get("id")
+        if not isinstance(source_id, str):
+            raise EvaluationError("every source pin must have a string id")
+        path = supplied.get(source_id)
+        if path is None:
+            results.append(
+                {
+                    "source_id": source_id,
+                    "status": "skipped",
+                    "reason": "local source bytes not supplied",
+                }
+            )
+            continue
+        try:
+            data = path.read_bytes()
+        except OSError:
+            results.append(
+                {
+                    "source_id": source_id,
+                    "status": "failed",
+                    "reason": "could not read local source bytes",
+                }
+            )
+            continue
+        passed = verify_pinned_bytes(data, pin["sha256"], pin.get("bytes"))
+        results.append(
+            {
+                "source_id": source_id,
+                "status": "passed" if passed else "failed",
+                "observed_bytes": len(data),
+                "observed_sha256": hashlib.sha256(data).hexdigest(),
+            }
+        )
+
+    if not supplied:
+        aggregate = "skipped"
+    elif all(item["status"] == "passed" for item in results):
+        aggregate = "passed"
+    else:
+        aggregate = "failed"
+    return {
+        "status": aggregate,
+        "policy": "all pinned sources must be locally supplied and valid once verification is requested",
+        "results": results,
+    }
+
+
 def _row_index(matrix: dict[str, Any]) -> dict[str, dict[str, Any]]:
     rows = matrix.get("rows")
     if not isinstance(rows, list):
@@ -94,7 +160,7 @@ def _base_result(case: dict[str, Any], row: dict[str, Any]) -> dict[str, Any]:
         "title": case["title"],
         "matrix_row": row["id"],
         "mapping_result": row["result"],
-        "row_outcome": None,
+        "expected_row_outcome": None,
         "permitted_conclusion": case["expected_permitted_conclusion"],
         "adjacent_successes": ["aip_chain_valid"],
         "non_claims": list(case.get("prohibited_conclusions", [])),
@@ -108,7 +174,7 @@ def _wrong_presenter(case: dict[str, Any], row: dict[str, Any]) -> dict[str, Any
         raise EvaluationError("wrong_presenter does not contain a presenter substitution")
     if situation["external_proof_of_possession_present"]:
         raise EvaluationError("wrong_presenter unexpectedly supplies an external PoP result")
-    result["row_outcome"] = "unsupported"
+    result["expected_row_outcome"] = "unsupported"
     result["diagnostic"] = (
         "AIP draft-01 deliberately has no presenter proof-of-possession check; "
         "the valid bearer chain cannot be promoted into live-presenter authentication."
@@ -123,7 +189,7 @@ def _same_control_verifier(case: dict[str, Any], row: dict[str, Any]) -> dict[st
         raise EvaluationError("same_control_verifier requires valid surrounding signatures")
     if situation["executor_control_domain"] != situation["verifier_control_domain"]:
         raise EvaluationError("same_control_verifier does not share a control domain")
-    result["row_outcome"] = "indeterminate"
+    result["expected_row_outcome"] = "indeterminate"
     result["adjacent_successes"].extend(
         ["completion_signature_valid", "attestation_signature_valid"]
     )
@@ -151,7 +217,7 @@ def _stale_unverifiable_completion(
         raise EvaluationError("frozen completion vector must preserve unverifiable")
     if evidence.get("freshness_within_relying_bound") is not False:
         raise EvaluationError("frozen completion evidence is not stale")
-    result["row_outcome"] = "indeterminate"
+    result["expected_row_outcome"] = "indeterminate"
     result["warrant_outcome"] = warrant_outcome
     result["adjacent_successes"].extend(
         ["completion_signature_valid", "result_hash_valid"]
@@ -178,7 +244,7 @@ def _a2a_mcp_action_swap(case: dict[str, Any], row: dict[str, Any]) -> dict[str,
         raise EvaluationError("frozen AIP profile unexpectedly carries an argument digest")
     if not situation["border_exact_argument_digest_present"]:
         raise EvaluationError("Border reference comparison is not enabled")
-    result["row_outcome"] = "unsupported"
+    result["expected_row_outcome"] = "unsupported"
     result["border_reference_outcome"] = "unsatisfied"
     result["authorized_argument_digest"] = authorized_digest
     result["observed_argument_digest"] = observed_digest
@@ -209,9 +275,9 @@ def evaluate_case(case: dict[str, Any], rows: dict[str, dict[str, Any]]) -> dict
     result = EVALUATORS[case_id](case, rows[row_id])
     if result["mapping_result"] != case.get("expected_mapping_result"):
         raise EvaluationError(f"{case_id}: mapping result differs from frozen expectation")
-    if result["row_outcome"] not in ROW_OUTCOMES:
+    if result["expected_row_outcome"] not in ROW_OUTCOMES:
         raise EvaluationError(f"{case_id}: invalid Principal Binding row outcome")
-    if result["row_outcome"] != case.get("expected_row_outcome"):
+    if result["expected_row_outcome"] != case.get("expected_row_outcome"):
         raise EvaluationError(f"{case_id}: row outcome differs from frozen expectation")
     if "expected_warrant_outcome" in case and result.get("warrant_outcome") != case[
         "expected_warrant_outcome"
@@ -225,7 +291,7 @@ def evaluate_case(case: dict[str, Any], rows: dict[str, dict[str, Any]]) -> dict
     return result
 
 
-def evaluate_all() -> dict[str, Any]:
+def evaluate_all(source_files: dict[str, Path] | None = None) -> dict[str, Any]:
     matrix = _load(MATRIX_PATH)
     cases_document = _load(CASES_PATH)
     sources = _load(SOURCES_PATH)
@@ -235,14 +301,15 @@ def evaluate_all() -> dict[str, Any]:
         raise EvaluationError("cases must be a list")
     results = [evaluate_case(case, rows) for case in cases]
     return {
-        "experiment": "AIP-MATRIX-FIT-001",
-        "evaluator_version": "0.1.0",
+        "experiment": "AIP-MATRIX-FIT-002",
+        "evaluator_version": "0.2.0",
         "source_protocol": matrix["source_protocol"],
         "evaluation_vocabulary": matrix["evaluation_vocabulary"],
         "matrix_sha256": _file_sha256(MATRIX_PATH),
         "cases_sha256": _file_sha256(CASES_PATH),
         "sources_sha256": _file_sha256(SOURCES_PATH),
         "source_count": len(sources.get("sources", [])),
+        "source_byte_verification": verify_source_files(source_files),
         "case_count": len(results),
         "all_conform": all(item["conforms_to_frozen_expectation"] for item in results),
         "results": results,

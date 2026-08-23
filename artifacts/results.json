@@ -1,11 +1,11 @@
 {
   "all_conform": true,
   "case_count": 4,
-  "cases_sha256": "4fae1e765e975b1d7ce48a63312b0dfcf7ad25e9adfff037af1aee2bc7af5f49",
+  "cases_sha256": "1ffa48351c82eb46a61dfe2734d578de99e45a48526a486df92cf128be07b13a",
   "evaluation_vocabulary": "draft-bu-agentproto-security-principal-binding-06",
-  "evaluator_version": "0.1.0",
-  "experiment": "AIP-MATRIX-FIT-001",
-  "matrix_sha256": "82f44e4822599aea5310fb6c778a25528505072191050b9b3c527418484afe94",
+  "evaluator_version": "0.2.0",
+  "experiment": "AIP-MATRIX-FIT-002",
+  "matrix_sha256": "053ba37c73b26e39f60db4cb73b6db15f779f752c1a3a1e06f4e822f2ba6eb74",
   "results": [
     {
       "adjacent_successes": [
@@ -14,6 +14,7 @@
       "case_id": "wrong_presenter",
       "conforms_to_frozen_expectation": true,
       "diagnostic": "AIP draft-01 deliberately has no presenter proof-of-possession check; the valid bearer chain cannot be promoted into live-presenter authentication.",
+      "expected_row_outcome": "unsupported",
       "mapping_result": "DECLARED-GAP",
       "matrix_row": "presenter",
       "non_claims": [
@@ -21,7 +22,6 @@
         "AIP failed merely because it accurately declared this limitation."
       ],
       "permitted_conclusion": "The bearer has a valid chain; AIP alone does not establish that the live presenter is the leaf subject.",
-      "row_outcome": "unsupported",
       "title": "Wrong Presenter"
     },
     {
@@ -33,6 +33,7 @@
       "case_id": "same_control_verifier",
       "conforms_to_frozen_expectation": true,
       "diagnostic": "The signer is authenticated, but draft-01 supplies no organizational control-domain independence rule or constrained result.",
+      "expected_row_outcome": "indeterminate",
       "mapping_result": "AMBIGUOUS",
       "matrix_row": "independence",
       "non_claims": [
@@ -40,7 +41,6 @@
         "A Level 2 or Level 3 label proves control-domain separation."
       ],
       "permitted_conclusion": "A named verifier signed the block; AIP draft-01 does not establish organizational independence.",
-      "row_outcome": "indeterminate",
       "title": "Same-Control Verifier"
     },
     {
@@ -52,15 +52,15 @@
       "case_id": "stale_unverifiable_completion",
       "conforms_to_frozen_expectation": true,
       "diagnostic": "The artifact is intact, but unreachable or stale evidence is unverifiable, not rejected; no adjacent signature success repairs that missing appraisal.",
+      "expected_row_outcome": "indeterminate",
       "mapping_result": "AMBIGUOUS",
-      "matrix_row": "provenance",
+      "matrix_row": "completion-evidence-freshness",
       "non_claims": [
         "Unverifiable evidence was rejected on its merits.",
         "A peer_verified label proves the evidence check succeeded.",
         "A valid completion signature proves the claimed execution occurred correctly."
       ],
       "permitted_conclusion": "The signed completion and result hash are intact, but the underlying evidence could not be established as current or checkable.",
-      "row_outcome": "indeterminate",
       "title": "Stale/Unverifiable Completion",
       "warrant_outcome": "unverifiable"
     },
@@ -74,6 +74,7 @@
       "case_id": "a2a_mcp_action_swap",
       "conforms_to_frozen_expectation": true,
       "diagnostic": "The AIP Simple-profile tool check succeeds, while the reused Border argument-digest comparison detects a different payload. Tool scope is not promoted into exact-action authorization.",
+      "expected_row_outcome": "unsupported",
       "mapping_result": "UNREPRESENTED",
       "matrix_row": "action",
       "non_claims": [
@@ -82,11 +83,52 @@
       ],
       "observed_argument_digest": "sha256:184b1af6c1b880855b4b15b1ce333d9edb8f6cdc7e7af282dcae3c0eb5c5e88a",
       "permitted_conclusion": "The tool remains in AIP scope, but AIP draft-01 does not establish that the observed MCP arguments are the exact payload authorized by the A2A task.",
-      "row_outcome": "unsupported",
       "title": "A2A to MCP Action Swap"
     }
   ],
+  "source_byte_verification": {
+    "policy": "all pinned sources must be locally supplied and valid once verification is requested",
+    "results": [
+      {
+        "observed_bytes": 47474,
+        "observed_sha256": "214c245c38ae534b9162acd8590ec80fd2969c8254d798eb8c082a9c1774f5e5",
+        "source_id": "aip-01",
+        "status": "passed"
+      },
+      {
+        "observed_bytes": 158195,
+        "observed_sha256": "4d08f60b22149f4590433a7f37d081700df27b37a457d09ca49cf018da9f5f37",
+        "source_id": "principal-binding-06",
+        "status": "passed"
+      },
+      {
+        "observed_bytes": 3625,
+        "observed_sha256": "eea9a7c5ca0e0d90ca308401c9408f0187721c5edeb4a46bffaf2a0484ca12d1",
+        "source_id": "border-crossing-cases",
+        "status": "passed"
+      },
+      {
+        "observed_bytes": 6338,
+        "observed_sha256": "ed4f9528f3acf7a48185bfc44a777bb99167d61cfef604715117bd1a60fdc71e",
+        "source_id": "border-crossing-receipt",
+        "status": "passed"
+      },
+      {
+        "observed_bytes": 5856,
+        "observed_sha256": "db5b04561f2c3fdf8781c4717ba65831b29cfa455d17bfc1ff836ea0ed85b3cf",
+        "source_id": "border-crossing-receipt-tests",
+        "status": "passed"
+      },
+      {
+        "observed_bytes": 4439,
+        "observed_sha256": "4de5613b839123cbc118875417fd18db99e53912e749a54f879828f72b493e69",
+        "source_id": "minority-prophet-claim-warrant",
+        "status": "passed"
+      }
+    ],
+    "status": "passed"
+  },
   "source_count": 6,
   "source_protocol": "draft-prakash-aip-01",
-  "sources_sha256": "5ab87a1037ac64a1f0ff8ed7e660d24b8139b27cdc9f7841b636888b6dfc8582"
+  "sources_sha256": "c1a87d6944c924d4f7b3a6a529c894e67d9b50a125609b55b3d2c58966c41f07"
 }

@@ -1,0 +1,17 @@
+{
+  "registry": "agent-security-verifier-matrix",
+  "purpose": "Version-pinned protocol mappings, external reproductions, and bounded review statements",
+  "non_goals": [
+    "wire protocol",
+    "security certification",
+    "IANA claim registry",
+    "proof of organizational independence"
+  ],
+  "schema": "record.schema.json",
+  "records": [
+    "records/aip-matrix-fit-001.mapping.json",
+    "records/aip-matrix-fit-002.mapping.json",
+    "records/songbo-bu-2026-08-23.external-reproduction.json",
+    "records/sunil-prakash-2026-08-23.protocol-author-review.json"
+  ]
+}

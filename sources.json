@@ -1,6 +1,7 @@
 {
-  "experiment": "AIP-MATRIX-FIT-001",
-  "frozen_at": "2026-08-22",
+  "experiment": "AIP-MATRIX-FIT-002",
+  "corrected_at": "2026-08-23",
+  "source_set_unchanged_from": "aip-matrix-fit-001-v0.1.0",
   "hash_algorithm": "sha256",
   "sources": [
     {

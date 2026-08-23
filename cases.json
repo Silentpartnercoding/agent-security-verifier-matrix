@@ -1,7 +1,12 @@
 {
-  "experiment": "AIP-MATRIX-FIT-001",
-  "status": "frozen-before-adapter",
-  "frozen_at": "2026-08-22",
+  "experiment": "AIP-MATRIX-FIT-002",
+  "status": "correction-and-reproduction-release",
+  "corrected_at": "2026-08-23",
+  "supersedes": {
+    "experiment": "AIP-MATRIX-FIT-001",
+    "git_commit": "8ed65b70f8933a659dcab00331d86bac40009abe",
+    "git_tag": "aip-matrix-fit-001-v0.1.0"
+  },
   "positive_control": {
     "id": "valid_constrained_mapping",
     "requirement": "Every case must preserve AIP signature and chain validity so a rejection cannot be explained by credential forgery.",
@@ -56,7 +61,7 @@
     {
       "id": "stale_unverifiable_completion",
       "title": "Stale/Unverifiable Completion",
-      "matrix_row": "provenance",
+      "matrix_row": "completion-evidence-freshness",
       "situation": {
         "aip_chain_valid": true,
         "completion_signature_valid": true,

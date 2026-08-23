@@ -1,7 +1,12 @@
 {
-  "experiment": "AIP-MATRIX-FIT-001",
-  "status": "frozen-before-adapter",
-  "frozen_at": "2026-08-22",
+  "experiment": "AIP-MATRIX-FIT-002",
+  "status": "correction-and-reproduction-release",
+  "corrected_at": "2026-08-23",
+  "supersedes": {
+    "experiment": "AIP-MATRIX-FIT-001",
+    "git_commit": "8ed65b70f8933a659dcab00331d86bac40009abe",
+    "git_tag": "aip-matrix-fit-001-v0.1.0"
+  },
   "source_protocol": "draft-prakash-aip-01",
   "evaluation_vocabulary": "draft-bu-agentproto-security-principal-binding-06",
   "profile": "AIP Simple profile plus the completion and verification language common to draft-01",
@@ -13,25 +18,27 @@
   ],
   "rows": [
     {
-      "id": "identity",
+      "id": "delegation-participants",
       "label": "Identity",
-      "claim": "The issuer, each delegator, each delegate, and the leaf subject named by the verified chain have the identities asserted by the chain.",
+      "claim": "The verified artifact consistently names its issuer, delegators, delegates, and leaf subject across the delegation chain.",
       "principal_binding_claim_ids": [
-        "C-001"
+        "C-003",
+        "C-012"
       ],
       "carrier": "AIP identifiers, compact-token iss/sub claims, chained identity/delegator/delegate facts, identity documents, and signatures.",
       "verifier": "The AIP relying party performing V1 through V7.",
       "binding": "The full signature chain, root key or identity document, and the identifiers committed by each predecessor block.",
       "failure": "Reject with the applicable AIP identity, signature, chain, or resolution error.",
       "result": "EXACT",
-      "permitted_conclusion": "The verified artifact establishes the chain participants it names.",
+      "permitted_conclusion": "The verified artifact establishes the ordering and non-substitution of the participant identifiers committed by the chain.",
       "non_claims": [
+        "Every named participant has been independently authenticated as a live security principal.",
         "The live presenter is the leaf subject.",
         "A named principal currently has entitlements for the action."
       ],
       "source_refs": [
         "aip-01:sections-2,4.1,4.2,4.8,5.3",
-        "principal-binding-06:C-001,C-011"
+        "principal-binding-06:C-003,C-012"
       ]
     },
     {
@@ -91,6 +98,11 @@
       "carrier": "Simple-profile Datalog checks and structural block facts.",
       "verifier": "The AIP relying party evaluating only the permitted ambient tool, time, and depth facts plus structural ceilings.",
       "binding": "The request's current tool and evaluation time, the verified chain depth, and the per-block intersection of allowed tools.",
+      "ambient_input_trust": {
+        "supplier": "The deployment supplies the current tool identifier and evaluation time; the chain parser supplies verified depth and structural facts.",
+        "authentication": "AIP draft-01 does not authenticate the physical tool or resource instance behind the supplied tool identifier. That binding is deployment-defined.",
+        "decision_boundary": "Policy success is relative to the supplied ambient facts and does not independently establish their correspondence to the physical execution context."
+      },
       "failure": "Reject a request outside the tool intersection, time window, depth limit, domain set, or structural budget ceiling.",
       "result": "EXACT",
       "permitted_conclusion": "The evaluated request dimensions are inside the conveyed Simple-profile scope.",
@@ -155,25 +167,50 @@
       ]
     },
     {
-      "id": "freshness",
-      "label": "Freshness",
-      "claim": "Both the delegation credential and the evidence underlying a completion verification result are current enough for the relying decision.",
+      "id": "credential-freshness",
+      "label": "Credential Freshness",
+      "claim": "The delegation credential, referenced identity keys, and configured revocation status are current enough for the relying decision.",
       "principal_binding_claim_ids": [
         "C-008",
         "C-009"
       ],
-      "carrier": "Token iat/exp, per-block time limits, identity-document key validity, and signed bounded-staleness revocation responses; no defined completion-evidence freshness field.",
-      "verifier": "The AIP relying party verifies token and revocation freshness. No completion-evidence freshness verifier is defined.",
-      "binding": "Credential freshness is bound to evaluation time and issuer status; evidence freshness is not bound to an observation time, method, or relying-decision bound.",
-      "failure": "Expired or stale credential status fails closed; stale or unreachable completion evidence has no distinct AIP draft-01 failure path.",
-      "result": "AMBIGUOUS",
-      "permitted_conclusion": "The chain and revocation inputs were fresh under the configured bound; no conclusion follows about the freshness of the evidence behind a completion label.",
+      "carrier": "Token iat/exp, per-block time limits, identity-document key validity, and signed bounded-staleness revocation responses.",
+      "verifier": "The AIP relying party compares credential and revocation inputs with evaluation time and configured freshness bounds.",
+      "binding": "Credential validity is bound to evaluation time; revocation status is bound to the issuer, serial, signed response, and configured staleness bound.",
+      "failure": "Reject expired credentials, invalid keys, revoked serials, invalid revocation signatures, and stale status beyond the configured bound.",
+      "result": "EXACT",
+      "permitted_conclusion": "The credential and revocation inputs passed AIP draft-01's configured freshness checks.",
       "non_claims": [
+        "Fresh credential status makes referenced completion evidence fresh.",
+        "Specification mapping proves that every implementation correctly enforces revocation."
+      ],
+      "source_refs": [
+        "aip-01:sections-4.7,7.4,7.5",
+        "principal-binding-06:C-008,C-009"
+      ]
+    },
+    {
+      "id": "completion-evidence-freshness",
+      "label": "Evidence Freshness",
+      "claim": "The evidence underlying a completion verification label is current enough for the relying decision.",
+      "principal_binding_claim_ids": [
+        "C-008",
+        "C-009",
+        "C-011"
+      ],
+      "carrier": "A signed completion can carry a verification_status and optional provenance reference, but draft-01 defines no evidence observation time, freshness bound, or appraisal result field.",
+      "verifier": "Draft-01 does not define the completion-evidence freshness verifier; an inherited RATS appraisal or another external verifier would be required and must be identified.",
+      "binding": "The completion signature binds the label and result hash, not the age, reachability, or successful appraisal of its underlying evidence.",
+      "failure": "Stale, unreachable, or semantically uncheckable evidence has no distinct draft-01 completion failure result.",
+      "result": "AMBIGUOUS",
+      "permitted_conclusion": "No conclusion about completion-evidence freshness follows from credential freshness or a valid completion signature alone.",
+      "non_claims": [
+        "A verification_status label proves that current evidence was successfully appraised.",
         "Fresh credential status makes referenced completion evidence fresh."
       ],
       "source_refs": [
-        "aip-01:sections-4.7,7.4,7.5,8.1",
-        "principal-binding-06:C-008,C-009",
+        "aip-01:sections-8.1,8.2,8.3",
+        "principal-binding-06:C-008,C-009,C-011",
         "minority-prophet-claim-warrant:unverifiable"
       ]
     },

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Silentpartnercoding/agent-security-verifier-matrix/blob/main/registry/record.schema.json",
+  "title": "Neutral verifier-matrix registry record envelope",
+  "description": "Repository metadata for version-pinned mappings, reproductions, and reviews. It is not an agent wire protocol or a claim vocabulary.",
+  "type": "object",
+  "required": [
+    "record_version",
+    "record_id",
+    "record_type",
+    "subject",
+    "provenance",
+    "payload"
+  ],
+  "properties": {
+    "record_version": { "const": "1" },
+    "record_id": { "type": "string", "minLength": 1 },
+    "record_type": {
+      "enum": ["mapping", "external-reproduction", "protocol-author-review"]
+    },
+    "subject": {
+      "type": "object",
+      "required": ["kind", "id", "version"],
+      "properties": {
+        "kind": { "type": "string", "minLength": 1 },
+        "id": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": true
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["recorded_at", "author_role", "source_links"],
+      "properties": {
+        "recorded_at": { "type": "string", "format": "date" },
+        "author_role": { "type": "string", "minLength": 1 },
+        "source_links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["uri"],
+            "properties": {
+              "uri": { "type": "string", "minLength": 1 },
+              "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "payload": { "type": "object" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,60 @@
+{
+  "record_version": "1",
+  "record_id": "protocol-author-review:sunil-prakash:aip-matrix-fit-001:2026-08-23",
+  "record_type": "protocol-author-review",
+  "subject": {
+    "kind": "mapping-release",
+    "id": "AIP-MATRIX-FIT-001",
+    "version": "0.1.0",
+    "source_protocol": "draft-prakash-aip-01"
+  },
+  "provenance": {
+    "recorded_at": "2026-08-23",
+    "author_role": "harness-maintainer-recording-protocol-author-review",
+    "protocol_author": "Sunil Prakash",
+    "source_links": [
+      {
+        "uri": "https://mailarchive.ietf.org/arch/msg/agentproto/3OOQr8DNqkulsDjfL_457Hc_OoA/"
+      },
+      {
+        "uri": "https://github.com/sunilp/aip/commit/b2ef08ad18bde8b21b1e514bdedf1b22779cb1e0"
+      },
+      {
+        "uri": "https://github.com/sunilp/aip/commit/b114c4aef3a591d17ea332200e4182774ca2be26"
+      }
+    ]
+  },
+  "payload": {
+    "relationship": "protocol-author-reviewer-not-external-reproducer",
+    "agreed_mapping_points": [
+      "the v0.1 identity row was inconsistent with the declared presenter gap",
+      "credential freshness and completion-evidence freshness must be separate",
+      "expected_row_outcome is the accurate emitted field name",
+      "exact A2A task or MCP argument binding is UNREPRESENTED in AIP-01",
+      "a completion verification_status does not itself establish successful external evidence appraisal",
+      "Level 2 is not independent and Level 3 does not establish control-domain separation"
+    ],
+    "protocol_author_forward_looking_statements": [
+      "AIP should explicitly state the inherited evidence appraisal model",
+      "AIP-02 may add an optional exact-action digest",
+      "AIP should avoid overstating revocation and delegation-participant authentication claims"
+    ],
+    "implementation_security_assertions": [
+      {
+        "claim": "two Datalog-injection authorization bypasses were fixed",
+        "public_fix_commit": "b2ef08ad18bde8b21b1e514bdedf1b22779cb1e0",
+        "registry_verification_status": "public-commit-reference-present-not-locally-reproduced"
+      },
+      {
+        "claim": "the proxy previously ran only verification step V1 and was fixed",
+        "public_fix_commit": "b114c4aef3a591d17ea332200e4182774ca2be26",
+        "registry_verification_status": "public-commit-reference-present-not-locally-reproduced"
+      }
+    ],
+    "limitations": [
+      "Agreement by a protocol author is not independent certification.",
+      "Forward-looking AIP-02 statements are not claims about pinned AIP-01.",
+      "The implementation bugs and fixes are author-reported and were not reproduced by this release."
+    ]
+  }
+}
