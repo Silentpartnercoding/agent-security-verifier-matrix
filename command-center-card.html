@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIP × Verifier Matrix · Daily Cheese</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --avm-bg: #070a10;
+      --avm-panel: #101722;
+      --avm-panel-2: #151e2c;
+      --avm-line: #2a3850;
+      --avm-text: #eef5ff;
+      --avm-muted: #91a0b4;
+      --avm-exact: #75e0ae;
+      --avm-gap: #61c8b0;
+      --avm-ambiguous: #f1c166;
+      --avm-unrepresented: #ff807a;
+      --avm-blue: #72c7ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 90% -10%, #18385e 0, transparent 31%),
+        radial-gradient(circle at 0 18%, #15382b 0, transparent 25%),
+        var(--avm-bg);
+      color: var(--avm-text);
+      font: 14px/1.45 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    #aip-verifier-card {
+      width: min(1480px, 100%);
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .avm-shell {
+      overflow: hidden;
+      border: 1px solid #315070;
+      border-radius: 24px;
+      background: rgba(13, 20, 31, .96);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .34);
+    }
+    .avm-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(330px, .8fr);
+      gap: 24px;
+      padding: 28px;
+      border-bottom: 1px solid var(--avm-line);
+      background: linear-gradient(135deg, rgba(20, 43, 68, .96), rgba(12, 22, 35, .98));
+    }
+    .avm-kicker {
+      color: var(--avm-blue);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 8px 0 12px;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: .95;
+      letter-spacing: -.055em;
+    }
+    .avm-subtitle {
+      max-width: 760px;
+      margin: 0;
+      color: #c3cedc;
+      font-size: 16px;
+    }
+    .avm-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      align-content: end;
+    }
+    .avm-meta div {
+      min-height: 70px;
+      padding: 11px 13px;
+      border: 1px solid var(--avm-line);
+      border-radius: 12px;
+      background: rgba(7, 13, 21, .68);
+    }
+    .avm-meta span,
+    .avm-table span,
+    .avm-tile span {
+      display: block;
+      color: var(--avm-muted);
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    .avm-meta strong { display: block; margin-top: 5px; font-size: 16px; }
+    .avm-content { padding: 24px; }
+    .avm-section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 13px;
+    }
+    h2 { margin: 0; font-size: 21px; letter-spacing: -.025em; }
+    .avm-legend { display: flex; flex-wrap: wrap; gap: 8px; }
+    .avm-legend b,
+    .avm-result {
+      display: inline-flex;
+      align-items: center;
+      width: max-content;
+      padding: 5px 8px;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .exact { color: var(--avm-exact); }
+    .declared-gap { color: var(--avm-gap); border-style: dashed !important; }
+    .ambiguous { color: var(--avm-ambiguous); }
+    .unrepresented { color: var(--avm-unrepresented); }
+    .avm-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--avm-line);
+      border-radius: 15px;
+    }
+    .avm-table {
+      display: grid;
+      grid-template-columns: 132px repeat(4, minmax(190px, 1fr)) 150px;
+      min-width: 1040px;
+    }
+    .avm-cell {
+      min-height: 92px;
+      padding: 13px;
+      border-right: 1px solid var(--avm-line);
+      border-bottom: 1px solid var(--avm-line);
+      background: var(--avm-panel);
+    }
+    .avm-cell:nth-child(6n) { border-right: 0; }
+    .avm-cell:nth-last-child(-n + 6) { border-bottom: 0; }
+    .avm-header {
+      min-height: auto;
+      color: var(--avm-muted);
+      background: #0b121d;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .avm-row-label {
+      color: #dcecff;
+      background: var(--avm-panel-2);
+      font-size: 15px;
+      font-weight: 850;
+    }
+    .avm-cell p { margin: 7px 0 0; color: #c8d3e1; }
+    .avm-cell-result { display: grid; align-content: start; gap: 8px; }
+    .avm-cell-result small { color: var(--avm-muted); }
+    .avm-green-rule {
+      margin: 13px 0 22px;
+      padding-left: 11px;
+      border-left: 3px solid var(--avm-exact);
+      color: #bdccda;
+    }
+    .avm-tests {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .avm-tile {
+      min-height: 188px;
+      padding: 15px;
+      border: 1px solid var(--avm-line);
+      border-radius: 14px;
+      background: var(--avm-panel-2);
+    }
+    .avm-tile h3 { min-height: 48px; margin: 9px 0 12px; font-size: 17px; line-height: 1.15; }
+    .avm-tile p { margin: 10px 0 0; color: var(--avm-muted); }
+    .avm-tile .avm-result { margin-top: 5px; }
+    .avm-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 15px 24px;
+      border-top: 1px solid var(--avm-line);
+      color: var(--avm-muted);
+      font-size: 11px;
+    }
+    @media (max-width: 1050px) {
+      .avm-head { grid-template-columns: 1fr; }
+      .avm-tests { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 650px) {
+      #aip-verifier-card { padding: 10px; }
+      .avm-head, .avm-content { padding: 18px; }
+      .avm-meta, .avm-tests { grid-template-columns: 1fr; }
+      .avm-section-head, .avm-footer { align-items: start; flex-direction: column; }
+      .avm-tile h3 { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main id="aip-verifier-card">
+    <article class="avm-shell">
+      <header class="avm-head">
+        <div>
+          <span class="avm-kicker">Daily Cheese · neutral conformance seam</span>
+          <h1>AIP × Verifier Matrix</h1>
+          <p class="avm-subtitle">A valid cryptographic container earns only the conclusions its separate claim verifiers actually establish.</p>
+        </div>
+        <div class="avm-meta" aria-label="Opportunity metadata">
+          <div><span>Confidence</span><strong>98</strong></div>
+          <div><span>Window</span><strong>NOW</strong></div>
+          <div><span>AIP-01</span><strong>Aug 19</strong></div>
+          <div><span>Principal Binding-06</span><strong>Aug 17</strong></div>
+          <div><span>agentproto</span><strong>WG forming</strong></div>
+          <div><span>Harness</span><strong>4 / 4 constrained</strong></div>
+        </div>
+      </header>
+
+      <div class="avm-content">
+        <div class="avm-section-head">
+          <h2>Claim matrix</h2>
+          <div class="avm-legend" aria-label="Mapping result legend">
+            <b class="exact">Exact</b>
+            <b class="declared-gap">Declared gap</b>
+            <b class="ambiguous">Ambiguous</b>
+            <b class="unrepresented">Unrepresented</b>
+          </div>
+        </div>
+
+        <div class="avm-table-wrap" role="region" aria-label="AIP claim-to-verifier matrix" tabindex="0">
+          <div class="avm-table" role="table">
+            <div class="avm-cell avm-header" role="columnheader">Claim</div>
+            <div class="avm-cell avm-header" role="columnheader">Carrier</div>
+            <div class="avm-cell avm-header" role="columnheader">Verifier</div>
+            <div class="avm-cell avm-header" role="columnheader">Binding</div>
+            <div class="avm-cell avm-header" role="columnheader">Failure</div>
+            <div class="avm-cell avm-header" role="columnheader">Result</div>
+
+            <div class="avm-cell avm-row-label" role="rowheader">Identity</div>
+            <div class="avm-cell"><span>Carrier</span><p>Identifiers, chain facts, identity documents, signatures</p></div>
+            <div class="avm-cell"><span>Verifier</span><p>AIP relying party, V1–V7</p></div>
+            <div class="avm-cell"><span>Binding</span><p>Root key and predecessor-committed chain</p></div>
+            <div class="avm-cell"><span>Failure</span><p>Reject identity, resolution, signature, or chain error</p></div>
+            <div class="avm-cell avm-cell-result"><b class="avm-result exact">Exact</b><small>Chain identities only</small></div>
+
+            <div class="avm-cell avm-row-label" role="rowheader">Authority</div>
+            <div class="avm-cell"><span>Carrier</span><p>Rights, allowlists, ceilings, delegation blocks</p></div>
+            <div class="avm-cell"><span>Verifier</span><p>Attenuation walk and policy evaluator</p></div>
+            <div class="avm-cell"><span>Binding</span><p>Each child checked against its ancestor</p></div>
+            <div class="avm-cell"><span>Failure</span><p>Reject widening or policy failure</p></div>
+            <div class="avm-cell avm-cell-result"><b class="avm-result exact">Exact</b><small>Agent authority, not principal entitlements</small></div>
+
+            <div class="avm-cell avm-row-label" role="rowheader">Presenter</div>
+            <div class="avm-cell"><span>Carrier</span><p>No AIP proof-of-possession carrier</p></div>
+            <div class="avm-cell"><span>Verifier</span><p>External transport or message-layer mechanism</p></div>
+            <div class="avm-cell"><span>Binding</span><p>Deployment-defined live key and channel</p></div>
+            <div class="avm-cell"><span>Failure</span><p>Never call AIP verification presenter authentication</p></div>
+            <div class="avm-cell avm-cell-result"><b class="avm-result declared-gap">Declared gap</b><small>Honest limit = good result</small></div>
+
+            <div class="avm-cell avm-row-label" role="rowheader">Scope</div>
+            <div class="avm-cell"><span>Carrier</span><p>Simple-profile checks and structural facts</p></div>
+            <div class="avm-cell"><span>Verifier</span><p>Tool, time, depth, and ceiling evaluator</p></div>
+            <div class="avm-cell"><span>Binding</span><p>Current tool/time and block intersection</p></div>
+            <div class="avm-cell"><span>Failure</span><p>Reject outside evaluated dimensions</p></div>
+            <div class="avm-cell avm-cell-result"><b class="avm-result exact">Exact</b><small>Not exact arguments or spend balance</small></div>
+
+            <div class="avm-cell avm-row-label" role="rowheader">Action</div>
+            <div class="avm-cell"><span>Carrier</span><p>No task/context/argument digest in Simple profile</p></div>
+            <div class="avm-cell"><span>Verifier</span><p>No AIP exact-crossing comparison rule</p></div>
+            <div class="avm-cell"><span>Binding</span><p>Tool scope exists; canonical payload binding does not</p></div>
+            <div class="avm-cell"><span>Failure</span><p>No draft-01 exact-action mismatch result</p></div>
+            <div class="avm-cell avm-cell-result"><b class="avm-result unrepresented">Unrepresented</b><small>Border detects the swap externally</small></div>
+
+            <div class="avm-cell avm-row-label" role="rowheader">Provenance</div>
+            <div class="avm-cell"><span>Carrier</span><p>Completion block, result hash, verification label</p></div>
+            <div class="avm-cell"><span>Verifier</span><p>Executor, delegator, or external signer</p></div>
+            <div class="avm-cell"><span>Binding</span><p>Signed assertion; appraisal evidence incomplete</p></div>
+            <div class="avm-cell"><span>Failure</span><p>No distinct stale or unverifiable evidence outcome</p></div>
+            <div class="avm-cell avm-cell-result"><b class="avm-result ambiguous">Ambiguous</b><small>Signed claim ≠ checked evidence</small></div>
+
+            <div class="avm-cell avm-row-label" role="rowheader">Freshness</div>
+            <div class="avm-cell"><span>Carrier</span><p>Token time, key validity, signed revocation status</p></div>
+            <div class="avm-cell"><span>Verifier</span><p>Credential freshness verifier only</p></div>
+            <div class="avm-cell"><span>Binding</span><p>Evaluation time; no completion-evidence bound</p></div>
+            <div class="avm-cell"><span>Failure</span><p>Credential fails closed; evidence path unspecified</p></div>
+            <div class="avm-cell avm-cell-result"><b class="avm-result ambiguous">Ambiguous</b><small>Exact for token, not evidence</small></div>
+
+            <div class="avm-cell avm-row-label" role="rowheader">Independence</div>
+            <div class="avm-cell"><span>Carrier</span><p>Counter-signature or external attestation</p></div>
+            <div class="avm-cell"><span>Verifier</span><p>Signer verified; control domain not evaluated</p></div>
+            <div class="avm-cell"><span>Binding</span><p>Attestation signed; independence relation absent</p></div>
+            <div class="avm-cell"><span>Failure</span><p>No shared-control independence result</p></div>
+            <div class="avm-cell avm-cell-result"><b class="avm-result ambiguous">Ambiguous</b><small>Different key ≠ independent controller</small></div>
+          </div>
+        </div>
+
+        <p class="avm-green-rule"><strong>Green means the distinction is faithfully represented.</strong> It never means that a signature automatically establishes presenter identity, evidence truth, freshness, or independence.</p>
+
+        <div class="avm-section-head"><h2>Four negative vectors</h2></div>
+        <div class="avm-tests">
+          <article class="avm-tile">
+            <span>01 · Presenter</span>
+            <h3>Wrong Presenter</h3>
+            <b class="avm-result declared-gap">Declared gap</b>
+            <p>Valid bearer chain; live presenter remains unauthenticated by AIP alone.</p>
+          </article>
+          <article class="avm-tile">
+            <span>02 · Independence</span>
+            <h3>Same-Control Verifier</h3>
+            <b class="avm-result ambiguous">Ambiguous</b>
+            <p>Valid attestation signature; organizational independence remains unestablished.</p>
+          </article>
+          <article class="avm-tile">
+            <span>03 · Provenance</span>
+            <h3>Stale/Unverifiable Completion</h3>
+            <b class="avm-result ambiguous">Ambiguous</b>
+            <p>Completion intact; underlying evidence remains unverifiable, not rejected.</p>
+          </article>
+          <article class="avm-tile">
+            <span>04 · Composition</span>
+            <h3>A2A→MCP Action Swap</h3>
+            <b class="avm-result unrepresented">Unrepresented</b>
+            <p>AIP tool scope succeeds while Border rejects the changed argument digest.</p>
+          </article>
+        </div>
+      </div>
+
+      <footer class="avm-footer">
+        <span>AIP-MATRIX-FIT-001 · out-of-tree · frozen before adapter</span>
+        <span>4 / 4 vectors preserve AIP chain validity</span>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>

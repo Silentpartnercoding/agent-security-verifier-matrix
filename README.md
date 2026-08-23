@@ -63,3 +63,7 @@ The report preserves two different levels deliberately:
 For the action-swap vector, the report also shows the adjacent AIP tool-scope
 row succeeding while the exact-action row remains unsupported. The successful
 scope check is never promoted into an exact-payload conclusion.
+
+`command-center-card.html` is the self-contained Daily Cheese card for this
+experiment. Its green states mean that the distinction is faithfully reported;
+they do not mean that a signature establishes every adjacent claim.
