@@ -1,0 +1,92 @@
+{
+  "all_conform": true,
+  "case_count": 4,
+  "cases_sha256": "4fae1e765e975b1d7ce48a63312b0dfcf7ad25e9adfff037af1aee2bc7af5f49",
+  "evaluation_vocabulary": "draft-bu-agentproto-security-principal-binding-06",
+  "evaluator_version": "0.1.0",
+  "experiment": "AIP-MATRIX-FIT-001",
+  "matrix_sha256": "82f44e4822599aea5310fb6c778a25528505072191050b9b3c527418484afe94",
+  "results": [
+    {
+      "adjacent_successes": [
+        "aip_chain_valid"
+      ],
+      "case_id": "wrong_presenter",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "AIP draft-01 deliberately has no presenter proof-of-possession check; the valid bearer chain cannot be promoted into live-presenter authentication.",
+      "mapping_result": "DECLARED-GAP",
+      "matrix_row": "presenter",
+      "non_claims": [
+        "The presenter is authenticated as aip:key:agent-a.",
+        "AIP failed merely because it accurately declared this limitation."
+      ],
+      "permitted_conclusion": "The bearer has a valid chain; AIP alone does not establish that the live presenter is the leaf subject.",
+      "row_outcome": "unsupported",
+      "title": "Wrong Presenter"
+    },
+    {
+      "adjacent_successes": [
+        "aip_chain_valid",
+        "completion_signature_valid",
+        "attestation_signature_valid"
+      ],
+      "case_id": "same_control_verifier",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "The signer is authenticated, but draft-01 supplies no organizational control-domain independence rule or constrained result.",
+      "mapping_result": "AMBIGUOUS",
+      "matrix_row": "independence",
+      "non_claims": [
+        "Different signing keys make the verifier independent.",
+        "A Level 2 or Level 3 label proves control-domain separation."
+      ],
+      "permitted_conclusion": "A named verifier signed the block; AIP draft-01 does not establish organizational independence.",
+      "row_outcome": "indeterminate",
+      "title": "Same-Control Verifier"
+    },
+    {
+      "adjacent_successes": [
+        "aip_chain_valid",
+        "completion_signature_valid",
+        "result_hash_valid"
+      ],
+      "case_id": "stale_unverifiable_completion",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "The artifact is intact, but unreachable or stale evidence is unverifiable, not rejected; no adjacent signature success repairs that missing appraisal.",
+      "mapping_result": "AMBIGUOUS",
+      "matrix_row": "provenance",
+      "non_claims": [
+        "Unverifiable evidence was rejected on its merits.",
+        "A peer_verified label proves the evidence check succeeded.",
+        "A valid completion signature proves the claimed execution occurred correctly."
+      ],
+      "permitted_conclusion": "The signed completion and result hash are intact, but the underlying evidence could not be established as current or checkable.",
+      "row_outcome": "indeterminate",
+      "title": "Stale/Unverifiable Completion",
+      "warrant_outcome": "unverifiable"
+    },
+    {
+      "adjacent_successes": [
+        "aip_chain_valid",
+        "aip_tool_scope_satisfied"
+      ],
+      "authorized_argument_digest": "sha256:9b2d43affbf49a367028df2e1414f84c0e099ac98c3d54a8a80157fd7771af25",
+      "border_reference_outcome": "unsatisfied",
+      "case_id": "a2a_mcp_action_swap",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "The AIP Simple-profile tool check succeeds, while the reused Border argument-digest comparison detects a different payload. Tool scope is not promoted into exact-action authorization.",
+      "mapping_result": "UNREPRESENTED",
+      "matrix_row": "action",
+      "non_claims": [
+        "A valid AIP chain proves the exact cross-protocol payload was authorized.",
+        "A matching tool name makes different arguments the same action."
+      ],
+      "observed_argument_digest": "sha256:184b1af6c1b880855b4b15b1ce333d9edb8f6cdc7e7af282dcae3c0eb5c5e88a",
+      "permitted_conclusion": "The tool remains in AIP scope, but AIP draft-01 does not establish that the observed MCP arguments are the exact payload authorized by the A2A task.",
+      "row_outcome": "unsupported",
+      "title": "A2A to MCP Action Swap"
+    }
+  ],
+  "source_count": 6,
+  "source_protocol": "draft-prakash-aip-01",
+  "sources_sha256": "5ab87a1037ac64a1f0ff8ed7e660d24b8139b27cdc9f7841b636888b6dfc8582"
+}

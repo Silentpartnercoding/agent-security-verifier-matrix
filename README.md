@@ -43,5 +43,23 @@ The matrix evaluates AIP draft-01 as written. It does not infer deployment
 controls, treat a signature as evidence of truth, treat an external name as
 proof of independence, or let evidence assessment grant execution authority.
 
-The adapter is intentionally not present in this commit. The table and cases
-are frozen first so implementation results cannot be used to rewrite the exam.
+The table and cases were frozen in git before the evaluator was added, so
+implementation results cannot be used to rewrite the exam.
+
+## Run
+
+The evaluator uses only the Python standard library:
+
+```text
+python3 -m aip_matrix_fit
+python3 -m unittest discover -s tests -v
+```
+
+The report preserves two different levels deliberately:
+
+- `mapping_result` says how AIP draft-01 maps to the claim.
+- `row_outcome` uses Principal Binding's per-input evaluation vocabulary.
+
+For the action-swap vector, the report also shows the adjacent AIP tool-scope
+row succeeding while the exact-action row remains unsupported. The successful
+scope check is never promoted into an exact-payload conclusion.
