@@ -1,6 +1,6 @@
 # AIP-MATRIX-FIT-001
 
-Status: **exploratory, frozen before adapter implementation**
+Status: **exploratory, frozen evaluation with executable results**
 
 AIP-MATRIX-FIT-001 is an out-of-tree compatibility experiment. It asks a
 narrow question: can the security claims made or carried by AIP draft-01 be
@@ -21,6 +21,10 @@ The experiment rewards an exact mapping and a minimal reproducible gap equally.
 
 The JSON files are experiment records. They are not schemas and are not
 intended for use on an agent wire.
+
+The mapping table and negative cases were committed before the evaluator was
+implemented. `artifacts/results.json` is the reproducible output of applying
+the evaluator to those frozen inputs.
 
 ## Report dispositions
 
@@ -67,3 +71,9 @@ scope check is never promoted into an exact-payload conclusion.
 `command-center-card.html` is the self-contained Daily Cheese card for this
 experiment. Its green states mean that the distinction is faithfully reported;
 they do not mean that a signature establishes every adjacent claim.
+
+## License
+
+Apache-2.0. The referenced IETF drafts and upstream artifacts remain subject
+to their respective terms; this repository pins and links them rather than
+redistributing their full contents.
