@@ -18,7 +18,7 @@ class RegistryTests(unittest.TestCase):
             for path in cls.index["records"]
         ]
 
-    def test_minimal_envelope_represents_both_mapping_versions(self) -> None:
+    def test_minimal_envelope_represents_historical_and_second_protocol_mappings(self) -> None:
         required = set(self.schema["required"])
         for record in self.records:
             self.assertEqual(set(record), required)
@@ -27,12 +27,29 @@ class RegistryTests(unittest.TestCase):
             for record in self.records
             if record["record_type"] == "mapping"
         }
-        self.assertEqual(set(mappings), {"AIP-MATRIX-FIT-001", "AIP-MATRIX-FIT-002"})
+        self.assertEqual(
+            set(mappings),
+            {"AIP-MATRIX-FIT-001", "AIP-MATRIX-FIT-002", "AGTP-MATRIX-FIT-001"},
+        )
         self.assertFalse(mappings["AIP-MATRIX-FIT-001"]["payload"]["historical_record_mutated"])
         self.assertEqual(
             mappings["AIP-MATRIX-FIT-002"]["payload"]["supersedes"],
             mappings["AIP-MATRIX-FIT-001"]["record_id"],
         )
+
+    def test_second_protocol_does_not_change_registry_or_claim_semantics(self) -> None:
+        record = next(
+            item
+            for item in self.records
+            if item["subject"]["id"] == "AGTP-MATRIX-FIT-001"
+        )
+        self.assertFalse(record["payload"]["claim_semantics_extended"])
+        self.assertFalse(record["payload"]["registry_envelope_changed"])
+        self.assertEqual(
+            record["payload"]["registry_schema_sha256"],
+            "4cee82333e74f3da7b9148e77218e6a6f2874dbfc8a878ceed713de27103a756",
+        )
+        self.assertEqual(record["payload"]["external_reproduction"], "not-yet-performed")
 
     def test_external_reproduction_does_not_overstate_independence(self) -> None:
         record = next(

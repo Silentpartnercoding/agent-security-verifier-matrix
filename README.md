@@ -1,6 +1,6 @@
 # AIP-MATRIX-FIT-002
 
-Status: **external reproduction incorporated; corrected v0.2 review pending**
+Status: **AIP v0.2 externally accepted; second-protocol registry test complete**
 
 AIP-MATRIX-FIT-002 is an out-of-tree correction and reproduction release. It asks a
 narrow question: can the security claims made or carried by AIP draft-01 be
@@ -35,6 +35,10 @@ The public review and reproduction records live under `registry/`. They keep
 reproduced facts, reviewer assertions, author statements, and untested claims
 separate. “External reproducer” does not imply an independently established
 organizational control domain.
+
+Songbo subsequently reran the corrected v0.2 tag, reproduced all 25 tests and
+all six pinned source-byte checks, matched the committed result byte for byte,
+and confirmed that v0.2 reflects the intended Principal Binding semantics.
 
 ## Frozen inputs
 
@@ -124,9 +128,13 @@ author review. It deliberately leaves protocol claim semantics inside the
 version-pinned artifacts. It is not a new credential format, standards
 proposal, certification mark, or IANA registry.
 
-Registry generality remains **NOT YET TESTED**. The next falsification step is
-to map one second protocol without changing this envelope or the underlying
-claim meanings.
+Registry generality is now **TESTED ON TWO PROTOCOLS**. The second mapping,
+[`AGTP-MATRIX-FIT-001`](experiments/agtp-matrix-fit-001/), applies the same nine
+claim classes and the unchanged record envelope to
+`draft-hood-independent-agtp-08`. The mapping required no new claim semantics
+and no schema change. Its external reproduction and protocol-author review
+remain pending, so this is evidence of structural reuse rather than consensus
+or implementation conformance.
 
 ## License
 

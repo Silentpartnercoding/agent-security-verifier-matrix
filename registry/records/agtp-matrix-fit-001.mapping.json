@@ -1,0 +1,68 @@
+{
+  "record_version": "1",
+  "record_id": "mapping:agtp-matrix-fit-001:v0.1.0",
+  "record_type": "mapping",
+  "subject": {
+    "kind": "protocol-to-verifier-matrix-mapping",
+    "id": "AGTP-MATRIX-FIT-001",
+    "version": "0.1.0",
+    "source_protocol": "draft-hood-independent-agtp-08",
+    "evaluation_vocabulary": "draft-bu-agentproto-security-principal-binding-06"
+  },
+  "provenance": {
+    "recorded_at": "2026-08-24",
+    "author_role": "harness-maintainer",
+    "source_links": [
+      {
+        "uri": "https://github.com/Silentpartnercoding/agent-security-verifier-matrix/tree/agtp-matrix-fit-001-v0.1.0/experiments/agtp-matrix-fit-001"
+      }
+    ]
+  },
+  "payload": {
+    "registry_generality_test": "second-protocol",
+    "git_tag": "agtp-matrix-fit-001-v0.1.0",
+    "claim_semantics_extended": false,
+    "registry_envelope_changed": false,
+    "registry_schema_sha256": "4cee82333e74f3da7b9148e77218e6a6f2874dbfc8a878ceed713de27103a756",
+    "core_claim_classes": [
+      "Identity",
+      "Authority",
+      "Presenter",
+      "Scope",
+      "Action",
+      "Provenance",
+      "Credential Freshness",
+      "Evidence Freshness",
+      "Independence"
+    ],
+    "frozen_dispositions": {
+      "EXACT": ["identity-document-subject"],
+      "DECLARED-GAP": [],
+      "AMBIGUOUS": [
+        "delegated-authority",
+        "live-presenter",
+        "request-scope",
+        "cross-protocol-action",
+        "completion-provenance",
+        "credential-freshness",
+        "completion-evidence-freshness",
+        "verifier-independence"
+      ],
+      "UNREPRESENTED": []
+    },
+    "artifact_hashes": {
+      "matrix.json": "33088afccd9f3cc613e03a7fb1c5b56bcd0b4a0c7f9bb7ecf52781987b04b461",
+      "cases.json": "2a11ba1078b2ee4c08ca9078bc3285d5232dfc17041371d277a8bba33bf425ca",
+      "sources.json": "eae35317f7ab63860175e15cd290019c2cde64b663aa48e2ad537a05862d92e0",
+      "artifacts/results.json": "9311d00041321f14c9fa4b007771504edc3dd6efb7b8b90588bdd6df9f4d3d32"
+    },
+    "external_reproduction": "not-yet-performed",
+    "protocol_author_review": "not-yet-requested",
+    "non_claims": [
+      "AGTP implementation conformance",
+      "IETF endorsement or working-group consensus",
+      "a complete evaluation of AGTP companion drafts",
+      "organizational independence of any future reproducer"
+    ]
+  }
+}

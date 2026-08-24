@@ -72,19 +72,22 @@ class CommandCenterCardTests(unittest.TestCase):
     def test_green_semantics_are_explicit(self) -> None:
         self.assertIn("Green means the distinction is faithfully represented.", self.text)
         self.assertIn("signature automatically establishes", self.text)
-        self.assertIn("green gate still closed", self.text)
+        self.assertIn("registry green gate is met", self.text)
+        self.assertIn("AGTP mapping itself still awaits external review", self.text)
 
     def test_external_reproduction_provenance_is_bounded(self) -> None:
         for value in [
             "Frozen v0.1",
             "external rerun ✓",
             "5 corrections",
-            "v0.2",
+            "v0.2 accepted ✓",
+            "AGTP-08 fit ✓",
             "1 external reproducer",
             "control-domain independence not established",
             "Registry Generality",
-            "NOT YET TESTED",
-            "V0.2 REVIEW PENDING",
+            "TESTED · 2 PROTOCOLS",
+            "GREEN GATE MET",
+            "AGTP review pending",
         ]:
             self.assertIn(value, self.text)
 

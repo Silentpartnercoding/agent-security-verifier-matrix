@@ -37,10 +37,10 @@
     }
     .avm-shell {
       overflow: hidden;
-      border: 1px solid #315070;
+      border: 1px solid rgba(117, 224, 174, .68);
       border-radius: 24px;
       background: rgba(13, 20, 31, .96);
-      box-shadow: 0 24px 70px rgba(0, 0, 0, .34);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, .34), 0 0 38px rgba(117, 224, 174, .08);
     }
     .avm-head {
       display: grid;
@@ -48,10 +48,10 @@
       gap: 24px;
       padding: 28px;
       border-bottom: 1px solid var(--avm-line);
-      background: linear-gradient(135deg, rgba(20, 43, 68, .96), rgba(12, 22, 35, .98));
+      background: linear-gradient(135deg, rgba(22, 65, 51, .96), rgba(12, 30, 31, .98));
     }
     .avm-kicker {
-      color: var(--avm-blue);
+      color: var(--avm-exact);
       font-size: 10px;
       font-weight: 900;
       letter-spacing: .14em;
@@ -105,12 +105,12 @@
     }
     .avm-lane { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
     .avm-lane b { color: #dcecff; }
-    .avm-arrow { color: var(--avm-blue); }
+    .avm-arrow { color: var(--avm-exact); }
     .avm-badge {
       padding: 6px 10px;
-      border: 1px solid var(--avm-blue);
+      border: 1px solid var(--avm-exact);
       border-radius: 999px;
-      color: var(--avm-blue);
+      color: var(--avm-exact);
       font-size: 10px;
       font-weight: 900;
       letter-spacing: .06em;
@@ -228,9 +228,9 @@
     <article class="avm-shell">
       <header class="avm-head">
         <div>
-          <span class="avm-kicker">Daily Cheese · externally reproduced</span>
+          <span class="avm-kicker">Daily Cheese · registry generalized</span>
           <h1>AIP × Verifier Matrix</h1>
-          <p class="avm-subtitle">External rerun confirmed. Five precision corrections are now in v0.2; public review remains pending.</p>
+          <p class="avm-subtitle">AIP v0.2 is independently accepted. AGTP-08 fits the unchanged registry and claim semantics; external review of that second mapping remains pending.</p>
         </div>
         <div class="avm-meta" aria-label="Opportunity metadata">
           <div><span>Confidence</span><strong>98</strong></div>
@@ -238,9 +238,9 @@
           <div><span>AIP-01</span><strong>Aug 19</strong></div>
           <div><span>Principal Binding-06</span><strong>Aug 17</strong></div>
           <div><span>agentproto</span><strong>WG forming</strong></div>
-          <div><span>State</span><strong>V0.2 REVIEW PENDING</strong></div>
+          <div><span>State</span><strong>GREEN GATE MET</strong></div>
           <div><span>External reproduction</span><strong>1 reproducer</strong></div>
-          <div><span>Registry Generality</span><strong>NOT YET TESTED</strong></div>
+          <div><span>Registry Generality</span><strong>TESTED · 2 PROTOCOLS</strong></div>
         </div>
       </header>
 
@@ -249,9 +249,10 @@
           <b>Frozen v0.1</b><span class="avm-arrow">→</span>
           <b>external rerun ✓</b><span class="avm-arrow">→</span>
           <b>5 corrections</b><span class="avm-arrow">→</span>
-          <b>v0.2</b>
+          <b>v0.2 accepted ✓</b><span class="avm-arrow">→</span>
+          <b>AGTP-08 fit ✓</b>
         </div>
-        <span class="avm-badge">1 external reproducer · control-domain independence not established</span>
+        <span class="avm-badge">1 external reproducer · AGTP review pending · control-domain independence not established</span>
       </section>
 
       <div class="avm-content">
@@ -332,7 +333,7 @@
           </div>
         </div>
 
-        <p class="avm-green-rule"><strong>Green means the distinction is faithfully represented.</strong> It never means that a signature automatically establishes presenter identity, evidence truth, freshness, or independence. The overall card stays review-pending until v0.2 is publicly accepted as accurate and a second protocol fits without changing claim semantics.</p>
+        <p class="avm-green-rule"><strong>Green means the distinction is faithfully represented.</strong> It never means that a signature automatically establishes presenter identity, evidence truth, freshness, or independence. The registry green gate is met because v0.2 was independently accepted and AGTP-08 fits without changing the claim semantics or registry envelope; the AGTP mapping itself still awaits external review.</p>
 
         <div class="avm-section-head"><h2>Four negative vectors</h2></div>
         <div class="avm-tests">
@@ -365,7 +366,7 @@
 
       <footer class="avm-footer">
         <span>AIP-MATRIX-FIT-002 · correction/reproduction release · out-of-tree</span>
-        <span>4 / 4 vectors preserve AIP chain validity · green gate still closed</span>
+        <span>4 / 4 AIP vectors preserved · green gate met · AGTP review pending</span>
       </footer>
     </article>
   </main>

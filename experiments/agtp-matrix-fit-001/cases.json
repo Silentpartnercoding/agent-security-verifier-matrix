@@ -1,0 +1,125 @@
+{
+  "experiment": "AGTP-MATRIX-FIT-001",
+  "status": "second-protocol-registry-generality-test",
+  "frozen_at": "2026-08-24",
+  "positive_control": {
+    "id": "valid_adjacent_agtp_checks",
+    "requirement": "Every hostile case preserves the stated adjacent AGTP signature, identity, scope, or attribution checks so the constrained result cannot be explained by a forged container.",
+    "expected": "The harness reports only the claim-specific result and never promotes an adjacent success into presenter identity, evidence appraisal, payload continuity, or verifier independence."
+  },
+  "cases": [
+    {
+      "id": "wrong_presenter",
+      "vector_type": "presenter-substitution",
+      "title": "Wrong Presenter",
+      "matrix_row": "live-presenter",
+      "situation": {
+        "transport_server_authenticated": true,
+        "identity_document_signature_valid": true,
+        "registrar_trust_configured": true,
+        "agent_id_header_matches_document": true,
+        "document_agent_id": "agtp:sha256:agent-a",
+        "live_presenter": "attacker-b",
+        "presenter_proof_of_possession_present": false,
+        "agent_mutual_tls_present": false
+      },
+      "expected_mapping_result": "AMBIGUOUS",
+      "expected_row_outcome": "indeterminate",
+      "expected_permitted_conclusion": "The declared Agent-ID has a valid trusted document; base Level 2 verification does not prove that the live sender controls the named agent.",
+      "prohibited_conclusions": [
+        "The live presenter is authenticated as agtp:sha256:agent-a.",
+        "Resolving a valid public document is proof of possession by the requester."
+      ],
+      "source_refs": ["agtp-08:sections-10.1,10.2,10.4.1"]
+    },
+    {
+      "id": "same_control_verifier",
+      "vector_type": "same-control-verifier",
+      "title": "Same-Control Verifier",
+      "matrix_row": "verifier-independence",
+      "situation": {
+        "attribution_signature_valid": true,
+        "attestation_evidence_signature_valid": true,
+        "executor_control_domain": "org-example",
+        "verifier_control_domain": "org-example",
+        "control_domain_provenance_verified": true
+      },
+      "expected_mapping_result": "AMBIGUOUS",
+      "expected_row_outcome": "indeterminate",
+      "expected_permitted_conclusion": "The signed record and evidence are checkable, but base AGTP-08 does not establish that their verifier is organizationally independent.",
+      "prohibited_conclusions": [
+        "Different signing keys prove independent control.",
+        "RATS evidence makes the party appraising it organizationally independent."
+      ],
+      "source_refs": ["agtp-08:sections-7.2.4,10.4.6,10.4.9"]
+    },
+    {
+      "id": "stale_unverifiable_completion",
+      "vector_type": "stale-unverifiable-evidence",
+      "title": "Stale/Unverifiable Completion",
+      "matrix_row": "completion-evidence-freshness",
+      "situation": {
+        "attribution_signature_valid": true,
+        "result_hash_valid": true,
+        "underlying_evidence": {
+          "reference_present": true,
+          "freshness_within_relying_bound": false,
+          "verify_outcome": "unverifiable",
+          "detail": "rats_reference_fetch_failed"
+        }
+      },
+      "expected_mapping_result": "AMBIGUOUS",
+      "expected_row_outcome": "indeterminate",
+      "expected_warrant_outcome": "unverifiable",
+      "expected_permitted_conclusion": "The Attribution-Record and result hash are intact, but the referenced execution evidence could not be established as current or appraised.",
+      "prohibited_conclusions": [
+        "Unverifiable evidence was rejected on its merits.",
+        "A valid Attribution-Record signature proves the referenced evidence was successfully appraised.",
+        "A fresh Governance Token makes completion evidence fresh."
+      ],
+      "source_refs": [
+        "agtp-08:sections-5.5.4,10.4.9",
+        "minority-prophet-claim-warrant:verify_outcome-unverifiable"
+      ]
+    },
+    {
+      "id": "a2a_mcp_action_swap",
+      "vector_type": "cross-protocol-action-swap",
+      "title": "A2A to MCP Action Swap",
+      "matrix_row": "cross-protocol-action",
+      "reused_border_case": {
+        "experiment": "A2A-MCP-CROSSING-001",
+        "id": "change_mcp_tool_or_payload",
+        "mutation": "the MCP tool name or its arguments differ from what the authority named",
+        "source_commit": "a61b6ad96485e249ddb1ddde7fa30908e0b6250d",
+        "source_blob_sha256": "eea9a7c5ca0e0d90ca308401c9408f0187721c5edeb4a46bffaf2a0484ca12d1"
+      },
+      "situation": {
+        "identity_document_signature_valid": true,
+        "governance_token_signature_valid": true,
+        "governance_token_unexpired": true,
+        "governance_token_agent_id_match": true,
+        "authority_scope_satisfied": true,
+        "governance_token_action": "mcp.tools.call",
+        "execute_action": "mcp.tools.call",
+        "authorized_arguments": {"message": "hello"},
+        "observed_arguments": {"message": "goodbye"},
+        "canonical_payload_binding_defined": false,
+        "border_exact_argument_digest_present": true
+      },
+      "expected_mapping_result": "AMBIGUOUS",
+      "expected_row_outcome": "indeterminate",
+      "expected_border_reference_outcome": "unsatisfied",
+      "expected_permitted_conclusion": "Identity, scope, token freshness, agent ID, and the high-level action label pass, but base AGTP-08 does not establish that the observed MCP arguments are the exact A2A-authorized payload.",
+      "prohibited_conclusions": [
+        "A fresh Governance Token proves every byte of the carried MCP payload was authorized.",
+        "A matching action label and Task-ID make different arguments the same action."
+      ],
+      "source_refs": [
+        "agtp-08:sections-6.5.8,7.2.8,8.2,8.4",
+        "border-crossing-cases:change_mcp_tool_or_payload",
+        "border-crossing-receipt:argument_digest"
+      ]
+    }
+  ]
+}
