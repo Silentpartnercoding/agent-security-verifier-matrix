@@ -29,12 +29,21 @@ class RegistryTests(unittest.TestCase):
         }
         self.assertEqual(
             set(mappings),
-            {"AIP-MATRIX-FIT-001", "AIP-MATRIX-FIT-002", "AGTP-MATRIX-FIT-001"},
+            {
+                "AIP-MATRIX-FIT-001",
+                "AIP-MATRIX-FIT-002",
+                "AGTP-MATRIX-FIT-001",
+                "AGTP-MATRIX-FIT-002",
+            },
         )
         self.assertFalse(mappings["AIP-MATRIX-FIT-001"]["payload"]["historical_record_mutated"])
         self.assertEqual(
             mappings["AIP-MATRIX-FIT-002"]["payload"]["supersedes"],
             mappings["AIP-MATRIX-FIT-001"]["record_id"],
+        )
+        self.assertEqual(
+            mappings["AGTP-MATRIX-FIT-002"]["payload"]["supersedes"],
+            mappings["AGTP-MATRIX-FIT-001"]["record_id"],
         )
 
     def test_second_protocol_does_not_change_registry_or_claim_semantics(self) -> None:

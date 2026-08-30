@@ -1,0 +1,57 @@
+{
+  "experiment": "AGTP-MATRIX-FIT-002",
+  "frozen_at": "2026-08-30",
+  "source_set_inherited_from": "AGTP-MATRIX-FIT-001",
+  "hash_algorithm": "sha256",
+  "sources": [
+    {
+      "id": "agtp-08",
+      "kind": "ietf-internet-draft",
+      "title": "Agent Transfer Protocol (AGTP)",
+      "revision": "draft-hood-independent-agtp-08",
+      "published": "2026-05-26",
+      "url": "https://www.ietf.org/archive/id/draft-hood-independent-agtp-08.txt",
+      "sha256": "b079aa8c1241b48e0be111f9335531486bcc68d62d9f480b3875b2966892c4a1",
+      "bytes": 429521,
+      "scope": "second source protocol under evaluation"
+    },
+    {
+      "id": "principal-binding-06",
+      "kind": "ietf-internet-draft",
+      "title": "Security Principal and Verifier Binding for Agent Communication Protocols",
+      "revision": "draft-bu-agentproto-security-principal-binding-06",
+      "published": "2026-08-17",
+      "url": "https://www.ietf.org/archive/id/draft-bu-agentproto-security-principal-binding-06.txt",
+      "sha256": "4d08f60b22149f4590433a7f37d081700df27b37a457d09ca49cf018da9f5f37",
+      "bytes": 158195,
+      "scope": "unchanged evaluation vocabulary"
+    },
+    {
+      "id": "border-crossing-cases",
+      "kind": "git-blob",
+      "repository": "https://github.com/Silentpartnercoding/minority-prophet-border",
+      "commit": "a61b6ad96485e249ddb1ddde7fa30908e0b6250d",
+      "path": "experiments/a2a-mcp-crossing-001/cases.json",
+      "sha256": "eea9a7c5ca0e0d90ca308401c9408f0187721c5edeb4a46bffaf2a0484ca12d1",
+      "scope": "reused cross-protocol action-substitution vector"
+    },
+    {
+      "id": "border-crossing-receipt",
+      "kind": "git-blob",
+      "repository": "https://github.com/Silentpartnercoding/minority-prophet-border",
+      "commit": "ebe61a8774f11463bfd516266cfcbc1c7b724de8",
+      "path": "conformance/crossing_receipt.py",
+      "sha256": "ed4f9528f3acf7a48185bfc44a777bb99167d61cfef604715117bd1a60fdc71e",
+      "scope": "canonical argument-digest reference behavior"
+    },
+    {
+      "id": "minority-prophet-claim-warrant",
+      "kind": "git-blob",
+      "repository": "https://github.com/Silentpartnercoding/minority-prophet",
+      "commit": "2f68dfc3a0673a3b273316a95cc83063c00f5c8c",
+      "path": "provenance/claim-warrant.schema.json",
+      "sha256": "4de5613b839123cbc118875417fd18db99e53912e749a54f879828f72b493e69",
+      "scope": "verified, rejected, and unverifiable evidence-check outcomes"
+    }
+  ]
+}

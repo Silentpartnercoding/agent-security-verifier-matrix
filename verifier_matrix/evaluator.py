@@ -11,7 +11,7 @@ from typing import Any
 REPORT_DISPOSITIONS = {"EXACT", "DECLARED-GAP", "AMBIGUOUS", "UNREPRESENTED"}
 ROW_OUTCOMES = {"satisfied", "unsatisfied", "indeterminate", "unsupported"}
 WARRANT_OUTCOMES = {"verified", "rejected", "unverifiable"}
-CORE_CLAIM_CLASSES = [
+GROUPING_LABELS = [
     "Identity",
     "Authority",
     "Presenter",
@@ -22,6 +22,8 @@ CORE_CLAIM_CLASSES = [
     "Evidence Freshness",
     "Independence",
 ]
+# Backward-compatible name for the frozen AGTP-MATRIX-FIT-001 output.
+CORE_CLAIM_CLASSES = GROUPING_LABELS
 
 
 class EvaluationError(ValueError):
@@ -103,8 +105,8 @@ def _matrix_rows(matrix: dict[str, Any]) -> dict[str, dict[str, Any]]:
     if not isinstance(rows, list):
         raise EvaluationError("matrix rows must be a list")
     labels = [row.get("label") for row in rows]
-    if labels != CORE_CLAIM_CLASSES:
-        raise EvaluationError("matrix changed the frozen core claim classes or their order")
+    if labels != GROUPING_LABELS:
+        raise EvaluationError("matrix changed the frozen grouping labels or their order")
     required = {"id", "label", "claim", "carrier", "verifier", "binding", "failure", "result", "permitted_conclusion"}
     indexed: dict[str, dict[str, Any]] = {}
     for row in rows:
@@ -283,10 +285,10 @@ def evaluate_experiment(
     if not isinstance(cases, list):
         raise EvaluationError("cases must be a list")
     results = [_evaluate_case(case, rows) for case in cases]
-    return {
+    report = {
         "experiment": matrix["experiment"],
         "evaluator": "verifier_matrix",
-        "evaluator_version": "1.0.0",
+        "evaluator_version": "1.1.0" if "grouping_labels" in matrix else "1.0.0",
         "source_protocol": matrix["source_protocol"],
         "evaluation_vocabulary": matrix["evaluation_vocabulary"],
         "profile": matrix["profile"],
@@ -301,3 +303,13 @@ def evaluate_experiment(
         "all_conform": all(result["conforms_to_frozen_expectation"] for result in results),
         "results": results,
     }
+    if "grouping_labels" in matrix:
+        report.pop("core_claim_classes")
+        report["grouping_labels"] = GROUPING_LABELS
+        report["grouping_label_semantics"] = matrix["grouping_label_semantics"]
+        report["claim_inventory_completeness"] = matrix["claim_inventory_completeness"]
+        report["result_object_status"] = matrix["result_object_status"]
+        report["permitted_conclusion_semantics"] = matrix[
+            "permitted_conclusion_semantics"
+        ]
+    return report

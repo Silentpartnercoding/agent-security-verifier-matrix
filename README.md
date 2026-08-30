@@ -130,11 +130,14 @@ proposal, certification mark, or IANA registry.
 
 Registry generality is now **TESTED ON TWO PROTOCOLS**. The second mapping,
 [`AGTP-MATRIX-FIT-001`](experiments/agtp-matrix-fit-001/), applies the same nine
-claim classes and the unchanged record envelope to
+experiment grouping labels and the unchanged record envelope to
 `draft-hood-independent-agtp-08`. The mapping required no new claim semantics
-and no schema change. Its external reproduction and protocol-author review
-remain pending, so this is evidence of structural reuse rather than consensus
-or implementation conformance.
+and no schema change. [`AGTP-MATRIX-FIT-002`](experiments/agtp-matrix-fit-002/)
+corrects the interpretation without rewriting v0.1: the grouping labels are not
+Principal Binding claim identifiers, an exact identity-document artifact check
+is not a C-001 live-presenter result, and the harness does not emit a complete
+accepted-result object. No external reproduction record is included in this
+correction release.
 
 ## License
 
