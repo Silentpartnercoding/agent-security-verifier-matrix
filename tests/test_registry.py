@@ -68,6 +68,33 @@ class RegistryTests(unittest.TestCase):
         self.assertTrue(record["payload"]["reviewer_assertions_not_yet_publicly_verifiable"])
         self.assertEqual(len(record["payload"]["corrections"]), 5)
 
+    def test_agtp_external_reproduction_is_pinned_and_bounded(self) -> None:
+        record = next(
+            item
+            for item in self.records
+            if item["record_id"]
+            == "external-reproduction:songbo-bu:agtp-matrix-fit-001:2026-08-26"
+        )
+        self.assertEqual(record["subject"]["git_tag"], "agtp-matrix-fit-001-v0.1.0")
+        self.assertEqual(
+            record["payload"]["review_boundary"]["correction_commit"],
+            "423df0b854be911fe80587a6e016c847834737e7",
+        )
+        self.assertEqual(
+            record["payload"]["review_boundary"]["correction_tag"],
+            "agtp-matrix-fit-002-v0.2.0",
+        )
+        self.assertEqual(record["payload"]["control_domain_independence"], "not-established")
+        self.assertEqual(len(record["payload"]["limitations"]), 6)
+        self.assertEqual(
+            record["provenance"]["source_links"],
+            [
+                {
+                    "uri": "https://github.com/Silentpartnercoding/agent-security-verifier-matrix/tree/agtp-matrix-fit-001-v0.1.0/experiments/agtp-matrix-fit-001"
+                }
+            ],
+        )
+
     def test_protocol_author_security_claims_remain_unreproduced(self) -> None:
         record = next(
             item for item in self.records if item["record_type"] == "protocol-author-review"

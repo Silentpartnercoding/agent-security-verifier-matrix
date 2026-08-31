@@ -1,0 +1,48 @@
+{
+  "record_version": "1",
+  "record_id": "external-reproduction:songbo-bu:agtp-matrix-fit-001:2026-08-26",
+  "record_type": "external-reproduction",
+  "subject": {
+    "kind": "mapping-release",
+    "id": "AGTP-MATRIX-FIT-001",
+    "version": "0.1.0",
+    "git_commit": "18e26cae7880cd5044d2e917b1b76427388c6b58",
+    "git_tag": "agtp-matrix-fit-001-v0.1.0"
+  },
+  "provenance": {
+    "recorded_at": "2026-08-30",
+    "author_role": "harness-maintainer-recording-approved-external-reproduction",
+    "external_reproducer": "Songbo Bu",
+    "source_links": [
+      {
+        "uri": "https://github.com/Silentpartnercoding/agent-security-verifier-matrix/tree/agtp-matrix-fit-001-v0.1.0/experiments/agtp-matrix-fit-001"
+      }
+    ]
+  },
+  "payload": {
+    "relationship": "external-reproducer-and-reviewer",
+    "control_domain_independence": "not-established",
+    "reproduced_facts": {
+      "repository_tests": "38/38 passed",
+      "pinned_source_checks": "5/5 passed",
+      "frozen_cases": "4/4 matched",
+      "regenerated_result_sha256": "9311d00041321f14c9fa4b007771504edc3dd6efb7b8b90588bdd6df9f4d3d32",
+      "committed_result_byte_match": true,
+      "tampered_source_control": "rejected"
+    },
+    "review_boundary": {
+      "correction_release": "AGTP-MATRIX-FIT-002",
+      "correction_commit": "423df0b854be911fe80587a6e016c847834737e7",
+      "correction_tag": "agtp-matrix-fit-002-v0.2.0",
+      "approved_wording_required_before_publication": true
+    },
+    "limitations": [
+      "External reproduction is not endorsement, certification, or IETF consensus.",
+      "Organizational or control-domain independence of the reproducer was not tested.",
+      "Deterministic reproduction does not establish semantic correctness.",
+      "No AGTP implementation was tested.",
+      "AGTP-CERT and unpinned companion-draft semantics were outside the evaluated profile.",
+      "Four cases do not establish complete Principal Binding claim coverage."
+    ]
+  }
+}
