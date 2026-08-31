@@ -1,0 +1,49 @@
+{
+  "record_version": "1",
+  "record_id": "mapping:agtp-matrix-fit-002:v0.2.0",
+  "record_type": "mapping",
+  "subject": {
+    "kind": "protocol-to-verifier-matrix-mapping",
+    "id": "AGTP-MATRIX-FIT-002",
+    "version": "0.2.0",
+    "source_protocol": "draft-hood-independent-agtp-08",
+    "evaluation_vocabulary": "draft-bu-agentproto-security-principal-binding-06"
+  },
+  "provenance": {
+    "recorded_at": "2026-08-30",
+    "author_role": "harness-maintainer",
+    "source_links": [
+      {
+        "uri": "https://github.com/Silentpartnercoding/agent-security-verifier-matrix/tree/agtp-matrix-fit-002-v0.2.0/experiments/agtp-matrix-fit-002"
+      }
+    ]
+  },
+  "payload": {
+    "supersedes": "mapping:agtp-matrix-fit-001:v0.1.0",
+    "git_tag": "agtp-matrix-fit-002-v0.2.0",
+    "correction_scope": [
+      "identify the nine human-readable labels as experiment grouping labels rather than Principal Binding claim identifiers",
+      "keep exact identity-document verification as a supporting artifact fact rather than a C-001 live-instance result",
+      "map C-001 to the ambiguous live-presenter row because base Level 2 does not prove requester key possession",
+      "limit the signed-document contribution to C-003 to issuer-stated baseline scope rather than current possession or a delegation chain",
+      "state that permitted_conclusion and expected_row_outcome are review constraints rather than stable accepted-result or complete row-result objects",
+      "state that unchanged claim semantics is an experiment declaration rather than proof of claim-inventory completeness"
+    ],
+    "grouping_labels_not_claim_ids": true,
+    "claim_inventory_completeness": "not-established",
+    "claim_semantics_extended": false,
+    "registry_envelope_changed": false,
+    "artifact_hashes": {
+      "matrix.json": "5ad267fe73b0ccdb92855a5fcc6c6f45d73fbae68f2cc3b1c44e6bcbe19dab39",
+      "cases.json": "0ecf558d23385a9b517613dca923b9efe4d9e4f3cc25ebc5e98058ec74c316e2",
+      "sources.json": "7d273ff12d23ba7d9d3979a5ae8e279e25b3536d80be187dc5cbd484164bd9c5",
+      "artifacts/results.json": "da9840d9719a99c640b547cc676e2e091caf301ca327aa771bbf80562b25a677"
+    },
+    "external_reproduction": "not-publicly-recorded",
+    "non_claims": [
+      "AGTP implementation conformance",
+      "IETF endorsement or working-group consensus",
+      "complete Principal Binding claim coverage"
+    ]
+  }
+}

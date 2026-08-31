@@ -1,0 +1,149 @@
+{
+  "all_conform": true,
+  "case_count": 4,
+  "cases_sha256": "0ecf558d23385a9b517613dca923b9efe4d9e4f3cc25ebc5e98058ec74c316e2",
+  "claim_inventory_completeness": "not-established",
+  "claim_semantics_extended": false,
+  "evaluation_vocabulary": "draft-bu-agentproto-security-principal-binding-06",
+  "evaluator": "verifier_matrix",
+  "evaluator_version": "1.1.0",
+  "experiment": "AGTP-MATRIX-FIT-002",
+  "grouping_label_semantics": "Experiment-only organizational labels; they are not Principal Binding C-001 through C-014 claim identifiers.",
+  "grouping_labels": [
+    "Identity",
+    "Authority",
+    "Presenter",
+    "Scope",
+    "Action",
+    "Provenance",
+    "Credential Freshness",
+    "Evidence Freshness",
+    "Independence"
+  ],
+  "matrix_sha256": "5ad267fe73b0ccdb92855a5fcc6c6f45d73fbae68f2cc3b1c44e6bcbe19dab39",
+  "permitted_conclusion_semantics": "Human-readable review constraint only; not a stable Principal Binding accepted-result or row-result object.",
+  "profile": "Base AGTP-08 Level 2 signed identity-document path, Governance Tokens, EXECUTE composition, Attribution-Records, and optional RATS evidence; AGTP-CERT and companion-draft semantics are not imported",
+  "registry_envelope_changed": false,
+  "result_object_status": "not-emitted",
+  "results": [
+    {
+      "adjacent_successes": [
+        "transport_server_authenticated",
+        "identity_document_signature_valid",
+        "registrar_trust_configured",
+        "agent_id_header_matches_document"
+      ],
+      "case_id": "wrong_presenter",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "The declared Agent-ID resolves to a valid signed document, but resolving a public document does not prove that the live sender controls an agent key.",
+      "expected_row_outcome": "indeterminate",
+      "mapping_result": "AMBIGUOUS",
+      "matrix_row": "live-presenter",
+      "permitted_conclusion": "The declared Agent-ID has a valid trusted document; base Level 2 verification does not prove that the live sender controls the named agent.",
+      "prohibited_conclusions": [
+        "The live presenter is authenticated as agtp:sha256:agent-a.",
+        "Resolving a valid public document is proof of possession by the requester."
+      ],
+      "title": "Wrong Presenter"
+    },
+    {
+      "adjacent_successes": [
+        "attribution_signature_valid",
+        "attestation_evidence_signature_valid"
+      ],
+      "case_id": "same_control_verifier",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "Distinct signatures and a checkable execution environment do not establish that the verifier is outside the executor's organizational control.",
+      "expected_row_outcome": "indeterminate",
+      "mapping_result": "AMBIGUOUS",
+      "matrix_row": "verifier-independence",
+      "permitted_conclusion": "The signed record and evidence are checkable, but base AGTP-08 does not establish that their verifier is organizationally independent.",
+      "prohibited_conclusions": [
+        "Different signing keys prove independent control.",
+        "RATS evidence makes the party appraising it organizationally independent."
+      ],
+      "title": "Same-Control Verifier"
+    },
+    {
+      "adjacent_successes": [
+        "attribution_signature_valid",
+        "result_hash_valid"
+      ],
+      "case_id": "stale_unverifiable_completion",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "The attribution record is intact, but its optional evidence cannot be established as current or appraised; signature success does not repair that missing result.",
+      "expected_row_outcome": "indeterminate",
+      "mapping_result": "AMBIGUOUS",
+      "matrix_row": "completion-evidence-freshness",
+      "permitted_conclusion": "The Attribution-Record and result hash are intact, but the referenced execution evidence could not be established as current or appraised.",
+      "prohibited_conclusions": [
+        "Unverifiable evidence was rejected on its merits.",
+        "A valid Attribution-Record signature proves the referenced evidence was successfully appraised.",
+        "A fresh Governance Token makes completion evidence fresh."
+      ],
+      "title": "Stale/Unverifiable Completion",
+      "warrant_outcome": "unverifiable"
+    },
+    {
+      "adjacent_successes": [
+        "identity_document_signature_valid",
+        "governance_token_signature_valid",
+        "governance_token_unexpired",
+        "governance_token_agent_id_match",
+        "authority_scope_satisfied"
+      ],
+      "authorized_argument_digest": "sha256:9b2d43affbf49a367028df2e1414f84c0e099ac98c3d54a8a80157fd7771af25",
+      "border_reference_outcome": "unsatisfied",
+      "case_id": "a2a_mcp_action_swap",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "The identity, scope, token signature, expiry, agent identifier, and high-level action all pass while the reused Border digest detects a substituted payload.",
+      "expected_row_outcome": "indeterminate",
+      "mapping_result": "AMBIGUOUS",
+      "matrix_row": "cross-protocol-action",
+      "observed_argument_digest": "sha256:184b1af6c1b880855b4b15b1ce333d9edb8f6cdc7e7af282dcae3c0eb5c5e88a",
+      "permitted_conclusion": "Identity, scope, token freshness, agent ID, and the high-level action label pass, but base AGTP-08 does not establish that the observed MCP arguments are the exact A2A-authorized payload.",
+      "prohibited_conclusions": [
+        "A fresh Governance Token proves every byte of the carried MCP payload was authorized.",
+        "A matching action label and Task-ID make different arguments the same action."
+      ],
+      "title": "A2A to MCP Action Swap"
+    }
+  ],
+  "source_byte_verification": {
+    "checks": [
+      {
+        "id": "agtp-08",
+        "observed_bytes": 429521,
+        "observed_sha256": "b079aa8c1241b48e0be111f9335531486bcc68d62d9f480b3875b2966892c4a1",
+        "status": "passed"
+      },
+      {
+        "id": "principal-binding-06",
+        "observed_bytes": 158195,
+        "observed_sha256": "4d08f60b22149f4590433a7f37d081700df27b37a457d09ca49cf018da9f5f37",
+        "status": "passed"
+      },
+      {
+        "id": "border-crossing-cases",
+        "observed_bytes": 3625,
+        "observed_sha256": "eea9a7c5ca0e0d90ca308401c9408f0187721c5edeb4a46bffaf2a0484ca12d1",
+        "status": "passed"
+      },
+      {
+        "id": "border-crossing-receipt",
+        "observed_bytes": 6338,
+        "observed_sha256": "ed4f9528f3acf7a48185bfc44a777bb99167d61cfef604715117bd1a60fdc71e",
+        "status": "passed"
+      },
+      {
+        "id": "minority-prophet-claim-warrant",
+        "observed_bytes": 4439,
+        "observed_sha256": "4de5613b839123cbc118875417fd18db99e53912e749a54f879828f72b493e69",
+        "status": "passed"
+      }
+    ],
+    "status": "passed"
+  },
+  "source_protocol": "draft-hood-independent-agtp-08",
+  "sources_sha256": "7d273ff12d23ba7d9d3979a5ae8e279e25b3536d80be187dc5cbd484164bd9c5"
+}
