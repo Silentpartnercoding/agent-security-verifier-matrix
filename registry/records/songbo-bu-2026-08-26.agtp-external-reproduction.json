@@ -34,8 +34,9 @@
       "correction_release": "AGTP-MATRIX-FIT-002",
       "correction_commit": "423df0b854be911fe80587a6e016c847834737e7",
       "correction_tag": "agtp-matrix-fit-002-v0.2.0",
-      "approved_wording_required_before_publication": true
+      "approved_wording_required_before_publication": false
     },
+    "approved_attribution": "Songbo Bu externally reproduced the frozen AGTP-MATRIX-FIT-001 v0.1.0 release by rerunning its published repository artifact: 38/38 repository tests passed, all five pinned source checks passed, all four frozen cases matched, and the regenerated result was byte-identical to the committed artifact; this records reproducibility of the published artifact, not an independent implementation, endorsement, certification, semantic completeness, or organizational or control-domain independence.",
     "limitations": [
       "External reproduction is not endorsement, certification, or IETF consensus.",
       "Organizational or control-domain independence of the reproducer was not tested.",

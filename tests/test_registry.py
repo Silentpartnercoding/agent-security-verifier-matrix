@@ -86,6 +86,22 @@ class RegistryTests(unittest.TestCase):
         )
         self.assertEqual(record["payload"]["control_domain_independence"], "not-established")
         self.assertEqual(len(record["payload"]["limitations"]), 6)
+        self.assertFalse(
+            record["payload"]["review_boundary"][
+                "approved_wording_required_before_publication"
+            ]
+        )
+        self.assertEqual(
+            record["payload"]["approved_attribution"],
+            "Songbo Bu externally reproduced the frozen AGTP-MATRIX-FIT-001 "
+            "v0.1.0 release by rerunning its published repository artifact: "
+            "38/38 repository tests passed, all five pinned source checks passed, "
+            "all four frozen cases matched, and the regenerated result was "
+            "byte-identical to the committed artifact; this records reproducibility "
+            "of the published artifact, not an independent implementation, "
+            "endorsement, certification, semantic completeness, or organizational "
+            "or control-domain independence.",
+        )
         self.assertEqual(
             record["provenance"]["source_links"],
             [
