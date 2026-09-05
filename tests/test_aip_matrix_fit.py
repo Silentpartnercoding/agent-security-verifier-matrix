@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import json
 import subprocess
 import sys
@@ -15,6 +16,8 @@ from aip_matrix_fit import (
     verify_pinned_bytes,
     verify_source_files,
 )
+from aip_matrix_fit.__main__ import _source_files_from_directory
+from scripts.fetch_pinned_sources import FetchError, _source_url, fetch_all
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -104,6 +107,78 @@ class CorrectedArtifactTests(unittest.TestCase):
             if source["kind"] == "git-blob":
                 self.assertEqual(len(source["commit"]), 40)
                 int(source["commit"], 16)
+
+    def test_source_directory_uses_manifest_ids_as_filenames(self) -> None:
+        source_files = _source_files_from_directory(Path("vendor/sources"))
+        self.assertEqual(len(source_files), 6)
+        self.assertEqual(
+            source_files["principal-binding-06"],
+            Path("vendor/sources/principal-binding-06"),
+        )
+
+
+class PinnedSourceFetcherTests(unittest.TestCase):
+    def test_git_blob_url_is_derived_from_full_commit(self) -> None:
+        pin = {
+            "id": "example",
+            "repository": "https://github.com/example/project",
+            "commit": "a" * 40,
+            "path": "dir/source file.txt",
+        }
+        self.assertEqual(
+            _source_url(pin),
+            "https://raw.githubusercontent.com/example/project/"
+            + "a" * 40
+            + "/dir/source%20file.txt",
+        )
+
+    def test_fetcher_installs_only_verified_bytes(self) -> None:
+        data = b"pinned bytes\n"
+        manifest = {
+            "sources": [
+                {
+                    "id": "source-1",
+                    "url": "https://example.test/source.txt",
+                    "bytes": len(data),
+                    "sha256": hashlib.sha256(data).hexdigest(),
+                }
+            ]
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            manifest_path = root / "sources.json"
+            manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+            def opener(request: object, timeout: int) -> io.BytesIO:
+                self.assertEqual(timeout, 30)
+                return io.BytesIO(data)
+
+            installed = fetch_all(manifest_path, root / "vendor" / "sources", opener)
+            self.assertEqual([path.name for path in installed], ["source-1"])
+            self.assertEqual(installed[0].read_bytes(), data)
+
+    def test_fetcher_fails_closed_on_digest_mismatch(self) -> None:
+        manifest = {
+            "sources": [
+                {
+                    "id": "source-1",
+                    "url": "https://example.test/source.txt",
+                    "sha256": "0" * 64,
+                }
+            ]
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            manifest_path = root / "sources.json"
+            manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+            with self.assertRaises(FetchError):
+                fetch_all(
+                    manifest_path,
+                    root / "vendor" / "sources",
+                    lambda request, timeout: io.BytesIO(b"changed"),
+                )
+            self.assertFalse((root / "vendor" / "sources" / "source-1").exists())
 
 
 class EvaluatorTests(unittest.TestCase):

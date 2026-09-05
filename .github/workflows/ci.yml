@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Fetch and verify pinned sources
+        run: python3 scripts/fetch_pinned_sources.py
+      - name: Reproduce frozen report
+        run: python3 -m aip_matrix_fit --source-dir vendor/sources --require-source-verification --output /tmp/aip-report.json
+      - name: Compare frozen report
+        run: cmp /tmp/aip-report.json artifacts/results.json

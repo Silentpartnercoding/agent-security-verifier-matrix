@@ -9,11 +9,29 @@ from pathlib import Path
 from .evaluator import EvaluationError, evaluate_all
 
 
+ROOT = Path(__file__).resolve().parent.parent
+SOURCES_PATH = ROOT / "sources.json"
+
+
 def _source_argument(value: str) -> tuple[str, Path]:
     source_id, separator, path = value.partition("=")
     if not separator or not source_id or not path:
         raise argparse.ArgumentTypeError("source must use ID=PATH")
     return source_id, Path(path)
+
+
+def _source_files_from_directory(directory: Path) -> dict[str, Path]:
+    manifest = json.loads(SOURCES_PATH.read_text(encoding="utf-8"))
+    pins = manifest.get("sources")
+    if not isinstance(pins, list):
+        raise EvaluationError("sources must be a list")
+    source_files: dict[str, Path] = {}
+    for pin in pins:
+        source_id = pin.get("id") if isinstance(pin, dict) else None
+        if not isinstance(source_id, str):
+            raise EvaluationError("every source pin must have a string id")
+        source_files[source_id] = directory / source_id
+    return source_files
 
 
 def main() -> int:
@@ -32,12 +50,22 @@ def main() -> int:
         help="verify locally supplied bytes for a pinned source; repeat for every source",
     )
     parser.add_argument(
+        "--source-dir",
+        type=Path,
+        help="verify every pinned source from files named by source ID in this directory",
+    )
+    parser.add_argument(
         "--require-source-verification",
         action="store_true",
         help="fail unless all pinned source bytes were supplied and passed",
     )
     args = parser.parse_args()
-    source_files: dict[str, Path] = {}
+    try:
+        source_files = (
+            _source_files_from_directory(args.source_dir) if args.source_dir else {}
+        )
+    except (OSError, json.JSONDecodeError, EvaluationError) as error:
+        parser.error(str(error))
     for source_id, path in args.source:
         if source_id in source_files:
             parser.error(f"duplicate --source id: {source_id}")

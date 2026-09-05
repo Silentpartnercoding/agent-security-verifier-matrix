@@ -84,16 +84,22 @@ v0.2 correction release explicitly supersedes it and is independently pinned.
 
 ## Run
 
-The evaluator uses only the Python standard library:
+The evaluator and explicit pin fetcher use only the Python standard library.
+From a clean checkout, one command fetches and verifies all six immutable source
+pins, reproduces the frozen report byte-for-byte, and runs the test suite:
 
 ```text
-python3 -m aip_matrix_fit
-python3 -m unittest discover -s tests -v
+python3 scripts/fetch_pinned_sources.py && python3 -m aip_matrix_fit --source-dir vendor/sources --require-source-verification --output /tmp/aip-report.json && cmp /tmp/aip-report.json artifacts/results.json && python3 -m unittest discover -s tests -v
 ```
 
-With no local source files, the report records source-byte verification as
-`skipped`; it never silently fetches mutable URLs. To verify the pinned bytes,
-repeat `--source ID=PATH` for all six IDs in `sources.json` and require a pass:
+Fetching is always an explicit step. The fetcher accepts only HTTPS URLs or raw
+GitHub files addressed by full commit IDs and installs a file only after its
+byte count (where recorded) and SHA-256 digest match `sources.json`. Any fetch
+or pin mismatch exits nonzero. The evaluator itself never accesses the network.
+
+For an already-downloaded source set, use `--source-dir DIRECTORY`; every file
+must be named by its source ID from `sources.json`. Individual local files can
+still be supplied with repeated `--source ID=PATH` arguments:
 
 ```text
 python3 -m aip_matrix_fit \
