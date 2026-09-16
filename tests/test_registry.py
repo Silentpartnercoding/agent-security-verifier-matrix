@@ -65,8 +65,39 @@ class RegistryTests(unittest.TestCase):
             item for item in self.records if item["record_type"] == "external-reproduction"
         )
         self.assertEqual(record["payload"]["control_domain_independence"], "not-established")
-        self.assertTrue(record["payload"]["reviewer_assertions_not_yet_publicly_verifiable"])
         self.assertEqual(len(record["payload"]["corrections"]), 5)
+
+    def test_parked_assertions_are_separated_from_verified_facts(self) -> None:
+        """The invariant, not the count.
+
+        This previously asserted that the not-yet-verifiable list was non-empty,
+        which made the stale state the passing state: when -07 was published and
+        the assertion became checkable, the test required it to stay parked. The
+        list is allowed to be empty or non-empty; what must hold is that the two
+        buckets never overlap and that nothing sits in the parked bucket without
+        a condition that can tell us when it comes due. Flip either of those and
+        this fails.
+        """
+        for record in self.records:
+            payload = record["payload"]
+            parked = payload.get("reviewer_assertions_not_yet_publicly_verifiable", [])
+            verified = payload.get("maintainer_verified_facts", [])
+            self.assertEqual(
+                set(parked) & set(verified),
+                set(),
+                f"{record['record_id']}: an assertion is both parked and verified",
+            )
+            conditions = {
+                entry["assertion"]: entry
+                for entry in payload.get("deferred_verifications", [])
+            }
+            for assertion in parked:
+                self.assertIn(
+                    assertion,
+                    conditions,
+                    f"{record['record_id']}: parked with no testable condition",
+                )
+                self.assertEqual(conditions[assertion]["status"], "pending")
 
     def test_agtp_external_reproduction_is_pinned_and_bounded(self) -> None:
         record = next(
