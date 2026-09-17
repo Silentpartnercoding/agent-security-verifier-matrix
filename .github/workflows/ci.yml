@@ -18,6 +18,12 @@ jobs:
           python-version: "3.12"
       - name: Run tests
         run: python3 -m unittest discover -s tests -v
+      # Fails when a claim parked pending an external condition comes due.
+      # Runs with network so the condition is actually probed; an unreachable
+      # probe is reported as unknown and does not fail the build, while the
+      # structural invariants fail the build either way.
+      - name: Check deferred verifications
+        run: python3 scripts/check_deferred_verifications.py
       - name: Fetch and verify pinned sources
         run: python3 scripts/fetch_pinned_sources.py
       - name: Reproduce frozen report

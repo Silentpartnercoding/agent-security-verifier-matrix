@@ -40,6 +40,19 @@ Songbo subsequently reran the corrected v0.2 tag, reproduced all 25 tests and
 all six pinned source-byte checks, matched the committed result byte for byte,
 and confirmed that v0.2 reflects the intended Principal Binding semantics.
 
+These reruns are also indexed alongside every other independent external
+reproduction obtained across this estate, in `minority-prophet` at
+`research/knowledge-ledger/EXTERNAL-REPRODUCTIONS.json`. That index exists
+because a reproduction recorded in one repository was invisible from the
+experiment it bore on in another for thirteen days. Each entry there states what
+it does **not** discharge; nothing in this repository discharges a
+knowledge-ledger gate, and nothing there makes a mapping label here correct.
+
+Claims here that cannot be checked yet are parked in a record's
+`deferred_verifications` with the condition that would settle them, and
+`scripts/check_deferred_verifications.py` fails the build when that condition
+fires. A parked claim with no testable condition also fails.
+
 ## Frozen inputs
 
 - `sources.json` retains the exact v0.1 source pins for the IETF draft text, the Border crossing case

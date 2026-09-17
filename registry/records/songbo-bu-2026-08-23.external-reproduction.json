@@ -35,11 +35,13 @@
     "maintainer_verified_facts": [
       "the public IETF audit attachment hashes to b078907b983494f8366e76dba672003bf0bdbcba14a52830452f20d94b24d5e4",
       "the audit names commit 8ed65b70f8933a659dcab00331d86bac40009abe",
-      "the audit contains five substantive correction requests"
+      "the audit contains five substantive correction requests",
+      "draft-bu-agentproto-security-principal-binding-07 was published 2026-09-15; the text at https://www.ietf.org/archive/id/draft-bu-agentproto-security-principal-binding-07.txt hashes to b24e4b10a181f820a931cee213a5857085d5519f8ef9d9292dd99a32ff3ee716",
+      "-07 Section 32 cites this repository at tree aip-matrix-fit-002-v0.2.0 and commit 373792ecc415374a8d92893d386dc400287ff71b; the tag in this repository dereferences to that exact commit",
+      "-07 Section 32 quotes deterministic result SHA-256 63a567f248fb28e5247270ce4241708acecc7139dac2a18ecfbcf0d1ce36bd42, which equals the value recorded in registry/records/aip-matrix-fit-002.mapping.json and the sha256 of artifacts/results.json at that tag",
+      "-07 Section 34 records changes in all three areas the reviewer named: a versioned extensible check-class registry, structured non-establishment fields for unsatisfied and indeterminate aggregates, and the corrected source-pinned AIP-01 matrix experiment"
     ],
-    "reviewer_assertions_not_yet_publicly_verifiable": [
-      "registry, aggregate-result, and AIP-mapping lessons were carried into local Principal Binding -07 working text"
-    ],
+    "reviewer_assertions_not_yet_publicly_verifiable": [],
     "corrections": [
       "separate artifact-named delegation participants from live presenter identity",
       "separate credential freshness from completion-evidence freshness",
@@ -57,7 +59,42 @@
       "An external rerun is not an endorsement or certification.",
       "Organizational or control-domain independence of the reproducer was not tested.",
       "The reproduction does not make every v0.1 mapping label correct; the review identified corrections.",
-      "Statements about unpublished -07 text remain reviewer assertions until that revision is public."
+      "Statements about unpublished -07 text remained reviewer assertions until that revision was public; -07 was published 2026-09-15 and the assertion is resolved in deferred_verifications. Resolution establishes correspondence with -07, not that this review caused it."
+    ],
+    "deferred_verifications": [
+      {
+        "id": "principal-binding-07-publication",
+        "assertion": "registry, aggregate-result, and AIP-mapping lessons were carried into local Principal Binding -07 working text",
+        "asserted_by": "Songbo Bu",
+        "blocked_on": {
+          "kind": "ietf-draft-revision-published",
+          "draft": "draft-bu-agentproto-security-principal-binding",
+          "revision": "07"
+        },
+        "status": "resolved",
+        "condition_fired_at": "2026-09-15",
+        "resolved_at": "2026-09-16",
+        "resolution": {
+          "established": [
+            "-07 is public, so the assertion is no longer unfalsifiable",
+            "-07 changed in all three areas the reviewer named (Section 34)",
+            "-07 cites this repository by tag, commit, and result hash, and all three resolve correctly (Section 32)"
+          ],
+          "not_established": [
+            "that this review caused those changes. -07's acknowledgements do not name this repository or its maintainer, and co-occurrence in a revision is correspondence, not precedence.",
+            "that the reviewer's private working text at the time of the assertion contained what -07 now contains."
+          ],
+          "evidence": [
+            {
+              "uri": "https://www.ietf.org/archive/id/draft-bu-agentproto-security-principal-binding-07.txt",
+              "sha256": "b24e4b10a181f820a931cee213a5857085d5519f8ef9d9292dd99a32ff3ee716"
+            },
+            {
+              "uri": "https://datatracker.ietf.org/doc/draft-bu-agentproto-security-principal-binding/07/"
+            }
+          ]
+        }
+      }
     ]
   }
 }
