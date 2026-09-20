@@ -1,0 +1,85 @@
+{
+  "all_expected": true,
+  "attempts_sha256": "df79acb5cf42c1b7ecf7dc3fcd3fe3af551fa157666a9ef439e5e23a6c7c3af5",
+  "case_count": 4,
+  "cases_sha256": "1b062b173ecf1c7d1e98ed49427b0fd48cccf0352a4089567edd30b22e528053",
+  "claim_boundary": {
+    "established": "The checker detects a required terminal refusal record that is absent when a separately frozen attempt manifest says it must exist.",
+    "not_established": [
+      "Conformance of Bradley B's eg-conform implementation or receipt format.",
+      "Production suitability of the committed test-vector signing key.",
+      "Organizational independence merely because this code is in a different repository.",
+      "External reproduction until another party runs the frozen release."
+    ]
+  },
+  "experiment": "AUDIT-REFUSAL-COMPLETENESS-001",
+  "implementation": "audit_refusal_fit",
+  "implementation_version": "1.0.0",
+  "public_key_sha256": "4097449bb6c25a152c7bb3c996f36a7c4c44944b3e6c391efc2d544164a746ff",
+  "results": [
+    {
+      "case_id": "complete",
+      "chain_verification_passed": true,
+      "conforms_to_frozen_expectation": true,
+      "decisive_check": "all-required-records-present",
+      "diagnostics": [],
+      "expected_outcome": "verified",
+      "missing_attempt_ids": [],
+      "outcome": "verified",
+      "record_semantics_passed": true,
+      "signature_verification_passed": true,
+      "unexpected_attempt_ids": []
+    },
+    {
+      "case_id": "missing-terminal-refusal",
+      "chain_verification_passed": true,
+      "conforms_to_frozen_expectation": true,
+      "decisive_check": "external-attempt-commitment",
+      "diagnostics": [
+        "missing required records: attempt-refuse"
+      ],
+      "expected_outcome": "violation",
+      "missing_attempt_ids": [
+        "attempt-refuse"
+      ],
+      "outcome": "violation",
+      "record_semantics_passed": true,
+      "signature_verification_passed": true,
+      "unexpected_attempt_ids": []
+    },
+    {
+      "case_id": "missing-middle-deny",
+      "chain_verification_passed": false,
+      "conforms_to_frozen_expectation": true,
+      "decisive_check": "external-attempt-commitment",
+      "diagnostics": [
+        "chain predecessor failed for attempt-refuse",
+        "missing required records: attempt-deny"
+      ],
+      "expected_outcome": "violation",
+      "missing_attempt_ids": [
+        "attempt-deny"
+      ],
+      "outcome": "violation",
+      "record_semantics_passed": true,
+      "signature_verification_passed": true,
+      "unexpected_attempt_ids": []
+    },
+    {
+      "case_id": "no-external-commitment",
+      "chain_verification_passed": null,
+      "conforms_to_frozen_expectation": true,
+      "decisive_check": "missing-external-commitment",
+      "diagnostics": [
+        "No valid external attempt manifest exists, so absent records cannot be distinguished from absent attempts."
+      ],
+      "expected_outcome": "unverifiable",
+      "missing_attempt_ids": [],
+      "outcome": "unverifiable",
+      "record_semantics_passed": null,
+      "signature_verification_passed": null,
+      "unexpected_attempt_ids": []
+    }
+  ],
+  "sources_sha256": "47e2e26e2bc94112f1f24675d3fbeebf865e4862f808b2cc13d451c722249f09"
+}

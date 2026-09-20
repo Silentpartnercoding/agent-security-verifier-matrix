@@ -1,0 +1,27 @@
+{
+  "experiment": "AUDIT-REFUSAL-COMPLETENESS-001",
+  "cases": [
+    {
+      "id": "complete",
+      "mutation": "none",
+      "expected_outcome": "verified"
+    },
+    {
+      "id": "missing-terminal-refusal",
+      "mutation": "remove-attempt",
+      "attempt_id": "attempt-refuse",
+      "expected_outcome": "violation"
+    },
+    {
+      "id": "missing-middle-deny",
+      "mutation": "remove-attempt",
+      "attempt_id": "attempt-deny",
+      "expected_outcome": "violation"
+    },
+    {
+      "id": "no-external-commitment",
+      "mutation": "remove-manifest-and-records",
+      "expected_outcome": "unverifiable"
+    }
+  ]
+}

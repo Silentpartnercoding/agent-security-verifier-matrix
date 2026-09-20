@@ -1,0 +1,28 @@
+{
+  "experiment": "AUDIT-REFUSAL-COMPLETENESS-001",
+  "sources": [
+    {
+      "id": "bradley-acceptance-message",
+      "kind": "ietf-mail-message",
+      "url": "https://mailarchive.ietf.org/arch/msg/agentproto/ujxE1J-394TnVw9gXmT1h2TeMew/download/",
+      "bytes": 15597,
+      "sha256": "2194d0160dfa5ff80d80108a0abae5ca193a8262aca3252c166c0ccc33f31c01"
+    },
+    {
+      "id": "audit-decision-records-00",
+      "kind": "ietf-internet-draft",
+      "url": "https://www.ietf.org/archive/id/draft-bradleyb-audit-decision-records-00.txt",
+      "bytes": 23433,
+      "sha256": "5d295f041ef19a19279e84d2c468a52db50c4360dcbcc7c2c176ab7d503da38c"
+    },
+    {
+      "id": "execution-governance-receipts",
+      "kind": "git-blob",
+      "repository": "https://github.com/11-11AI/execution-governance",
+      "commit": "f2efb313d113149c6ddc9656307a605a7619f8ea",
+      "path": "docs/RECEIPTS.md",
+      "bytes": 10156,
+      "sha256": "8b19b03cb238cf62142b235ec5d304906bedc9c7b155e9e01691f0a9a9c7e0ce"
+    }
+  ]
+}
