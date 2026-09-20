@@ -1,14 +1,16 @@
 from __future__ import annotations
 
-import json
-import hashlib
 import copy
+import hashlib
+import json
+import shutil
 import subprocess
 import sys
 import tempfile
 import unittest
 from pathlib import Path
 
+import audit_refusal_fit
 from audit_refusal_fit import check_records, emit_records, run_experiment
 
 
@@ -108,6 +110,192 @@ class RefusalCheckerTests(unittest.TestCase):
         self.assertFalse(result["record_semantics_passed"])
 
 
+class DeclaredRootCounterTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.private_key = EXPERIMENT / "keys" / "test-private.pem"
+        cls.public_key = EXPERIMENT / "keys" / "test-public.pem"
+
+    def emit_and_count(self, records: list[dict]) -> dict:
+        self.assertTrue(
+            hasattr(audit_refusal_fit, "emit_evidence_records"),
+            "signed evidence emitter is not exported",
+        )
+        self.assertTrue(
+            hasattr(audit_refusal_fit, "count_declared_roots"),
+            "declared-root counter is not exported",
+        )
+        emitted = audit_refusal_fit.emit_evidence_records(
+            {"key_id": "audit-refusal-test-key", "records": records},
+            self.private_key,
+        )
+        return audit_refusal_fit.count_declared_roots(emitted, self.public_key)
+
+    def test_three_signed_descendants_count_as_one_declared_root(self) -> None:
+        result = self.emit_and_count(
+            [
+                {
+                    "record_id": "observation-a",
+                    "claim": "the terminal record exists",
+                    "side": "support",
+                    "root_basis_state": "declared",
+                    "root_basis_id": "sensor-a",
+                },
+                {
+                    "record_id": "relay-a",
+                    "parent_record_id": "observation-a",
+                    "claim": "the terminal record exists",
+                    "side": "support",
+                },
+                {
+                    "record_id": "summary-a",
+                    "parent_record_id": "relay-a",
+                    "claim": "the terminal record exists",
+                    "side": "support",
+                },
+            ]
+        )
+
+        self.assertEqual(result["outcome"], "counted")
+        self.assertEqual(result["distinct_record_count"], 3)
+        self.assertEqual(result["declared_root_count"], 1)
+        self.assertEqual(result["collapsed_descendant_count"], 2)
+        self.assertEqual(result["root_record_ids"], ["observation-a"])
+        self.assertTrue(result["signature_verification_passed"])
+        self.assertTrue(result["chain_verification_passed"])
+        self.assertEqual(result["independence_state"], "not-established")
+
+    def test_two_declared_roots_remain_two(self) -> None:
+        result = self.emit_and_count(
+            [
+                {
+                    "record_id": "observation-a",
+                    "claim": "the terminal record exists",
+                    "side": "support",
+                    "root_basis_state": "declared",
+                    "root_basis_id": "sensor-a",
+                },
+                {
+                    "record_id": "relay-a",
+                    "parent_record_id": "observation-a",
+                    "claim": "the terminal record exists",
+                    "side": "support",
+                },
+                {
+                    "record_id": "observation-b",
+                    "claim": "the terminal record exists",
+                    "side": "support",
+                    "root_basis_state": "declared",
+                    "root_basis_id": "sensor-b",
+                },
+                {
+                    "record_id": "relay-b",
+                    "parent_record_id": "observation-b",
+                    "claim": "the terminal record exists",
+                    "side": "support",
+                },
+            ]
+        )
+
+        self.assertEqual(result["outcome"], "counted")
+        self.assertEqual(result["distinct_record_count"], 4)
+        self.assertEqual(result["declared_root_count"], 2)
+        self.assertEqual(result["collapsed_descendant_count"], 2)
+        self.assertEqual(
+            result["root_record_ids"], ["observation-a", "observation-b"]
+        )
+
+    def test_two_root_records_with_one_basis_do_not_mint_two_roots(self) -> None:
+        result = self.emit_and_count(
+            [
+                {
+                    "record_id": "observation-a",
+                    "claim": "the terminal record exists",
+                    "side": "support",
+                    "root_basis_state": "declared",
+                    "root_basis_id": "sensor-a",
+                },
+                {
+                    "record_id": "observation-a-restated",
+                    "claim": "the terminal record exists",
+                    "side": "support",
+                    "root_basis_state": "declared",
+                    "root_basis_id": "sensor-a",
+                },
+            ]
+        )
+
+        self.assertEqual(result["outcome"], "counted")
+        self.assertEqual(result["distinct_record_count"], 2)
+        self.assertEqual(result["declared_root_count"], 1)
+        self.assertEqual(result["collapsed_descendant_count"], 1)
+        self.assertEqual(result["root_basis_ids"], ["sensor-a"])
+
+    def test_mixed_claims_are_not_one_root_census(self) -> None:
+        result = self.emit_and_count(
+            [
+                {
+                    "record_id": "observation-a",
+                    "claim": "the terminal record exists",
+                    "side": "support",
+                    "root_basis_state": "declared",
+                    "root_basis_id": "sensor-a",
+                },
+                {
+                    "record_id": "observation-b",
+                    "claim": "a different claim",
+                    "side": "support",
+                    "root_basis_state": "declared",
+                    "root_basis_id": "sensor-b",
+                },
+            ]
+        )
+
+        self.assertEqual(result["outcome"], "unverifiable")
+        self.assertIsNone(result["declared_root_count"])
+        self.assertIn("multiple claims", result["diagnostics"])
+
+    def test_missing_parent_is_unverifiable_and_mints_no_root(self) -> None:
+        result = self.emit_and_count(
+            [
+                {
+                    "record_id": "orphan",
+                    "parent_record_id": "absent-record",
+                    "claim": "the terminal record exists",
+                    "side": "support",
+                }
+            ]
+        )
+
+        self.assertEqual(result["outcome"], "unverifiable")
+        self.assertIsNone(result["declared_root_count"])
+        self.assertEqual(result["root_record_ids"], [])
+        self.assertIn("missing parent absent-record", result["diagnostics"])
+
+    def test_cycle_is_unverifiable_and_mints_no_root(self) -> None:
+        result = self.emit_and_count(
+            [
+                {
+                    "record_id": "copy-a",
+                    "parent_record_id": "copy-b",
+                    "claim": "the terminal record exists",
+                    "side": "support",
+                },
+                {
+                    "record_id": "copy-b",
+                    "parent_record_id": "copy-a",
+                    "claim": "the terminal record exists",
+                    "side": "support",
+                },
+            ]
+        )
+
+        self.assertEqual(result["outcome"], "unverifiable")
+        self.assertIsNone(result["declared_root_count"])
+        self.assertEqual(result["root_record_ids"], [])
+        self.assertTrue(any("cycle" in item for item in result["diagnostics"]))
+
+
 class RefusalExperimentTests(unittest.TestCase):
     def test_upstream_tail_deletion_result_is_pinned(self) -> None:
         artifact = EXPERIMENT / "artifacts" / "upstream-tail-deletion.json"
@@ -155,6 +343,82 @@ class RefusalExperimentTests(unittest.TestCase):
         self.assertTrue(terminal["chain_verification_passed"])
         self.assertEqual(terminal["decisive_check"], "external-attempt-commitment")
         self.assertTrue(report["all_expected"])
+
+    def test_frozen_root_cases_collapse_photocopies_without_claiming_independence(self) -> None:
+        report = run_experiment(EXPERIMENT)
+        self.assertIn("root_count_results", report)
+        outcomes = {
+            case["case_id"]: (
+                case["outcome"],
+                case["distinct_record_count"],
+                case["declared_root_count"],
+            )
+            for case in report["root_count_results"]
+        }
+        self.assertEqual(
+            outcomes,
+            {
+                "photocopy-three-one-root": ("counted", 3, 1),
+                "two-declared-roots": ("counted", 4, 2),
+                "duplicate-root-basis": ("counted", 2, 1),
+                "missing-parent": ("unverifiable", 1, None),
+                "lineage-cycle": ("unverifiable", 2, None),
+            },
+        )
+        photocopy = next(
+            case
+            for case in report["root_count_results"]
+            if case["case_id"] == "photocopy-three-one-root"
+        )
+        self.assertEqual(photocopy["collapsed_descendant_count"], 2)
+        self.assertEqual(photocopy["independence_state"], "not-established")
+        self.assertTrue(report["all_expected"])
+
+    def test_report_binds_evidence_cases_and_upstream_probe(self) -> None:
+        evidence_cases = EXPERIMENT / "evidence-cases.json"
+        upstream_probe = EXPERIMENT / "artifacts" / "upstream-tail-deletion.json"
+        self.assertTrue(evidence_cases.is_file(), "frozen evidence cases are missing")
+        report = run_experiment(EXPERIMENT)
+        self.assertEqual(
+            report["evidence_cases_sha256"],
+            hashlib.sha256(evidence_cases.read_bytes()).hexdigest(),
+        )
+        self.assertEqual(
+            report["upstream_tail_probe_sha256"],
+            hashlib.sha256(upstream_probe.read_bytes()).hexdigest(),
+        )
+        self.assertEqual(
+            [row["case_id"] for row in report["result_table"]],
+            [
+                "upstream-full",
+                "upstream-tail-deleted",
+                "missing-terminal-refusal",
+                "missing-middle-deny",
+                "photocopy-three-one-root",
+            ],
+        )
+        for row in report["result_table"]:
+            for column in (
+                "present_record_integrity",
+                "expected_record_completeness",
+                "declared_root_counting",
+            ):
+                self.assertIn("outcome", row[column])
+                self.assertIn("verifier", row[column])
+
+    def test_report_fails_closed_when_pinned_upstream_result_drifts(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            copied_experiment = Path(directory) / "experiment"
+            shutil.copytree(EXPERIMENT, copied_experiment)
+            artifact = copied_experiment / "artifacts" / "upstream-tail-deletion.json"
+            probe = json.loads(artifact.read_text(encoding="utf-8"))
+            probe["tail_deleted"]["ok"] = False
+            artifact.write_text(json.dumps(probe), encoding="utf-8")
+
+            report = run_experiment(copied_experiment)
+
+            self.assertFalse(report["upstream_conforms_to_frozen_expectation"])
+            self.assertFalse(report["all_expected"])
 
     def test_cli_report_matches_committed_artifact(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

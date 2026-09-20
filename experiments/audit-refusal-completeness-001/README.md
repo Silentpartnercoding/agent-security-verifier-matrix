@@ -3,7 +3,9 @@
 This experiment implements one narrow acceptance test proposed in the
 AgentProto discussion: an implementation separate from the proposer emits and
 checks refusal records against frozen inputs, including a case where a required
-record should exist but is absent.
+record should exist but is absent. The v1.1 package also carries a separate
+declared-lineage fixture showing that three signed descendants of one recorded
+observation remain one declared evidence root.
 
 The experiment name describes its intended discussion venue. It is not an IETF
 work item, an adopted AUDIT document, or an IETF endorsement.
@@ -30,8 +32,39 @@ Four frozen cases are checked:
 - `no-external-commitment` is `unverifiable`, because silence cannot say whether
   an attempt or its record is missing.
 
-The committed report is
-`04537757831823352150fe8fa621e0b0ec4bf43e869eae0bd39e64cf26f6e209`.
+Five signed lineage cases are checked separately:
+
+- `photocopy-three-one-root` contains three valid signed records and counts one
+  declared root plus two collapsed descendants.
+- `two-declared-roots` contains four valid signed records and counts two
+  declared roots.
+- `duplicate-root-basis` contains two separately signed root records carrying
+  the same declared basis identifier and counts one root, not two.
+- `missing-parent` and `lineage-cycle` are `unverifiable`; neither condition
+  silently creates a root.
+
+The counter reports `independence_state: not-established` in every case.
+Declared lineage is sufficient to prevent record-count inflation; it is not
+proof that a declared root is true or causally independent.
+
+The committed combined report is
+`6c21e573a1977e30127017d994bbb7bdf06ba699f6514a511f278721f10024cc`.
+The separately frozen upstream probe is
+`5cb6451306300a1123e19d410e3256e735658cb310203826f0894d1445eb5b02`.
+
+## Named-verifier result table
+
+| Case | Present-record integrity | Expected-record completeness | Declared-root counting |
+| --- | --- | --- | --- |
+| Upstream complete file | `verified` by pinned upstream `verifyReceiptFile` | not evaluated | not evaluated |
+| Upstream terminal deletion | `verified` by pinned upstream `verifyReceiptFile` | not evaluated | not evaluated |
+| Independent terminal-refusal deletion | `verified` by independent signature and chain checks | `violation` by external-attempt commitment | not evaluated |
+| Independent interior deletion | `violation` by independent chain check | `violation` by external-attempt commitment | not evaluated |
+| Signed photocopy chain | `verified` by independent signature and chain checks | not evaluated | one declared root from three signed records |
+
+The upstream terminal-deletion row and independent terminal-refusal row use
+different record formats and frozen inputs. Their shared structural lesson is
+reported without pretending the independent checker ran over upstream bytes.
 
 ## Pinned upstream tail-deletion probe
 
@@ -83,11 +116,15 @@ Silentpartnercoding control domain. A separate person or organization must run
 the frozen command and publish what it obtained before an external-reproduction
 claim is warranted.
 
-The result establishes only that the checker detects a missing terminal refusal
-record when a separately frozen attempt manifest says the record must exist. It
-does not establish conformance of Bradley B's `eg-conform` format checker,
-production suitability of the public test key, or progress by a party that
-emitted an entry record and then remained silent.
+The result establishes three bounded observations: the pinned upstream verifier
+accepts a valid prefix after terminal deletion; the independent checker detects
+a missing terminal refusal when a separately frozen attempt manifest says it
+must exist; and the declared-lineage counter collapses three signed descendants
+to one declared root. It does not establish a defect in a present-record
+integrity verifier, conformance of Bradley B's `eg-conform` beyond the pinned
+probe, truth or causal independence of a declared root, production suitability
+of the public test key, or progress by a party that emitted an entry record and
+then remained silent.
 
 The public IPR disclosure associated with the motivating contribution states
 royalty-free reasonable and non-discriminatory terms for Necessary Patent

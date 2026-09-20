@@ -1,0 +1,142 @@
+{
+  "profile": "declared-evidence-lineage-v1",
+  "cases": [
+    {
+      "id": "photocopy-three-one-root",
+      "records": [
+        {
+          "record_id": "observation-a",
+          "claim": "the terminal record exists",
+          "side": "support",
+          "root_basis_state": "declared",
+          "root_basis_id": "sensor-a"
+        },
+        {
+          "record_id": "relay-a",
+          "parent_record_id": "observation-a",
+          "claim": "the terminal record exists",
+          "side": "support"
+        },
+        {
+          "record_id": "summary-a",
+          "parent_record_id": "relay-a",
+          "claim": "the terminal record exists",
+          "side": "support"
+        }
+      ],
+      "expected": {
+        "outcome": "counted",
+        "distinct_record_count": 3,
+        "declared_root_count": 1,
+        "collapsed_descendant_count": 2,
+        "independence_state": "not-established"
+      }
+    },
+    {
+      "id": "two-declared-roots",
+      "records": [
+        {
+          "record_id": "observation-a",
+          "claim": "the terminal record exists",
+          "side": "support",
+          "root_basis_state": "declared",
+          "root_basis_id": "sensor-a"
+        },
+        {
+          "record_id": "relay-a",
+          "parent_record_id": "observation-a",
+          "claim": "the terminal record exists",
+          "side": "support"
+        },
+        {
+          "record_id": "observation-b",
+          "claim": "the terminal record exists",
+          "side": "support",
+          "root_basis_state": "declared",
+          "root_basis_id": "sensor-b"
+        },
+        {
+          "record_id": "relay-b",
+          "parent_record_id": "observation-b",
+          "claim": "the terminal record exists",
+          "side": "support"
+        }
+      ],
+      "expected": {
+        "outcome": "counted",
+        "distinct_record_count": 4,
+        "declared_root_count": 2,
+        "collapsed_descendant_count": 2,
+        "independence_state": "not-established"
+      }
+    },
+    {
+      "id": "missing-parent",
+      "records": [
+        {
+          "record_id": "orphan",
+          "parent_record_id": "absent-record",
+          "claim": "the terminal record exists",
+          "side": "support"
+        }
+      ],
+      "expected": {
+        "outcome": "unverifiable",
+        "distinct_record_count": 1,
+        "declared_root_count": null,
+        "collapsed_descendant_count": null,
+        "independence_state": "not-established"
+      }
+    },
+    {
+      "id": "duplicate-root-basis",
+      "records": [
+        {
+          "record_id": "observation-a",
+          "claim": "the terminal record exists",
+          "side": "support",
+          "root_basis_state": "declared",
+          "root_basis_id": "sensor-a"
+        },
+        {
+          "record_id": "observation-a-restated",
+          "claim": "the terminal record exists",
+          "side": "support",
+          "root_basis_state": "declared",
+          "root_basis_id": "sensor-a"
+        }
+      ],
+      "expected": {
+        "outcome": "counted",
+        "distinct_record_count": 2,
+        "declared_root_count": 1,
+        "collapsed_descendant_count": 1,
+        "independence_state": "not-established"
+      }
+    },
+    {
+      "id": "lineage-cycle",
+      "records": [
+        {
+          "record_id": "copy-a",
+          "parent_record_id": "copy-b",
+          "claim": "the terminal record exists",
+          "side": "support"
+        },
+        {
+          "record_id": "copy-b",
+          "parent_record_id": "copy-a",
+          "claim": "the terminal record exists",
+          "side": "support"
+        }
+      ],
+      "expected": {
+        "outcome": "unverifiable",
+        "distinct_record_count": 2,
+        "declared_root_count": null,
+        "collapsed_descendant_count": null,
+        "independence_state": "not-established"
+      }
+    }
+  ]
+}

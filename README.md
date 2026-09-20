@@ -152,7 +152,10 @@ implements the separately stated missing-record acceptance test: it emits
 signed decision and refusal records from frozen attempts, then requires a
 checker to reject a corpus whose final refusal record was silently removed.
 The remaining chain still verifies in that case; the external attempt
-commitment is what makes the missing terminal record observable.
+commitment is what makes the missing terminal record observable. Its v1.1
+adversarial package also runs the actual pinned upstream verifier against a
+terminal deletion and adds a signed photocopy fixture where three descendant
+records count as one declared evidence root.
 
 This is a separately written implementation with no imported upstream code,
 not a clean-room implementation, external reproduction, or claim of

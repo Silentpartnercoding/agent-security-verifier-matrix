@@ -4,18 +4,102 @@
   "case_count": 4,
   "cases_sha256": "1b062b173ecf1c7d1e98ed49427b0fd48cccf0352a4089567edd30b22e528053",
   "claim_boundary": {
-    "established": "The checker detects a required terminal refusal record that is absent when a separately frozen attempt manifest says it must exist.",
+    "established": [
+      "At the pinned upstream commit, verifyReceiptFile accepts a valid two-record prefix after a third terminal record is deleted.",
+      "The independent checker detects a required terminal refusal record that is absent when a separately frozen attempt manifest says it must exist.",
+      "The declared-lineage counter counts three signed descendant records as one declared evidence root."
+    ],
     "not_established": [
-      "Conformance of Bradley B's eg-conform implementation or receipt format.",
+      "A defect in an upstream verifier limited to integrity of the records supplied to it.",
+      "Conformance of Bradley B's eg-conform implementation or receipt format beyond the pinned probe.",
       "Production suitability of the committed test-vector signing key.",
+      "Truth or causal independence of a declared evidence root.",
       "Organizational independence merely because this code is in a different repository.",
       "External reproduction until another party runs the frozen release."
     ]
   },
+  "evidence_cases_sha256": "074e9af356ac22f033c2e505bf95f8cceed85432fbc3ed9f13fd327a03207b9a",
   "experiment": "AUDIT-REFUSAL-COMPLETENESS-001",
   "implementation": "audit_refusal_fit",
-  "implementation_version": "1.0.0",
+  "implementation_version": "1.1.0",
   "public_key_sha256": "4097449bb6c25a152c7bb3c996f36a7c4c44944b3e6c391efc2d544164a746ff",
+  "result_table": [
+    {
+      "case_id": "upstream-full",
+      "declared_root_counting": {
+        "outcome": "not-evaluated",
+        "verifier": "none"
+      },
+      "expected_record_completeness": {
+        "outcome": "not-evaluated",
+        "verifier": "none"
+      },
+      "present_record_integrity": {
+        "outcome": "verified",
+        "verifier": "execution-governance verifyReceiptFile at pinned commit"
+      }
+    },
+    {
+      "case_id": "upstream-tail-deleted",
+      "declared_root_counting": {
+        "outcome": "not-evaluated",
+        "verifier": "none"
+      },
+      "expected_record_completeness": {
+        "outcome": "not-evaluated",
+        "verifier": "none"
+      },
+      "present_record_integrity": {
+        "outcome": "verified",
+        "verifier": "execution-governance verifyReceiptFile at pinned commit"
+      }
+    },
+    {
+      "case_id": "missing-terminal-refusal",
+      "declared_root_counting": {
+        "outcome": "not-evaluated",
+        "verifier": "none"
+      },
+      "expected_record_completeness": {
+        "outcome": "violation",
+        "verifier": "audit_refusal_fit external-attempt commitment"
+      },
+      "present_record_integrity": {
+        "outcome": "verified",
+        "verifier": "audit_refusal_fit signature and chain checks"
+      }
+    },
+    {
+      "case_id": "missing-middle-deny",
+      "declared_root_counting": {
+        "outcome": "not-evaluated",
+        "verifier": "none"
+      },
+      "expected_record_completeness": {
+        "outcome": "violation",
+        "verifier": "audit_refusal_fit external-attempt commitment"
+      },
+      "present_record_integrity": {
+        "outcome": "violation",
+        "verifier": "audit_refusal_fit signature and chain checks"
+      }
+    },
+    {
+      "case_id": "photocopy-three-one-root",
+      "declared_root_counting": {
+        "outcome": "1-declared-root-from-3-signed-records",
+        "verifier": "audit_refusal_fit count_declared_roots"
+      },
+      "expected_record_completeness": {
+        "outcome": "not-evaluated",
+        "verifier": "none"
+      },
+      "present_record_integrity": {
+        "outcome": "verified",
+        "verifier": "audit_refusal_fit declared-lineage signature and chain checks"
+      }
+    }
+  ],
   "results": [
     {
       "case_id": "complete",
@@ -81,5 +165,149 @@
       "unexpected_attempt_ids": []
     }
   ],
-  "sources_sha256": "47e2e26e2bc94112f1f24675d3fbeebf865e4862f808b2cc13d451c722249f09"
+  "root_case_count": 5,
+  "root_count_results": [
+    {
+      "case_id": "photocopy-three-one-root",
+      "chain_verification_passed": true,
+      "collapsed_descendant_count": 2,
+      "conforms_to_frozen_expectation": true,
+      "declared_root_count": 1,
+      "diagnostics": [],
+      "distinct_record_count": 3,
+      "expected": {
+        "collapsed_descendant_count": 2,
+        "declared_root_count": 1,
+        "distinct_record_count": 3,
+        "independence_state": "not-established",
+        "outcome": "counted"
+      },
+      "independence_state": "not-established",
+      "outcome": "counted",
+      "root_basis_ids": [
+        "sensor-a"
+      ],
+      "root_record_ids": [
+        "observation-a"
+      ],
+      "signature_verification_passed": true
+    },
+    {
+      "case_id": "two-declared-roots",
+      "chain_verification_passed": true,
+      "collapsed_descendant_count": 2,
+      "conforms_to_frozen_expectation": true,
+      "declared_root_count": 2,
+      "diagnostics": [],
+      "distinct_record_count": 4,
+      "expected": {
+        "collapsed_descendant_count": 2,
+        "declared_root_count": 2,
+        "distinct_record_count": 4,
+        "independence_state": "not-established",
+        "outcome": "counted"
+      },
+      "independence_state": "not-established",
+      "outcome": "counted",
+      "root_basis_ids": [
+        "sensor-a",
+        "sensor-b"
+      ],
+      "root_record_ids": [
+        "observation-a",
+        "observation-b"
+      ],
+      "signature_verification_passed": true
+    },
+    {
+      "case_id": "missing-parent",
+      "chain_verification_passed": true,
+      "collapsed_descendant_count": null,
+      "conforms_to_frozen_expectation": true,
+      "declared_root_count": null,
+      "diagnostics": [
+        "missing parent absent-record"
+      ],
+      "distinct_record_count": 1,
+      "expected": {
+        "collapsed_descendant_count": null,
+        "declared_root_count": null,
+        "distinct_record_count": 1,
+        "independence_state": "not-established",
+        "outcome": "unverifiable"
+      },
+      "independence_state": "not-established",
+      "outcome": "unverifiable",
+      "root_basis_ids": [],
+      "root_record_ids": [],
+      "signature_verification_passed": true
+    },
+    {
+      "case_id": "duplicate-root-basis",
+      "chain_verification_passed": true,
+      "collapsed_descendant_count": 1,
+      "conforms_to_frozen_expectation": true,
+      "declared_root_count": 1,
+      "diagnostics": [],
+      "distinct_record_count": 2,
+      "expected": {
+        "collapsed_descendant_count": 1,
+        "declared_root_count": 1,
+        "distinct_record_count": 2,
+        "independence_state": "not-established",
+        "outcome": "counted"
+      },
+      "independence_state": "not-established",
+      "outcome": "counted",
+      "root_basis_ids": [
+        "sensor-a"
+      ],
+      "root_record_ids": [
+        "observation-a",
+        "observation-a-restated"
+      ],
+      "signature_verification_passed": true
+    },
+    {
+      "case_id": "lineage-cycle",
+      "chain_verification_passed": true,
+      "collapsed_descendant_count": null,
+      "conforms_to_frozen_expectation": true,
+      "declared_root_count": null,
+      "diagnostics": [
+        "lineage cycle reached from copy-a",
+        "lineage cycle reached from copy-b"
+      ],
+      "distinct_record_count": 2,
+      "expected": {
+        "collapsed_descendant_count": null,
+        "declared_root_count": null,
+        "distinct_record_count": 2,
+        "independence_state": "not-established",
+        "outcome": "unverifiable"
+      },
+      "independence_state": "not-established",
+      "outcome": "unverifiable",
+      "root_basis_ids": [],
+      "root_record_ids": [],
+      "signature_verification_passed": true
+    }
+  ],
+  "sources_sha256": "47e2e26e2bc94112f1f24675d3fbeebf865e4862f808b2cc13d451c722249f09",
+  "upstream_conforms_to_frozen_expectation": true,
+  "upstream_tail_probe": {
+    "finding": "present-record verification does not establish terminal completeness",
+    "full": {
+      "breaks": [],
+      "ok": true,
+      "total": 3
+    },
+    "tail_deleted": {
+      "breaks": [],
+      "ok": true,
+      "total": 2
+    },
+    "upstream_commit": "f2efb313d113149c6ddc9656307a605a7619f8ea"
+  },
+  "upstream_tail_probe_sha256": "5cb6451306300a1123e19d410e3256e735658cb310203826f0894d1445eb5b02"
 }
