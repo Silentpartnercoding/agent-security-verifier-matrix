@@ -33,6 +33,30 @@ Four frozen cases are checked:
 The committed report is
 `04537757831823352150fe8fa621e0b0ec4bf43e869eae0bd39e64cf26f6e209`.
 
+## Pinned upstream tail-deletion probe
+
+The separate `upstream-tail-deletion-probe.mjs` runs the upstream
+`verifyReceiptFile` implementation itself at commit
+`f2efb313d113149c6ddc9656307a605a7619f8ea`. It generates three valid
+receipts, verifies the complete file, deletes only the final receipt, and
+verifies the surviving prefix. Both calls return `ok: true`; the reported
+total changes from three to two and neither report contains a break.
+
+That is not a defect in a verifier whose stated scope is the integrity of
+records supplied to it. It is a counterexample to the stronger claim that
+present-record integrity alone establishes that every expected terminal record
+exists. The independently written Python checker adds the separate external
+attempt commitment needed to evaluate that stronger property.
+
+To reproduce the upstream observation, check out the pinned commit in a clean
+copy of `https://github.com/11-11AI/execution-governance`, run `npm ci && npm
+run build`, then run this repository's probe with that checkout as the current
+directory:
+
+```text
+node /path/to/agent-security-verifier-matrix/experiments/audit-refusal-completeness-001/upstream-tail-deletion-probe.mjs > /tmp/upstream-tail-deletion.json && cmp /tmp/upstream-tail-deletion.json /path/to/agent-security-verifier-matrix/experiments/audit-refusal-completeness-001/artifacts/upstream-tail-deletion.json
+```
+
 ## One-command reproduction
 
 Requirements are Python 3.9 or newer and an `openssl` command with Ed25519

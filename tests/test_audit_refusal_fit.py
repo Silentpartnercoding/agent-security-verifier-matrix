@@ -109,6 +109,30 @@ class RefusalCheckerTests(unittest.TestCase):
 
 
 class RefusalExperimentTests(unittest.TestCase):
+    def test_upstream_tail_deletion_result_is_pinned(self) -> None:
+        artifact = EXPERIMENT / "artifacts" / "upstream-tail-deletion.json"
+        self.assertTrue(artifact.is_file(), "frozen upstream result is missing")
+        result = json.loads(
+            artifact.read_text(encoding="utf-8")
+        )
+
+        self.assertEqual(
+            result["upstream_commit"],
+            "f2efb313d113149c6ddc9656307a605a7619f8ea",
+        )
+        self.assertEqual(
+            result["full"],
+            {"breaks": [], "ok": True, "total": 3},
+        )
+        self.assertEqual(
+            result["tail_deleted"],
+            {"breaks": [], "ok": True, "total": 2},
+        )
+        self.assertEqual(
+            result["finding"],
+            "present-record verification does not establish terminal completeness",
+        )
+
     def test_frozen_cases_produce_the_expected_four_outcomes(self) -> None:
         report = run_experiment(EXPERIMENT)
         self.assertEqual(
