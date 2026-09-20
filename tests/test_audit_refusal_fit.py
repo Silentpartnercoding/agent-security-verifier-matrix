@@ -9,8 +9,10 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 import audit_refusal_fit
+import audit_refusal_fit.experiment as experiment_module
 from audit_refusal_fit import check_records, emit_records, run_experiment
 
 
@@ -392,6 +394,7 @@ class RefusalExperimentTests(unittest.TestCase):
             [
                 "upstream-full",
                 "upstream-tail-deleted",
+                "independent-complete",
                 "missing-terminal-refusal",
                 "missing-middle-deny",
                 "photocopy-three-one-root",
@@ -405,6 +408,34 @@ class RefusalExperimentTests(unittest.TestCase):
             ):
                 self.assertIn("outcome", row[column])
                 self.assertIn("verifier", row[column])
+
+    def test_result_table_is_derived_and_fails_closed_on_integrity_regression(self) -> None:
+        original_check_records = experiment_module.check_records
+
+        def check_with_false_integrity(*args, **kwargs):
+            result = original_check_records(*args, **kwargs)
+            if result.get("missing_attempt_ids") == ["attempt-refuse"]:
+                result = dict(result)
+                result["signature_verification_passed"] = False
+            return result
+
+        with mock.patch.object(
+            experiment_module,
+            "check_records",
+            side_effect=check_with_false_integrity,
+        ):
+            report = run_experiment(EXPERIMENT)
+
+        terminal = next(
+            row
+            for row in report["result_table"]
+            if row["case_id"] == "missing-terminal-refusal"
+        )
+        self.assertEqual(
+            terminal["present_record_integrity"]["outcome"], "violation"
+        )
+        self.assertFalse(report["result_table_conforms_to_frozen_expectation"])
+        self.assertFalse(report["all_expected"])
 
     def test_report_fails_closed_when_pinned_upstream_result_drifts(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

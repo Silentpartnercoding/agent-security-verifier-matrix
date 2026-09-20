@@ -115,9 +115,17 @@ def run_experiment(experiment_dir: Path) -> dict[str, Any]:
         root_count_results.append(root_result)
 
     result_by_id = {result["case_id"]: result for result in results}
+    root_by_id = {result["case_id"]: result for result in root_count_results}
 
     def cell(outcome: str, verifier: str) -> dict[str, str]:
         return {"outcome": outcome, "verifier": verifier}
+
+    def integrity_outcome(result: dict[str, Any]) -> str:
+        if result.get("signature_verification_passed") and result.get(
+            "chain_verification_passed"
+        ):
+            return "verified"
+        return "violation"
 
     result_table = [
         {
@@ -143,9 +151,21 @@ def run_experiment(experiment_dir: Path) -> dict[str, Any]:
             "declared_root_counting": cell("not-evaluated", "none"),
         },
         {
+            "case_id": "independent-complete",
+            "present_record_integrity": cell(
+                integrity_outcome(result_by_id["complete"]),
+                "audit_refusal_fit signature and chain checks",
+            ),
+            "expected_record_completeness": cell(
+                result_by_id["complete"]["outcome"],
+                "audit_refusal_fit external-attempt commitment",
+            ),
+            "declared_root_counting": cell("not-evaluated", "none"),
+        },
+        {
             "case_id": "missing-terminal-refusal",
             "present_record_integrity": cell(
-                "verified",
+                integrity_outcome(result_by_id["missing-terminal-refusal"]),
                 "audit_refusal_fit signature and chain checks",
             ),
             "expected_record_completeness": cell(
@@ -157,11 +177,7 @@ def run_experiment(experiment_dir: Path) -> dict[str, Any]:
         {
             "case_id": "missing-middle-deny",
             "present_record_integrity": cell(
-                "verified"
-                if result_by_id["missing-middle-deny"][
-                    "chain_verification_passed"
-                ]
-                else "violation",
+                integrity_outcome(result_by_id["missing-middle-deny"]),
                 "audit_refusal_fit signature and chain checks",
             ),
             "expected_record_completeness": cell(
@@ -173,16 +189,55 @@ def run_experiment(experiment_dir: Path) -> dict[str, Any]:
         {
             "case_id": "photocopy-three-one-root",
             "present_record_integrity": cell(
-                "verified",
+                integrity_outcome(root_by_id["photocopy-three-one-root"]),
                 "audit_refusal_fit declared-lineage signature and chain checks",
             ),
             "expected_record_completeness": cell("not-evaluated", "none"),
             "declared_root_counting": cell(
-                "1-declared-root-from-3-signed-records",
+                (
+                    "1-declared-root-from-3-signed-records"
+                    if root_by_id["photocopy-three-one-root"]["outcome"]
+                    == "counted"
+                    and root_by_id["photocopy-three-one-root"][
+                        "declared_root_count"
+                    ]
+                    == 1
+                    else root_by_id["photocopy-three-one-root"]["outcome"]
+                ),
                 "audit_refusal_fit count_declared_roots",
             ),
         },
     ]
+
+    expected_table_outcomes = {
+        "upstream-full": ("verified", "not-evaluated", "not-evaluated"),
+        "upstream-tail-deleted": (
+            "verified",
+            "not-evaluated",
+            "not-evaluated",
+        ),
+        "independent-complete": ("verified", "verified", "not-evaluated"),
+        "missing-terminal-refusal": (
+            "verified",
+            "violation",
+            "not-evaluated",
+        ),
+        "missing-middle-deny": ("violation", "violation", "not-evaluated"),
+        "photocopy-three-one-root": (
+            "verified",
+            "not-evaluated",
+            "1-declared-root-from-3-signed-records",
+        ),
+    }
+    result_table_conforms = all(
+        (
+            row["present_record_integrity"]["outcome"],
+            row["expected_record_completeness"]["outcome"],
+            row["declared_root_counting"]["outcome"],
+        )
+        == expected_table_outcomes[row["case_id"]]
+        for row in result_table
+    )
 
     root_expected = all(
         result["conforms_to_frozen_expectation"] for result in root_count_results
@@ -201,11 +256,13 @@ def run_experiment(experiment_dir: Path) -> dict[str, Any]:
         "case_count": len(results),
         "root_case_count": len(root_count_results),
         "upstream_conforms_to_frozen_expectation": upstream_conforms,
+        "result_table_conforms_to_frozen_expectation": result_table_conforms,
         "all_expected": all(
             result["conforms_to_frozen_expectation"] for result in results
         )
         and root_expected
-        and upstream_conforms,
+        and upstream_conforms
+        and result_table_conforms,
         "claim_boundary": {
             "established": [
                 "At the pinned upstream commit, verifyReceiptFile accepts a valid two-record prefix after a third terminal record is deleted.",

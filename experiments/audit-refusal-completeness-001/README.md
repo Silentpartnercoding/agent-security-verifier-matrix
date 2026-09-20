@@ -48,7 +48,7 @@ Declared lineage is sufficient to prevent record-count inflation; it is not
 proof that a declared root is true or causally independent.
 
 The committed combined report is
-`6c21e573a1977e30127017d994bbb7bdf06ba699f6514a511f278721f10024cc`.
+`2441c35b2e499c3ae2ee965fdba1464d18a32973ae60098c9686e574e686c845`.
 The separately frozen upstream probe is
 `5cb6451306300a1123e19d410e3256e735658cb310203826f0894d1445eb5b02`.
 
@@ -58,6 +58,7 @@ The separately frozen upstream probe is
 | --- | --- | --- | --- |
 | Upstream complete file | `verified` by pinned upstream `verifyReceiptFile` | not evaluated | not evaluated |
 | Upstream terminal deletion | `verified` by pinned upstream `verifyReceiptFile` | not evaluated | not evaluated |
+| Independent complete corpus | `verified` by independent signature and chain checks | `verified` by external-attempt commitment | not evaluated |
 | Independent terminal-refusal deletion | `verified` by independent signature and chain checks | `violation` by external-attempt commitment | not evaluated |
 | Independent interior deletion | `violation` by independent chain check | `violation` by external-attempt commitment | not evaluated |
 | Signed photocopy chain | `verified` by independent signature and chain checks | not evaluated | one declared root from three signed records |

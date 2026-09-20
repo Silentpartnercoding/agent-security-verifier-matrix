@@ -55,6 +55,21 @@
       }
     },
     {
+      "case_id": "independent-complete",
+      "declared_root_counting": {
+        "outcome": "not-evaluated",
+        "verifier": "none"
+      },
+      "expected_record_completeness": {
+        "outcome": "verified",
+        "verifier": "audit_refusal_fit external-attempt commitment"
+      },
+      "present_record_integrity": {
+        "outcome": "verified",
+        "verifier": "audit_refusal_fit signature and chain checks"
+      }
+    },
+    {
       "case_id": "missing-terminal-refusal",
       "declared_root_counting": {
         "outcome": "not-evaluated",
@@ -100,6 +115,7 @@
       }
     }
   ],
+  "result_table_conforms_to_frozen_expectation": true,
   "results": [
     {
       "case_id": "complete",
