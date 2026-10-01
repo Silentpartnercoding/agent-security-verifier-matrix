@@ -1,0 +1,14 @@
+{
+  "finding": "present-record verification does not establish terminal completeness",
+  "full": {
+    "breaks": [],
+    "ok": true,
+    "total": 3
+  },
+  "tail_deleted": {
+    "breaks": [],
+    "ok": true,
+    "total": 2
+  },
+  "upstream_commit": "f2efb313d113149c6ddc9656307a605a7619f8ea"
+}

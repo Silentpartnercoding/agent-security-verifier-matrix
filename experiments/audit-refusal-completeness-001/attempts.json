@@ -1,0 +1,40 @@
+{
+  "experiment": "AUDIT-REFUSAL-COMPLETENESS-001",
+  "commitment_profile": "external-attempt-manifest-v1",
+  "signing_profile": "test-vector-ed25519-v1",
+  "key_id": "audit-refusal-test-key-01",
+  "attempts": [
+    {
+      "attempt_id": "attempt-allow",
+      "tool": "inventory.read",
+      "arguments": {
+        "item": "alpha"
+      },
+      "expected_record_kind": "decision",
+      "expected_outcome": "allow",
+      "reason": "policy permits read"
+    },
+    {
+      "attempt_id": "attempt-deny",
+      "tool": "inventory.delete",
+      "arguments": {
+        "item": "alpha"
+      },
+      "expected_record_kind": "decision",
+      "expected_outcome": "deny",
+      "reason": "policy denies delete"
+    },
+    {
+      "attempt_id": "attempt-refuse",
+      "tool": "metrics.record",
+      "unencodable_arguments": {
+        "field": "value",
+        "kind": "non-finite-number",
+        "lexeme": "NaN"
+      },
+      "expected_record_kind": "refusal",
+      "expected_outcome": "unencodable",
+      "reason": "arguments have no canonical JSON representation"
+    }
+  ]
+}

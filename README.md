@@ -158,6 +158,23 @@ is not a C-001 live-presenter result, and the harness does not emit a complete
 accepted-result object. No external reproduction record is included in this
 correction release.
 
+## AUDIT refusal-record completeness experiment
+
+[`AUDIT-REFUSAL-COMPLETENESS-001`](experiments/audit-refusal-completeness-001/)
+implements the separately stated missing-record acceptance test: it emits
+signed decision and refusal records from frozen attempts, then requires a
+checker to reject a corpus whose final refusal record was silently removed.
+The remaining chain still verifies in that case; the external attempt
+commitment is what makes the missing terminal record observable. Its v1.1
+adversarial package also runs the actual pinned upstream verifier against a
+terminal deletion and adds a signed photocopy fixture where three descendant
+records count as one declared evidence root.
+
+This is a separately written implementation with no imported upstream code,
+not a clean-room implementation, external reproduction, or claim of
+organizational independence. Its README contains the frozen one-command run
+and exact claim boundary.
+
 ## License
 
 Apache-2.0. The referenced IETF drafts and upstream artifacts remain subject

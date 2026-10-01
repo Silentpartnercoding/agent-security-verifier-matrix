@@ -1,3 +1,5 @@
 __pycache__/
 *.py[cod]
 vendor/sources/
+**/vendor/sources/
+.worktrees/
