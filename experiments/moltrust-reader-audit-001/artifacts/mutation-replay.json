@@ -1,0 +1,832 @@
+{
+  "baseline_output_sha256": "505dfb71a640e7ef0eceb7f2d859e5cf08dac4c81bed80672135e0eb51b92130",
+  "python_implementation": "cpython",
+  "python_version": "3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]",
+  "reader_sha256": "82a316b548397b5bc3ff37d33285473f754e7b4c6bd1408660a18f2dc2154477",
+  "recipes": [
+    {
+      "affected": [
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "v0090b52048ca1f51",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "accept"
+        }
+      ],
+      "case": "baseline",
+      "exit": 0,
+      "mutated_input_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stderr_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stdout_sha256": "505dfb71a640e7ef0eceb7f2d859e5cf08dac4c81bed80672135e0eb51b92130",
+      "summary": "members=165 accept=82 reject=28 cannot-tell=55"
+    },
+    {
+      "affected": [],
+      "case": "omit_rejected_member",
+      "exit": 0,
+      "mutated_input_tree_sha256": "3a41716f76613ac33bca5c38e7079c9581ab0c2fce0fff84e774424474ce149e",
+      "output_lines": 164,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "77ab1d4ad8274cec260fbdc983d24508ec2ae2a8d95c11eee70308c108c02f79",
+      "stderr_sha256": "77ab1d4ad8274cec260fbdc983d24508ec2ae2a8d95c11eee70308c108c02f79",
+      "stdout_sha256": "c8944ab02913246dd639ee4949d2c40f9f1e774612c5a0853c64bc3d49e5298d",
+      "summary": "members=164 accept=82 reject=27 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "v0090b52048ca1f51",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "accept"
+        },
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "v0090b52048ca1f51",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "accept"
+        }
+      ],
+      "case": "duplicate_member_file",
+      "exit": 0,
+      "mutated_input_tree_sha256": "aae51e36603208ec239a98baf0cd74919679d3d25206e515cab58b74653d6c90",
+      "output_lines": 166,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "e44ff1669746131bdf3f6be936502ae667edc7637e83d7ef368f051a59a26441",
+      "stderr_sha256": "e44ff1669746131bdf3f6be936502ae667edc7637e83d7ef368f051a59a26441",
+      "stdout_sha256": "5feb114f242717307e594998c555a8e032ac597c4147b86e3aea27c83703407e",
+      "summary": "members=166 accept=83 reject=28 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "None",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "accept"
+        }
+      ],
+      "case": "missing_member_id",
+      "exit": 0,
+      "mutated_input_tree_sha256": "a42dd695fc5f6df215769c13fc5f4f498a069caf2a4fe59b6758e1f482c5f2f9",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stderr_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stdout_sha256": "8496364aaa4d9791158ca9966acbef148a51e01b008f41ef8ba8a906d067c805",
+      "summary": "members=165 accept=82 reject=28 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "v0e286b53de78162a",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "accept"
+        },
+        {
+          "ground": "row 8 (line 280): \"other-verdict foreclosed with discrimination demonstrated\" - c-fail: other-verdict foreclosed beside discrimination demonstrated",
+          "grounds": [
+            "row 8 (line 280): \"other-verdict foreclosed with discrimination demonstrated\" - c-fail: other-verdict foreclosed beside discrimination demonstrated"
+          ],
+          "id": "v0e286b53de78162a",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "reject"
+        }
+      ],
+      "case": "duplicate_member_id",
+      "exit": 0,
+      "mutated_input_tree_sha256": "876fad7e1970bd55755c263a93319acf431b69f194bfc6011ae982c78b8bb2c4",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stderr_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stdout_sha256": "3f2c3840b03d81896212cb482e0153591ab825ac883ac57938fb317d314a8327",
+      "summary": "members=165 accept=82 reject=28 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "v0090b52048ca1f51",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "accept"
+        }
+      ],
+      "case": "unknown_field",
+      "exit": 0,
+      "mutated_input_tree_sha256": "4d5f8f39cd715c85d7fb67efb68de97bccaf0f69ee3812a3d01a4e59faa2749a",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stderr_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stdout_sha256": "505dfb71a640e7ef0eceb7f2d859e5cf08dac4c81bed80672135e0eb51b92130",
+      "summary": "members=165 accept=82 reject=28 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "v0090b52048ca1f51",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "accept"
+        }
+      ],
+      "case": "unicode_description",
+      "exit": 0,
+      "mutated_input_tree_sha256": "fbf9c7fc225a4cf4517a566ab678b721eeb9722ab73f2aeedd51ccbc3a3ff1aa",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stderr_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stdout_sha256": "505dfb71a640e7ef0eceb7f2d859e5cf08dac4c81bed80672135e0eb51b92130",
+      "summary": "members=165 accept=82 reject=28 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "line 343: \"An aggregate is computed only over declared, exercised checks\" - reading R24: the roll-up gives exercised 1, the records give 0",
+          "grounds": [],
+          "id": "v0090b52048ca1f51",
+          "notes": [],
+          "open": [
+            "R24",
+            "R25"
+          ],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "cannot-tell"
+        }
+      ],
+      "case": "missing_state",
+      "exit": 0,
+      "mutated_input_tree_sha256": "b604978047a3296094300a107619ce8e1b14beb0c103942f315989297058b03f",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "f0196a93b33e18624edc3793eb10728023647274c86fb7eb463afdbb7eb97a84",
+      "stderr_sha256": "f0196a93b33e18624edc3793eb10728023647274c86fb7eb463afdbb7eb97a84",
+      "stdout_sha256": "73e5bff0519d62bcd4e84391bdab86c67d324e1fb3e8a93afa2d27143be28497",
+      "summary": "members=165 accept=81 reject=28 cannot-tell=56"
+    },
+    {
+      "affected": [
+        {
+          "ground": "line 343: \"An aggregate is computed only over declared, exercised checks\" - reading R24: the roll-up gives exercised 1, the records give 0",
+          "grounds": [],
+          "id": "v0090b52048ca1f51",
+          "notes": [],
+          "open": [
+            "R24",
+            "R25"
+          ],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "cannot-tell"
+        }
+      ],
+      "case": "unknown_state",
+      "exit": 0,
+      "mutated_input_tree_sha256": "cd83b741e400491b81c1e5d2428a3db8286be7f83188c8cb1ace3c8331132a6f",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "f0196a93b33e18624edc3793eb10728023647274c86fb7eb463afdbb7eb97a84",
+      "stderr_sha256": "f0196a93b33e18624edc3793eb10728023647274c86fb7eb463afdbb7eb97a84",
+      "stdout_sha256": "73e5bff0519d62bcd4e84391bdab86c67d324e1fb3e8a93afa2d27143be28497",
+      "summary": "members=165 accept=81 reject=28 cannot-tell=56"
+    },
+    {
+      "affected": [
+        {
+          "ground": "row 7 (line 279): \"a verdict state carrying a cause\" - c-pass is pass and carries a cause",
+          "grounds": [
+            "row 7 (line 279): \"a verdict state carrying a cause\" - c-pass is pass and carries a cause"
+          ],
+          "id": "v0090b52048ca1f51",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "reject"
+        }
+      ],
+      "case": "forbidden_cause",
+      "exit": 0,
+      "mutated_input_tree_sha256": "bfa1c6d87e94eeb07417438a1a9c6b2e22b3c95758c3839f481fa369e8e8bc1d",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "b716aec70a43d2f85e4a19f93525540acbbd8dc950b306a812aa9003f2930a34",
+      "stderr_sha256": "b716aec70a43d2f85e4a19f93525540acbbd8dc950b306a812aa9003f2930a34",
+      "stdout_sha256": "134a7780eeeaca4458373fbc634e07632abd1658c05fc82025b897c0c5134f7e",
+      "summary": "members=165 accept=81 reject=29 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "line 152: \"Five slots\" - reading R19: evidence e-1 lacks changed",
+          "grounds": [],
+          "id": "vf9b5623144960dda",
+          "notes": [],
+          "open": [
+            "R19"
+          ],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "cannot-tell"
+        }
+      ],
+      "case": "missing_evidence_changed",
+      "exit": 0,
+      "mutated_input_tree_sha256": "e13c40232425c2ca116f017c89105a733f1b1e2109c40f104ce1efd745920359",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "f0196a93b33e18624edc3793eb10728023647274c86fb7eb463afdbb7eb97a84",
+      "stderr_sha256": "f0196a93b33e18624edc3793eb10728023647274c86fb7eb463afdbb7eb97a84",
+      "stdout_sha256": "3eafaad2e4e1eee670bac2012cd1bc1aadcd8363b8eb531f56f5da3dbf9f5312",
+      "summary": "members=165 accept=81 reject=28 cannot-tell=56"
+    },
+    {
+      "affected": [
+        {
+          "ground": "row 12 (line 288): \"discrimination demonstrated citing an evidence object whose changed slot is the checker\" - c-fail: discrimination cites evidence e-1, whose changed slot is the checker rule",
+          "grounds": [
+            "row 12 (line 288): \"discrimination demonstrated citing an evidence object whose changed slot is the checker\" - c-fail: discrimination cites evidence e-1, whose changed slot is the checker rule"
+          ],
+          "id": "vf9b5623144960dda",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "reject"
+        }
+      ],
+      "case": "checker_changed",
+      "exit": 0,
+      "mutated_input_tree_sha256": "0776bc011ac38f7ce16246cc65eb0dc43b626979937ce52e52377af1dff96fa8",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "b716aec70a43d2f85e4a19f93525540acbbd8dc950b306a812aa9003f2930a34",
+      "stderr_sha256": "b716aec70a43d2f85e4a19f93525540acbbd8dc950b306a812aa9003f2930a34",
+      "stdout_sha256": "3929abca1000df3220b3fb082539b778b75ecbc54f9a9e50a9518b0eb57f7d62",
+      "summary": "members=165 accept=81 reject=29 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "line 421: \"\"Nothing\" is a permitted answer. Silence in that field is not\" - the roll-up does not say whether its checks could produce a negative verdict",
+          "grounds": [
+            "line 421: \"\"Nothing\" is a permitted answer. Silence in that field is not\" - the roll-up does not say whether its checks could produce a negative verdict"
+          ],
+          "id": "v0090b52048ca1f51",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "reject"
+        }
+      ],
+      "case": "missing_negative_field",
+      "exit": 0,
+      "mutated_input_tree_sha256": "88de32f851baa101a9d2a4160955d0f50ac0f1983aa9b36e1c88ca714f6918c4",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "b716aec70a43d2f85e4a19f93525540acbbd8dc950b306a812aa9003f2930a34",
+      "stderr_sha256": "b716aec70a43d2f85e4a19f93525540acbbd8dc950b306a812aa9003f2930a34",
+      "stdout_sha256": "dd65b7acd37b670638920f65350a6d7b996280543769bb64fc7c5ad326467348",
+      "summary": "members=165 accept=81 reject=29 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "line 343: \"An aggregate is computed only over declared, exercised checks\" - reading R24: the roll-up gives pass 999, the records give 1",
+          "grounds": [],
+          "id": "v0090b52048ca1f51",
+          "notes": [],
+          "open": [
+            "R24"
+          ],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "cannot-tell"
+        }
+      ],
+      "case": "wrong_state_total",
+      "exit": 0,
+      "mutated_input_tree_sha256": "417a313a2754c03235c18388620fa23d9f46df4bc4510a18de9327a3bd23ec58",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "f0196a93b33e18624edc3793eb10728023647274c86fb7eb463afdbb7eb97a84",
+      "stderr_sha256": "f0196a93b33e18624edc3793eb10728023647274c86fb7eb463afdbb7eb97a84",
+      "stdout_sha256": "ddb4b8703de179e6e104de9411885d10f50efe0dd987a8f9dc87b9cb7a92d912",
+      "summary": "members=165 accept=81 reject=28 cannot-tell=56"
+    },
+    {
+      "affected": [
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "v0090b52048ca1f51",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "accept"
+        }
+      ],
+      "case": "wrong_observation_total",
+      "exit": 0,
+      "mutated_input_tree_sha256": "4a9421bd9a8ef2687979ad211ef8b50f8b4333619719715ec23b59c48b29aca2",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stderr_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stdout_sha256": "505dfb71a640e7ef0eceb7f2d859e5cf08dac4c81bed80672135e0eb51b92130",
+      "summary": "members=165 accept=82 reject=28 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "v0090b52048ca1f51",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "accept"
+        }
+      ],
+      "case": "boolean_state_total",
+      "exit": 0,
+      "mutated_input_tree_sha256": "4bab601f95f19010d3cb7de6d4cade4b913bc1cd30562e17edccf1125918d9d3",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stderr_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stdout_sha256": "505dfb71a640e7ef0eceb7f2d859e5cf08dac4c81bed80672135e0eb51b92130",
+      "summary": "members=165 accept=82 reject=28 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "v0090b52048ca1f51",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "accept"
+        }
+      ],
+      "case": "float_leaf_count",
+      "exit": 0,
+      "mutated_input_tree_sha256": "79ac668512f4adb6930e3d9be9a15d9428cb51e39975653ad187ca4dbc665918",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stderr_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stdout_sha256": "505dfb71a640e7ef0eceb7f2d859e5cf08dac4c81bed80672135e0eb51b92130",
+      "summary": "members=165 accept=82 reject=28 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "v0090b52048ca1f51",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "accept"
+        }
+      ],
+      "case": "malformed_check_append",
+      "exit": 0,
+      "mutated_input_tree_sha256": "11b7b107bc1dbce6d80e176d143d1b952bb582eb7b395d1be49909ddf95b3f84",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stderr_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stdout_sha256": "505dfb71a640e7ef0eceb7f2d859e5cf08dac4c81bed80672135e0eb51b92130",
+      "summary": "members=165 accept=82 reject=28 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "v0090b52048ca1f51",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "accept"
+        }
+      ],
+      "case": "malformed_evidence_append",
+      "exit": 0,
+      "mutated_input_tree_sha256": "4114731153cf3bd13a9afebaef060827b359aa1dc661f9465e61ffec050a4248",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stderr_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stdout_sha256": "505dfb71a640e7ef0eceb7f2d859e5cf08dac4c81bed80672135e0eb51b92130",
+      "summary": "members=165 accept=82 reject=28 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "v1032eb59a7cdb30f",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 0
+          },
+          "verdict": "accept"
+        }
+      ],
+      "case": "duplicate_check_id",
+      "exit": 0,
+      "mutated_input_tree_sha256": "2715811aaf9d1ccfc79bf8918fa89b3290d094b817171a61bb7892a07737ef54",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stderr_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stdout_sha256": "505dfb71a640e7ef0eceb7f2d859e5cf08dac4c81bed80672135e0eb51b92130",
+      "summary": "members=165 accept=82 reject=28 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "vf9b5623144960dda",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "accept"
+        }
+      ],
+      "case": "reverse_check_records",
+      "exit": 0,
+      "mutated_input_tree_sha256": "89208d35f75dbaf9836b329fd651525535211bcf10f95968db29b2e9ba45f072",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stderr_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stdout_sha256": "505dfb71a640e7ef0eceb7f2d859e5cf08dac4c81bed80672135e0eb51b92130",
+      "summary": "members=165 accept=82 reject=28 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "vf9b5623144960dda",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "accept"
+        }
+      ],
+      "case": "duplicate_evidence_append",
+      "exit": 0,
+      "mutated_input_tree_sha256": "176ad54a773f64435fc4294721b70109175605bb1b7a00dd3a9d9963e05e1a5d",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stderr_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stdout_sha256": "505dfb71a640e7ef0eceb7f2d859e5cf08dac4c81bed80672135e0eb51b92130",
+      "summary": "members=165 accept=82 reject=28 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "row 12 (line 288): \"discrimination demonstrated citing an evidence object whose changed slot is the checker\" - c-fail: discrimination cites evidence e-1, whose changed slot is the checker rule",
+          "grounds": [
+            "row 12 (line 288): \"discrimination demonstrated citing an evidence object whose changed slot is the checker\" - c-fail: discrimination cites evidence e-1, whose changed slot is the checker rule"
+          ],
+          "id": "vf9b5623144960dda",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "reject"
+        }
+      ],
+      "case": "duplicate_evidence_prepend",
+      "exit": 0,
+      "mutated_input_tree_sha256": "4003ed3904b6f2500d7c5d823c236b6c693dd440b8eef16a8bc4be5eb4c565fd",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "b716aec70a43d2f85e4a19f93525540acbbd8dc950b306a812aa9003f2930a34",
+      "stderr_sha256": "b716aec70a43d2f85e4a19f93525540acbbd8dc950b306a812aa9003f2930a34",
+      "stdout_sha256": "3929abca1000df3220b3fb082539b778b75ecbc54f9a9e50a9518b0eb57f7d62",
+      "summary": "members=165 accept=81 reject=29 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "row 12 (line 288): \"discrimination demonstrated citing an evidence object whose changed slot is the checker\" - c-fail: discrimination cites evidence e-1, whose changed slot is the checker rule",
+          "grounds": [
+            "row 12 (line 288): \"discrimination demonstrated citing an evidence object whose changed slot is the checker\" - c-fail: discrimination cites evidence e-1, whose changed slot is the checker rule"
+          ],
+          "id": "vf9b5623144960dda",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "reject"
+        }
+      ],
+      "case": "duplicate_evidence_reverse",
+      "exit": 0,
+      "mutated_input_tree_sha256": "4003ed3904b6f2500d7c5d823c236b6c693dd440b8eef16a8bc4be5eb4c565fd",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "b716aec70a43d2f85e4a19f93525540acbbd8dc950b306a812aa9003f2930a34",
+      "stderr_sha256": "b716aec70a43d2f85e4a19f93525540acbbd8dc950b306a812aa9003f2930a34",
+      "stdout_sha256": "3929abca1000df3220b3fb082539b778b75ecbc54f9a9e50a9518b0eb57f7d62",
+      "summary": "members=165 accept=81 reject=29 cannot-tell=55"
+    },
+    {
+      "affected": [],
+      "case": "unhashable_evidence_id",
+      "exit": 1,
+      "mutated_input_tree_sha256": "20ab0baf320e3c28a87646492e8555819e91090ed7b7a24eb37b642f38f39c0a",
+      "output_lines": 160,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "a790f6026ac9b5cd3a8e36e887ab173a684857eaeb6e3e384d3e5c1ec22b2fdf",
+      "stderr_sha256": "9e923504299c4655dbf3692363df622422c45a352e8a6ab47fdd6ef8cc45939b",
+      "stdout_sha256": "35ee25b88ebc93bb181f4a4765faded8c340e6a167b90ea3d09fe4abe8e9dcb0",
+      "summary": "TypeError: unhashable type: 'list'"
+    },
+    {
+      "affected": [],
+      "case": "integer_observations",
+      "exit": 1,
+      "mutated_input_tree_sha256": "dad8b8ab8341c8e4288f5f9ee964630e6510e8207c46b9e089ccecc634a40dab",
+      "output_lines": 160,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "07a97147690aabeadc64d6a24732ac73886973f0ee9b37280ff2be473fcd95af",
+      "stderr_sha256": "188d31c41dab61bf89d3515fbe2278b577e6c5cc642daec968e791de95a10cf1",
+      "stdout_sha256": "35ee25b88ebc93bb181f4a4765faded8c340e6a167b90ea3d09fe4abe8e9dcb0",
+      "summary": "TypeError: 'int' object is not iterable"
+    },
+    {
+      "affected": [],
+      "case": "list_negative_kind",
+      "exit": 1,
+      "mutated_input_tree_sha256": "c5c3ef76fdadc5ca54c29396c9e212f01a5d229665bc86698644d4152b0b16fa",
+      "output_lines": 0,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "7655b5d0f898973964129ea5e6af6e3433aef9f512d57cf0da1a9d53322a0181",
+      "stderr_sha256": "78640b29b2e6233582098a445cf68c3044746c9591857dbb63444e3ed7856cc0",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": "TypeError: unhashable type: 'list'"
+    },
+    {
+      "affected": [
+        {
+          "ground": "row 13 (line 294): \"other-verdict demonstrated citing an evidence object whose moved does not contain the verdict\" - c-fail: evidence e-1 recomputes moved as [\"fired-rule list\"], without the verdict",
+          "grounds": [
+            "row 13 (line 294): \"other-verdict demonstrated citing an evidence object whose moved does not contain the verdict\" - c-fail: evidence e-1 recomputes moved as [\"fired-rule list\"], without the verdict"
+          ],
+          "id": "vf9b5623144960dda",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "reject"
+        }
+      ],
+      "case": "same_digest_changed_verdict",
+      "exit": 0,
+      "mutated_input_tree_sha256": "7592461b4bbc977909b4bca61c21f91e9aaf878b62d8eca360469d014304891d",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "b716aec70a43d2f85e4a19f93525540acbbd8dc950b306a812aa9003f2930a34",
+      "stderr_sha256": "b716aec70a43d2f85e4a19f93525540acbbd8dc950b306a812aa9003f2930a34",
+      "stdout_sha256": "2e0ecddba5eacb3cd414d594c806af79800ce24777fbfa89195eb9e7529f237e",
+      "summary": "members=165 accept=81 reject=29 cannot-tell=55"
+    },
+    {
+      "affected": [],
+      "case": "invalid_json",
+      "exit": 1,
+      "mutated_input_tree_sha256": "c9c1f85210f4c65aaa58715d51f0185a9b06fe37e9919004acbd4d360adac0ef",
+      "output_lines": 0,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "8655b72d3480a1be1ec8a1a99db315cf4f512ff05c595d25529c272f968fe129",
+      "stderr_sha256": "47c908305ebd105c86e92da72a16cb2dafb5991f44be9ab31df6a977efbfd32e",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": "json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+    },
+    {
+      "affected": [],
+      "case": "top_level_array",
+      "exit": 1,
+      "mutated_input_tree_sha256": "fb413e3099c05d8198f628a64537157a76080c3ab769e5f450e2789fde966fe2",
+      "output_lines": 0,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "c67f8143076186ed767e88309360eac41f5e61ab6db7798e4b6ece2916ee0c2f",
+      "stderr_sha256": "5ebd81da2e324c892835583472aa42b545810c6319ad96d85a7d80c6b062ac00",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": "AttributeError: 'list' object has no attribute 'get'"
+    },
+    {
+      "affected": [],
+      "case": "uppercase_extension",
+      "exit": 0,
+      "mutated_input_tree_sha256": "71533b587d9c3932a84284156d991bedd98a8bfb53e75fbc09ad2d4f8385a31c",
+      "output_lines": 164,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "77ab1d4ad8274cec260fbdc983d24508ec2ae2a8d95c11eee70308c108c02f79",
+      "stderr_sha256": "77ab1d4ad8274cec260fbdc983d24508ec2ae2a8d95c11eee70308c108c02f79",
+      "stdout_sha256": "c8944ab02913246dd639ee4949d2c40f9f1e774612c5a0853c64bc3d49e5298d",
+      "summary": "members=164 accept=82 reject=27 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "row 8 (line 280): \"other-verdict foreclosed with discrimination demonstrated\" - c-fail: other-verdict foreclosed beside discrimination demonstrated",
+          "grounds": [
+            "row 8 (line 280): \"other-verdict foreclosed with discrimination demonstrated\" - c-fail: other-verdict foreclosed beside discrimination demonstrated"
+          ],
+          "id": "v0e286b53de78162a",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "reject"
+        }
+      ],
+      "case": "rename_file",
+      "exit": 0,
+      "mutated_input_tree_sha256": "a0370d67cb9f2d23eb89e9a36bd081848eb180629df6202efb39d3cfec8a5789",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stderr_sha256": "38a832438b6b4f961e04ddbd7fc04747059f14a8b1b277cb47b0abc7accafadb",
+      "stdout_sha256": "505dfb71a640e7ef0eceb7f2d859e5cf08dac4c81bed80672135e0eb51b92130",
+      "summary": "members=165 accept=82 reject=28 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "v0e286b53de78162a",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "accept"
+        }
+      ],
+      "case": "replace_reject_by_accept_same_id",
+      "exit": 0,
+      "mutated_input_tree_sha256": "f1df38262b2542fe33dbdecb005edb7e5c61478d7f4f27ed6229c270787dced6",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "900c4db3cd79312e3c935fc83fa2f2b7ea7ff0664c5f3a9e205d7f5ba6d3211a",
+      "stderr_sha256": "900c4db3cd79312e3c935fc83fa2f2b7ea7ff0664c5f3a9e205d7f5ba6d3211a",
+      "stdout_sha256": "806af32111aee20e16bc70b610a0d10fcd48a026c9e18aae0bc266e22f914244",
+      "summary": "members=165 accept=83 reject=27 cannot-tell=55"
+    },
+    {
+      "affected": [
+        {
+          "ground": "",
+          "grounds": [],
+          "id": "v0e286b53de78162a",
+          "notes": [],
+          "open": [],
+          "recount": {
+            "carried": 0,
+            "referenced": 2
+          },
+          "verdict": "accept"
+        }
+      ],
+      "case": "duplicate_json_key",
+      "exit": 0,
+      "mutated_input_tree_sha256": "0cd9bcace9f62aa881c1e041c94c4383a1df1be68b22db6caccbdee3c37b5269",
+      "output_lines": 165,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "900c4db3cd79312e3c935fc83fa2f2b7ea7ff0664c5f3a9e205d7f5ba6d3211a",
+      "stderr_sha256": "900c4db3cd79312e3c935fc83fa2f2b7ea7ff0664c5f3a9e205d7f5ba6d3211a",
+      "stdout_sha256": "806af32111aee20e16bc70b610a0d10fcd48a026c9e18aae0bc266e22f914244",
+      "summary": "members=165 accept=83 reject=27 cannot-tell=55"
+    },
+    {
+      "affected": [],
+      "case": "empty_directory",
+      "exit": 0,
+      "mutated_input_tree_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_lines": 0,
+      "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+      "stderr_normalized_sha256": "53e33cab7a2978ff80cffc02faa1acc52516715c7049360524a49d638bc3a743",
+      "stderr_sha256": "53e33cab7a2978ff80cffc02faa1acc52516715c7049360524a49d638bc3a743",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary": "members=0 accept=0 reject=0 cannot-tell=0"
+    }
+  ],
+  "source_commit": "6d8ee54b01d20a819869ceb9fcea096d59251f8c",
+  "source_members_tree_sha256": "aa9ac43e01b53f61adf572a8c3db8c5d7d058c940818a86ad5cd80b6c960be58",
+  "specification_sha256": "35625d73baa56f2705bb2fffe7e2a4075293fa6df075bc61bdd349a5d3618d9d"
+}

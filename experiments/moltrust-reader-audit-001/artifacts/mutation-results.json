@@ -1,0 +1,641 @@
+[
+  {
+    "case": "baseline",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/baseline",
+    "expected": "165 members; recorded output identical",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=82 reject=28 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "v0090b52048ca1f51",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "accept"
+      }
+    ]
+  },
+  {
+    "case": "omit_rejected_member",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/omit_rejected_member",
+    "expected": "No documented corpus-manifest enforcement; count should fall",
+    "exit": 0,
+    "output_lines": 164,
+    "summary": "members=164 accept=82 reject=27 cannot-tell=55",
+    "affected": []
+  },
+  {
+    "case": "duplicate_member_file",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/duplicate_member_file",
+    "expected": "No documented uniqueness validation; duplicate output must be visible",
+    "exit": 0,
+    "output_lines": 166,
+    "summary": "members=166 accept=83 reject=28 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "v0090b52048ca1f51",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "accept"
+      },
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "v0090b52048ca1f51",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "accept"
+      }
+    ]
+  },
+  {
+    "case": "missing_member_id",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/missing_member_id",
+    "expected": "Wire schema unspecified; ideally report malformed identifier",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=82 reject=28 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "None",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "accept"
+      }
+    ]
+  },
+  {
+    "case": "duplicate_member_id",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/duplicate_member_id",
+    "expected": "Wire schema unspecified; ideally flag ambiguous identifier",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=82 reject=28 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "v0e286b53de78162a",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "accept"
+      },
+      {
+        "ground": "row 8 (line 280): \"other-verdict foreclosed with discrimination demonstrated\" - c-fail: other-verdict foreclosed beside discrimination demonstrated",
+        "grounds": [
+          "row 8 (line 280): \"other-verdict foreclosed with discrimination demonstrated\" - c-fail: other-verdict foreclosed beside discrimination demonstrated"
+        ],
+        "id": "v0e286b53de78162a",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "reject"
+      }
+    ]
+  },
+  {
+    "case": "unknown_field",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/unknown_field",
+    "expected": "Unchanged; no rule reads unknown field",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=82 reject=28 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "v0090b52048ca1f51",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "accept"
+      }
+    ]
+  },
+  {
+    "case": "unicode_description",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/unicode_description",
+    "expected": "Unchanged; description explicitly not read",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=82 reject=28 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "v0090b52048ca1f51",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "accept"
+      }
+    ]
+  },
+  {
+    "case": "missing_state",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/missing_state",
+    "expected": "cannot-tell R25",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=81 reject=28 cannot-tell=56",
+    "affected": [
+      {
+        "ground": "line 343: \"An aggregate is computed only over declared, exercised checks\" - reading R24: the roll-up gives exercised 1, the records give 0",
+        "grounds": [],
+        "id": "v0090b52048ca1f51",
+        "notes": [],
+        "open": [
+          "R24",
+          "R25"
+        ],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "cannot-tell"
+      }
+    ]
+  },
+  {
+    "case": "unknown_state",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/unknown_state",
+    "expected": "cannot-tell R25",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=81 reject=28 cannot-tell=56",
+    "affected": [
+      {
+        "ground": "line 343: \"An aggregate is computed only over declared, exercised checks\" - reading R24: the roll-up gives exercised 1, the records give 0",
+        "grounds": [],
+        "id": "v0090b52048ca1f51",
+        "notes": [],
+        "open": [
+          "R24",
+          "R25"
+        ],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "cannot-tell"
+      }
+    ]
+  },
+  {
+    "case": "forbidden_cause",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/forbidden_cause",
+    "expected": "reject row 7",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=81 reject=29 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "row 7 (line 279): \"a verdict state carrying a cause\" - c-pass is pass and carries a cause",
+        "grounds": [
+          "row 7 (line 279): \"a verdict state carrying a cause\" - c-pass is pass and carries a cause"
+        ],
+        "id": "v0090b52048ca1f51",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "reject"
+      }
+    ]
+  },
+  {
+    "case": "missing_evidence_changed",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/missing_evidence_changed",
+    "expected": "cannot-tell R19",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=81 reject=28 cannot-tell=56",
+    "affected": [
+      {
+        "ground": "line 152: \"Five slots\" - reading R19: evidence e-1 lacks changed",
+        "grounds": [],
+        "id": "vf9b5623144960dda",
+        "notes": [],
+        "open": [
+          "R19"
+        ],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "cannot-tell"
+      }
+    ]
+  },
+  {
+    "case": "checker_changed",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/checker_changed",
+    "expected": "reject row 12",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=81 reject=29 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "row 12 (line 288): \"discrimination demonstrated citing an evidence object whose changed slot is the checker\" - c-fail: discrimination cites evidence e-1, whose changed slot is the checker rule",
+        "grounds": [
+          "row 12 (line 288): \"discrimination demonstrated citing an evidence object whose changed slot is the checker\" - c-fail: discrimination cites evidence e-1, whose changed slot is the checker rule"
+        ],
+        "id": "vf9b5623144960dda",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "reject"
+      }
+    ]
+  },
+  {
+    "case": "missing_negative_field",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/missing_negative_field",
+    "expected": "reject silence",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=81 reject=29 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "line 421: \"\"Nothing\" is a permitted answer. Silence in that field is not\" - the roll-up does not say whether its checks could produce a negative verdict",
+        "grounds": [
+          "line 421: \"\"Nothing\" is a permitted answer. Silence in that field is not\" - the roll-up does not say whether its checks could produce a negative verdict"
+        ],
+        "id": "v0090b52048ca1f51",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "reject"
+      }
+    ]
+  },
+  {
+    "case": "wrong_state_total",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/wrong_state_total",
+    "expected": "cannot-tell R24",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=81 reject=28 cannot-tell=56",
+    "affected": [
+      {
+        "ground": "line 343: \"An aggregate is computed only over declared, exercised checks\" - reading R24: the roll-up gives pass 999, the records give 1",
+        "grounds": [],
+        "id": "v0090b52048ca1f51",
+        "notes": [],
+        "open": [
+          "R24"
+        ],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "cannot-tell"
+      }
+    ]
+  },
+  {
+    "case": "wrong_observation_total",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/wrong_observation_total",
+    "expected": "Unchanged, documented R24 nonjudgment",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=82 reject=28 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "v0090b52048ca1f51",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "accept"
+      }
+    ]
+  },
+  {
+    "case": "boolean_state_total",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/boolean_state_total",
+    "expected": "Count type unspecified; ideally distinguish boolean from count",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=82 reject=28 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "v0090b52048ca1f51",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "accept"
+      }
+    ]
+  },
+  {
+    "case": "float_leaf_count",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/float_leaf_count",
+    "expected": "Count type unspecified; compare numeric count",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=82 reject=28 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "v0090b52048ca1f51",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "accept"
+      }
+    ]
+  },
+  {
+    "case": "malformed_check_append",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/malformed_check_append",
+    "expected": "Wire schema unspecified; ideally cannot-tell, not silent discard",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=82 reject=28 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "v0090b52048ca1f51",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "accept"
+      }
+    ]
+  },
+  {
+    "case": "malformed_evidence_append",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/malformed_evidence_append",
+    "expected": "Wire schema unspecified; ideally cannot-tell, not silent discard",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=82 reject=28 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "v0090b52048ca1f51",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "accept"
+      }
+    ]
+  },
+  {
+    "case": "duplicate_check_id",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/duplicate_check_id",
+    "expected": "Uniqueness unspecified; ideally detect ambiguous check identity",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=82 reject=28 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "v1032eb59a7cdb30f",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 0
+        },
+        "verdict": "accept"
+      }
+    ]
+  },
+  {
+    "case": "reverse_check_records",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/reverse_check_records",
+    "expected": "Identical result, counts and rules order-independent",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=82 reject=28 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "vf9b5623144960dda",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "accept"
+      }
+    ]
+  },
+  {
+    "case": "duplicate_evidence_append",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/duplicate_evidence_append",
+    "expected": "Contradictory same-id evidence should be surfaced, not silently discarded",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=82 reject=28 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "vf9b5623144960dda",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "accept"
+      }
+    ]
+  },
+  {
+    "case": "duplicate_evidence_prepend",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/duplicate_evidence_prepend",
+    "expected": "Same contradiction as append; should not depend on order",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=81 reject=29 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "row 12 (line 288): \"discrimination demonstrated citing an evidence object whose changed slot is the checker\" - c-fail: discrimination cites evidence e-1, whose changed slot is the checker rule",
+        "grounds": [
+          "row 12 (line 288): \"discrimination demonstrated citing an evidence object whose changed slot is the checker\" - c-fail: discrimination cites evidence e-1, whose changed slot is the checker rule"
+        ],
+        "id": "vf9b5623144960dda",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "reject"
+      }
+    ]
+  },
+  {
+    "case": "duplicate_evidence_reverse",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/duplicate_evidence_reverse",
+    "expected": "Reversing identical pair should preserve outcome",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=81 reject=29 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "row 12 (line 288): \"discrimination demonstrated citing an evidence object whose changed slot is the checker\" - c-fail: discrimination cites evidence e-1, whose changed slot is the checker rule",
+        "grounds": [
+          "row 12 (line 288): \"discrimination demonstrated citing an evidence object whose changed slot is the checker\" - c-fail: discrimination cites evidence e-1, whose changed slot is the checker rule"
+        ],
+        "id": "vf9b5623144960dda",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "reject"
+      }
+    ]
+  },
+  {
+    "case": "unhashable_evidence_id",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/unhashable_evidence_id",
+    "expected": "Malformed input should produce diagnostic",
+    "exit": 1,
+    "output_lines": 160,
+    "summary": "TypeError: unhashable type: 'list'",
+    "affected": []
+  },
+  {
+    "case": "integer_observations",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/integer_observations",
+    "expected": "R19 says non-pair observations cannot-tell",
+    "exit": 1,
+    "output_lines": 160,
+    "summary": "TypeError: 'int' object is not iterable",
+    "affected": []
+  },
+  {
+    "case": "list_negative_kind",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/list_negative_kind",
+    "expected": "R20 says unknown kind cannot-tell",
+    "exit": 1,
+    "output_lines": 0,
+    "summary": "TypeError: unhashable type: 'list'",
+    "affected": []
+  },
+  {
+    "case": "same_digest_changed_verdict",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/same_digest_changed_verdict",
+    "expected": "R10 explicitly does not authenticate contents; row13 now rejects",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=81 reject=29 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "row 13 (line 294): \"other-verdict demonstrated citing an evidence object whose moved does not contain the verdict\" - c-fail: evidence e-1 recomputes moved as [\"fired-rule list\"], without the verdict",
+        "grounds": [
+          "row 13 (line 294): \"other-verdict demonstrated citing an evidence object whose moved does not contain the verdict\" - c-fail: evidence e-1 recomputes moved as [\"fired-rule list\"], without the verdict"
+        ],
+        "id": "vf9b5623144960dda",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "reject"
+      }
+    ]
+  },
+  {
+    "case": "invalid_json",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/invalid_json",
+    "expected": "Parse failure; no completed summary",
+    "exit": 1,
+    "output_lines": 0,
+    "summary": "json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+    "affected": []
+  },
+  {
+    "case": "top_level_array",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/top_level_array",
+    "expected": "Malformed member diagnostic",
+    "exit": 1,
+    "output_lines": 0,
+    "summary": "AttributeError: 'list' object has no attribute 'get'",
+    "affected": []
+  },
+  {
+    "case": "uppercase_extension",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/uppercase_extension",
+    "expected": "Only .json supported by implementation; omitted file should be visible",
+    "exit": 0,
+    "output_lines": 164,
+    "summary": "members=164 accept=82 reject=27 cannot-tell=55",
+    "affected": []
+  }
+]

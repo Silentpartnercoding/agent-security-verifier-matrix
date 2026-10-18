@@ -1,0 +1,3568 @@
+{
+  "sourceCommit": "33d545104ff2f8c124cff465c96c013eeb809156",
+  "sourceTag": "v0.18.1",
+  "corpusDigest": "f9e58e62f89b0700c94bfae289f73517439008ebd3b655e3d85057b2ec7668fc",
+  "corpusDigestAlgorithm": "SHA-256 of raw member file bytes concatenated by lexicographically sorted member ID",
+  "corpusMemberCount": 269,
+  "corpusCounts": {
+    "accept": 173,
+    "reject": 96
+  },
+  "selection": "subjectType == report AND every cited requirements[] identifier has manifest requirements[].status == agreed",
+  "selectedMemberCount": 165,
+  "selectedCounts": {
+    "accept": 124,
+    "reject": 41
+  },
+  "selectedRawMemberDigest": "18c129cbca3bf086159ee98a9e4720d71c5152a30fd0657159fe7d2848f8972a",
+  "groundCounts": {
+    "W3C-R-008": 1,
+    "W3C-R-013": 4,
+    "W3C-R-017": 1,
+    "W3C-R-027": 1,
+    "W3C-R-019": 1,
+    "W3C-R-015": 5,
+    "W3C-R-023": 4,
+    "W3C-R-025": 1,
+    "W3C-R-018": 1,
+    "W3C-R-020": 3,
+    "W3C-R-009": 1,
+    "W3C-R-014": 1,
+    "W3C-R-005": 1,
+    "W3C-R-006": 1,
+    "W3C-R-016": 1,
+    "W3C-R-003": 1,
+    "W3C-R-021": 1,
+    "W3C-R-024": 1,
+    "W3C-R-029": 2,
+    "W3C-R-001": 1,
+    "W3C-R-010": 1,
+    "W3C-R-026": 1,
+    "W3C-R-012": 1,
+    "W3C-R-028": 1,
+    "W3C-R-007": 1,
+    "W3C-R-004": 1,
+    "W3C-R-011": 1,
+    "W3C-R-002": 1
+  },
+  "agreedRequirements": [
+    {
+      "id": "W3C-R-001",
+      "row": "1",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 271,
+      "sentence": "a non-verdict state with no cause",
+      "sentenceDigest": "87893835a3e134511a7e36cfac22625860d0266aafdf00c0458be7e98f62db60",
+      "specVersion": "0.1",
+      "class": "consistency",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-002",
+      "row": "2",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 272,
+      "sentence": "void with not_applicable, out_of_scope or withheld",
+      "sentenceDigest": "05fb9274ff0859d9374173449c90b3498422210ac295321a8d4357816428b3d8",
+      "specVersion": "0.1",
+      "class": "consistency",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-003",
+      "row": "3",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 273,
+      "sentence": "not-exercised with integrity-failure",
+      "sentenceDigest": "587e9bc351daaed25ce2f9a832d39574a3ff48b85d5c1555d919b92351507f19",
+      "specVersion": "0.1",
+      "class": "consistency",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-004",
+      "row": "4",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 274,
+      "sentence": "cause confinement-failed-during-check with any\n      state but void",
+      "sentenceDigest": "fa7afadb72dcc56f0db321ee4dfec2c82482c37db122dfcff6006d18485dc01f",
+      "specVersion": "0.1",
+      "class": "consistency",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-005",
+      "row": "5",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 276,
+      "sentence": "a declared exclusion with any state but\n      not-exercised",
+      "sentenceDigest": "2824f710983d7d640372d8890ca3e80ead5d9a668f78472ef7f31a507a31558e",
+      "specVersion": "0.1",
+      "class": "consistency",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-006",
+      "row": "6",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 278,
+      "sentence": "a non-verdict state carrying either qualifier",
+      "sentenceDigest": "4ef6f3c9383ae4543122f50bbba43f8dd94dbb68a496eb8786d1000928f9b55d",
+      "specVersion": "0.1",
+      "class": "consistency",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-007",
+      "row": "7",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 279,
+      "sentence": "a verdict state carrying a cause",
+      "sentenceDigest": "831dc816ea23fa26b14116513c67fe62b8d8b04baf22b57faf834c4f01a0d525",
+      "specVersion": "0.1",
+      "class": "consistency",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-008",
+      "row": "8",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 280,
+      "sentence": "other-verdict foreclosed with discrimination\n      demonstrated",
+      "sentenceDigest": "971c3d8c232fe9dca0fa8fce74c703ff9c5006fc070897c4997e8a8ab3e8ba8e",
+      "specVersion": "0.1",
+      "class": "consistency",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-009",
+      "row": "9",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 282,
+      "sentence": "discrimination demonstrated with other-verdict\n      unknown or possible-not-demonstrated",
+      "sentenceDigest": "4cb5ee4206feba7aee42cc090174db197d7d0f4f7e38cb317a14f9e7241cf531",
+      "specVersion": "0.1",
+      "class": "consistency",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-010",
+      "row": "10",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 284,
+      "sentence": "foreclosed without a constraint set and a domain",
+      "sentenceDigest": "139eba59f4dc4345b39be809c1a65bec3d30efc5155f9f2919bf047361812026",
+      "specVersion": "0.1",
+      "class": "consistency",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-011",
+      "row": "11",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 286,
+      "sentence": "an asserted value without its evidence reference,\n      on either field, foreclosed included",
+      "sentenceDigest": "82c27c355fd56b7dde71a7880b89c451b36db62318e64ea867930b34e7546a0e",
+      "specVersion": "0.1",
+      "class": "consistency",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-012",
+      "row": "12",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 288,
+      "sentence": "discrimination demonstrated citing an evidence\n      object whose changed slot is the checker",
+      "sentenceDigest": "6931e045470934031a4e375a0f582a4b62d8ab7b7d915a7926a15f76b10abe43",
+      "specVersion": "0.1",
+      "class": "consistency",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-025",
+      "row": "13",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 294,
+      "sentence": "13 other-verdict demonstrated citing an evidence object whose\n      moved does not contain the verdict",
+      "sentenceDigest": "75f4aaa3f705171ab081baa9298e90719667a68cf006ff7771b530f6ea16750c",
+      "specVersion": "0.1",
+      "class": "evidence",
+      "status": "agreed",
+      "resolvedRead": true
+    },
+    {
+      "id": "W3C-R-026",
+      "row": "14",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 296,
+      "sentence": "14 moved asserted on an evidence object that neither carries both\n      observations nor references them with digests",
+      "sentenceDigest": "2f6eb3b103bf0ce109d82c0653d0a755ca165ac33b2f53d7cf8f25d332fada2f",
+      "specVersion": "0.1",
+      "class": "form",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-019",
+      "row": "1.2 closed vocabulary",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 110,
+      "sentence": "Free text is refused in place of a disposition",
+      "sentenceDigest": "c0c29df61ecbc5f4839a07d9f2c9abce4a4c9e945a9cbac2914d7fc12da41f80",
+      "specVersion": "0.1",
+      "class": "form",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-024",
+      "row": "1.3 delta-related pair",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 143,
+      "sentence": "Unrelated pass and fail\nrecords in one corpus do not qualify",
+      "sentenceDigest": "5a597f4b8de5f8310cdd69fdf1c2938fcf2fa68f4a5345ba16e0a7c547402ee8",
+      "specVersion": "0.1",
+      "class": "consistency",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-016",
+      "row": "2 recomputed moved contained",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 164,
+      "sentence": "an object whose moved\nis not contained in its declared compared set is rejected",
+      "sentenceDigest": "913913ec0dc014c2413f1d1f238776b12f4d595d74544fcf025d081edd5b809f",
+      "specVersion": "0.1",
+      "class": "evidence",
+      "status": "agreed",
+      "resolvedRead": true
+    },
+    {
+      "id": "W3C-R-021",
+      "row": "2 recomputed moved",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 163,
+      "sentence": "moved is recomputed, not declared",
+      "sentenceDigest": "67d001c7a474766fe2f79b25a28d4dc6b21884cc1ccadf862fd7c0b65d6de481",
+      "specVersion": "0.1",
+      "class": "evidence",
+      "status": "agreed",
+      "resolvedRead": true
+    },
+    {
+      "id": "W3C-R-027",
+      "row": "2 arity recomputed",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 178,
+      "sentence": "arity is recomputed from the delta",
+      "sentenceDigest": "7ad91a2f2b6ce5f03526ed80e80431eaa127466c5af034a9c0c4c618ed3fe438",
+      "specVersion": "0.1",
+      "class": "form",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-028",
+      "row": "2 domain once",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 171,
+      "sentence": "The domain is a declared object, declared once at run level",
+      "sentenceDigest": "88ed23692510e45446c3c4db8212219547a6599bb745f2f37ca7efc9200fe0d8",
+      "specVersion": "0.1",
+      "class": "form",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-020",
+      "row": "3 reference mismatch",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 215,
+      "sentence": "resolves, digests differ integrity failure",
+      "sentenceDigest": "30544d50d0ecb7ca7fb9bb4e0102f953932db2c35e290ac5c6d5e70fdee63635",
+      "specVersion": "0.1",
+      "class": "evidence",
+      "status": "agreed",
+      "resolvedRead": true
+    },
+    {
+      "id": "W3C-R-015",
+      "row": "3.1 set binding",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 229,
+      "sentence": "A digest match establishes a set only when the count of leaves is\nbound into what is signed or hashed, and a report MUST declare which\ntree shape it uses",
+      "sentenceDigest": "bae0f589fd14116ed5c4bce4de1445bf475b8a878422ddd9aa52f7cc62874a0b",
+      "specVersion": "0.1",
+      "class": "evidence",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-017",
+      "row": "5.1 denominator",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 345,
+      "sentence": "It is never emitted without its complete denominator",
+      "sentenceDigest": "9f8ec623178bd2fce87e7ba7cad4ce1bf7ba27cbd125869162c95a59998f98bb",
+      "specVersion": "0.1",
+      "class": "evidence",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-023",
+      "row": "5.2 population",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 362,
+      "sentence": "A claim over an empty population is reported as not claimable, not\nas satisfied",
+      "sentenceDigest": "7e37adc3e17eea94094be67c1ae747d3bdac223741ea8a95130e92748cd9dcca",
+      "specVersion": "0.1",
+      "class": "evidence",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-018",
+      "row": "5.3 counter",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 381,
+      "sentence": "carried against referenced is recomputable by anyone\nholding the report and cannot be understated",
+      "sentenceDigest": "f3cd13017eef9aab6d42c9959a5a8c18d8a312ccd0eaa8c9745bebbb86d0c2e8",
+      "specVersion": "0.1",
+      "class": "evidence",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-013",
+      "row": "5.4 roll-up",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 393,
+      "sentence": "A roll-up states whether the checks it aggregates were capable of\nproducing a negative verdict",
+      "sentenceDigest": "9b00061b244165aadbdf3c0e4e089721e6933f9a6c6cbd8c572703be6617c93a",
+      "specVersion": "0.1",
+      "class": "evidence",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-014",
+      "row": "5.4 prior run",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 452,
+      "sentence": "A prior run only counts where check identity survives across\n    runs",
+      "sentenceDigest": "cc10241a9f88472c451d44eb11972545da7031fb4aeb2dc09dff50870053adef",
+      "specVersion": "0.1",
+      "class": "consistency",
+      "status": "agreed",
+      "resolvedRead": false
+    },
+    {
+      "id": "W3C-R-029",
+      "row": "5.4 control binding",
+      "file": "0087",
+      "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+      "line": 431,
+      "sentence": "The control runs under the same checker revision and the same\n    relevant configuration and constraints as the declared checks\n    whose negative capability it is reported for",
+      "sentenceDigest": "4160b21d27d64e6afb8a236c78d3a4b2266672794579be3f970309b26278677b",
+      "specVersion": "0.1",
+      "class": "consistency",
+      "status": "agreed",
+      "resolvedRead": false
+    }
+  ],
+  "specSource": {
+    "path": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+    "sha256": "35625d73baa56f2705bb2fffe7e2a4075293fa6df075bc61bdd349a5d3618d9d",
+    "author": "Evgenii Arsentev",
+    "source": "https://lists.w3.org/Archives/Public/public-agent-conformance/2026Sep/0087.html"
+  },
+  "sanitizedSpecificationSha256": "8b0e9f66a1cc1ee5df3922e4057552dd365a927969ff79759fe43bf2aa418e3f",
+  "sanitizedDirectory": "/tmp/w3c-clean-inputs.ZcHeiL",
+  "sanitizedChecksumManifestSha256": "585954b74ac5bfe4809cc59d3878e7949d40d9a963a853f1c0fab4fbb1665823",
+  "sanitization": "Strip all top-level keys except subjectType, subject, resolves. Keep subject/store untouched. Neutral sequential case names, with source IDs and expected results retained only in this separate audit file. Copy only canonical specification body through section 12, omitting cover note, editor signature, change log and trailing quoted reply.",
+  "verification": [
+    "269 member file set matches manifest exactly",
+    "269 raw member bytes produce declared corpusDigest",
+    "18 vendored specification hashes match manifest",
+    "every requirement sentence digest and occurrence verified",
+    "165 selected manifest entries match source member oracle fields",
+    "165 sanitized subjects and stores roundtrip without semantic change",
+    "SHA256SUMS contains all 166 input files"
+  ],
+  "members": [
+    {
+      "caseFile": "cases/case-001.json",
+      "id": "v0090b52048ca1f51",
+      "source": "vectors/v0090b52048ca1f51.json",
+      "sourceSha256": "c02a95231c9f05c3db29adb5e1f33d70ace9d53989645f15633d0ba18af3b7e1",
+      "sanitizedSha256": "142d03eaf7321d2aeb37b66747bb5ad8f8c91358d2091de348e0ac687359a7cf",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-010"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-002.json",
+      "id": "v04934d23180f6d9c",
+      "source": "vectors/v04934d23180f6d9c.json",
+      "sourceSha256": "bfb0b2456b13cf7a2c60b266502a805511a79f8e5afa21fc4ca8f9ef3519f290",
+      "sanitizedSha256": "5b81e37cc703ee9698fc99d745d83143d67fce4b6d12b2b459fbc3dd14b790cf",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-014"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-003.json",
+      "id": "v050e5667630b8bf7",
+      "source": "vectors/v050e5667630b8bf7.json",
+      "sourceSha256": "0718e19a8a0b2a656526ea0cf84c771d4b98d4a5b986c423a0ec6c8cf7862575",
+      "sanitizedSha256": "1534834c0f21c9ce7c8fb1b7f8f6e5eb0a01d5815c38a903e08efa56c2786401",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-004.json",
+      "id": "v0e286b53de78162a",
+      "source": "vectors/v0e286b53de78162a.json",
+      "sourceSha256": "189513b19940bfee76117c05ea0d586cad5ccb78ff86f04f4d0c30cefd44635b",
+      "sanitizedSha256": "16d38e80f74691cf056969f42969be26bdca9483740dfcd25e4f8428a15816fa",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-008"
+        ]
+      },
+      "requirements": [
+        "W3C-R-008"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-008",
+          "row": "8",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 280,
+          "sentence": "other-verdict foreclosed with discrimination\n      demonstrated",
+          "sentenceDigest": "971c3d8c232fe9dca0fa8fce74c703ff9c5006fc070897c4997e8a8ab3e8ba8e",
+          "specVersion": "0.1",
+          "class": "consistency",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-005.json",
+      "id": "v1032eb59a7cdb30f",
+      "source": "vectors/v1032eb59a7cdb30f.json",
+      "sourceSha256": "d940f96d8c7b005113ac57ccdd784a5c0a6dc41b8ef2b0b90a50dc2010212d97",
+      "sanitizedSha256": "cfb869b93efe44a82823c84473c6f72cccb855a790a6c400f1ada446735b85d6",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-015"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-006.json",
+      "id": "v13b3c66e7fc7dae2",
+      "source": "vectors/v13b3c66e7fc7dae2.json",
+      "sourceSha256": "1eff50d1612d35fac5042e8bb7c8a2f6c3db1902e2b2667cd662382cf02c95fa",
+      "sanitizedSha256": "2d3b53e14a3950043d9b8b87fe59eb4ceffe7dffaa4181dc2bb8c7de1de9bcc6",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-007.json",
+      "id": "v148fc59046a8548a",
+      "source": "vectors/v148fc59046a8548a.json",
+      "sourceSha256": "9471e140a3bb0b894b965da582d290c0fb6b018fb70fe9334815fb193c449871",
+      "sanitizedSha256": "4b9c5bc31d5488d768909896297be6b75d9a6e9acf6fc95dc63cde170c4b742c",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-015"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-008.json",
+      "id": "v159bcd24a7e74a43",
+      "source": "vectors/v159bcd24a7e74a43.json",
+      "sourceSha256": "138f45eb7c69843673541c4a0be61df0a9c7ecb5c9fc20eef1f3d810b1489f32",
+      "sanitizedSha256": "24bd567539ab12b5a0df69a4ac1a1dffad5abf042eb6a9f710284e2559ab5308",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-009.json",
+      "id": "v1660acd2e4efb7c7",
+      "source": "vectors/v1660acd2e4efb7c7.json",
+      "sourceSha256": "5112961f339c61ad6826262eecd319df26528784c01f58b6df853da3951a3dcf",
+      "sanitizedSha256": "45c84655eb282289d2bacb23c0c7d2144b8eaba26a49bb5047626dfa29cc3b60",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-013"
+        ]
+      },
+      "requirements": [
+        "W3C-R-013"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-013",
+          "row": "5.4 roll-up",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 393,
+          "sentence": "A roll-up states whether the checks it aggregates were capable of\nproducing a negative verdict",
+          "sentenceDigest": "9b00061b244165aadbdf3c0e4e089721e6933f9a6c6cbd8c572703be6617c93a",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-010.json",
+      "id": "v17b2ad943b1f051d",
+      "source": "vectors/v17b2ad943b1f051d.json",
+      "sourceSha256": "9173328170e2938ab37d2af6aef40271c768c3992f143ec27bbc220f8bdd4bd8",
+      "sanitizedSha256": "7ae9fb1452ac751fece7688c0cefdd850da63891800a37fc084d793ec011e5d8",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-011.json",
+      "id": "v183b37dea5ad4159",
+      "source": "vectors/v183b37dea5ad4159.json",
+      "sourceSha256": "16148bce800872f098765ea479a7830d941f5d7ffea1e3ec17691608866fa390",
+      "sanitizedSha256": "44cff673f979d56b98b85fc98aa14ac085fd3af182cd1cc861c981d9482a87f3",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-012.json",
+      "id": "v1a0f984d88bb9fe2",
+      "source": "vectors/v1a0f984d88bb9fe2.json",
+      "sourceSha256": "871717a15e7aa7b8218da56a0cdedfb7ba34d3ba4c1f398f15796e6f77fc6570",
+      "sanitizedSha256": "5b83b4fb2b49bd98afb9253e99e46dfdff64ba62d11af46882de29e828c09daa",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-008"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-013.json",
+      "id": "v1afbcaac4b0d514d",
+      "source": "vectors/v1afbcaac4b0d514d.json",
+      "sourceSha256": "6e7da7c726976c59d9f5f3eece56e01ed67bde3742fe1cb4b35af89eb43fb07f",
+      "sanitizedSha256": "73a9d6d741eb875fbfa7f1a725ad75d59e484d1613115099f08df7ce0c4b721a",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-014.json",
+      "id": "v1c020dd1ed49874c",
+      "source": "vectors/v1c020dd1ed49874c.json",
+      "sourceSha256": "35186be5484fe36ac2bf8a6e66d06749d2029d56d5581d8d78ebadaadcda17b6",
+      "sanitizedSha256": "1f536eb84547ac443c17883b5fe4cf6da0714ea2cda71b9308d62d937dbcbd40",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-017"
+        ]
+      },
+      "requirements": [
+        "W3C-R-017"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-017",
+          "row": "5.1 denominator",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 345,
+          "sentence": "It is never emitted without its complete denominator",
+          "sentenceDigest": "9f8ec623178bd2fce87e7ba7cad4ce1bf7ba27cbd125869162c95a59998f98bb",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-015.json",
+      "id": "v20a798b25fc2ec0b",
+      "source": "vectors/v20a798b25fc2ec0b.json",
+      "sourceSha256": "98c66b83eb3ae322458d17b6f610d6ebc6aae01b6ed7a2e6c3f1275405b0f134",
+      "sanitizedSha256": "383f0e622f796eb47dad4a6fbf8d32e7926a2740718e519ccfd25ec1dc4fc63b",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-027"
+        ]
+      },
+      "requirements": [
+        "W3C-R-027"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-027",
+          "row": "2 arity recomputed",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 178,
+          "sentence": "arity is recomputed from the delta",
+          "sentenceDigest": "7ad91a2f2b6ce5f03526ed80e80431eaa127466c5af034a9c0c4c618ed3fe438",
+          "specVersion": "0.1",
+          "class": "form",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-016.json",
+      "id": "v20f99b9d22c842a3",
+      "source": "vectors/v20f99b9d22c842a3.json",
+      "sourceSha256": "2fb63f21f0a01274b69a63ab6c4580ea44c361e780e7cba312a40cb915003216",
+      "sanitizedSha256": "d19d38f7ff8c869a47efc5aa87e8de017a6c62d6678db91d65b2bb7e7234ad5e",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-017.json",
+      "id": "v22e6c34b776baff7",
+      "source": "vectors/v22e6c34b776baff7.json",
+      "sourceSha256": "af6cc9bcbbd14c2c95a5166f52e3c6a0f6665ef03af7b01875c297f85ee9b558",
+      "sanitizedSha256": "022e8b0ffe7f7a6fb46de1791b37af52e3bad35724484cd75caacb26cac38282",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-018.json",
+      "id": "v22f803622ac75918",
+      "source": "vectors/v22f803622ac75918.json",
+      "sourceSha256": "6a35255904d85cfaa26b52efeb0a28d0bf95248c6bf30a7a6e656a61e01886d3",
+      "sanitizedSha256": "90d69834a1d2298f38d5fa7682e0f29319963956818e9e901d20a91dddd56b5e",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-019.json",
+      "id": "v254933bf314c82fc",
+      "source": "vectors/v254933bf314c82fc.json",
+      "sourceSha256": "bb6c0104782aef8894543daaac0bedf2ba1495b54739a171e025c9aa36e547b5",
+      "sanitizedSha256": "04c8372e1128e8e9b3687d4e5549c81f1d0c91f11d8acc1ca88565886c7ddedf",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-020.json",
+      "id": "v265c2e6f0a3d31f6",
+      "source": "vectors/v265c2e6f0a3d31f6.json",
+      "sourceSha256": "37c22b009899492b9b660de5c76ecbf611894dbf29b99856c7b1c0bbc81d49fb",
+      "sanitizedSha256": "b9d412a10b99728db847128d5a630b328bea7d2ffad37aa8c71a449231c96006",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-021.json",
+      "id": "v27a01b14321f6ae5",
+      "source": "vectors/v27a01b14321f6ae5.json",
+      "sourceSha256": "e052756526304ee7850fcc9b1e1c4a76d0c11339e9002f13266aba7abe48edf9",
+      "sanitizedSha256": "e203a29021b3743c72d5cef516ced0c17644d0ea94d73ad330d4b4f29716ecf4",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-019"
+        ]
+      },
+      "requirements": [
+        "W3C-R-019"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-019",
+          "row": "1.2 closed vocabulary",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 110,
+          "sentence": "Free text is refused in place of a disposition",
+          "sentenceDigest": "c0c29df61ecbc5f4839a07d9f2c9abce4a4c9e945a9cbac2914d7fc12da41f80",
+          "specVersion": "0.1",
+          "class": "form",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-022.json",
+      "id": "v28820b464a335617",
+      "source": "vectors/v28820b464a335617.json",
+      "sourceSha256": "8e555621c7a315ec2ab12ba825244eb95c0c0bde058526f19355f5d509a39745",
+      "sanitizedSha256": "636d5cef8223d1b26d195c2aa694d41c3f5e58c451f8651ba4fa67087b58b79e",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-015"
+        ]
+      },
+      "requirements": [
+        "W3C-R-015"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-015",
+          "row": "3.1 set binding",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 229,
+          "sentence": "A digest match establishes a set only when the count of leaves is\nbound into what is signed or hashed, and a report MUST declare which\ntree shape it uses",
+          "sentenceDigest": "bae0f589fd14116ed5c4bce4de1445bf475b8a878422ddd9aa52f7cc62874a0b",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-023.json",
+      "id": "v2a251ae413920da5",
+      "source": "vectors/v2a251ae413920da5.json",
+      "sourceSha256": "86eb0b751fc0312c9150e8a934cbb35d725e4ce6c0b43a3473d3c279894d427f",
+      "sanitizedSha256": "f9cda8103801ae950142f04fbbcb98a5ac2f09b0a1b4559c4c39147acb6f2c35",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-019"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-024.json",
+      "id": "v2ddb14c9194e0341",
+      "source": "vectors/v2ddb14c9194e0341.json",
+      "sourceSha256": "093054606a6ea9dc9911dadba1ab22c238900626ea5ea7bb21ac93712675341a",
+      "sanitizedSha256": "f630cf181031905b424a44892d376b8854aebdeae0fff7977160330a8dedbd68",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-025.json",
+      "id": "v320406e03fff4faa",
+      "source": "vectors/v320406e03fff4faa.json",
+      "sourceSha256": "f1efa770846175e6afb4ea28424bfe2c3c0e86ac27971188ff02f6ddf501151d",
+      "sanitizedSha256": "d30bd49108887cdd77e0344e3f6f71fc717c929839cf13bcbff248df483d3310",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-005"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-026.json",
+      "id": "v36ba5fca23b6a162",
+      "source": "vectors/v36ba5fca23b6a162.json",
+      "sourceSha256": "bba0fbddd7314bd498c58cb79e7d4e5db1e6eef9b76072c97051aa1783609af6",
+      "sanitizedSha256": "2af70df214283fbfd40ee4ee342b8c4e73c912ebde0bf3b32d9e48ed4241baac",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-027.json",
+      "id": "v37729703d471ba9b",
+      "source": "vectors/v37729703d471ba9b.json",
+      "sourceSha256": "a70a6130751bc7209db396cb164719133d7f363d1f65d9559b355e459791437d",
+      "sanitizedSha256": "8fe2e49c52b1011f9a096a7d78932c9e34737405deead7283fc08e06f137de6d",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-023"
+        ]
+      },
+      "requirements": [
+        "W3C-R-023"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-023",
+          "row": "5.2 population",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 362,
+          "sentence": "A claim over an empty population is reported as not claimable, not\nas satisfied",
+          "sentenceDigest": "7e37adc3e17eea94094be67c1ae747d3bdac223741ea8a95130e92748cd9dcca",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-028.json",
+      "id": "v37d8ddc87ed265e8",
+      "source": "vectors/v37d8ddc87ed265e8.json",
+      "sourceSha256": "8638b5dad5c8e2dfff5357e5be4b440d51a984eeb1800e78c2f3354a154fe730",
+      "sanitizedSha256": "e1b3048538ee11348837a31f539cab19139c347c633b43ca463d3461b96a2efd",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-029.json",
+      "id": "v3aef8ba9ac745dbf",
+      "source": "vectors/v3aef8ba9ac745dbf.json",
+      "sourceSha256": "7fcf96e85c90b13b2c27852200a91712970d0592379248aae7767ad2dadb9a70",
+      "sanitizedSha256": "62a796c6b5eeae5455d8bceefd0f23e3ca54fa3b064a76d65c0ec211550df32a",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-030.json",
+      "id": "v3cf361bbfb973f7d",
+      "source": "vectors/v3cf361bbfb973f7d.json",
+      "sourceSha256": "100067a340f250f2abce8255244dc70ba2a0b9385e54c0311e88e0c155fab4c4",
+      "sanitizedSha256": "9af85306519fe57e531ca6b971069a1f1e78edd16b3c749432b1b734a8411887",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-031.json",
+      "id": "v3fef7c8cc4ed5e4b",
+      "source": "vectors/v3fef7c8cc4ed5e4b.json",
+      "sourceSha256": "460362698ded74fb1af921404ac98b33e51ea948ce270ad6103ce3ba9dd9aa79",
+      "sanitizedSha256": "23101a86ad9cc0255156271394df41c163e81a604bf6ad62796033dacc3009ff",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-025"
+        ]
+      },
+      "requirements": [
+        "W3C-R-025"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-025",
+          "row": "13",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 294,
+          "sentence": "13 other-verdict demonstrated citing an evidence object whose\n      moved does not contain the verdict",
+          "sentenceDigest": "75f4aaa3f705171ab081baa9298e90719667a68cf006ff7771b530f6ea16750c",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": true
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-032.json",
+      "id": "v44f7a4acc7f66fa4",
+      "source": "vectors/v44f7a4acc7f66fa4.json",
+      "sourceSha256": "f41387b93784a2e38e2064ad56eb2259b94c43b76c01aee9a60020a984cece8f",
+      "sanitizedSha256": "8b6b44a3cbbf57d25eb4014d2b4a9827145469b5ee3ee009d4fbd18e274fd2e8",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-033.json",
+      "id": "v472759709d82c585",
+      "source": "vectors/v472759709d82c585.json",
+      "sourceSha256": "8afddc4ddad37dea766a09b33d13a71c32183ac1002a4a0e8247afeeed5240b8",
+      "sanitizedSha256": "63dcaedcb700151f85384ec0ab822b5d24fbac9b4fc816a5a4c9c4695975571a",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-020"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-034.json",
+      "id": "v48877f27bbd03b55",
+      "source": "vectors/v48877f27bbd03b55.json",
+      "sourceSha256": "18c11c5e95609b36f75cece3ad7a5b50b9b5cede1622ecf72622f1ae8261b887",
+      "sanitizedSha256": "08d4b181d132ff22311ac4424493f232e323eccc470f6f9a1b90e7589c27b38a",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-018"
+        ]
+      },
+      "requirements": [
+        "W3C-R-018"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-018",
+          "row": "5.3 counter",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 381,
+          "sentence": "carried against referenced is recomputable by anyone\nholding the report and cannot be understated",
+          "sentenceDigest": "f3cd13017eef9aab6d42c9959a5a8c18d8a312ccd0eaa8c9745bebbb86d0c2e8",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-035.json",
+      "id": "v494ac13464d685ee",
+      "source": "vectors/v494ac13464d685ee.json",
+      "sourceSha256": "e6eaff1396f229538a8709a57f2ee2e34745ecb9c571c07eb2c1601c85aa6a3d",
+      "sanitizedSha256": "a8ef909180a504e722587e81f25dd329f68da77c6eb071732f4f6359052179fc",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-036.json",
+      "id": "v499412698a1dd50e",
+      "source": "vectors/v499412698a1dd50e.json",
+      "sourceSha256": "381fc5a62ee64902dfba839544212675f914e6421d673f8a216e29e4ba82535c",
+      "sanitizedSha256": "b2781449f8f915d67080d481897ffe5759210ce88e7a7edcd5c869f9e3dfac80",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-020"
+        ]
+      },
+      "requirements": [
+        "W3C-R-020"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-020",
+          "row": "3 reference mismatch",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 215,
+          "sentence": "resolves, digests differ integrity failure",
+          "sentenceDigest": "30544d50d0ecb7ca7fb9bb4e0102f953932db2c35e290ac5c6d5e70fdee63635",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": true
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-037.json",
+      "id": "v49afe44cc51bc376",
+      "source": "vectors/v49afe44cc51bc376.json",
+      "sourceSha256": "58a724acfb6c03f583701cf6299f47e0d11911dcbfb26290e8dff6b5716027af",
+      "sanitizedSha256": "c7c6a8ff0e53c098238079873d72ac50fa22c209459060f8274cfcbdba677d21",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-029"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-038.json",
+      "id": "v4a06b866afca0d49",
+      "source": "vectors/v4a06b866afca0d49.json",
+      "sourceSha256": "d88428f7da3629996c8c788d13d743f5b50664f7a9045ab16d37502055434aea",
+      "sanitizedSha256": "3afc7b7ddc09586bf203e5e40b1f92c3bb702749ee63f367810ca3164902903f",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-015"
+        ]
+      },
+      "requirements": [
+        "W3C-R-015"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-015",
+          "row": "3.1 set binding",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 229,
+          "sentence": "A digest match establishes a set only when the count of leaves is\nbound into what is signed or hashed, and a report MUST declare which\ntree shape it uses",
+          "sentenceDigest": "bae0f589fd14116ed5c4bce4de1445bf475b8a878422ddd9aa52f7cc62874a0b",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-039.json",
+      "id": "v4c778d3ee20deb35",
+      "source": "vectors/v4c778d3ee20deb35.json",
+      "sourceSha256": "456252418319fa724212ae30bffa10f263622b5d46611fd3802c1cc1fab5a5f7",
+      "sanitizedSha256": "2af94d36e39a3808b707e7466972d77da32d30bb2e401fa748da05fdb8bd4d10",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-040.json",
+      "id": "v4e4face5dd4ff492",
+      "source": "vectors/v4e4face5dd4ff492.json",
+      "sourceSha256": "c607383f2e951c3034d48805bed0400b8ef7b97915b7164ae4edf14d504e12ec",
+      "sanitizedSha256": "435d50e03290c6a5c87827eab3b5f29fbaec1c427f9e5d5e529e6e763562d3a9",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-013"
+        ]
+      },
+      "requirements": [
+        "W3C-R-013"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-013",
+          "row": "5.4 roll-up",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 393,
+          "sentence": "A roll-up states whether the checks it aggregates were capable of\nproducing a negative verdict",
+          "sentenceDigest": "9b00061b244165aadbdf3c0e4e089721e6933f9a6c6cbd8c572703be6617c93a",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-041.json",
+      "id": "v4f343e8bd3d6af08",
+      "source": "vectors/v4f343e8bd3d6af08.json",
+      "sourceSha256": "4b17cc3c9db796106f4ba84c7a22d978ad3aa62a3c57d86686fa5414890e4016",
+      "sanitizedSha256": "1ee9884e456bfa794fea25d0c77f07b2f19c7e48c2d9977408eafb173597872d",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-020"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-042.json",
+      "id": "v53dd1aa630064e4c",
+      "source": "vectors/v53dd1aa630064e4c.json",
+      "sourceSha256": "21cbbb932a3ca820494ea13e95ae78c6a2ae83ba1c7dd04021b8472d31e9d9a0",
+      "sanitizedSha256": "ee557bc4fc47e4c4f96f7f0787dcc89d3fbad3f0e0ac1e5c6c39040f1cc82a60",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-043.json",
+      "id": "v568e8a1311ecb396",
+      "source": "vectors/v568e8a1311ecb396.json",
+      "sourceSha256": "2c556ab473b6a442628bada05dc060f5c522d6e867fe272b63fc81fee56cf0ec",
+      "sanitizedSha256": "e8c7abf14a7cc54ebf588ab129a8552832a6c96555d36bb683e66cd5d856d92e",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-044.json",
+      "id": "v56b6337b612b1ee3",
+      "source": "vectors/v56b6337b612b1ee3.json",
+      "sourceSha256": "437b6536db2699e0e5e51efa8f42a3a3a68135ecb4f2998a8b5b837d5d54b36c",
+      "sanitizedSha256": "ceda9a02291f199a2f60f7aab9ac806d0689fb90afb0a2700d6ddb93ebf1dc04",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-012"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-045.json",
+      "id": "v56f37afaff2a6ca8",
+      "source": "vectors/v56f37afaff2a6ca8.json",
+      "sourceSha256": "73fadd79a407415381d736f58c10b8c2675080d6d479e3e00962c545ebcd13bf",
+      "sanitizedSha256": "f6d21d272159a82aaa6aa11970ba2bd219a6b9dd2b77da0444fe000156c3d174",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-025"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-046.json",
+      "id": "v59b5c22988c70b05",
+      "source": "vectors/v59b5c22988c70b05.json",
+      "sourceSha256": "b150daac3bb0a1c56d8bd363bd6b24d4dce0c7b1beadcc57b37728b876f30425",
+      "sanitizedSha256": "eeb3df22ae364286b33fa2cddc02dea4f800c6b8090f33fcad2f2f80619ec5c2",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-047.json",
+      "id": "v5a2ff35648828621",
+      "source": "vectors/v5a2ff35648828621.json",
+      "sourceSha256": "009ef04426cc428efaa0b9144b8f0029d817ce524049f9e88db2096c60701a8a",
+      "sanitizedSha256": "3d51c242609b1ad49bdfaa9baeb367bd49b952e2af59ec5c4d9c74dfd4dc24f1",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-009"
+        ]
+      },
+      "requirements": [
+        "W3C-R-009"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-009",
+          "row": "9",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 282,
+          "sentence": "discrimination demonstrated with other-verdict\n      unknown or possible-not-demonstrated",
+          "sentenceDigest": "4cb5ee4206feba7aee42cc090174db197d7d0f4f7e38cb317a14f9e7241cf531",
+          "specVersion": "0.1",
+          "class": "consistency",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-048.json",
+      "id": "v5a678e8560a4f0f1",
+      "source": "vectors/v5a678e8560a4f0f1.json",
+      "sourceSha256": "d1bdf557111641e367f0c675ac8eabe41f8d82055e0ac20fd1d92f04fd4424e6",
+      "sanitizedSha256": "25b9dee05cd873b47ed1707211ebb86e8e8bc735c9732ebc59a4128dab5a3d7c",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-049.json",
+      "id": "v5c26b11179a2277a",
+      "source": "vectors/v5c26b11179a2277a.json",
+      "sourceSha256": "bf996fbd8fd7eb8e6c3b2d803336d07ca087b805a216369df22b3eaee9e95c4c",
+      "sanitizedSha256": "f80180f7c35f1891e87524b62f1493b85420a8535cac1ef048b936c0af20bf5a",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-023"
+        ]
+      },
+      "requirements": [
+        "W3C-R-023"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-023",
+          "row": "5.2 population",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 362,
+          "sentence": "A claim over an empty population is reported as not claimable, not\nas satisfied",
+          "sentenceDigest": "7e37adc3e17eea94094be67c1ae747d3bdac223741ea8a95130e92748cd9dcca",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-050.json",
+      "id": "v6397c3de47a1882c",
+      "source": "vectors/v6397c3de47a1882c.json",
+      "sourceSha256": "4a7feaaa2c119cb3752d48341ce2bd125c6a53efc40fe8c62f113e0876589a03",
+      "sanitizedSha256": "36622fc4353122d72d47a7ea0a3df05efe94237916a3df5faee553f33712bc45",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-051.json",
+      "id": "v66fd68ad7d106fac",
+      "source": "vectors/v66fd68ad7d106fac.json",
+      "sourceSha256": "0ec586978568318e986f84defdf336aabe5d4fa7a4cb15c6c40d5744650c7c26",
+      "sanitizedSha256": "8c1f6fca22dab03b47d7a8e285a3f6af5415ec0b2b40c9de83323143bdbaee4f",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-014"
+        ]
+      },
+      "requirements": [
+        "W3C-R-014"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-014",
+          "row": "5.4 prior run",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 452,
+          "sentence": "A prior run only counts where check identity survives across\n    runs",
+          "sentenceDigest": "cc10241a9f88472c451d44eb11972545da7031fb4aeb2dc09dff50870053adef",
+          "specVersion": "0.1",
+          "class": "consistency",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-052.json",
+      "id": "v6b1ea60273861c5a",
+      "source": "vectors/v6b1ea60273861c5a.json",
+      "sourceSha256": "f2feb6b954dad1d5cd2023198602700dafaccab77177ab5f1f6e3f92b91013f5",
+      "sanitizedSha256": "5d674f1f19f94c9411b0828e39a99238a6e2d71e73fe4ed7ec8113e80505a93d",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-023"
+        ]
+      },
+      "requirements": [
+        "W3C-R-023"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-023",
+          "row": "5.2 population",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 362,
+          "sentence": "A claim over an empty population is reported as not claimable, not\nas satisfied",
+          "sentenceDigest": "7e37adc3e17eea94094be67c1ae747d3bdac223741ea8a95130e92748cd9dcca",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-053.json",
+      "id": "v6cd84ff1aea45153",
+      "source": "vectors/v6cd84ff1aea45153.json",
+      "sourceSha256": "343fd56b0e0dd9284db341ec5720a76833be72955048ba01fbbd6cad9b1bff4a",
+      "sanitizedSha256": "9321852c71a9c975cec5ec2c8c2d5ff88d810bc89a9807cbce1abb13c14fba61",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-020"
+        ]
+      },
+      "requirements": [
+        "W3C-R-020"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-020",
+          "row": "3 reference mismatch",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 215,
+          "sentence": "resolves, digests differ integrity failure",
+          "sentenceDigest": "30544d50d0ecb7ca7fb9bb4e0102f953932db2c35e290ac5c6d5e70fdee63635",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": true
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-054.json",
+      "id": "v6f15889cec93060d",
+      "source": "vectors/v6f15889cec93060d.json",
+      "sourceSha256": "9fb6a4b43842ac255a742109551c3660d8c56ee32dcd805f9f58931f551fc3c6",
+      "sanitizedSha256": "2af85d8dfd37f3cf8cd68c67653320cd879be2f6f5c768f1d5f1f18072f53f67",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-055.json",
+      "id": "v6f4ff1db603ecfec",
+      "source": "vectors/v6f4ff1db603ecfec.json",
+      "sourceSha256": "6b06ce266e152dc8a1ce67231f9242ed37cd8d7cbbfbb7f114fd8909c1a9752c",
+      "sanitizedSha256": "fbf6f38a44b25e46a2c6541705e8326a3b2e194c4a30e83dc0fd1a9a2e3a2631",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-056.json",
+      "id": "v70bdf863fb9cd6ac",
+      "source": "vectors/v70bdf863fb9cd6ac.json",
+      "sourceSha256": "81a3e4cc3d41ad17dddfe37e7070c76ce2bc5e4fd3219efbdefdab78865a1074",
+      "sanitizedSha256": "8c2c9524d34c7526300e58f9d9b9713cefcd45408acd856bb9568240f3e2eadf",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-057.json",
+      "id": "v719b5f3fe23d8c03",
+      "source": "vectors/v719b5f3fe23d8c03.json",
+      "sourceSha256": "ab7d63dcd233f3e3f62130da1691a8b28ce4150aa3fb61dd136e562860448614",
+      "sanitizedSha256": "7ffef78cc2186c49785cb25ebe5b04689813334b42ca3dfc9e3d896301ff76b5",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-058.json",
+      "id": "v7351d22d2343dfb5",
+      "source": "vectors/v7351d22d2343dfb5.json",
+      "sourceSha256": "b4fc044ba197738e32cb527e540d557143cf065f0ff8f882df1f30ade3e65608",
+      "sanitizedSha256": "7ab2056943a9be260c79472947cd62deb0c3f099732924b3b32c1d6944786541",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-059.json",
+      "id": "v735efb00ce85d044",
+      "source": "vectors/v735efb00ce85d044.json",
+      "sourceSha256": "dfdd296039091cce6e1266a15eb419dbfc79fe26765d3d06b3dc3c349e3e2efd",
+      "sanitizedSha256": "8fbf6d897b51b5c11b42a9f62a1c03bb69fd508c9b8e0ad9b3fa8922fc179561",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-017"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-060.json",
+      "id": "v737955ac1c0d9c2e",
+      "source": "vectors/v737955ac1c0d9c2e.json",
+      "sourceSha256": "1404b89932af894902430a9bf987e66535f3540c0efa248a27c8c4a45676a82b",
+      "sanitizedSha256": "77244176956af208118704d0bfe3d8b87e0a37a8445255ccb89652e282e963ad",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-061.json",
+      "id": "v76c0022fb2a7f21e",
+      "source": "vectors/v76c0022fb2a7f21e.json",
+      "sourceSha256": "85c8ba27b9234b3a7f8ec93c475379de336d2d0dd40ab3cdfa588d318f9a2eba",
+      "sanitizedSha256": "342b3369872a86005c5dbc20766ea42e704413c5a34372b707c7e8ec3ab2ce2a",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-025"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-062.json",
+      "id": "v796a6048345b8f58",
+      "source": "vectors/v796a6048345b8f58.json",
+      "sourceSha256": "e535b8bc155e05963fd65482cbf1d5fd7bf279c9ef87d98415653ec960813cc3",
+      "sanitizedSha256": "a1a11055166cfa4c80695f89cf3263a277bd10220302c2c6cfdd1d8cb056724b",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-029"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-063.json",
+      "id": "v7c22f1451e51aeb5",
+      "source": "vectors/v7c22f1451e51aeb5.json",
+      "sourceSha256": "df4c593cb99e03395c35f73184a403b21775835a5f5444f5f2e169d8a89c49d7",
+      "sanitizedSha256": "6f9616bb1c180f2d3907174360134310817a578c56fe3af592e0d25e78f3327a",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-015"
+        ]
+      },
+      "requirements": [
+        "W3C-R-015"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-015",
+          "row": "3.1 set binding",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 229,
+          "sentence": "A digest match establishes a set only when the count of leaves is\nbound into what is signed or hashed, and a report MUST declare which\ntree shape it uses",
+          "sentenceDigest": "bae0f589fd14116ed5c4bce4de1445bf475b8a878422ddd9aa52f7cc62874a0b",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-064.json",
+      "id": "v7cac3bda7403c268",
+      "source": "vectors/v7cac3bda7403c268.json",
+      "sourceSha256": "df8b78dcb79b11c691ec83be2b23ad33cb47725e27e2294c2a8185d640a11570",
+      "sanitizedSha256": "3c8739fb5b2026330274b32af93b3aaefaae294954f3c2abd85f415b69cc6e25",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-005"
+        ]
+      },
+      "requirements": [
+        "W3C-R-005"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-005",
+          "row": "5",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 276,
+          "sentence": "a declared exclusion with any state but\n      not-exercised",
+          "sentenceDigest": "2824f710983d7d640372d8890ca3e80ead5d9a668f78472ef7f31a507a31558e",
+          "specVersion": "0.1",
+          "class": "consistency",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-065.json",
+      "id": "v7ce1218057f32f1c",
+      "source": "vectors/v7ce1218057f32f1c.json",
+      "sourceSha256": "7e39c8dbff6c82dedd4e6630fec0a8725649b086764172cd642ec3ce81b3a881",
+      "sanitizedSha256": "ef7c94252281d306bfddcd495f94371f75152f3c29a0a234f959ccff136573b3",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-066.json",
+      "id": "v804ca6858fa22efe",
+      "source": "vectors/v804ca6858fa22efe.json",
+      "sourceSha256": "232d3170d06832c5c830bef82883943a33690ff387ba03ca2a4f7db9be720cce",
+      "sanitizedSha256": "3b84486c6a7ffe5ebf359c961a920424470473fb0af212711536a9b462a4c3e2",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-002"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-067.json",
+      "id": "v8224d0f41c80f492",
+      "source": "vectors/v8224d0f41c80f492.json",
+      "sourceSha256": "8fc400d20ab50eba17e69ee863baabbaf46e7676bc68dcef394a8161b7d54c26",
+      "sanitizedSha256": "0ea87fcef05d8a7a3c87166aa08f296b585654787506f8c554e48c2196fc4317",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-068.json",
+      "id": "v822b02c01fe9ddd2",
+      "source": "vectors/v822b02c01fe9ddd2.json",
+      "sourceSha256": "9eba87c7715873d614125244b09ce8f59d9b56fafc1fa2895a875d8c699ce2c5",
+      "sanitizedSha256": "19bbb25b466c12fcb0d1f126fa0ec5c42f0854086c156ce78ef3c6feb8f2dea7",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-003"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-069.json",
+      "id": "v828ec4d8309aa2e3",
+      "source": "vectors/v828ec4d8309aa2e3.json",
+      "sourceSha256": "8a24873695009bbc4e04afae912883d7abd45b5b3a35630577a40a71ce4e8f10",
+      "sanitizedSha256": "766bcf612182ee7b00e471ebe3ceaede3ce50327452eb6fbf440ddc432b7be49",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-070.json",
+      "id": "v84f8c68bc5fc2810",
+      "source": "vectors/v84f8c68bc5fc2810.json",
+      "sourceSha256": "3eda357f4937f0563e08ac717d071e15bd7fc137d4fe3e97f6882d35d8ed0241",
+      "sanitizedSha256": "afde8b0f08194635a501be746ca3c06552ebfe4a5dbc190e4541fb0835e5c533",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-071.json",
+      "id": "v86e1560a0d27b432",
+      "source": "vectors/v86e1560a0d27b432.json",
+      "sourceSha256": "9724f08e5ae2350a2149aeccb2ace382deec40e571d74d8b48e614748eac0d63",
+      "sanitizedSha256": "912df5601350637b01afb6f2fabe0e5b5ae384f16f7f1b15478c8ec184645ab8",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-015"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-072.json",
+      "id": "v876f8aa31676cf48",
+      "source": "vectors/v876f8aa31676cf48.json",
+      "sourceSha256": "1f83cc04b1aa27102aa723f01bd0f4b6c89ca02d19e379211842e39c23a30c36",
+      "sanitizedSha256": "2fa4ad3ef44de467b3b0644aaf42506f5cde355593e12b55997295f0f25dc7f8",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-073.json",
+      "id": "v88935f0b29397a80",
+      "source": "vectors/v88935f0b29397a80.json",
+      "sourceSha256": "c098761fb5b9fe7df8d5e0c401d82b0d32e1ef3091dd6d951ac19a18eedcff39",
+      "sanitizedSha256": "02b7ef345575fd790ff3dee21e440e55eb5a91f62dff50647e9a8224a1488208",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-015"
+        ]
+      },
+      "requirements": [
+        "W3C-R-015"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-015",
+          "row": "3.1 set binding",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 229,
+          "sentence": "A digest match establishes a set only when the count of leaves is\nbound into what is signed or hashed, and a report MUST declare which\ntree shape it uses",
+          "sentenceDigest": "bae0f589fd14116ed5c4bce4de1445bf475b8a878422ddd9aa52f7cc62874a0b",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-074.json",
+      "id": "v8981e0830c69b869",
+      "source": "vectors/v8981e0830c69b869.json",
+      "sourceSha256": "7460bdb8e9f55d8ba0a07dd0b015ad865a5116801fda7c9c7b6bfaa872904968",
+      "sanitizedSha256": "3333bd0aeedf73c8b4c7aaecac420647373e1760733ca411004a496cec2961a3",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-006"
+        ]
+      },
+      "requirements": [
+        "W3C-R-006"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-006",
+          "row": "6",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 278,
+          "sentence": "a non-verdict state carrying either qualifier",
+          "sentenceDigest": "4ef6f3c9383ae4543122f50bbba43f8dd94dbb68a496eb8786d1000928f9b55d",
+          "specVersion": "0.1",
+          "class": "consistency",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-075.json",
+      "id": "v8a7442b19984a1ff",
+      "source": "vectors/v8a7442b19984a1ff.json",
+      "sourceSha256": "2992d44fd908630077970fb49327f0b28d4483304036ae63ed3ce0c8dd93a855",
+      "sanitizedSha256": "97dee82844a6520fee8984e224bf85095d1822570a8644954e6b2c451672ac56",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-007"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-076.json",
+      "id": "v8a8da062cba9fce5",
+      "source": "vectors/v8a8da062cba9fce5.json",
+      "sourceSha256": "f4eba623905bfb077872e590056e7b2e1ddc5272c9f4d4ecc81db5a3394e7380",
+      "sanitizedSha256": "dd8cf4493487a02b4a08fcaff80f224d2dbe84058555cb2d9b8a12b982fc8412",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-077.json",
+      "id": "v8c15455bb3d933cb",
+      "source": "vectors/v8c15455bb3d933cb.json",
+      "sourceSha256": "d26b4d811f7d0f775a4b350185f381b8a9407f1cd0381205399a6bdbade9d340",
+      "sanitizedSha256": "2ac5f5859b52479de4641b0f78fd8319952141b94151d0de991fc101a1201ea3",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-078.json",
+      "id": "v8ec1375690daa188",
+      "source": "vectors/v8ec1375690daa188.json",
+      "sourceSha256": "aa255f5aca45f3ceeef0e882f2483cb4b4d26335f2d968b14f093d14090f0c0e",
+      "sanitizedSha256": "e6122cf4e783682fa46fbbc17095c450440ed11fb6e7e41f153810c05254383d",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-016"
+        ]
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-016",
+          "row": "2 recomputed moved contained",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 164,
+          "sentence": "an object whose moved\nis not contained in its declared compared set is rejected",
+          "sentenceDigest": "913913ec0dc014c2413f1d1f238776b12f4d595d74544fcf025d081edd5b809f",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": true
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-079.json",
+      "id": "v8f818aaaa7cdc7ed",
+      "source": "vectors/v8f818aaaa7cdc7ed.json",
+      "sourceSha256": "cdfb8e997a3fc19e4fc7e56ecc16cb20c24e635759d0cf631a0068e22e0b7ded",
+      "sanitizedSha256": "7cb81aaa7ac1aa0e374486adc76ffc8283ff822a8a0e2e95173a78deaa45fe5a",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-080.json",
+      "id": "v9614879a484c4fc0",
+      "source": "vectors/v9614879a484c4fc0.json",
+      "sourceSha256": "59ebad9b66c12b31ac3875d011150ad8c412553ca8cedf6491671eef1e0a4c16",
+      "sanitizedSha256": "e5dfdc7461c351517f64226f67fb370bfa401eebb8a7f0a5efe377504452914b",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-081.json",
+      "id": "v98252c989e84999d",
+      "source": "vectors/v98252c989e84999d.json",
+      "sourceSha256": "fe0a30319a7b3552ec844af000476e091a5cbd624553006f6cc9b1fd407537f7",
+      "sanitizedSha256": "fcd878ecdc55ba7fbe3a4c9cd82584b0b408508b83bc91d360c62a2b8347a994",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-003"
+        ]
+      },
+      "requirements": [
+        "W3C-R-003"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-003",
+          "row": "3",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 273,
+          "sentence": "not-exercised with integrity-failure",
+          "sentenceDigest": "587e9bc351daaed25ce2f9a832d39574a3ff48b85d5c1555d919b92351507f19",
+          "specVersion": "0.1",
+          "class": "consistency",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-082.json",
+      "id": "v98ee154eeceb9c55",
+      "source": "vectors/v98ee154eeceb9c55.json",
+      "sourceSha256": "c3d4de95653acf7ecc0138875eb424bd7b7de29d9c3f556ec83e2814c2de4922",
+      "sanitizedSha256": "d198f59ae6932c02f1670725b419ae39bcccea1167f9fe9c761dc68ed8035467",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-083.json",
+      "id": "v9b7c8cf7d1b9f679",
+      "source": "vectors/v9b7c8cf7d1b9f679.json",
+      "sourceSha256": "fbb2bc3834e2b1f990e2da2892c798c487e69c0e7aeca0a4ca429c085eabf5df",
+      "sanitizedSha256": "ee546e97558aa537d0c97a011792298009ae3da9ca09679ec4e63ec99c40b3cc",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-026"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-084.json",
+      "id": "v9c68a108ed63da63",
+      "source": "vectors/v9c68a108ed63da63.json",
+      "sourceSha256": "da62c1718dfb2e1ab7e8698c53d09ca14c47731e3762879ccc8f7f4cee896a68",
+      "sanitizedSha256": "da406db2e02fdf6da2a0ff5f8394cd2e383d0a010033887f3c5b30b2fdd521c9",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-021"
+        ]
+      },
+      "requirements": [
+        "W3C-R-021"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-021",
+          "row": "2 recomputed moved",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 163,
+          "sentence": "moved is recomputed, not declared",
+          "sentenceDigest": "67d001c7a474766fe2f79b25a28d4dc6b21884cc1ccadf862fd7c0b65d6de481",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": true
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-085.json",
+      "id": "v9f618dfd3e44b84a",
+      "source": "vectors/v9f618dfd3e44b84a.json",
+      "sourceSha256": "ab5dda5fc1a83df1fd2c6c57884c98fde9d97ebfb2158243dcd7b4b750484c76",
+      "sanitizedSha256": "4078c863c3587afa832faf99f892b367dbf74b25e67c24829060a282f0c83eb5",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-023"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-086.json",
+      "id": "va0620b488f2ff2f5",
+      "source": "vectors/va0620b488f2ff2f5.json",
+      "sourceSha256": "0cae14852ab6251f3a10ecb5005608dce98c542a2ec4b97496881e11ec00ae8f",
+      "sanitizedSha256": "342b3369872a86005c5dbc20766ea42e704413c5a34372b707c7e8ec3ab2ce2a",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-028"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-087.json",
+      "id": "va18bfa567e0405b7",
+      "source": "vectors/va18bfa567e0405b7.json",
+      "sourceSha256": "7a0aaa5520613bb10565dad127ce7e9d2811265701afc0510a12046623e9838b",
+      "sanitizedSha256": "ea3081f14698963f69a77f8c6654faf86da11b48ccc244df64b3d06ea96717e0",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-088.json",
+      "id": "va19ba1b3f9f382bb",
+      "source": "vectors/va19ba1b3f9f382bb.json",
+      "sourceSha256": "cf429847d6b6ce200b0c1ac6bfa104498a01bbc2fc4f050a6ac2db46b3d61d39",
+      "sanitizedSha256": "bee14a042604d6268f933d74fc560b6a75d90cef0eb2cb2a360119e0fcef3563",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-089.json",
+      "id": "va1e910d25ebbb2c4",
+      "source": "vectors/va1e910d25ebbb2c4.json",
+      "sourceSha256": "d145fd9080089b1748208eef13941b62dd4a8968571917fd11352ec663e25061",
+      "sanitizedSha256": "5cbaa6686d346e58c0c7f241db53c99c15dbdd6edcac0b46a8040092a359cae0",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-023"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-090.json",
+      "id": "va213bada85cc9abe",
+      "source": "vectors/va213bada85cc9abe.json",
+      "sourceSha256": "cd885574f984ee7945241c235bd9fd26d3ebae829ff2e05b3a1fddf44189d76d",
+      "sanitizedSha256": "912df5601350637b01afb6f2fabe0e5b5ae384f16f7f1b15478c8ec184645ab8",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-013"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-091.json",
+      "id": "va2ba93081d3a6c13",
+      "source": "vectors/va2ba93081d3a6c13.json",
+      "sourceSha256": "3723e6716697f60824760b57c0067eb13972dac7fdbc6098a48d4109c0031db5",
+      "sanitizedSha256": "64b1e9167b01717dde1cc3726b143e8cd8cad8034100333f0fb0206448a3a1f8",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-092.json",
+      "id": "va3c277aa6743807a",
+      "source": "vectors/va3c277aa6743807a.json",
+      "sourceSha256": "c268e85764e99cef751140614f0714ed6a6e5015fb5d5d8c92eeb05b7a478794",
+      "sanitizedSha256": "74944fe0f59f119fe07899a226fa55f0759b79c5046a45734e1cc18271b4a8cc",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-024"
+        ]
+      },
+      "requirements": [
+        "W3C-R-024"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-024",
+          "row": "1.3 delta-related pair",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 143,
+          "sentence": "Unrelated pass and fail\nrecords in one corpus do not qualify",
+          "sentenceDigest": "5a597f4b8de5f8310cdd69fdf1c2938fcf2fa68f4a5345ba16e0a7c547402ee8",
+          "specVersion": "0.1",
+          "class": "consistency",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-093.json",
+      "id": "va4fc9fc8f711bd58",
+      "source": "vectors/va4fc9fc8f711bd58.json",
+      "sourceSha256": "9f26489d033c63d02c51debdf04c7170fa2b81a45fc0cc505683edd35f8a6990",
+      "sanitizedSha256": "c74f038c7d0d078a8aa60700a3aced0c4e5b6e925d6471b4d2852a57371a1a2b",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-094.json",
+      "id": "va64493c76c57f982",
+      "source": "vectors/va64493c76c57f982.json",
+      "sourceSha256": "9f0111e49924723ad0bfd732779c3b545af54c7fc310a96c4b48fccbc4a98a0e",
+      "sanitizedSha256": "e55de7212e4bda366bcd4d51940b0b69d85cd7e49f2f85ecb464b4635837e6fc",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-095.json",
+      "id": "va83db4001b89e73e",
+      "source": "vectors/va83db4001b89e73e.json",
+      "sourceSha256": "ac2edcfe010e79d8b13fbc3c3ac53b24434bee761e72d4cbe57239a1316f7dd2",
+      "sanitizedSha256": "4832bab4f3e87647c20233697dd8d622d645f8d3dae33c0c63b5c54e4346613f",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-096.json",
+      "id": "va86e962a5024f152",
+      "source": "vectors/va86e962a5024f152.json",
+      "sourceSha256": "15d71668c0b2a8ae37084f1c3090c9160fb1c8d440af0bef0457f014604e8385",
+      "sanitizedSha256": "30b6b86a8cbe1c0a5fa943a1aff2231095c6661a70e5ee88f44e969c632884c5",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-029"
+        ]
+      },
+      "requirements": [
+        "W3C-R-029"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-029",
+          "row": "5.4 control binding",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 431,
+          "sentence": "The control runs under the same checker revision and the same\n    relevant configuration and constraints as the declared checks\n    whose negative capability it is reported for",
+          "sentenceDigest": "4160b21d27d64e6afb8a236c78d3a4b2266672794579be3f970309b26278677b",
+          "specVersion": "0.1",
+          "class": "consistency",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-097.json",
+      "id": "va91d537fa714f2d3",
+      "source": "vectors/va91d537fa714f2d3.json",
+      "sourceSha256": "499ce1ec323722108b0f95895b85b13e6015fadb427870614d0a65d449b4fe4f",
+      "sanitizedSha256": "10366c822ca7bf1ddbcf1fff9e3ac0c8c967fda0e8037a1ca7db3ebefeb16637",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-098.json",
+      "id": "vaad2cb64c5b0646b",
+      "source": "vectors/vaad2cb64c5b0646b.json",
+      "sourceSha256": "bb1312aa7ea6dc49c19d08a83ce60e4e616c6e068e9f0d7fe14818d01da3fe30",
+      "sanitizedSha256": "1d7061ace812cdefd41b893faa078259db8f7356ba29c7f140481ab18aa67cc0",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-006"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-099.json",
+      "id": "vab508347e605c0af",
+      "source": "vectors/vab508347e605c0af.json",
+      "sourceSha256": "5bf4de2ae111dd4b751f6b43d020676d82241c1622c20894c73e4ee85bc49bc4",
+      "sanitizedSha256": "34054692a13fa7caf9fa710f4a26c9d46d6478b44c10f692f6b9abedfaa61fdf",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-020"
+        ]
+      },
+      "requirements": [
+        "W3C-R-020"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-020",
+          "row": "3 reference mismatch",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 215,
+          "sentence": "resolves, digests differ integrity failure",
+          "sentenceDigest": "30544d50d0ecb7ca7fb9bb4e0102f953932db2c35e290ac5c6d5e70fdee63635",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": true
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-100.json",
+      "id": "vac146420618655c5",
+      "source": "vectors/vac146420618655c5.json",
+      "sourceSha256": "f75a0a7fdd856ea58b6fec0a0588a4f9bc9ea99f34b734386f7cf2dba154df89",
+      "sanitizedSha256": "5218206ccef61fbbae9d8d7197cd41339368155a1c6d3f05e72294d91f1ee23e",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-101.json",
+      "id": "vaca8620fefade22f",
+      "source": "vectors/vaca8620fefade22f.json",
+      "sourceSha256": "a8ea4d350ccb7b7824902a2d47dee432d2de049a81ae693c6a3d1a727d7e061a",
+      "sanitizedSha256": "a7895bde6ff2829428674a50bfdd301879704af56ef7dc4da01206955910d563",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-102.json",
+      "id": "vad9b72227e24e32f",
+      "source": "vectors/vad9b72227e24e32f.json",
+      "sourceSha256": "3cfe191d4dcf71d5e642bead362cc8980fb1e55709d08d8c5792850e8f6a6aa6",
+      "sanitizedSha256": "8d785e0adab6ec14970d239c846b98865e7f6053f9f7c68a93a6b393a8f2c7f5",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-103.json",
+      "id": "vaeb76896b202e837",
+      "source": "vectors/vaeb76896b202e837.json",
+      "sourceSha256": "7cdf3d42094d2d4c605b85568701602dc3ff0083f1bbed9f5fb0439aaca5794b",
+      "sanitizedSha256": "ea3d7769b9ff00735e50c82c5758e1d79fd280fa34a0e8ae2b58f9e05ec47af2",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-013"
+        ]
+      },
+      "requirements": [
+        "W3C-R-013"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-013",
+          "row": "5.4 roll-up",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 393,
+          "sentence": "A roll-up states whether the checks it aggregates were capable of\nproducing a negative verdict",
+          "sentenceDigest": "9b00061b244165aadbdf3c0e4e089721e6933f9a6c6cbd8c572703be6617c93a",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-104.json",
+      "id": "vb11134a37e7c0c2b",
+      "source": "vectors/vb11134a37e7c0c2b.json",
+      "sourceSha256": "99bcf41041033d0f13ce164c02070acb10b37837f331c4f69681bad90b51906c",
+      "sanitizedSha256": "60c738e1b8ac2675b1679b780c5f68cba972165138ba987d4dbdedf01aa8a59f",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-001"
+        ]
+      },
+      "requirements": [
+        "W3C-R-001"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-001",
+          "row": "1",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 271,
+          "sentence": "a non-verdict state with no cause",
+          "sentenceDigest": "87893835a3e134511a7e36cfac22625860d0266aafdf00c0458be7e98f62db60",
+          "specVersion": "0.1",
+          "class": "consistency",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-105.json",
+      "id": "vb195f23e8436fd19",
+      "source": "vectors/vb195f23e8436fd19.json",
+      "sourceSha256": "981a9b314b1823cf786b28ca6b898c3846da3e7f9579a7f8a800319d6dc303fe",
+      "sanitizedSha256": "bcb9f11cd2a1e88c4243deab8c3cb3c024e53a654c38028d4dea0609b9a74525",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-013"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-106.json",
+      "id": "vb4de5d37845a1546",
+      "source": "vectors/vb4de5d37845a1546.json",
+      "sourceSha256": "22731a29dbef40f52db75a9624201c40ded8a7968277860bda1dc88db5c3d8c7",
+      "sanitizedSha256": "218ffcc208f80d4923e8f0169eb0ea925bbecfbe4f17cfd27ef97bf5546abf9d",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-107.json",
+      "id": "vb684dfb39487fcb1",
+      "source": "vectors/vb684dfb39487fcb1.json",
+      "sourceSha256": "6146c2a56e0f84a03de365ed65a860d5acb2ec3d32a1f00cc71ab8e44a2a1522",
+      "sanitizedSha256": "4d0134a27019fc7c573d5a436d5592a036e9c3d5a20f8eeab8564d22f48f93de",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-108.json",
+      "id": "vb7ef2cf28c013f46",
+      "source": "vectors/vb7ef2cf28c013f46.json",
+      "sourceSha256": "be4701256aaeb312007988e86c466458a120ecbf178c53b7a3669df4365b2f54",
+      "sanitizedSha256": "c55c1421fe2808cfdfcdddce4ac6863904f9b6815d0886ac853f5dd59ef54f57",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-109.json",
+      "id": "vba057012581af13b",
+      "source": "vectors/vba057012581af13b.json",
+      "sourceSha256": "931a1e0f64e45768aa9a5c59d9aa81aa84a8c3460fdf364825b3db5031a5465d",
+      "sanitizedSha256": "2d286e26edd952fd5b5ecad4aa21bf3ca58b3597861b9a605d5b2a113034b945",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-110.json",
+      "id": "vbb1688d0226174aa",
+      "source": "vectors/vbb1688d0226174aa.json",
+      "sourceSha256": "d8a1b9029315cf35ac6394381133bd1b5ba5ba2ea194e816b0b62450fc436ae3",
+      "sanitizedSha256": "a1f6b4d5201dd069a54d1d08f51a6f049bca653ff40c5831d911f55583d7f758",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-111.json",
+      "id": "vbb5bb72ed5c3bcb1",
+      "source": "vectors/vbb5bb72ed5c3bcb1.json",
+      "sourceSha256": "f310d319875a847ac98c4dcb6b7060d864185d4b68995cad562245423d39b9ff",
+      "sanitizedSha256": "1dced533a56b73244f75700aa1cd5195d8374a7e27e496e658e5bb25b3912f20",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-112.json",
+      "id": "vbca0a5030104e2f3",
+      "source": "vectors/vbca0a5030104e2f3.json",
+      "sourceSha256": "e5a69fb313479854be72045a32b25b17ece5d688941dbd009643b7cc886b892c",
+      "sanitizedSha256": "abaae0da8b96a6a1a6f6104909e0c2803a03811aa14bbd4a05f578397ea0339a",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-113.json",
+      "id": "vbe6937292f4f1614",
+      "source": "vectors/vbe6937292f4f1614.json",
+      "sourceSha256": "e7bf0ee299db1ad748fba54e937a8e9a166f73f6d4062a7f86d14d2afaac2c6f",
+      "sanitizedSha256": "396a5dbc62b2666ef25016ec027ca91e59e94ddc5ee89452ac3216ebe26c299f",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-010"
+        ]
+      },
+      "requirements": [
+        "W3C-R-010"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-010",
+          "row": "10",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 284,
+          "sentence": "foreclosed without a constraint set and a domain",
+          "sentenceDigest": "139eba59f4dc4345b39be809c1a65bec3d30efc5155f9f2919bf047361812026",
+          "specVersion": "0.1",
+          "class": "consistency",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-114.json",
+      "id": "vbee48753abe90e1a",
+      "source": "vectors/vbee48753abe90e1a.json",
+      "sourceSha256": "a5e2a7bd3655c0c269fb315c903930835039e5c351ffc64ce17333c9ce0364fd",
+      "sanitizedSha256": "f7c2c34e3843645b3fca3ffa0d1529ffd15ced3e280314d9c5da577a6c77ba4b",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-115.json",
+      "id": "vc12a1c0f00be35f3",
+      "source": "vectors/vc12a1c0f00be35f3.json",
+      "sourceSha256": "1d12b543655d661d32d7c1a5b9c7793e10ba2d4a8bb77594db46567fb1571f71",
+      "sanitizedSha256": "161b7eb93f7039bfdd613ad7c1abe1e8b5ca05767be439ed00afe1f7e22a4130",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-116.json",
+      "id": "vc2cab6dea09f0a3b",
+      "source": "vectors/vc2cab6dea09f0a3b.json",
+      "sourceSha256": "9c67bffae6d2f9e98b1c66fc3159f641183a264d7ad6cddb6a4e0f33c925c70b",
+      "sanitizedSha256": "aa1b46475509a22a1a7f78240f93dd2f905d01fa88d1ad963ec00392ed4aa3dc",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-117.json",
+      "id": "vc34eb74f8bbc70ca",
+      "source": "vectors/vc34eb74f8bbc70ca.json",
+      "sourceSha256": "3ea2e3aaa9c28657e3adba8524edfda384d2eb20f85841be5a46ddc580010530",
+      "sanitizedSha256": "f1aabaab16c8fa125112e96c2e40328790a38c5f035c1daad349a6a143662fe1",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-118.json",
+      "id": "vc39c75a8c00ab957",
+      "source": "vectors/vc39c75a8c00ab957.json",
+      "sourceSha256": "dbeae9ae3875721cdb68d0af1c421c963a06c2eba4b7c75b9d04913096e6f1a6",
+      "sanitizedSha256": "2e9c97013b817e535d5dfc147ab94f5a92516210f002ecedcbebf13b107d3888",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-119.json",
+      "id": "vc46bee7a31918d67",
+      "source": "vectors/vc46bee7a31918d67.json",
+      "sourceSha256": "3dfe75dc2a1b5fe4a8b7f0d48c413ade0805aeb2ab25f00876a2e0b95560d151",
+      "sanitizedSha256": "dec5f4aedff7ba305d103f8d12f23e1b5de3b03203104abef6ecbb2571dc4f4a",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-120.json",
+      "id": "vc55768118bb88e53",
+      "source": "vectors/vc55768118bb88e53.json",
+      "sourceSha256": "c5253342865f9337ef4483d91e265d18486912dabd556e06f8dc7965681c31e0",
+      "sanitizedSha256": "ed657a8be2f02a689dcfa08f73c9b3eeb31a8ff0ee790209bf6f212c78f8e3f4",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-121.json",
+      "id": "vc58647a590befbb7",
+      "source": "vectors/vc58647a590befbb7.json",
+      "sourceSha256": "9e6f297c313cfc65652fd5ff8f0ed92a29e6b0fc0cd096de6ded98a5aac93fbb",
+      "sanitizedSha256": "e565f5cc25ccd73a2d0fb94a857f2f25d4b73f1e7a2c597868eb15db2fff98de",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-013"
+        ]
+      },
+      "requirements": [
+        "W3C-R-013"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-013",
+          "row": "5.4 roll-up",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 393,
+          "sentence": "A roll-up states whether the checks it aggregates were capable of\nproducing a negative verdict",
+          "sentenceDigest": "9b00061b244165aadbdf3c0e4e089721e6933f9a6c6cbd8c572703be6617c93a",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-122.json",
+      "id": "vc653bb099d9c5839",
+      "source": "vectors/vc653bb099d9c5839.json",
+      "sourceSha256": "46f2cb94ac7aa148942e20b97f4edc7db8dad66b90213b19f4f84a080e05356e",
+      "sanitizedSha256": "0f7f26ff6c86c231717762be9bf4888065e96415964af07c65d209cd66feaab2",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-123.json",
+      "id": "vc66120fe5e1af394",
+      "source": "vectors/vc66120fe5e1af394.json",
+      "sourceSha256": "0d9b875b662ea9d2a48d62d633c63f6b44397f344834432bdd044b27720b590b",
+      "sanitizedSha256": "1740a51e39daaebb4411c311a29130933587ae784da87c5fbc9de4698166d8ea",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-124.json",
+      "id": "vc82b6b45a103ce1d",
+      "source": "vectors/vc82b6b45a103ce1d.json",
+      "sourceSha256": "1b6f25a6fc0ca51f3173ca9cf58d2f673697823c8633f070e94eda965c335635",
+      "sanitizedSha256": "ae003825458a5988fc8712cd5629525e82a3a144066625b249ae882f676fc46f",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-125.json",
+      "id": "vc938b2ab36cae34a",
+      "source": "vectors/vc938b2ab36cae34a.json",
+      "sourceSha256": "8d3a7d6b66e44e6d41b8ad957f6b00e86bab3e844de1a2f8d8171133f19f8573",
+      "sanitizedSha256": "9a61caf4b078f40f0450cfd3371bea87039b4b7c492e91b3de644f9f237e4a1c",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-027"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-126.json",
+      "id": "vcf1cbb85d729dcd1",
+      "source": "vectors/vcf1cbb85d729dcd1.json",
+      "sourceSha256": "9eaf30c764acef6677a04f8a325ed92a157680de2f79f17b9fe31381dfb6652f",
+      "sanitizedSha256": "4cbd2973f5c46d48c42cbe4988ed54233803177df6debb2d7a8a3764d06eb915",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-026"
+        ]
+      },
+      "requirements": [
+        "W3C-R-026"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-026",
+          "row": "14",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 296,
+          "sentence": "14 moved asserted on an evidence object that neither carries both\n      observations nor references them with digests",
+          "sentenceDigest": "2f6eb3b103bf0ce109d82c0653d0a755ca165ac33b2f53d7cf8f25d332fada2f",
+          "specVersion": "0.1",
+          "class": "form",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-127.json",
+      "id": "vd1eb6a3fb13eb97d",
+      "source": "vectors/vd1eb6a3fb13eb97d.json",
+      "sourceSha256": "9d4a1e7fb8d949b51c6966fda05ce7df39849b67a77bbafc7c823ea8c5ce359b",
+      "sanitizedSha256": "767152b63bad62f4abd662f7b61a17a276f3d1c3cc3a32122fd71262628f21bf",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-012"
+        ]
+      },
+      "requirements": [
+        "W3C-R-012"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-012",
+          "row": "12",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 288,
+          "sentence": "discrimination demonstrated citing an evidence\n      object whose changed slot is the checker",
+          "sentenceDigest": "6931e045470934031a4e375a0f582a4b62d8ab7b7d915a7926a15f76b10abe43",
+          "specVersion": "0.1",
+          "class": "consistency",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-128.json",
+      "id": "vd27e483fe63e78c0",
+      "source": "vectors/vd27e483fe63e78c0.json",
+      "sourceSha256": "1564e86323a58b252a98bb315077569a40d9aeb79e80881f3b7b07c13cfa519d",
+      "sanitizedSha256": "d8781258fb4d00ee9bae845583cf49e9f9bbe8ed9f3aba9b46023b368b62f547",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-129.json",
+      "id": "vd2a25cb35e1b8bce",
+      "source": "vectors/vd2a25cb35e1b8bce.json",
+      "sourceSha256": "665afb770de8c4135cff107ccc38c0a809886524e74e87103d4693d7da78dd2b",
+      "sanitizedSha256": "29af792b90d153b4defa93dc6377da0aa65eec5b12ef5ba23dbef52fc4dca51b",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-023"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-130.json",
+      "id": "vd2ae28ba9140bc89",
+      "source": "vectors/vd2ae28ba9140bc89.json",
+      "sourceSha256": "52eb6d4912898e73e0599eb08fdd785fe7a2857784311a6b136f8af3bfa35061",
+      "sanitizedSha256": "7d5d6c8bb3c9dd803f5560a0a9e57f311c1bc4fe86b106cb8e79decc956e2539",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-028"
+        ]
+      },
+      "requirements": [
+        "W3C-R-028"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-028",
+          "row": "2 domain once",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 171,
+          "sentence": "The domain is a declared object, declared once at run level",
+          "sentenceDigest": "88ed23692510e45446c3c4db8212219547a6599bb745f2f37ca7efc9200fe0d8",
+          "specVersion": "0.1",
+          "class": "form",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-131.json",
+      "id": "vd2e50306dcd6c470",
+      "source": "vectors/vd2e50306dcd6c470.json",
+      "sourceSha256": "6247c6595244cb5de2a529444ea2c11fda01feaccd245d5a91c7514628c297e0",
+      "sanitizedSha256": "4eb256f1858639053a80abbebf2d2f7dfb578499346c1c53a7df32027a895252",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-023"
+        ]
+      },
+      "requirements": [
+        "W3C-R-023"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-023",
+          "row": "5.2 population",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 362,
+          "sentence": "A claim over an empty population is reported as not claimable, not\nas satisfied",
+          "sentenceDigest": "7e37adc3e17eea94094be67c1ae747d3bdac223741ea8a95130e92748cd9dcca",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-132.json",
+      "id": "vd3e84d6a85cb6a0f",
+      "source": "vectors/vd3e84d6a85cb6a0f.json",
+      "sourceSha256": "cbce25462455efd5fa294f30e0ad22352aa58d2d3c071fbfebacd7ef3a1163e1",
+      "sanitizedSha256": "b6076c04f7d44edf9c9d088dd3799787d617d13d1b93ed0ce158835ba10acd95",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-024"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-133.json",
+      "id": "vd5cc438bcd34a9d5",
+      "source": "vectors/vd5cc438bcd34a9d5.json",
+      "sourceSha256": "1739369d51a194f4753946b7cc75ef0eae0e2c3ffc27eedaa724c049286a8736",
+      "sanitizedSha256": "dd922fc1ecc20f430e472be349f23dca649b54323c7e92e9ce32ba7f651180da",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-134.json",
+      "id": "vd64679c8b7f9e736",
+      "source": "vectors/vd64679c8b7f9e736.json",
+      "sourceSha256": "d54c3c8dbd6fc05b9e789755a2bf4d4eb68cb0d2363336f96fe967e0b8b8f885",
+      "sanitizedSha256": "ba8cfebc9a99dc44a912ef6f7e70e21f2c99d7e35ca47213bb1fca5b3a1169cd",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-135.json",
+      "id": "vd7d23c0d86701fc6",
+      "source": "vectors/vd7d23c0d86701fc6.json",
+      "sourceSha256": "c953f1f6b26a3b13cff8c9b877187db37aa035bdc38e9af90ba60f5e319a839d",
+      "sanitizedSha256": "1a25cce802aea73ec84ed3c0a8063e7390d1cb4b285782f4abec87a9f4e34921",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-136.json",
+      "id": "vd8d93fd735111aa5",
+      "source": "vectors/vd8d93fd735111aa5.json",
+      "sourceSha256": "3445f7ee6455270a2724d755159e81a3a5bd967cb70f7890a2ecc6b0b43d27ed",
+      "sanitizedSha256": "6bf0b03fe13cfc8332bfdc5d75cb3079ab8e616c6034eeabf27e5a4fb290b858",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-013"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-137.json",
+      "id": "vda5261ec1d0bd74e",
+      "source": "vectors/vda5261ec1d0bd74e.json",
+      "sourceSha256": "effadd89ccf67106102a90966c3deb0c5ea5979ea6d1f95f8028426e1b0c27f6",
+      "sanitizedSha256": "6c2238ef7c90b0b25c354634f0f2f966efe8f93a51a55917556fa800bd99a8ed",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-138.json",
+      "id": "vdcb0849fc754aaea",
+      "source": "vectors/vdcb0849fc754aaea.json",
+      "sourceSha256": "25ab6e34441a3fd9dbe9d714f3fc4e97b068437ac9f077046fdc43e4bd534c1b",
+      "sanitizedSha256": "60803c8c95d01bd190b85d10e10716d65c1f276351d33b749e03c0f0ee2191e6",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-139.json",
+      "id": "vdcbd067d047bfbd0",
+      "source": "vectors/vdcbd067d047bfbd0.json",
+      "sourceSha256": "bc0194c6fa014fc1f77ec8fe8bec438785fa072e74515e6d81c61bb3545dae4e",
+      "sanitizedSha256": "f7defb5e09bead37e034df830a0f199fbb219eff35207488da1228ec1dd3cedb",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-007"
+        ]
+      },
+      "requirements": [
+        "W3C-R-007"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-007",
+          "row": "7",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 279,
+          "sentence": "a verdict state carrying a cause",
+          "sentenceDigest": "831dc816ea23fa26b14116513c67fe62b8d8b04baf22b57faf834c4f01a0d525",
+          "specVersion": "0.1",
+          "class": "consistency",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-140.json",
+      "id": "vdd9207f5aa2fc9e3",
+      "source": "vectors/vdd9207f5aa2fc9e3.json",
+      "sourceSha256": "8324ba193cb03e6bb510fdd043338004f0d2d154316db7b1c89025d3fad70c95",
+      "sanitizedSha256": "acc92882f78801773f8e0f8bcf9ef2c8ea0e7ae57ba2f53510afa70fbbc8778f",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-141.json",
+      "id": "vdec1361509de89d4",
+      "source": "vectors/vdec1361509de89d4.json",
+      "sourceSha256": "076b3bb93539ee0efaf81c5d61428e174befd7f516120e06ba776806639fd5d2",
+      "sanitizedSha256": "39e36300eabffb7dc6b2697d0f6240376c41d80baf2e27f6ee94374d9e82f10d",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-142.json",
+      "id": "vdf05d359490e7833",
+      "source": "vectors/vdf05d359490e7833.json",
+      "sourceSha256": "5779c5928dedfcec14f4f2933ed2cbc4239c9b443f4e8076345b76d46f206cb3",
+      "sanitizedSha256": "96ffb0a6bf1da00d8ec4e10df0616d6d710cf96fa0cd1e869e89507e18b38601",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-018"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-143.json",
+      "id": "ve4744745405812b9",
+      "source": "vectors/ve4744745405812b9.json",
+      "sourceSha256": "236eb853dd94700175fc96fe0b40bc6473a94b8dfb7555fe64045f104e6ba7c2",
+      "sanitizedSha256": "729cb2e66a6d07c3923598308da0cc8430d99669a52d1c34eeedc42fc0e77a54",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-144.json",
+      "id": "ve53f0521c7e3a30c",
+      "source": "vectors/ve53f0521c7e3a30c.json",
+      "sourceSha256": "6cc57d341ccab8585dec18d6e764fccc2ab706fccdb8d202af2ab7f76f89413c",
+      "sanitizedSha256": "cae3002c197ccc14d04662326f0f0cf150ec1b496868e133e55e86be01e3f5c4",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-145.json",
+      "id": "ve5d916a50130739e",
+      "source": "vectors/ve5d916a50130739e.json",
+      "sourceSha256": "ffd06198892fc1522bdd465a766dcca3aaec9ca4e0f838889bc92c843f374a54",
+      "sanitizedSha256": "a9140220d05260bd1e7fd9db8dc9a05e465598f6ce112a61b7e71c9860259708",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-001",
+        "W3C-R-005"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-146.json",
+      "id": "ve70386fdb6f071d3",
+      "source": "vectors/ve70386fdb6f071d3.json",
+      "sourceSha256": "6e94c3a067c5e73321cbc5a10d68a916850d747ce080b14d36aabb6adcab4d02",
+      "sanitizedSha256": "7784b4eae928e1d0fe52bf53996fd486b4ef341b939a4bbeb5e84c1da782e126",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-001"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-147.json",
+      "id": "ve7520b18160365d2",
+      "source": "vectors/ve7520b18160365d2.json",
+      "sourceSha256": "d6eb87f01513238a357c0780361cfc1fbed4f8433e9e0a7a8d71a8a0d48f40cd",
+      "sanitizedSha256": "18af60e9396c4c82d4a9a4630792f7a6155bf27001f61ab478b77737f055ae89",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-148.json",
+      "id": "ve75a143e2bdb4d61",
+      "source": "vectors/ve75a143e2bdb4d61.json",
+      "sourceSha256": "93ac4e8e66fdf66b6e71fad96a36b246a28ae69c83bcb80fd449194488b7f834",
+      "sanitizedSha256": "e1a31241e2683df0e6adee64cefcda123fb2b055334778ea499242fc44e67b4f",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-149.json",
+      "id": "ve9c436f93e42e394",
+      "source": "vectors/ve9c436f93e42e394.json",
+      "sourceSha256": "7f539cd292ae5ea5b5e414d56559cf588bbbdb8c74f3daa1e509a3cc3ddfbecb",
+      "sanitizedSha256": "1c1445db7bf90bf08aa030afb20e2a33dc971ad8958ec7fa43207bbfaf13d2dc",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-029"
+        ]
+      },
+      "requirements": [
+        "W3C-R-029"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-029",
+          "row": "5.4 control binding",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 431,
+          "sentence": "The control runs under the same checker revision and the same\n    relevant configuration and constraints as the declared checks\n    whose negative capability it is reported for",
+          "sentenceDigest": "4160b21d27d64e6afb8a236c78d3a4b2266672794579be3f970309b26278677b",
+          "specVersion": "0.1",
+          "class": "consistency",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-150.json",
+      "id": "ve9cefed56bbc8359",
+      "source": "vectors/ve9cefed56bbc8359.json",
+      "sourceSha256": "61941426f9e9408907f669a9ff4aae04f4e77275d609b9af0229c2dee7174df3",
+      "sanitizedSha256": "12bd78a2f22fe1a64783ccef4ea56db86152def09ebfea441eaab9522238d543",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-151.json",
+      "id": "vea3ee7919ceb2e10",
+      "source": "vectors/vea3ee7919ceb2e10.json",
+      "sourceSha256": "5fe2fbac4fdd15a36b52c541c07fe6f900ca5e0802c25348876c4d8f1fa4e7e4",
+      "sanitizedSha256": "92647a9494e49ad8182696b9278d7de083a4d976b62b14516ef4fbc9e71c81f9",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-152.json",
+      "id": "vea80ece35200e349",
+      "source": "vectors/vea80ece35200e349.json",
+      "sourceSha256": "e978b6c08c6435aca04b3ab2a3661ed7c796c163e7507c1ceba783c8f932e162",
+      "sanitizedSha256": "f24f1691331783ba8973913a35cd24ea32027b1eb297856be7f1a16a0c0531d8",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-153.json",
+      "id": "veaee43cdb4a113d0",
+      "source": "vectors/veaee43cdb4a113d0.json",
+      "sourceSha256": "5812ce0b5e9b2df602e52f00f654f8e9ffc3912b4cefbbf02ced8ab2f115a091",
+      "sanitizedSha256": "30428f12a28d969ff8d3780d5eda286a195e5319e3c0c7a2a53a73f9e077968f",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-154.json",
+      "id": "vec36e393a92b69eb",
+      "source": "vectors/vec36e393a92b69eb.json",
+      "sourceSha256": "4c061af330652b564bedb5e73afe68935a45973f032140ba12b7717461c31b9c",
+      "sanitizedSha256": "556455abaebbcf4c3459eee5591d1dc0eab80b63b6ea04c08ca8d658fc139f60",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-004"
+        ]
+      },
+      "requirements": [
+        "W3C-R-004"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-004",
+          "row": "4",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 274,
+          "sentence": "cause confinement-failed-during-check with any\n      state but void",
+          "sentenceDigest": "fa7afadb72dcc56f0db321ee4dfec2c82482c37db122dfcff6006d18485dc01f",
+          "specVersion": "0.1",
+          "class": "consistency",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-155.json",
+      "id": "vecd8b7bb20fed3a3",
+      "source": "vectors/vecd8b7bb20fed3a3.json",
+      "sourceSha256": "89b964118e544a8117d9856a7548d6e8dd9fe45e6d436a9a36c1893b8a6a4267",
+      "sanitizedSha256": "35a2949a3f1f6488e36de9e58d8569fec3eefae01f39017855e74307afb6b4f5",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-021"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-156.json",
+      "id": "vee997c119f09258b",
+      "source": "vectors/vee997c119f09258b.json",
+      "sourceSha256": "856cd2da3a734d091a5ef921314e20901ca37cab62b87dc207c952b9ef39de59",
+      "sanitizedSha256": "e64e7dd173c62096499fe60e669601064d783d39b0f190e91ee114761e18eeb7",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-011"
+        ]
+      },
+      "requirements": [
+        "W3C-R-011"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-011",
+          "row": "11",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 286,
+          "sentence": "an asserted value without its evidence reference,\n      on either field, foreclosed included",
+          "sentenceDigest": "82c27c355fd56b7dde71a7880b89c451b36db62318e64ea867930b34e7546a0e",
+          "specVersion": "0.1",
+          "class": "consistency",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-157.json",
+      "id": "vef3f22a57a308f45",
+      "source": "vectors/vef3f22a57a308f45.json",
+      "sourceSha256": "03c92da75525e65f30bb887bb18b5973411bbe0807b47cb616f2d18ea871c0e2",
+      "sanitizedSha256": "50595909fb35d03c11e436ce7cb2c72508f206d6a833fc4f4dbcb3bffa923933",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-158.json",
+      "id": "vf374114fe7f28e7d",
+      "source": "vectors/vf374114fe7f28e7d.json",
+      "sourceSha256": "f16a568ef0f616261b999c62ccd68c16ad9d26336cb5f66687217c0a9f9b4901",
+      "sanitizedSha256": "a43335f0d98b4dbd0e72fd37d95901bf7e2296791b456e7986566abf4a0b8f7f",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-002"
+        ]
+      },
+      "requirements": [
+        "W3C-R-002"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-002",
+          "row": "2",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 272,
+          "sentence": "void with not_applicable, out_of_scope or withheld",
+          "sentenceDigest": "05fb9274ff0859d9374173449c90b3498422210ac295321a8d4357816428b3d8",
+          "specVersion": "0.1",
+          "class": "consistency",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-159.json",
+      "id": "vf407ebb4a9cb8a3d",
+      "source": "vectors/vf407ebb4a9cb8a3d.json",
+      "sourceSha256": "c1bf60a6b2f82968e2321a605f7cd1eb889ba4eea4dec722744c13747143a15a",
+      "sanitizedSha256": "a7e07633ef01d52ff2211c076ca5428c72b6f357c0beb27ae01b6d65a3005583",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-016"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-160.json",
+      "id": "vf82e507d268fed9d",
+      "source": "vectors/vf82e507d268fed9d.json",
+      "sourceSha256": "aa046e1656550ca6651f0e4c636a894ab00bd6c1d9ff7039c2b4ffb9de251afa",
+      "sanitizedSha256": "bb2656a60a58e8aac395a8206a44eb867eebc32f1ad89bf9dfca87c78b7abe9a",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-004"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-161.json",
+      "id": "vf9b5623144960dda",
+      "source": "vectors/vf9b5623144960dda.json",
+      "sourceSha256": "ab7a6d57cfa3401618588e4508151828696425e1ec7dc5bded93008356930424",
+      "sanitizedSha256": "b6076c04f7d44edf9c9d088dd3799787d617d13d1b93ed0ce158835ba10acd95",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-009"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-162.json",
+      "id": "vfa24e4f45c2e826e",
+      "source": "vectors/vfa24e4f45c2e826e.json",
+      "sourceSha256": "70297e14ab057ce8fcae8ad7f15beae421f35430158dee401a48960f37ba3757",
+      "sanitizedSha256": "342b3369872a86005c5dbc20766ea42e704413c5a34372b707c7e8ec3ab2ce2a",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-020"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-163.json",
+      "id": "vfa79ad0a7bd957b9",
+      "source": "vectors/vfa79ad0a7bd957b9.json",
+      "sourceSha256": "497e15530e81fff4a65b87fbb1afb433c64d0c121b7833f1ab5a14e1bda09432",
+      "sanitizedSha256": "342b3369872a86005c5dbc20766ea42e704413c5a34372b707c7e8ec3ab2ce2a",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-011"
+      ],
+      "grounds": []
+    },
+    {
+      "caseFile": "cases/case-164.json",
+      "id": "vfbc5db1c2a012359",
+      "source": "vectors/vfbc5db1c2a012359.json",
+      "sourceSha256": "5f56a208344e758c57b1e24e4477ae2ad7c5bcc9b636354733c068930d6cee26",
+      "sanitizedSha256": "b31d867f32a0d12dd4c54f0c171f875d564b39a28da259ad78ca15fdd5be0a64",
+      "expected": {
+        "verdict": "reject",
+        "rejects": [
+          "W3C-R-015"
+        ]
+      },
+      "requirements": [
+        "W3C-R-015"
+      ],
+      "grounds": [
+        {
+          "id": "W3C-R-015",
+          "row": "3.1 set binding",
+          "file": "0087",
+          "vendored": "spec-vendored/0087-arsentev-2026-09-30-v01.txt",
+          "line": 229,
+          "sentence": "A digest match establishes a set only when the count of leaves is\nbound into what is signed or hashed, and a report MUST declare which\ntree shape it uses",
+          "sentenceDigest": "bae0f589fd14116ed5c4bce4de1445bf475b8a878422ddd9aa52f7cc62874a0b",
+          "specVersion": "0.1",
+          "class": "evidence",
+          "status": "agreed",
+          "resolvedRead": false
+        }
+      ]
+    },
+    {
+      "caseFile": "cases/case-165.json",
+      "id": "vfbd7379026575f04",
+      "source": "vectors/vfbd7379026575f04.json",
+      "sourceSha256": "0b1398f470294eb44d4dafe7f768dc7c71d6ef1d6fadad568000df8f8ad69681",
+      "sanitizedSha256": "01a0fdaaf1e748f3df27fa7dcc1c161d741cbc32e6cddbdcd6f28357512069aa",
+      "expected": {
+        "verdict": "accept",
+        "rejects": []
+      },
+      "requirements": [
+        "W3C-R-001",
+        "W3C-R-002"
+      ],
+      "grounds": []
+    }
+  ]
+}

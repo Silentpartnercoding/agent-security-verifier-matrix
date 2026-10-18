@@ -1,0 +1,36 @@
+{
+  "lars_reader": {
+    "repository": "https://github.com/MoltyCel/reporting-format-v01-reader.git",
+    "commit": "6d8ee54b01d20a819869ceb9fcea096d59251f8c",
+    "tag": "frozen-run-1",
+    "reader_sha256": "82a316b548397b5bc3ff37d33285473f754e7b4c6bd1408660a18f2dc2154477",
+    "readme_sha256": "cac10ab4537515e03cf09fa35ddc0503bbd28554fe11efe77b3c59a847e44c76",
+    "specification_sha256": "35625d73baa56f2705bb2fffe7e2a4075293fa6df075bc61bdd349a5d3618d9d"
+  },
+  "upstream_oracle": {
+    "repository": "https://github.com/probityai/agent-evidence-vectors.git",
+    "commit": "33d545104ff2f8c124cff465c96c013eeb809156",
+    "tag": "v0.18.1",
+    "corpus_member_count": 269,
+    "selected_member_count": 165,
+    "selected_raw_member_digest": "18c129cbca3bf086159ee98a9e4720d71c5152a30fd0657159fe7d2848f8972a",
+    "full_corpus_digest": "f9e58e62f89b0700c94bfae289f73517439008ebd3b655e3d85057b2ec7668fc"
+  },
+  "clean_room_reader": {
+    "freeze_commit": "24c54f14824f6a802572786ff6f7a58db341d760",
+    "history_bundle_sha256": "d31fb26b8a0aa520b0ff552beb326e85d91d3af94f044f85a0b234fa93490cea",
+    "reader_sha256": "35b58098456b8875e2491a56e457b891b1464f024dcba8713dc612dc9cc1dec9",
+    "input_manifest_sha256": "585954b74ac5bfe4809cc59d3878e7949d40d9a963a853f1c0fab4fbb1665823",
+    "predictions_sha256": "dc96574a754ab85f5d4a2df0067557cfe9b4c938df1aa9bb32f3b19bfebd4975",
+    "counts_sha256": "e4a374a130d9745114a2c9b5278bb275c5e308199e4e09b54fcb090371325f96"
+  },
+  "frozen_audit_artifacts": {
+    "lars_run_sha256": "505dfb71a640e7ef0eceb7f2d859e5cf08dac4c81bed80672135e0eb51b92130",
+    "oracle_audit_sha256": "c66f36035a9c4de25deb18e93b0a4bc19832b531af100da577c13cfd60ccfad2",
+    "comparison_rows_sha256": "e108606356d682f900cb6765cb5f7bd4b38532b8a6b830a72f82cdd31560a7f9",
+    "mutation_runner_sha256": "d625eed944c6410b5c03c596cb87c0b74ceefab0a473b44427a75d18e1cc54e4",
+    "mutation_replay_sha256": "9a111b89cf30a53639076ee9b20bcac5597a6c9da84c8808017c297e7babbfb1",
+    "mutation_results_sha256": "aa65f328c609dc252a2b21b601737990b899dc12522eff2ab61307c4dff3d411",
+    "mutation_results_more_sha256": "85b62f02d0a61e55d40fd7fa05e0975c9dd64f36ba724e06764b3d30a4323cb2"
+  }
+}

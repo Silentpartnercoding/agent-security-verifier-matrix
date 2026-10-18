@@ -1,0 +1,2470 @@
+[
+  {
+    "case_id": "case-001",
+    "id": "v0090b52048ca1f51",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3",
+      "§5.3 disclosure counter"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified.; referenced disclosure count 2 exceeds the 1 relevant verdict records; §5.3 supplies no rejection row for this disclosure."
+  },
+  {
+    "case_id": "case-002",
+    "id": "v04934d23180f6d9c",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "prior run does not resolve: unchecked, not discriminating power, not a refusal (R22)",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3 reading table; §5.4 prior run",
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Prior report cannot be resolved with verified identity, fail results and checker/configuration binding from the supplied envelope.; Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-003",
+    "id": "v050e5667630b8bf7",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-004",
+    "id": "v0e286b53de78162a",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-008"
+    ],
+    "lars": "reject",
+    "lars_ground": "row 8 (line 280): \"other-verdict foreclosed with discrimination demonstrated\" - c-fail: other-verdict foreclosed beside discrimination demonstrated",
+    "lars_grounds": [
+      "row 8 (line 280): \"other-verdict foreclosed with discrimination demonstrated\" - c-fail: other-verdict foreclosed beside discrimination demonstrated"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§4 row 8"
+    ],
+    "clean_reason": "Foreclosure and demonstrated discrimination are asserted together."
+  },
+  {
+    "case_id": "case-005",
+    "id": "v1032eb59a7cdb30f",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1 collection digest"
+    ],
+    "clean_reason": "Text supplies no collection leaf serialization or count-binding encoding for RFC9162_SHA256; root correctness cannot be verified."
+  },
+  {
+    "case_id": "case-006",
+    "id": "v13b3c66e7fc7dae2",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-007",
+    "id": "v148fc59046a8548a",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1 collection digest"
+    ],
+    "clean_reason": "Text supplies no collection leaf serialization or count-binding encoding for rfc6962; root correctness cannot be verified."
+  },
+  {
+    "case_id": "case-008",
+    "id": "v159bcd24a7e74a43",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-009",
+    "id": "v1660acd2e4efb7c7",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-013"
+    ],
+    "lars": "reject",
+    "lars_ground": "line 405: \"\"Fail\" here is the state fail, in all three places. A non-pass is not enough\" - the roll-up claims shown-by-run but no check record is in state fail",
+    "lars_grounds": [
+      "line 405: \"\"Fail\" here is the state fail, in all three places. A non-pass is not enough\" - the roll-up claims shown-by-run but no check record is in state fail"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§5.4 negative verdict"
+    ],
+    "clean_reason": "Run claims negative capability without a declared check in state fail."
+  },
+  {
+    "case_id": "case-010",
+    "id": "v17b2ad943b1f051d",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-011",
+    "id": "v183b37dea5ad4159",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-012",
+    "id": "v1a0f984d88bb9fe2",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-013",
+    "id": "v1afbcaac4b0d514d",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-014",
+    "id": "v1c020dd1ed49874c",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-017"
+    ],
+    "lars": "cannot-tell",
+    "lars_ground": "line 343: \"An aggregate is computed only over declared, exercised checks\" - reading R24: the roll-up gives exercised 3, the records give 2",
+    "lars_grounds": [],
+    "clean": "reject",
+    "clean_grounds": [
+      "§5.1 complete denominator"
+    ],
+    "clean_reason": "Aggregate exercised denominator is absent, invalid or inconsistent with check states."
+  },
+  {
+    "case_id": "case-015",
+    "id": "v20a798b25fc2ec0b",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-027"
+    ],
+    "lars": "accept",
+    "lars_ground": "evidence e-1: declared arity 1 not read, recomputed 1 from the delta (R18)",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-016",
+    "id": "v20f99b9d22c842a3",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-017",
+    "id": "v22e6c34b776baff7",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-018",
+    "id": "v22f803622ac75918",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-019",
+    "id": "v254933bf314c82fc",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-020",
+    "id": "v265c2e6f0a3d31f6",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-021",
+    "id": "v27a01b14321f6ae5",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-019"
+    ],
+    "lars": "reject",
+    "lars_ground": "row 1 (line 271): \"a non-verdict state with no cause\" - c-nx is not-exercised with no cause from the vocabulary",
+    "lars_grounds": [
+      "row 1 (line 271): \"a non-verdict state with no cause\" - c-nx is not-exercised with no cause from the vocabulary",
+      "line 110: \"Free text is refused in place of a disposition\" - c-nx gives cause \"the proxy blocked it\", not a disposition"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§1.2 cause vocabulary"
+    ],
+    "clean_reason": "Cause is not a defined disposition."
+  },
+  {
+    "case_id": "case-022",
+    "id": "v28820b464a335617",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-015"
+    ],
+    "lars": "reject",
+    "lars_ground": "line 230: \"a report MUST declare which tree shape it uses\" - the check-set digest declares no tree shape",
+    "lars_grounds": [
+      "line 230: \"a report MUST declare which tree shape it uses\" - the check-set digest declares no tree shape"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§3.1 closed tree-shape set"
+    ],
+    "clean_reason": "Declared check set omits a registered tree-shape identifier or uses free text."
+  },
+  {
+    "case_id": "case-023",
+    "id": "v2a251ae413920da5",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-024",
+    "id": "v2ddb14c9194e0341",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-025",
+    "id": "v320406e03fff4faa",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-026",
+    "id": "v36ba5fca23b6a162",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-027",
+    "id": "v37729703d471ba9b",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-023"
+    ],
+    "lars": "reject",
+    "lars_ground": "line 327: \"a report asserting a completeness claim without the count of the population it quantifies over\" - the no-void claim counts 2, its population (declared checks) is 3",
+    "lars_grounds": [
+      "line 327: \"a report asserting a completeness claim without the count of the population it quantifies over\" - the no-void claim counts 2, its population (declared checks) is 3"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§5.2 completeness population"
+    ],
+    "clean_reason": "no-void claim population differs from the population specified in §5.2."
+  },
+  {
+    "case_id": "case-028",
+    "id": "v37d8ddc87ed265e8",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-029",
+    "id": "v3aef8ba9ac745dbf",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-030",
+    "id": "v3cf361bbfb973f7d",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-031",
+    "id": "v3fef7c8cc4ed5e4b",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-025"
+    ],
+    "lars": "reject",
+    "lars_ground": "row 13 (line 294): \"other-verdict demonstrated citing an evidence object whose moved does not contain the verdict\" - c-fail: evidence e-1 recomputes moved as [\"fired-rule list\"], without the verdict",
+    "lars_grounds": [
+      "row 13 (line 294): \"other-verdict demonstrated citing an evidence object whose moved does not contain the verdict\" - c-fail: evidence e-1 recomputes moved as [\"fired-rule list\"], without the verdict"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§4 row 13"
+    ],
+    "clean_reason": "Other-verdict demonstration cites evidence whose recomputed moved lacks verdict."
+  },
+  {
+    "case_id": "case-032",
+    "id": "v44f7a4acc7f66fa4",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-033",
+    "id": "v472759709d82c585",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1 collection digest"
+    ],
+    "clean_reason": "Text supplies no collection leaf serialization or count-binding encoding for rfc6962; root correctness cannot be verified."
+  },
+  {
+    "case_id": "case-034",
+    "id": "v48877f27bbd03b55",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-018"
+    ],
+    "lars": "reject",
+    "lars_ground": "row 14 (line 296): \"moved asserted on an evidence object that neither carries both observations nor references them with digests\" - evidence e-1 asserts moved but neither carries both observations nor references both with digests",
+    "lars_grounds": [
+      "row 14 (line 296): \"moved asserted on an evidence object that neither carries both observations nor references them with digests\" - evidence e-1 asserts moved but neither carries both observations nor references both with digests"
+    ],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3",
+      "§5.3 disclosure counter"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified.; A verdict record uses both carried and referenced observations; the text does not specify its counter assignment."
+  },
+  {
+    "case_id": "case-035",
+    "id": "v494ac13464d685ee",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-036",
+    "id": "v499412698a1dd50e",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-020"
+    ],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1 collection digest"
+    ],
+    "clean_reason": "Text supplies no collection leaf serialization or count-binding encoding for RFC9162_SHA256; root correctness cannot be verified."
+  },
+  {
+    "case_id": "case-037",
+    "id": "v49afe44cc51bc376",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3",
+      "§5.4 checker/configuration binding; §10 text precedence"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified.; Missing checker/configuration binding cannot establish the normative §5.4 condition; §10 reports a permissive corpus treatment."
+  },
+  {
+    "case_id": "case-038",
+    "id": "v4a06b866afca0d49",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-015"
+    ],
+    "lars": "reject",
+    "lars_ground": "line 240: \"The declaration is an identifier from a closed, versioned set of tree construction and hash identifiers, not free text\" - the check-set declares tree shape \"RFC 9162 SHA-256\", not an identifier of the set",
+    "lars_grounds": [
+      "line 240: \"The declaration is an identifier from a closed, versioned set of tree construction and hash identifiers, not free text\" - the check-set declares tree shape \"RFC 9162 SHA-256\", not an identifier of the set"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§3.1 closed tree-shape set"
+    ],
+    "clean_reason": "Declared check set omits a registered tree-shape identifier or uses free text."
+  },
+  {
+    "case_id": "case-039",
+    "id": "v4c778d3ee20deb35",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-040",
+    "id": "v4e4face5dd4ff492",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-013"
+    ],
+    "lars": "reject",
+    "lars_ground": "line 416: \"control-failed requires the control's state to be fail\" - the control's state is \"inconclusive\", not fail",
+    "lars_grounds": [
+      "line 416: \"control-failed requires the control's state to be fail\" - the control's state is \"inconclusive\", not fail"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§5.4 control"
+    ],
+    "clean_reason": "Control did not return the negative verdict fail."
+  },
+  {
+    "case_id": "case-041",
+    "id": "v4f343e8bd3d6af08",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1 collection digest"
+    ],
+    "clean_reason": "Text supplies no collection leaf serialization or count-binding encoding for RFC9162_SHA256; root correctness cannot be verified."
+  },
+  {
+    "case_id": "case-042",
+    "id": "v53dd1aa630064e4c",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-043",
+    "id": "v568e8a1311ecb396",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-044",
+    "id": "v56b6337b612b1ee3",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3",
+      "§5.3 disclosure counter"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified.; referenced disclosure count 4 exceeds the 2 relevant verdict records; §5.3 supplies no rejection row for this disclosure."
+  },
+  {
+    "case_id": "case-045",
+    "id": "v56f37afaff2a6ca8",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 216: \"does not resolve unchecked; the rows reading moved degrade\" - reading R12: c-fail: evidence e-1 does not resolve and declares moved [\"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3 reading table",
+      "§3 reading table; §4 row 13",
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Observation reference 'obs-fail' is unresolved; moved-dependent rows degrade.; Observation reference 'obs-pass' is unresolved; moved-dependent rows degrade.; Other-verdict evidence lacks a recomputable verdict projection; row 13 degrades.; Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-046",
+    "id": "v59b5c22988c70b05",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-047",
+    "id": "v5a2ff35648828621",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-009"
+    ],
+    "lars": "reject",
+    "lars_ground": "row 9 (line 282): \"discrimination demonstrated with other-verdict unknown or possible-not-demonstrated\" - c-fail: discrimination demonstrated, other-verdict possible-not-demonstrated",
+    "lars_grounds": [
+      "row 9 (line 282): \"discrimination demonstrated with other-verdict unknown or possible-not-demonstrated\" - c-fail: discrimination demonstrated, other-verdict possible-not-demonstrated",
+      "row 11 (line 286): \"an asserted value without its evidence reference, on either field, foreclosed included\" - c-fail: other-verdict possible-not-demonstrated names no evidence reference"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§4 row 9"
+    ],
+    "clean_reason": "Demonstrated discrimination accompanies unknown or undemonstrated other-verdict."
+  },
+  {
+    "case_id": "case-048",
+    "id": "v5a678e8560a4f0f1",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-049",
+    "id": "v5c26b11179a2277a",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-023"
+    ],
+    "lars": "reject",
+    "lars_ground": "line 327: \"a report asserting a completeness claim without the count of the population it quantifies over\" - the accounting claim counts 3, its population (declared checks) is 2",
+    "lars_grounds": [
+      "line 327: \"a report asserting a completeness claim without the count of the population it quantifies over\" - the accounting claim counts 3, its population (declared checks) is 2"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§5.2 completeness population"
+    ],
+    "clean_reason": "accounting claim population differs from the population specified in §5.2."
+  },
+  {
+    "case_id": "case-050",
+    "id": "v6397c3de47a1882c",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-051",
+    "id": "v66fd68ad7d106fac",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-014"
+    ],
+    "lars": "accept",
+    "lars_ground": "prior run does not resolve: unchecked, not discriminating power, not a refusal (R22)",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3 reading table; §5.4 prior run",
+      "§3.1; §11 O3",
+      "§5.4 prior-run identity"
+    ],
+    "clean_reason": "Prior report cannot be resolved with verified identity, fail results and checker/configuration binding from the supplied envelope.; Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified.; Prior-run check identity is not established by the adapter or resolved evidence."
+  },
+  {
+    "case_id": "case-052",
+    "id": "v6b1ea60273861c5a",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-023"
+    ],
+    "lars": "cannot-tell",
+    "lars_ground": "line 364: \"With a nonempty declared set it is satisfied when the void count is zero and not satisfied otherwise\" - reading R23: the no-void claim is \"satisfied\" with 1 void records",
+    "lars_grounds": [],
+    "clean": "reject",
+    "clean_grounds": [
+      "§5.2 no-void claim"
+    ],
+    "clean_reason": "No-void claim disagrees with the declared void count."
+  },
+  {
+    "case_id": "case-053",
+    "id": "v6cd84ff1aea45153",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-020"
+    ],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1 collection digest"
+    ],
+    "clean_reason": "Text supplies no collection leaf serialization or count-binding encoding for rfc6962; root correctness cannot be verified."
+  },
+  {
+    "case_id": "case-054",
+    "id": "v6f15889cec93060d",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-055",
+    "id": "v6f4ff1db603ecfec",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-056",
+    "id": "v70bdf863fb9cd6ac",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-057",
+    "id": "v719b5f3fe23d8c03",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-058",
+    "id": "v7351d22d2343dfb5",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-059",
+    "id": "v735efb00ce85d044",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-060",
+    "id": "v737955ac1c0d9c2e",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-061",
+    "id": "v76c0022fb2a7f21e",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-062",
+    "id": "v796a6048345b8f58",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-063",
+    "id": "v7c22f1451e51aeb5",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-015"
+    ],
+    "lars": "cannot-tell",
+    "lars_ground": "line 229: \"A digest match establishes a set only when the count of leaves is bound into what is signed or hashed\" - reading R16: the check-set states no leaf count",
+    "lars_grounds": [],
+    "clean": "reject",
+    "clean_grounds": [
+      "§3.1 count binding"
+    ],
+    "clean_reason": "Declared check set digest has no nonnegative integer leaf count."
+  },
+  {
+    "case_id": "case-064",
+    "id": "v7cac3bda7403c268",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-005"
+    ],
+    "lars": "reject",
+    "lars_ground": "row 5 (line 276): \"a declared exclusion with any state but not-exercised\" - c-x is a declared exclusion in state pass",
+    "lars_grounds": [
+      "row 5 (line 276): \"a declared exclusion with any state but not-exercised\" - c-x is a declared exclusion in state pass"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§4 row 5"
+    ],
+    "clean_reason": "A declared exclusion has a state other than not-exercised."
+  },
+  {
+    "case_id": "case-065",
+    "id": "v7ce1218057f32f1c",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-066",
+    "id": "v804ca6858fa22efe",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-067",
+    "id": "v8224d0f41c80f492",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-068",
+    "id": "v822b02c01fe9ddd2",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-069",
+    "id": "v828ec4d8309aa2e3",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-070",
+    "id": "v84f8c68bc5fc2810",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-071",
+    "id": "v86e1560a0d27b432",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-072",
+    "id": "v876f8aa31676cf48",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-073",
+    "id": "v88935f0b29397a80",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-015"
+    ],
+    "lars": "cannot-tell",
+    "lars_ground": "line 229: \"A digest match establishes a set only when the count of leaves is bound into what is signed or hashed\" - reading R16: the check-set states 3 leaves over 2 check records",
+    "lars_grounds": [],
+    "clean": "reject",
+    "clean_grounds": [
+      "§3.1 count binding"
+    ],
+    "clean_reason": "Declared check set leaf count differs from its declared population."
+  },
+  {
+    "case_id": "case-074",
+    "id": "v8981e0830c69b869",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-006"
+    ],
+    "lars": "cannot-tell",
+    "lars_ground": "row 6 (line 278): \"a non-verdict state carrying either qualifier\" - reading R05: c-inconclusive is inconclusive and writes other-verdict as unknown",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-075",
+    "id": "v8a7442b19984a1ff",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-076",
+    "id": "v8a8da062cba9fce5",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-077",
+    "id": "v8c15455bb3d933cb",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-078",
+    "id": "v8ec1375690daa188",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-016"
+    ],
+    "lars": "reject",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - evidence e-1: moved [\"fired-rule list\", \"verdict\"] escapes compared [\"verdict\"]",
+    "lars_grounds": [
+      "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - evidence e-1: moved [\"fired-rule list\", \"verdict\"] escapes compared [\"verdict\"]"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§2 moved subset"
+    ],
+    "clean_reason": "Declared comparable moved includes a projection outside compared.; Recomputed moved includes a projection outside compared."
+  },
+  {
+    "case_id": "case-079",
+    "id": "v8f818aaaa7cdc7ed",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-080",
+    "id": "v9614879a484c4fc0",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-081",
+    "id": "v98252c989e84999d",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-003"
+    ],
+    "lars": "reject",
+    "lars_ground": "row 3 (line 273): \"not-exercised with integrity-failure\" - c-nx is not-exercised with integrity-failure",
+    "lars_grounds": [
+      "row 3 (line 273): \"not-exercised with integrity-failure\" - c-nx is not-exercised with integrity-failure"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§4 row 3"
+    ],
+    "clean_reason": "Not-exercised carries integrity-failure."
+  },
+  {
+    "case_id": "case-082",
+    "id": "v98ee154eeceb9c55",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-083",
+    "id": "v9b7c8cf7d1b9f679",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-084",
+    "id": "v9c68a108ed63da63",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-021"
+    ],
+    "lars": "reject",
+    "lars_ground": "row 11 (line 286): \"an asserted value without its evidence reference, on either field, foreclosed included\" - c-fail: other-verdict possible-not-demonstrated names no evidence reference",
+    "lars_grounds": [
+      "row 11 (line 286): \"an asserted value without its evidence reference, on either field, foreclosed included\" - c-fail: other-verdict possible-not-demonstrated names no evidence reference"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§2 moved recomputation"
+    ],
+    "clean_reason": "Declared moved differs from the supplied observation projections."
+  },
+  {
+    "case_id": "case-085",
+    "id": "v9f618dfd3e44b84a",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3",
+      "§5.2 completeness definitions"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified.; The text supplies the accounting population but not a complete satisfaction algorithm."
+  },
+  {
+    "case_id": "case-086",
+    "id": "va0620b488f2ff2f5",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-087",
+    "id": "va18bfa567e0405b7",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-088",
+    "id": "va19ba1b3f9f382bb",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-089",
+    "id": "va1e910d25ebbb2c4",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3",
+      "§5.2 completeness definitions"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified.; The text supplies the accounting population but not a complete satisfaction algorithm.; The text supplies the evidence population but not a complete satisfaction algorithm."
+  },
+  {
+    "case_id": "case-090",
+    "id": "va213bada85cc9abe",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-091",
+    "id": "va2ba93081d3a6c13",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-092",
+    "id": "va3c277aa6743807a",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-024"
+    ],
+    "lars": "cannot-tell",
+    "lars_ground": "line 152: \"Five slots\" - reading R19: evidence e-1 lacks delta",
+    "lars_grounds": [],
+    "clean": "reject",
+    "clean_grounds": [
+      "§2 delta"
+    ],
+    "clean_reason": "Evidence lacks a concrete delta."
+  },
+  {
+    "case_id": "case-093",
+    "id": "va4fc9fc8f711bd58",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-094",
+    "id": "va64493c76c57f982",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-095",
+    "id": "va83db4001b89e73e",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-096",
+    "id": "va86e962a5024f152",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-029"
+    ],
+    "lars": "cannot-tell",
+    "lars_ground": "line 431: \"The control runs under the same checker revision and the same relevant configuration and constraints as the declared checks\" - reading R21: the control ran under checker \"checker-2\", the run under \"checker-1\"",
+    "lars_grounds": [],
+    "clean": "reject",
+    "clean_grounds": [
+      "§5.4 checker/configuration binding"
+    ],
+    "clean_reason": "Control differs from the supported run on binding components: checker."
+  },
+  {
+    "case_id": "case-097",
+    "id": "va91d537fa714f2d3",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-098",
+    "id": "vaad2cb64c5b0646b",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "reject",
+    "lars_ground": "row 11 (line 286): \"an asserted value without its evidence reference, on either field, foreclosed included\" - c-fail: other-verdict possible-not-demonstrated names no evidence reference",
+    "lars_grounds": [
+      "row 11 (line 286): \"an asserted value without its evidence reference, on either field, foreclosed included\" - c-fail: other-verdict possible-not-demonstrated names no evidence reference"
+    ],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§1.3; §4 row 11",
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Text does not explicitly settle whether possible-not-demonstrated asserts a value requiring an evidence reference.; Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-099",
+    "id": "vab508347e605c0af",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-020"
+    ],
+    "lars": "cannot-tell",
+    "lars_ground": "line 215: \"resolves, digests differ integrity failure\" - reading R11: evidence e-1: a referenced observation resolves with a different digest",
+    "lars_grounds": [],
+    "clean": "reject",
+    "clean_grounds": [
+      "§3 reading table"
+    ],
+    "clean_reason": "Resolved observation digest differs from the reference: integrity failure."
+  },
+  {
+    "case_id": "case-100",
+    "id": "vac146420618655c5",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-101",
+    "id": "vaca8620fefade22f",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-102",
+    "id": "vad9b72227e24e32f",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-103",
+    "id": "vaeb76896b202e837",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-013"
+    ],
+    "lars": "reject",
+    "lars_ground": "line 421: \"\"Nothing\" is a permitted answer. Silence in that field is not\" - the roll-up does not say whether its checks could produce a negative verdict",
+    "lars_grounds": [
+      "line 421: \"\"Nothing\" is a permitted answer. Silence in that field is not\" - the roll-up does not say whether its checks could produce a negative verdict"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§5.4 disclosure"
+    ],
+    "clean_reason": "Roll-up is silent about negative capability."
+  },
+  {
+    "case_id": "case-104",
+    "id": "vb11134a37e7c0c2b",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-001"
+    ],
+    "lars": "reject",
+    "lars_ground": "row 1 (line 271): \"a non-verdict state with no cause\" - c-inconclusive is inconclusive with no cause from the vocabulary",
+    "lars_grounds": [
+      "row 1 (line 271): \"a non-verdict state with no cause\" - c-inconclusive is inconclusive with no cause from the vocabulary"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§4 row 1"
+    ],
+    "clean_reason": "A non-verdict state has no cause."
+  },
+  {
+    "case_id": "case-105",
+    "id": "vb195f23e8436fd19",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-106",
+    "id": "vb4de5d37845a1546",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-107",
+    "id": "vb684dfb39487fcb1",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-108",
+    "id": "vb7ef2cf28c013f46",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-109",
+    "id": "vba057012581af13b",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-110",
+    "id": "vbb1688d0226174aa",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-111",
+    "id": "vbb5bb72ed5c3bcb1",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-112",
+    "id": "vbca0a5030104e2f3",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-113",
+    "id": "vbe6937292f4f1614",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-010"
+    ],
+    "lars": "reject",
+    "lars_ground": "row 10 (line 284): \"foreclosed without a constraint set and a domain\" - c-pass: foreclosed without constraint-set and domain",
+    "lars_grounds": [
+      "row 10 (line 284): \"foreclosed without a constraint set and a domain\" - c-pass: foreclosed without constraint-set and domain"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§4 row 10"
+    ],
+    "clean_reason": "Foreclosure lacks a constraint-set identifier or domain identifier."
+  },
+  {
+    "case_id": "case-114",
+    "id": "vbee48753abe90e1a",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-115",
+    "id": "vc12a1c0f00be35f3",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-116",
+    "id": "vc2cab6dea09f0a3b",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-117",
+    "id": "vc34eb74f8bbc70ca",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-118",
+    "id": "vc39c75a8c00ab957",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-119",
+    "id": "vc46bee7a31918d67",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-120",
+    "id": "vc55768118bb88e53",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-1: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-121",
+    "id": "vc58647a590befbb7",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-013"
+    ],
+    "lars": "reject",
+    "lars_ground": "line 405: \"\"Fail\" here is the state fail, in all three places. A non-pass is not enough\" - the roll-up claims shown-by-run but no check record is in state fail",
+    "lars_grounds": [
+      "line 405: \"\"Fail\" here is the state fail, in all three places. A non-pass is not enough\" - the roll-up claims shown-by-run but no check record is in state fail"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§5.4 negative verdict"
+    ],
+    "clean_reason": "Run claims negative capability without a declared check in state fail."
+  },
+  {
+    "case_id": "case-122",
+    "id": "vc653bb099d9c5839",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-123",
+    "id": "vc66120fe5e1af394",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-124",
+    "id": "vc82b6b45a103ce1d",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-125",
+    "id": "vc938b2ab36cae34a",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-126",
+    "id": "vcf1cbb85d729dcd1",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-026"
+    ],
+    "lars": "reject",
+    "lars_ground": "row 14 (line 296): \"moved asserted on an evidence object that neither carries both observations nor references them with digests\" - evidence e-1 asserts moved but neither carries both observations nor references both with digests",
+    "lars_grounds": [
+      "row 14 (line 296): \"moved asserted on an evidence object that neither carries both observations nor references them with digests\" - evidence e-1 asserts moved but neither carries both observations nor references both with digests"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§4 row 14"
+    ],
+    "clean_reason": "An observation is neither carried nor referenced with a digest."
+  },
+  {
+    "case_id": "case-127",
+    "id": "vd1eb6a3fb13eb97d",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-012"
+    ],
+    "lars": "reject",
+    "lars_ground": "row 12 (line 288): \"discrimination demonstrated citing an evidence object whose changed slot is the checker\" - c-fail: discrimination cites evidence e-2, whose changed slot is the checker rule",
+    "lars_grounds": [
+      "row 12 (line 288): \"discrimination demonstrated citing an evidence object whose changed slot is the checker\" - c-fail: discrimination cites evidence e-2, whose changed slot is the checker rule"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§4 row 12"
+    ],
+    "clean_reason": "Discrimination cites a changed checker rule."
+  },
+  {
+    "case_id": "case-128",
+    "id": "vd27e483fe63e78c0",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-129",
+    "id": "vd2a25cb35e1b8bce",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3",
+      "§5.2 completeness definitions"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified.; The text supplies the accounting population but not a complete satisfaction algorithm.; The text supplies the evidence population but not a complete satisfaction algorithm."
+  },
+  {
+    "case_id": "case-130",
+    "id": "vd2ae28ba9140bc89",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-028"
+    ],
+    "lars": "cannot-tell",
+    "lars_ground": "line 171: \"The domain is a declared object, declared once at run level. foreclosed and the fixed slot reference it by identifier and no slot restates it\" - reading R17: evidence e-1 fixed slot writes the domain as {\"description\": \"the run's declared domain, referenced by identifier\", \"id\": \"d-run\"}, not an identifier",
+    "lars_grounds": [],
+    "clean": "reject",
+    "clean_grounds": [
+      "§2 fixed",
+      "§2 run domain"
+    ],
+    "clean_reason": "Evidence fixed slot must name checker identity, constraint set and domain.; Evidence domain is not a reference to the run domain identifier."
+  },
+  {
+    "case_id": "case-131",
+    "id": "vd2e50306dcd6c470",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-023"
+    ],
+    "lars": "cannot-tell",
+    "lars_ground": "line 362: \"A claim over an empty population is reported as not claimable, not as satisfied.\" - reading R23: the evidence claim is \"satisfied\" over an empty population",
+    "lars_grounds": [],
+    "clean": "reject",
+    "clean_grounds": [
+      "§5.2 empty population"
+    ],
+    "clean_reason": "A completeness claim over an empty population is not reported as not-claimable."
+  },
+  {
+    "case_id": "case-132",
+    "id": "vd3e84d6a85cb6a0f",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-133",
+    "id": "vd5cc438bcd34a9d5",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-134",
+    "id": "vd64679c8b7f9e736",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-135",
+    "id": "vd7d23c0d86701fc6",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-136",
+    "id": "vd8d93fd735111aa5",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3",
+      "§5.4 checker/configuration binding; §10 text precedence"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified.; Missing checker/configuration binding cannot establish the normative §5.4 condition; §10 reports a permissive corpus treatment."
+  },
+  {
+    "case_id": "case-137",
+    "id": "vda5261ec1d0bd74e",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-138",
+    "id": "vdcb0849fc754aaea",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-139",
+    "id": "vdcbd067d047bfbd0",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-007"
+    ],
+    "lars": "reject",
+    "lars_ground": "row 7 (line 279): \"a verdict state carrying a cause\" - c-pass is pass and carries a cause",
+    "lars_grounds": [
+      "row 7 (line 279): \"a verdict state carrying a cause\" - c-pass is pass and carries a cause"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§4 row 7"
+    ],
+    "clean_reason": "A verdict state carries a cause."
+  },
+  {
+    "case_id": "case-140",
+    "id": "vdd9207f5aa2fc9e3",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-141",
+    "id": "vdec1361509de89d4",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-142",
+    "id": "vdf05d359490e7833",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "reject",
+    "lars_ground": "row 14 (line 296): \"moved asserted on an evidence object that neither carries both observations nor references them with digests\" - evidence e-1 asserts moved but neither carries both observations nor references both with digests",
+    "lars_grounds": [
+      "row 14 (line 296): \"moved asserted on an evidence object that neither carries both observations nor references them with digests\" - evidence e-1 asserts moved but neither carries both observations nor references both with digests"
+    ],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3",
+      "§5.3 disclosure counter"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified.; A verdict record uses both carried and referenced observations; the text does not specify its counter assignment."
+  },
+  {
+    "case_id": "case-143",
+    "id": "ve4744745405812b9",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-144",
+    "id": "ve53f0521c7e3a30c",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-145",
+    "id": "ve5d916a50130739e",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-146",
+    "id": "ve70386fdb6f071d3",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-147",
+    "id": "ve7520b18160365d2",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-148",
+    "id": "ve75a143e2bdb4d61",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-149",
+    "id": "ve9c436f93e42e394",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-029"
+    ],
+    "lars": "cannot-tell",
+    "lars_ground": "line 431: \"The control runs under the same checker revision and the same relevant configuration and constraints as the declared checks\" - reading R21: the control ran under constraint-set \"cs-2\", the run under \"cs-1\"",
+    "lars_grounds": [],
+    "clean": "reject",
+    "clean_grounds": [
+      "§5.4 checker/configuration binding"
+    ],
+    "clean_reason": "Control differs from the supported run on binding components: constraint-set."
+  },
+  {
+    "case_id": "case-150",
+    "id": "ve9cefed56bbc8359",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-151",
+    "id": "vea3ee7919ceb2e10",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-152",
+    "id": "vea80ece35200e349",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-153",
+    "id": "veaee43cdb4a113d0",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-154",
+    "id": "vec36e393a92b69eb",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-004"
+    ],
+    "lars": "reject",
+    "lars_ground": "row 4 (line 274): \"cause confinement-failed-during-check with any state but void\" - c-confined is inconclusive with confinement-failed-during-check",
+    "lars_grounds": [
+      "row 4 (line 274): \"cause confinement-failed-during-check with any state but void\" - c-confined is inconclusive with confinement-failed-during-check"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§4 row 4"
+    ],
+    "clean_reason": "Confinement failure during the check is declared outside void."
+  },
+  {
+    "case_id": "case-155",
+    "id": "vecd8b7bb20fed3a3",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "reject",
+    "lars_ground": "row 11 (line 286): \"an asserted value without its evidence reference, on either field, foreclosed included\" - c-fail: other-verdict possible-not-demonstrated names no evidence reference",
+    "lars_grounds": [
+      "row 11 (line 286): \"an asserted value without its evidence reference, on either field, foreclosed included\" - c-fail: other-verdict possible-not-demonstrated names no evidence reference"
+    ],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§1.3; §4 row 11",
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Text does not explicitly settle whether possible-not-demonstrated asserts a value requiring an evidence reference.; Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-156",
+    "id": "vee997c119f09258b",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-011"
+    ],
+    "lars": "reject",
+    "lars_ground": "row 11 (line 286): \"an asserted value without its evidence reference, on either field, foreclosed included\" - c-fail: other-verdict demonstrated names no evidence reference",
+    "lars_grounds": [
+      "row 11 (line 286): \"an asserted value without its evidence reference, on either field, foreclosed included\" - c-fail: other-verdict demonstrated names no evidence reference"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§4 row 11"
+    ],
+    "clean_reason": "An asserted qualifier has no evidence reference."
+  },
+  {
+    "case_id": "case-157",
+    "id": "vef3f22a57a308f45",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-158",
+    "id": "vf374114fe7f28e7d",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-002"
+    ],
+    "lars": "reject",
+    "lars_ground": "row 2 (line 272): \"void with not_applicable, out_of_scope or withheld\" - c-void is void with cause out_of_scope",
+    "lars_grounds": [
+      "row 2 (line 272): \"void with not_applicable, out_of_scope or withheld\" - c-void is void with cause out_of_scope"
+    ],
+    "clean": "reject",
+    "clean_grounds": [
+      "§4 row 2"
+    ],
+    "clean_reason": "Void carries a disposition excluded by row 2."
+  },
+  {
+    "case_id": "case-159",
+    "id": "vf407ebb4a9cb8a3d",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "cannot-tell",
+    "lars_ground": "line 164: \"an object whose moved is not contained in its declared compared set is rejected\" - reading R13: evidence e-pair: recomputed moved [\"fired-rule list\", \"verdict\"] and declared moved [\"verdict\", \"fired-rule list\", \"error list\"] disagree on compared [\"verdict\", \"fired-rule list\"]",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-160",
+    "id": "vf82e507d268fed9d",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-161",
+    "id": "vf9b5623144960dda",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-162",
+    "id": "vfa24e4f45c2e826e",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-163",
+    "id": "vfa79ad0a7bd957b9",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-164",
+    "id": "vfbc5db1c2a012359",
+    "oracle": "reject",
+    "oracle_rejects": [
+      "W3C-R-015"
+    ],
+    "lars": "accept",
+    "lars_ground": "prior run does not resolve: unchecked, not discriminating power, not a refusal (R22)",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3 reading table; §5.4 prior run",
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Prior report cannot be resolved with verified identity, fail results and checker/configuration binding from the supplied envelope.; Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  },
+  {
+    "case_id": "case-165",
+    "id": "vfbd7379026575f04",
+    "oracle": "accept",
+    "oracle_rejects": [],
+    "lars": "accept",
+    "lars_ground": "",
+    "lars_grounds": [],
+    "clean": "cannot-tell",
+    "clean_grounds": [
+      "§3.1; §11 O3"
+    ],
+    "clean_reason": "Flat tree construction is undefined in the text; its digest and cryptographic count binding cannot be verified."
+  }
+]

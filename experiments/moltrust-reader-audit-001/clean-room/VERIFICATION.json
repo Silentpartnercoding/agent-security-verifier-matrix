@@ -1,0 +1,19 @@
+{
+  "byte_identical_regeneration": true,
+  "comparison_data_accessed": false,
+  "counts": {
+    "accept": 0,
+    "cannot-tell": 131,
+    "reject": 34,
+    "total": 165
+  },
+  "counts_sha256": "e4a374a130d9745114a2c9b5278bb275c5e308199e4e09b54fcb090371325f96",
+  "errors": 0,
+  "failures": 0,
+  "input_manifest_sha256": "585954b74ac5bfe4809cc59d3878e7949d40d9a963a853f1c0fab4fbb1665823",
+  "prediction_rows": 165,
+  "predictions_sha256": "dc96574a754ab85f5d4a2df0067557cfe9b4c938df1aa9bb32f3b19bfebd4975",
+  "skipped": 0,
+  "tests_run": 66,
+  "unique_case_ids": 165
+}

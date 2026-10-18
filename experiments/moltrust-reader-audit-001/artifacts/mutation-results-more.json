@@ -1,0 +1,75 @@
+[
+  {
+    "case": "rename_file",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/rename_file",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=82 reject=28 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "row 8 (line 280): \"other-verdict foreclosed with discrimination demonstrated\" - c-fail: other-verdict foreclosed beside discrimination demonstrated",
+        "grounds": [
+          "row 8 (line 280): \"other-verdict foreclosed with discrimination demonstrated\" - c-fail: other-verdict foreclosed beside discrimination demonstrated"
+        ],
+        "id": "v0e286b53de78162a",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "reject"
+      }
+    ]
+  },
+  {
+    "case": "replace_reject_by_accept_same_id",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/replace_reject_by_accept_same_id",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=83 reject=27 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "v0e286b53de78162a",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "accept"
+      }
+    ]
+  },
+  {
+    "case": "duplicate_json_key",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/duplicate_json_key",
+    "exit": 0,
+    "output_lines": 165,
+    "summary": "members=165 accept=83 reject=27 cannot-tell=55",
+    "affected": [
+      {
+        "ground": "",
+        "grounds": [],
+        "id": "v0e286b53de78162a",
+        "notes": [],
+        "open": [],
+        "recount": {
+          "carried": 0,
+          "referenced": 2
+        },
+        "verdict": "accept"
+      }
+    ]
+  },
+  {
+    "case": "empty_directory",
+    "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -I /private/tmp/lars-mutation-audit.3Ug5ML/repo/reader.py /private/tmp/lars-mutation-audit.3Ug5ML/cases/empty_directory",
+    "exit": 0,
+    "output_lines": 0,
+    "summary": "members=0 accept=0 reject=0 cannot-tell=0",
+    "affected": []
+  }
+]
