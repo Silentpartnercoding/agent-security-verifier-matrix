@@ -1,0 +1,146 @@
+{
+  "experiment": "w3c-phase1-root-cardinality-001",
+  "@context": {
+    "prov": "http://www.w3.org/ns/prov#",
+    "fixture": "https://silentpartnercoding.github.io/agent-security-verifier-matrix/ns/fixture#",
+    "one": "https://silentpartnercoding.github.io/agent-security-verifier-matrix/case/one/",
+    "three": "https://silentpartnercoding.github.io/agent-security-verifier-matrix/case/three/",
+    "experiment": "fixture:experiment",
+    "profile": "fixture:profile",
+    "cases": {
+      "@id": "fixture:case",
+      "@container": "@set"
+    },
+    "id": "fixture:caseId",
+    "producer": "fixture:producer",
+    "context": "fixture:provenanceContext",
+    "observed_artifacts": {
+      "@id": "fixture:observedArtifact",
+      "@container": "@set"
+    },
+    "computed_artifacts": {
+      "@id": "fixture:computedArtifact",
+      "@container": "@set"
+    },
+    "value": "fixture:value",
+    "label": "fixture:label",
+    "proposition": "fixture:proposition",
+    "attestation": "fixture:attestation",
+    "expected_distinct_observed_root_count": "fixture:expectedDistinctObservedRootCount"
+  },
+  "profile": "prov-o-entity-lineage-v1",
+  "cases": [
+    {
+      "id": "one-observed-root",
+      "producer": "silentpartnercoding-fixture-producer",
+      "context": "phase-1-paired-fixture",
+      "observed_artifacts": [
+        {
+          "@id": "one:R",
+          "label": "R",
+          "value": "same-observation"
+        }
+      ],
+      "computed_artifacts": [
+        {
+          "@id": "one:A",
+          "label": "A",
+          "value": "same-computed-a",
+          "proposition": "computed-a-is-valid",
+          "prov:wasDerivedFrom": [
+            {
+              "@id": "one:R"
+            }
+          ],
+          "attestation": "checked"
+        },
+        {
+          "@id": "one:B",
+          "label": "B",
+          "value": "same-computed-b",
+          "proposition": "computed-b-is-valid",
+          "prov:wasDerivedFrom": [
+            {
+              "@id": "one:R"
+            }
+          ],
+          "attestation": "checked"
+        },
+        {
+          "@id": "one:C",
+          "label": "C",
+          "value": "same-computed-c",
+          "proposition": "computed-c-is-valid",
+          "prov:wasDerivedFrom": [
+            {
+              "@id": "one:R"
+            }
+          ],
+          "attestation": "checked"
+        }
+      ],
+      "expected_distinct_observed_root_count": 1
+    },
+    {
+      "id": "three-observed-roots",
+      "producer": "silentpartnercoding-fixture-producer",
+      "context": "phase-1-paired-fixture",
+      "observed_artifacts": [
+        {
+          "@id": "three:R1",
+          "label": "R1",
+          "value": "same-observation"
+        },
+        {
+          "@id": "three:R2",
+          "label": "R2",
+          "value": "same-observation"
+        },
+        {
+          "@id": "three:R3",
+          "label": "R3",
+          "value": "same-observation"
+        }
+      ],
+      "computed_artifacts": [
+        {
+          "@id": "three:A",
+          "label": "A",
+          "value": "same-computed-a",
+          "proposition": "computed-a-is-valid",
+          "prov:wasDerivedFrom": [
+            {
+              "@id": "three:R1"
+            }
+          ],
+          "attestation": "checked"
+        },
+        {
+          "@id": "three:B",
+          "label": "B",
+          "value": "same-computed-b",
+          "proposition": "computed-b-is-valid",
+          "prov:wasDerivedFrom": [
+            {
+              "@id": "three:R2"
+            }
+          ],
+          "attestation": "checked"
+        },
+        {
+          "@id": "three:C",
+          "label": "C",
+          "value": "same-computed-c",
+          "proposition": "computed-c-is-valid",
+          "prov:wasDerivedFrom": [
+            {
+              "@id": "three:R3"
+            }
+          ],
+          "attestation": "checked"
+        }
+      ],
+      "expected_distinct_observed_root_count": 3
+    }
+  ]
+}

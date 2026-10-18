@@ -2,6 +2,14 @@
 
 Status: **AIP v0.2 externally accepted; second-protocol registry test complete**
 
+The repository also carries a small proposed Phase 1 test vector for W3C
+conformance discussion:
+[`W3C-PHASE1-ROOT-CARDINALITY-001`](experiments/w3c-phase1-root-cardinality-001/README.md)
+freezes the same three computed artifacts and checked attestations over either
+one recorded observed root or three, then verifies that `prov:wasDerivedFrom`
+survives a serialization/reload boundary without promoting root identifiers to
+proof of independence.
+
 AIP-MATRIX-FIT-002 is an out-of-tree correction and reproduction release. It asks a
 narrow question: can the security claims made or carried by AIP draft-01 be
 represented without overstatement in the verifier-facing vocabulary of

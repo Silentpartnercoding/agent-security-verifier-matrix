@@ -1,0 +1,87 @@
+{
+  "all_expected": true,
+  "case_results": [
+    {
+      "attestation_count": 3,
+      "case_id": "one-observed-root",
+      "computed_artifact_count": 3,
+      "conforms_to_frozen_expectation": true,
+      "distinct_observed_root_count": 1,
+      "distinct_observed_root_ids": [
+        "R"
+      ],
+      "expected_distinct_observed_root_count": 1
+    },
+    {
+      "attestation_count": 3,
+      "case_id": "three-observed-roots",
+      "computed_artifact_count": 3,
+      "conforms_to_frozen_expectation": true,
+      "distinct_observed_root_count": 3,
+      "distinct_observed_root_ids": [
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "expected_distinct_observed_root_count": 3
+    }
+  ],
+  "cases_sha256": "a7a33676e157c77f56c650f2d7a1c43e2c943febe1fff91f408dea38548ea292",
+  "claim_boundary": {
+    "established": [
+      "Canonical JSON serialization and reload preserve the recorded immediate-input distinction between one observed root and three observed roots.",
+      "The paired cases keep the same producer, context, computed artifact values, and checked-attestation count while changing only the recorded input topology."
+    ],
+    "not_established": [
+      "W3C conformance, adoption, endorsement, or a normative Phase 1 data model.",
+      "Truth, causal independence, or organizational independence of a recorded observed root.",
+      "That signatures or attestations create independent evidence roots."
+    ]
+  },
+  "expanded_lineage_predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+  "expanded_lineage_quads": {
+    "one-observed-root": [
+      {
+        "object": "https://silentpartnercoding.github.io/agent-security-verifier-matrix/case/one/R",
+        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+        "subject": "https://silentpartnercoding.github.io/agent-security-verifier-matrix/case/one/A"
+      },
+      {
+        "object": "https://silentpartnercoding.github.io/agent-security-verifier-matrix/case/one/R",
+        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+        "subject": "https://silentpartnercoding.github.io/agent-security-verifier-matrix/case/one/B"
+      },
+      {
+        "object": "https://silentpartnercoding.github.io/agent-security-verifier-matrix/case/one/R",
+        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+        "subject": "https://silentpartnercoding.github.io/agent-security-verifier-matrix/case/one/C"
+      }
+    ],
+    "three-observed-roots": [
+      {
+        "object": "https://silentpartnercoding.github.io/agent-security-verifier-matrix/case/three/R1",
+        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+        "subject": "https://silentpartnercoding.github.io/agent-security-verifier-matrix/case/three/A"
+      },
+      {
+        "object": "https://silentpartnercoding.github.io/agent-security-verifier-matrix/case/three/R2",
+        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+        "subject": "https://silentpartnercoding.github.io/agent-security-verifier-matrix/case/three/B"
+      },
+      {
+        "object": "https://silentpartnercoding.github.io/agent-security-verifier-matrix/case/three/R3",
+        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+        "subject": "https://silentpartnercoding.github.io/agent-security-verifier-matrix/case/three/C"
+      }
+    ]
+  },
+  "experiment": "w3c-phase1-root-cardinality-001",
+  "implementation": "w3c_phase1_fit",
+  "implementation_version": "1.0.0",
+  "independence_state": "not-established",
+  "preserves_required_distinction": true,
+  "profile": "prov-o-entity-lineage-v1",
+  "same_attestation_count": true,
+  "same_computed_artifacts": true,
+  "serialization_roundtrip_preserved": true
+}
