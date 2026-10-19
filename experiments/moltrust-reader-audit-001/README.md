@@ -55,19 +55,26 @@ rows, so consumers must not treat partial stdout as a completed audit.
 
 The clean-room reader was frozen before any oracle or Lars output was shown to
 it. On the same 165 neutral cases it returns 34 reject and 131 cannot-tell.
-Every explicit rejection agrees with the upstream oracle, and it finds 10
-explicit violations that Lars leaves at cannot-tell. It accepts none because
-the prose does not specify enough cryptographic serialization detail to prove
-the declared collection root. That conservatism is a feature of the test: it
-refuses to invent a green result.
+Every explicit rejection agrees with the upstream expected label. For 10 of
+those cases Lars returns cannot-tell. A subsequent case-by-case adjudication
+finds explicit input contradictions or omissions in eight, but Lars's reader
+already identifies them and applies a documented refusal policy under which
+v0.1 does not make rejection mandatory. The other two are underdetermined by
+v0.1 at an earlier interpretive step. None of the 10 may be promoted into a
+reader error merely because the clean-room reader and expected labels agree.
+The clean-room reader accepts none because the prose does not specify enough
+cryptographic serialization detail to prove the declared collection root.
+That conservatism is a feature of the test: it refuses to invent a green
+result.
 
 ## What this proves—and does not
 
 This proves that Lars's package works as one implementation of a semantic
-reader and has identifiable robustness/completeness gaps. It does **not**
-prove maliciousness, does not prove that all 8 Lars/oracle binary
-disagreements are Lars bugs, and does not make the upstream oracle infallible.
-Those disagreements are preserved for adjudication rather than converted
+reader and has identifiable robustness/completeness boundaries. It does
+**not** prove maliciousness, does not prove that all 8 Lars/oracle binary
+disagreements are Lars bugs, does not turn all 10 clean/Lars disagreements
+into reader errors, and does not make the upstream expected labels
+infallible. The disagreements are preserved and bounded rather than converted
 into a headline number.
 
 The key protocol finding is stronger than a score comparison: neither a
@@ -94,6 +101,10 @@ and verified separately.
 - `artifacts/upstream-oracle-audit.json` — pinned selection and expected results.
 - `artifacts/comparison-rows.json` — per-case three-way join.
 - `artifacts/audit-summary.json` — frozen aggregate claims.
+- `artifacts/lars-cannot-tell-adjudication.json` — case-by-case boundary for
+  the 10 clean-reject/Lars-cannot-tell disagreements: eight explicit
+  contradictions with a disputed mandatory-rejection policy and two
+  underdetermined cases.
 
 The inputs derive from `probityai/agent-evidence-vectors`, licensed under
 Apache-2.0; the upstream license is retained as `inputs/LICENSE.upstream.txt`.

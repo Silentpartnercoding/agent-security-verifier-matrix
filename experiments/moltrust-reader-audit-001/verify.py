@@ -44,6 +44,7 @@ def verify_evidence(root):
         root / "artifacts" / "mutation-replay.json": frozen["mutation_replay_sha256"],
         root / "artifacts" / "mutation-results.json": frozen["mutation_results_sha256"],
         root / "artifacts" / "mutation-results-more.json": frozen["mutation_results_more_sha256"],
+        root / "artifacts" / "lars-cannot-tell-adjudication.json": frozen["lars_cannot_tell_adjudication_sha256"],
     }
     for path, expected in paths.items():
         require_digest(path, expected)

@@ -45,6 +45,53 @@ class AuditSummaryTests(unittest.TestCase):
             ],
         )
 
+    def test_public_claim_adjudication_separates_policy_disputes_from_ambiguities(self):
+        adjudication = json.loads(
+            (ROOT / "artifacts" / "lars-cannot-tell-adjudication.json").read_text()
+        )
+        self.assertEqual(
+            adjudication["subject_commit"],
+            "6d8ee54b01d20a819869ceb9fcea096d59251f8c",
+        )
+        self.assertEqual(len(adjudication["cases"]), 10)
+        self.assertEqual(
+            {row["classification"] for row in adjudication["cases"]},
+            {
+                "explicit-contradiction-disputed-rejection-policy",
+                "underdetermined-under-v0.1",
+            },
+        )
+        policy_disputes = {
+            row["case"] for row in adjudication["cases"]
+            if row["classification"] == "explicit-contradiction-disputed-rejection-policy"
+        }
+        underdetermined = {
+            row["case"] for row in adjudication["cases"]
+            if row["classification"] == "underdetermined-under-v0.1"
+        }
+        self.assertEqual(
+            policy_disputes,
+            {
+                "case-014", "case-052", "case-073", "case-092",
+                "case-096", "case-130", "case-131", "case-149",
+            },
+        )
+        self.assertEqual(underdetermined, {"case-063", "case-099"})
+        self.assertEqual(
+            policy_disputes | underdetermined,
+            set(self.summary["clean_reject_lars_cannot_tell"]),
+        )
+        self.assertEqual(adjudication["claim_boundary"]["policy_dispute_count"], 8)
+        self.assertEqual(adjudication["claim_boundary"]["underdetermined_count"], 2)
+        self.assertEqual(
+            adjudication["claim_boundary"]["permitted_public_claim"],
+            "Eight cases contain explicit input contradictions or omissions that the Lars reader detects but does not make mandatory rejection grounds under its documented v0.1 refusal policy; two additional disagreements remain underdetermined by v0.1.",
+        )
+        self.assertNotIn(
+            "proven violations",
+            adjudication["claim_boundary"]["permitted_public_claim"].lower(),
+        )
+
     def test_lars_oracle_oppositions_are_listed_not_overclaimed(self):
         self.assertEqual(
             self.summary["lars_opposite_oracle"],

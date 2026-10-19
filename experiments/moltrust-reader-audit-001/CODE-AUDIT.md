@@ -75,12 +75,16 @@ abstains on 55, and gives the opposite binary verdict on 8. Those 8 are
 reported as disagreements, not automatically as bugs: the v0.1 prose leaves
 some adapter and interpretation choices underdetermined.
 
-The independently frozen specification-only reader rejects 34 reports and
-abstains on 131. All 34 explicit rejections agree with the upstream oracle;
-none oppose it. It identifies 10 explicit violations for which Lars returns
-cannot-tell. It deliberately accepts none because the text does not pin the
-flat-tree leaf serialization and count-binding encoding needed to establish
-the collection digest cryptographically.
+The separately frozen specification-only reader rejects 34 reports and
+abstains on 131. All 34 explicit rejections agree with the upstream expected
+labels; none oppose them. For 10 of those cases Lars returns cannot-tell.
+Case-by-case adjudication finds explicit contradictions or omissions in eight,
+but the Lars reader identifies those facts and abstains under its documented
+reading of v0.1's refusal policy. Two additional cases are underdetermined at
+an earlier interpretive step. The clean-room reader deliberately accepts none
+because the text does not pin the flat-tree leaf serialization and
+count-binding encoding needed to establish the collection digest
+cryptographically.
 
 The defensible conclusion is therefore narrow: Lars's package is useful as
 one semantic reading of self-reported objects, but its green cells do not

@@ -1,0 +1,64 @@
+{
+  "schema": "moltrust-reader-adjudication-v1",
+  "subject_commit": "6d8ee54b01d20a819869ceb9fcea096d59251f8c",
+  "scope": "The ten cases rejected by the frozen clean-room reader and upstream expected labels while the pinned Lars reader returned cannot-tell.",
+  "control_domain": "The clean-room implementation and this adjudication were produced under the same user-directed control domain. This is internal adversarial review, not independent validation.",
+  "claim_boundary": {
+    "policy_dispute_count": 8,
+    "underdetermined_count": 2,
+    "permitted_public_claim": "Eight cases contain explicit input contradictions or omissions that the Lars reader detects but does not make mandatory rejection grounds under its documented v0.1 refusal policy; two additional disagreements remain underdetermined by v0.1.",
+    "forbidden_public_claim": "The Lars reader missed ten proven violations or contains eight demonstrated reader errors."
+  },
+  "cases": [
+    {
+      "case": "case-014",
+      "classification": "explicit-contradiction-disputed-rejection-policy",
+      "basis": "Three declared records include one not-exercised exclusion, so exercised is two while the roll-up declares three. The Lars reader reports the mismatch under R24 but v0.1 does not unambiguously make every aggregate mismatch a refusal ground."
+    },
+    {
+      "case": "case-052",
+      "classification": "explicit-contradiction-disputed-rejection-policy",
+      "basis": "The no-void claim is marked satisfied while a declared record is void and the roll-up void count is one. The Lars reader identifies the inconsistency under R23 but applies its documented refusal-word policy rather than mandatory rejection."
+    },
+    {
+      "case": "case-063",
+      "classification": "underdetermined-under-v0.1",
+      "basis": "The check-set omits a leaf-count field, but v0.1 does not specify the normative JSON slot or flat-tree encoding that proves count binding is absent from the digest."
+    },
+    {
+      "case": "case-073",
+      "classification": "explicit-contradiction-disputed-rejection-policy",
+      "basis": "The check-set declares three leaves for exactly two checks, an explicit population contradiction independent of root serialization. The Lars reader records the count problem under R16 but v0.1 leaves the mandatory-refusal consequence open."
+    },
+    {
+      "case": "case-092",
+      "classification": "explicit-contradiction-disputed-rejection-policy",
+      "basis": "Discrimination is declared demonstrated while the cited evidence supplies no delta. The Lars reader identifies the missing slot under R19 but v0.1 does not state the refusal consequence with the precision its policy requires."
+    },
+    {
+      "case": "case-096",
+      "classification": "explicit-contradiction-disputed-rejection-policy",
+      "basis": "The control explicitly names checker-2 while the run names checker-1, contradicting the same-checker condition. The Lars reader records the mismatch under R21; its reading treats the relevant corpus rejection row as proposed rather than normative."
+    },
+    {
+      "case": "case-099",
+      "classification": "underdetermined-under-v0.1",
+      "basis": "The supplied resolver establishes a digest mismatch, but v0.1 calls the integrity result a reading table rather than a refusal row and does not unambiguously require whole-report rejection."
+    },
+    {
+      "case": "case-130",
+      "classification": "explicit-contradiction-disputed-rejection-policy",
+      "basis": "The fixed slot restates the domain object instead of referencing the single run-level domain by identifier. The Lars reader detects the representation problem under R17 but v0.1 also says the corresponding rejection row was removed."
+    },
+    {
+      "case": "case-131",
+      "classification": "explicit-contradiction-disputed-rejection-policy",
+      "basis": "Evidence completeness is marked satisfied over an empty population even though v0.1 says an empty-population claim is not claimable. The Lars reader reports the problem under R23 but applies its documented refusal-word policy rather than mandatory rejection."
+    },
+    {
+      "case": "case-149",
+      "classification": "explicit-contradiction-disputed-rejection-policy",
+      "basis": "The control explicitly names constraint set cs-2 while the run names cs-1, contradicting the same-configuration condition. The Lars reader records the mismatch under R21; its reading treats the relevant corpus rejection row as proposed rather than normative."
+    }
+  ]
+}

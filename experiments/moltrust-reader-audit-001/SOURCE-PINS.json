@@ -31,6 +31,7 @@
     "mutation_runner_sha256": "d625eed944c6410b5c03c596cb87c0b74ceefab0a473b44427a75d18e1cc54e4",
     "mutation_replay_sha256": "9a111b89cf30a53639076ee9b20bcac5597a6c9da84c8808017c297e7babbfb1",
     "mutation_results_sha256": "aa65f328c609dc252a2b21b601737990b899dc12522eff2ab61307c4dff3d411",
-    "mutation_results_more_sha256": "85b62f02d0a61e55d40fd7fa05e0975c9dd64f36ba724e06764b3d30a4323cb2"
+    "mutation_results_more_sha256": "85b62f02d0a61e55d40fd7fa05e0975c9dd64f36ba724e06764b3d30a4323cb2",
+    "lars_cannot_tell_adjudication_sha256": "a6fc9739e1f1bff7ba1c119383eda7881ee72240537bdf2beb8e5af36a76d054"
   }
 }
