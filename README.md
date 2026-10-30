@@ -157,6 +157,11 @@ Principal Binding claim identifiers, an exact identity-document artifact check
 is not a C-001 live-presenter result, and the harness does not emit a complete
 accepted-result object. No external reproduction record is included in this
 correction release.
+[`AGTP-MATRIX-FIT-003`](experiments/agtp-matrix-fit-003/) is a new grading
+round pinned to `draft-hood-independent-agtp-10`. It imports
+`draft-hood-agtp-identity-document-00` only for `agent_public_key` and its
+freshness and rotation rules, keeps every other AGTP companion excluded, and
+leaves FIT-002 frozen on `-08`.
 
 ## AUDIT refusal-record completeness experiment
 

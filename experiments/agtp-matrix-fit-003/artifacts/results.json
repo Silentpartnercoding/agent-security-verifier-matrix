@@ -1,0 +1,307 @@
+{
+  "all_conform": true,
+  "case_count": 9,
+  "cases_sha256": "7a163de16c420b649209788b9463adc3cf1ccc7a9dc17f89906f22830d905542",
+  "claim_inventory_completeness": "not-established",
+  "claim_semantics_extended": false,
+  "companion_imports": [
+    {
+      "imported_for": [
+        "agent_public_key",
+        "identity-document freshness rules",
+        "key rotation by re-issuance and prior-version retention"
+      ],
+      "reason": "The mandatory Request-Signature in -10 is verified under agent_public_key, which is defined in this companion.",
+      "revision": "draft-hood-agtp-identity-document-00",
+      "source": "identity-document-00"
+    }
+  ],
+  "companions_excluded": [
+    "AGTP-CERT",
+    "AGTP-LOG",
+    "AGTP-TRUST",
+    "AGTP-IDENTIFIERS",
+    "AGTP-COMPOSITION",
+    "AGTP-DISCOVERY"
+  ],
+  "evaluation_vocabulary": "draft-bu-agentproto-security-principal-binding-06",
+  "evaluator": "verifier_matrix",
+  "evaluator_version": "1.2.0",
+  "experiment": "AGTP-MATRIX-FIT-003",
+  "grouping_label_semantics": "Experiment-only organizational labels, kept separate from the Principal Binding C-001 through C-014 claim identifiers.",
+  "grouping_labels": [
+    "Identity",
+    "Authority",
+    "Presenter",
+    "Scope",
+    "Action",
+    "Provenance",
+    "Credential Freshness",
+    "Evidence Freshness",
+    "Independence"
+  ],
+  "matrix_sha256": "7c4553f651c1687c57d59f16b9cc657585ab708e6f1ff2456b1fe232ba97e453",
+  "permitted_conclusion_semantics": "Human-readable review constraint only; it carries no stable Principal Binding accepted-result or row-result object.",
+  "profile": "Base AGTP-10 Level 2 path: signed identity document, Request-Signature, Delegation-Chain verification, Governance Token action digest, EXECUTE, Attribution-Records, and optional RATS evidence. Imports draft-hood-agtp-identity-document-00 only for agent_public_key, its freshness rules, and its rotation and prior-version retention rules, because the mandatory request signature in -10 depends on them. All other companions stay excluded: AGTP-CERT, AGTP-LOG, AGTP-TRUST, AGTP-IDENTIFIERS, AGTP-COMPOSITION, and AGTP-DISCOVERY.",
+  "registry_envelope_changed": false,
+  "result_object_status": "not-emitted",
+  "results": [
+    {
+      "adjacent_successes": [
+        "transport_server_authenticated",
+        "identity_document_signature_valid",
+        "registrar_trust_configured",
+        "agent_id_header_matches_document",
+        "request_signature_iat_in_window",
+        "request_signature_nonce_unseen"
+      ],
+      "agtp_reason": "possession-unproven",
+      "agtp_status": 401,
+      "case_id": "wrong_presenter",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "The declared Agent-ID resolves to a valid signed document and the signature is fresh, but it verifies under a key other than the document's agent_public_key, so the request is refused before dispatch.",
+      "dispatched": false,
+      "expected_row_outcome": "unsatisfied",
+      "mapping_result": "EXACT",
+      "matrix_row": "live-presenter",
+      "permitted_conclusion": "The request was refused because its signature does not verify under the agent_public_key the trusted document names for agtp:sha256:agent-a.",
+      "prohibited_conclusions": [
+        "The live presenter is authenticated as agtp:sha256:agent-a.",
+        "A fresh, well-formed Request-Signature proves possession whatever key produced it."
+      ],
+      "title": "Wrong Presenter"
+    },
+    {
+      "adjacent_successes": [
+        "identity_document_signature_valid",
+        "request_signature_valid"
+      ],
+      "agtp_reason": "scope-exceeds-parent",
+      "agtp_status": 551,
+      "case_id": "widened_delegation_hop",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "Every hop signature verifies, but the 9.3 checks find a hop that fails on inputs the verifier holds, so the request is refused with the failing hop named.",
+      "dispatched": false,
+      "evaluation": "refused",
+      "expected_row_outcome": "unsatisfied",
+      "failing_hop": 1,
+      "mapping_result": "EXACT",
+      "matrix_row": "delegated-authority",
+      "permitted_conclusion": "Hop 1 names mail:send, which its parent hop never held, so the chain is invalid and the request is refused.",
+      "prohibited_conclusions": [
+        "A hop signed by a valid parent key may widen scope.",
+        "Membership of mail:send in the origin grant repairs a widened later hop."
+      ],
+      "title": "Widened Delegation Hop",
+      "verification": "invalid"
+    },
+    {
+      "adjacent_successes": [
+        "identity_document_signature_valid",
+        "request_signature_valid"
+      ],
+      "agtp_reason": "input-unavailable",
+      "agtp_status": 551,
+      "case_id": "unreachable_delegation_registry",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "A check cannot run because an input is unavailable; the outcome is carried as incomplete, kept apart from a refusal, and denied by default.",
+      "dispatched": false,
+      "evaluation": "incomplete",
+      "expected_row_outcome": "indeterminate",
+      "failing_hop": 0,
+      "mapping_result": "EXACT",
+      "matrix_row": "delegated-authority",
+      "missing_input": "lifecycle:agtp:sha256:agent-b",
+      "permitted_conclusion": "The lifecycle state of agent-b could not be resolved, so the chain is indeterminate and the request is denied by default.",
+      "prohibited_conclusions": [
+        "An indeterminate chain is a valid chain.",
+        "An unreachable registry is the same outcome as a refused chain."
+      ],
+      "relying_party_default": "deny",
+      "title": "Unreachable Delegation Registry",
+      "verification": "indeterminate"
+    },
+    {
+      "adjacent_successes": [
+        "identity_document_signature_valid",
+        "request_signature_valid"
+      ],
+      "agtp_reason": "scope-claim-invalid",
+      "agtp_status": 455,
+      "case_id": "claimed_scope_beyond_grant",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "455 when the request exceeds what the signed document grants; 262 when the missing scope is one the document grants and the agent could add to its claim.",
+      "dispatched": false,
+      "expected_row_outcome": "unsatisfied",
+      "mapping_result": "EXACT",
+      "matrix_row": "request-scope",
+      "permitted_conclusion": "The request claims mail:send, which the signed document never granted, so it is refused with 455.",
+      "prohibited_conclusions": [
+        "A claimed Authority-Scope adds authority the signed document lacks.",
+        "The refusal could equally be reported as 262."
+      ],
+      "title": "Claimed Scope Beyond Grant"
+    },
+    {
+      "adjacent_successes": [
+        "identity_document_signature_valid",
+        "request_signature_valid"
+      ],
+      "agtp_condition": "b",
+      "agtp_reason": null,
+      "agtp_status": 262,
+      "case_id": "granted_scope_unclaimed",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "455 when the request exceeds what the signed document grants; 262 when the missing scope is one the document grants and the agent could add to its claim.",
+      "dispatched": false,
+      "expected_row_outcome": "unsatisfied",
+      "mapping_result": "EXACT",
+      "matrix_row": "request-scope",
+      "permitted_conclusion": "The agent holds documents:summarize in its signed document but left it out of its claim, so the request receives 262 and may be re-sent with the scope claimed.",
+      "prohibited_conclusions": [
+        "An obtainable but unclaimed scope is a scope violation reported with 455."
+      ],
+      "title": "Granted Scope Left Unclaimed"
+    },
+    {
+      "adjacent_successes": [
+        "attribution_signature_valid",
+        "attestation_evidence_signature_valid"
+      ],
+      "case_id": "same_control_verifier",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "Distinct signatures and a checkable execution environment do not establish that the verifier is outside the executor's organizational control.",
+      "expected_row_outcome": "indeterminate",
+      "mapping_result": "AMBIGUOUS",
+      "matrix_row": "verifier-independence",
+      "permitted_conclusion": "The signed record and evidence are checkable, but AGTP-10 does not establish that their verifier is organizationally independent.",
+      "prohibited_conclusions": [
+        "Different signing keys prove independent control.",
+        "RATS evidence makes the party appraising it organizationally independent."
+      ],
+      "title": "Same-Control Verifier"
+    },
+    {
+      "adjacent_successes": [
+        "attribution_signature_valid",
+        "result_hash_valid"
+      ],
+      "case_id": "stale_unverifiable_completion",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "The attribution record is intact, but its optional evidence cannot be established as current or appraised; signature success does not repair that missing result.",
+      "expected_row_outcome": "indeterminate",
+      "mapping_result": "AMBIGUOUS",
+      "matrix_row": "completion-evidence-freshness",
+      "permitted_conclusion": "The Attribution-Record and result hash are intact, but the referenced execution evidence could not be established as current or appraised.",
+      "prohibited_conclusions": [
+        "Unverifiable evidence was rejected on its merits.",
+        "A valid Attribution-Record signature proves the referenced evidence was successfully appraised.",
+        "A fresh Governance Token makes completion evidence fresh."
+      ],
+      "title": "Stale/Unverifiable Completion",
+      "warrant_outcome": "unverifiable"
+    },
+    {
+      "adjacent_successes": [
+        "identity_document_signature_valid",
+        "request_signature_valid",
+        "governance_token_signature_valid",
+        "governance_token_unexpired",
+        "governance_token_unused",
+        "governance_token_agent_id_match",
+        "authority_scope_satisfied"
+      ],
+      "agtp_reason": "token-action-mismatch",
+      "agtp_status": 262,
+      "authorized_argument_digest": "sha256:6fd81bfe5cd22414214f7bfe15b0e27b64af1c35eaccfbd5cd10ff24a61c6198",
+      "border_reference_outcome": "unsatisfied",
+      "case_id": "a2a_mcp_action_swap",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "Identity, signature, scope, and token checks pass, and the token's action_digest no longer matches the request as received, so the swap is refused before dispatch.",
+      "dispatched": false,
+      "expected_row_outcome": "unsatisfied",
+      "mapping_result": "AMBIGUOUS",
+      "matrix_row": "cross-protocol-action",
+      "observed_action_digest": "sha256:fbf9761f232860d94964a14904e52880442775bbd6872c5bc1c27dd36ac7609f",
+      "observed_argument_digest": "sha256:1fb64bad559533a120cb0b4c7afa3c3dbbc3da5cb0499322a40f18ec4d6fde65",
+      "permitted_conclusion": "The carried payload differs from the one the token's action_digest covers, so the request is refused before dispatch.",
+      "prohibited_conclusions": [
+        "A matching action label proves the carried payload was authorized.",
+        "Detecting the payload swap establishes continuity from the originating A2A task."
+      ],
+      "title": "A2A to MCP Payload Swap",
+      "token_action_digest": "sha256:21574a12cca07216434d8e14995980b79215110c1550fb26ac5f9930544f7e5a"
+    },
+    {
+      "adjacent_successes": [
+        "identity_document_signature_valid",
+        "request_signature_valid",
+        "governance_token_signature_valid",
+        "governance_token_unexpired",
+        "governance_token_unused",
+        "governance_token_agent_id_match",
+        "authority_scope_satisfied",
+        "token_action_digest_match"
+      ],
+      "agtp_task_binding": "outside-action-digest",
+      "border_reference_outcome": "unsatisfied",
+      "case_id": "a2a_task_substitution",
+      "conforms_to_frozen_expectation": true,
+      "diagnostic": "The action_digest matches because the originating task identifier sits outside its inputs; the Border reference binds the task and detects the substitution.",
+      "expected_row_outcome": "indeterminate",
+      "mapping_result": "AMBIGUOUS",
+      "matrix_row": "cross-protocol-action",
+      "observed_action_digest": "sha256:21574a12cca07216434d8e14995980b79215110c1550fb26ac5f9930544f7e5a",
+      "permitted_conclusion": "The token and payload checks pass; whether this request continues the A2A task the authority was issued for stays indeterminate under AGTP-10.",
+      "prohibited_conclusions": [
+        "A matching action_digest proves the request belongs to the authorized task.",
+        "Task-ID correlation is action authorization."
+      ],
+      "title": "A2A Task Substitution",
+      "token_action_digest": "sha256:21574a12cca07216434d8e14995980b79215110c1550fb26ac5f9930544f7e5a"
+    }
+  ],
+  "source_byte_verification": {
+    "checks": [
+      {
+        "id": "agtp-10",
+        "observed_bytes": 395048,
+        "observed_sha256": "59cbf5c15ff45d83a9c4693f9a58075ed88369e72576d1c5dd291d725a3e5c5c",
+        "status": "passed"
+      },
+      {
+        "id": "identity-document-00",
+        "observed_bytes": 37568,
+        "observed_sha256": "b24056c461abb3e973247d4dbe80202c803483761c6901fdd1a3a92989ec1805",
+        "status": "passed"
+      },
+      {
+        "id": "principal-binding-06",
+        "observed_bytes": 158195,
+        "observed_sha256": "4d08f60b22149f4590433a7f37d081700df27b37a457d09ca49cf018da9f5f37",
+        "status": "passed"
+      },
+      {
+        "id": "border-crossing-cases",
+        "observed_bytes": 3625,
+        "observed_sha256": "eea9a7c5ca0e0d90ca308401c9408f0187721c5edeb4a46bffaf2a0484ca12d1",
+        "status": "passed"
+      },
+      {
+        "id": "border-crossing-receipt",
+        "observed_bytes": 6338,
+        "observed_sha256": "ed4f9528f3acf7a48185bfc44a777bb99167d61cfef604715117bd1a60fdc71e",
+        "status": "passed"
+      },
+      {
+        "id": "minority-prophet-claim-warrant",
+        "observed_bytes": 4439,
+        "observed_sha256": "4de5613b839123cbc118875417fd18db99e53912e749a54f879828f72b493e69",
+        "status": "passed"
+      }
+    ],
+    "status": "passed"
+  },
+  "source_protocol": "draft-hood-independent-agtp-10",
+  "sources_sha256": "d824eca11240a33b2aaa80b1ab89edc0bda3653a1865387483b6174edadccb36"
+}
