@@ -1,0 +1,73 @@
+{
+  "experiment": "AGTP-MATRIX-FIT-003",
+  "frozen_at": "2026-10-30",
+  "source_set_inherited_from": "AGTP-MATRIX-FIT-002",
+  "source_set_changes": [
+    "agtp-08 replaced by agtp-10",
+    "identity-document-00 added as the one imported companion",
+    "border-crossing-cases also supplies substitute_task_or_context_id"
+  ],
+  "hash_algorithm": "sha256",
+  "sources": [
+    {
+      "id": "agtp-10",
+      "kind": "ietf-internet-draft",
+      "title": "Agent Transfer Protocol (AGTP)",
+      "revision": "draft-hood-independent-agtp-10",
+      "published": "2026-10-30",
+      "url": "https://www.ietf.org/archive/id/draft-hood-independent-agtp-10.txt",
+      "sha256": "59cbf5c15ff45d83a9c4693f9a58075ed88369e72576d1c5dd291d725a3e5c5c",
+      "bytes": 395048,
+      "scope": "source protocol under evaluation"
+    },
+    {
+      "id": "identity-document-00",
+      "kind": "ietf-internet-draft",
+      "title": "AGTP Agent Identity Document",
+      "revision": "draft-hood-agtp-identity-document-00",
+      "published": "2026-10-30",
+      "url": "https://www.ietf.org/archive/id/draft-hood-agtp-identity-document-00.txt",
+      "sha256": "b24056c461abb3e973247d4dbe80202c803483761c6901fdd1a3a92989ec1805",
+      "bytes": 37568,
+      "scope": "imported companion, limited to agent_public_key and its freshness and rotation rules"
+    },
+    {
+      "id": "principal-binding-06",
+      "kind": "ietf-internet-draft",
+      "title": "Security Principal and Verifier Binding for Agent Communication Protocols",
+      "revision": "draft-bu-agentproto-security-principal-binding-06",
+      "published": "2026-08-17",
+      "url": "https://www.ietf.org/archive/id/draft-bu-agentproto-security-principal-binding-06.txt",
+      "sha256": "4d08f60b22149f4590433a7f37d081700df27b37a457d09ca49cf018da9f5f37",
+      "bytes": 158195,
+      "scope": "unchanged evaluation vocabulary"
+    },
+    {
+      "id": "border-crossing-cases",
+      "kind": "git-blob",
+      "repository": "https://github.com/Silentpartnercoding/minority-prophet-border",
+      "commit": "a61b6ad96485e249ddb1ddde7fa30908e0b6250d",
+      "path": "experiments/a2a-mcp-crossing-001/cases.json",
+      "sha256": "eea9a7c5ca0e0d90ca308401c9408f0187721c5edeb4a46bffaf2a0484ca12d1",
+      "scope": "reused cross-protocol payload-swap and task-substitution vectors"
+    },
+    {
+      "id": "border-crossing-receipt",
+      "kind": "git-blob",
+      "repository": "https://github.com/Silentpartnercoding/minority-prophet-border",
+      "commit": "ebe61a8774f11463bfd516266cfcbc1c7b724de8",
+      "path": "conformance/crossing_receipt.py",
+      "sha256": "ed4f9528f3acf7a48185bfc44a777bb99167d61cfef604715117bd1a60fdc71e",
+      "scope": "canonical argument-digest reference behavior"
+    },
+    {
+      "id": "minority-prophet-claim-warrant",
+      "kind": "git-blob",
+      "repository": "https://github.com/Silentpartnercoding/minority-prophet",
+      "commit": "2f68dfc3a0673a3b273316a95cc83063c00f5c8c",
+      "path": "provenance/claim-warrant.schema.json",
+      "sha256": "4de5613b839123cbc118875417fd18db99e53912e749a54f879828f72b493e69",
+      "scope": "verified, rejected, and unverifiable evidence-check outcomes"
+    }
+  ]
+}

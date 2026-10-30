@@ -1,0 +1,50 @@
+{
+  "record_version": "1",
+  "record_id": "mapping:agtp-matrix-fit-003:v0.3.0",
+  "record_type": "mapping",
+  "subject": {
+    "kind": "protocol-to-verifier-matrix-mapping",
+    "id": "AGTP-MATRIX-FIT-003",
+    "version": "0.3.0",
+    "source_protocol": "draft-hood-independent-agtp-10",
+    "evaluation_vocabulary": "draft-bu-agentproto-security-principal-binding-06"
+  },
+  "provenance": {
+    "recorded_at": "2026-10-30",
+    "author_role": "harness-maintainer",
+    "source_links": [
+      {
+        "uri": "https://github.com/Silentpartnercoding/agent-security-verifier-matrix/tree/agtp-matrix-fit-003-v0.3.0/experiments/agtp-matrix-fit-003"
+      }
+    ]
+  },
+  "payload": {
+    "supersedes": "mapping:agtp-matrix-fit-002:v0.2.0",
+    "git_tag": "agtp-matrix-fit-003-v0.3.0",
+    "round_scope": [
+      "regrade the nine rows against draft-hood-independent-agtp-10",
+      "import draft-hood-agtp-identity-document-00 only for agent_public_key and its freshness and rotation rules",
+      "keep every other AGTP companion excluded",
+      "add vector types for Request-Signature, Delegation-Chain verification, scope obtainability, and the Governance Token action digest"
+    ],
+    "companion_imports": [
+      "draft-hood-agtp-identity-document-00"
+    ],
+    "grouping_labels_not_claim_ids": true,
+    "claim_inventory_completeness": "not-established",
+    "claim_semantics_extended": false,
+    "registry_envelope_changed": false,
+    "artifact_hashes": {
+      "matrix.json": "7c4553f651c1687c57d59f16b9cc657585ab708e6f1ff2456b1fe232ba97e453",
+      "cases.json": "7a163de16c420b649209788b9463adc3cf1ccc7a9dc17f89906f22830d905542",
+      "sources.json": "d824eca11240a33b2aaa80b1ab89edc0bda3653a1865387483b6174edadccb36",
+      "artifacts/results.json": "c5a7a772d20c4ac65a4f5f6c21003e533b0bb82f077d2c198734ddad6cc6d1b6"
+    },
+    "external_reproduction": "not-publicly-recorded",
+    "non_claims": [
+      "AGTP implementation conformance",
+      "IETF endorsement or working-group consensus",
+      "complete Principal Binding claim coverage"
+    ]
+  }
+}

@@ -1,0 +1,291 @@
+{
+  "experiment": "AGTP-MATRIX-FIT-003",
+  "status": "new-round-pre-adapter-mapping-review",
+  "frozen_at": "2026-10-30",
+  "source_protocol": "draft-hood-independent-agtp-10",
+  "evaluation_vocabulary": "draft-bu-agentproto-security-principal-binding-06",
+  "evaluator_contract": "1.2.0",
+  "profile": "Base AGTP-10 Level 2 path: signed identity document, Request-Signature, Delegation-Chain verification, Governance Token action digest, EXECUTE, Attribution-Records, and optional RATS evidence. Imports draft-hood-agtp-identity-document-00 only for agent_public_key, its freshness rules, and its rotation and prior-version retention rules, because the mandatory request signature in -10 depends on them. All other companions stay excluded: AGTP-CERT, AGTP-LOG, AGTP-TRUST, AGTP-IDENTIFIERS, AGTP-COMPOSITION, and AGTP-DISCOVERY.",
+  "companion_imports": [
+    {
+      "source": "identity-document-00",
+      "revision": "draft-hood-agtp-identity-document-00",
+      "imported_for": [
+        "agent_public_key",
+        "identity-document freshness rules",
+        "key rotation by re-issuance and prior-version retention"
+      ],
+      "reason": "The mandatory Request-Signature in -10 is verified under agent_public_key, which is defined in this companion."
+    }
+  ],
+  "companions_excluded": [
+    "AGTP-CERT",
+    "AGTP-LOG",
+    "AGTP-TRUST",
+    "AGTP-IDENTIFIERS",
+    "AGTP-COMPOSITION",
+    "AGTP-DISCOVERY"
+  ],
+  "previous_round": "AGTP-MATRIX-FIT-002",
+  "grouping_labels": [
+    "Identity",
+    "Authority",
+    "Presenter",
+    "Scope",
+    "Action",
+    "Provenance",
+    "Credential Freshness",
+    "Evidence Freshness",
+    "Independence"
+  ],
+  "grouping_label_semantics": "Experiment-only organizational labels, kept separate from the Principal Binding C-001 through C-014 claim identifiers.",
+  "claim_inventory_completeness": "not-established",
+  "claim_semantics_extended": false,
+  "registry_envelope_changed": false,
+  "result_object_status": "not-emitted",
+  "permitted_conclusion_semantics": "Human-readable review constraint only; it carries no stable Principal Binding accepted-result or row-result object.",
+  "report_dispositions": [
+    "EXACT",
+    "DECLARED-GAP",
+    "AMBIGUOUS",
+    "UNREPRESENTED"
+  ],
+  "rows": [
+    {
+      "id": "identity-document-artifact",
+      "label": "Identity",
+      "claim": "The retrieved identity artifact consistently names the canonical Agent-ID, owner principal, governance zone, and registrar-signed attributes.",
+      "principal_binding_claim_ids": [],
+      "principal_binding_role": "supporting-fact-only",
+      "supports_claim_ids": [
+        "C-001",
+        "C-002",
+        "C-003",
+        "C-012"
+      ],
+      "mapping_scope": "Exact AGTP artifact verification only. Live presenter, authority, and delegated scope are graded in their own rows.",
+      "carrier": "Canonical Agent-ID derived from Agent Genesis plus a signed Agent Identity Document whose schema, including agent_public_key, comes from the imported identity-document-00.",
+      "verifier": "A Level 2 AGTP relying party resolving the declared Agent-ID, checking the document signature, recomputing the Agent Genesis hash, and applying a configured registrar trust policy.",
+      "binding": "The Agent-ID is the SHA-256 digest of canonical Agent Genesis bytes; the signed identity document binds the named attributes to its registrar key.",
+      "failure": "Reject a hash mismatch, invalid signature, untrusted registrar under relying policy, or inconsistent canonical Agent-ID.",
+      "result": "EXACT",
+      "permitted_conclusion": "The trusted registrar signed the identified agent attributes and they are consistent with the canonical Agent-ID.",
+      "non_claims": [
+        "A verified public identity document identifies the live requester.",
+        "A structurally valid self-published registrar key is trusted.",
+        "The owner principal granted the current live action.",
+        "The document proves a current delegation chain."
+      ],
+      "source_refs": [
+        "agtp-10:sections-2,2.1,7.1,7.2,7.3.2,12.2,12.4.1",
+        "identity-document-00:sections-3.3,3.5",
+        "principal-binding-06:sections-8,9,10"
+      ]
+    },
+    {
+      "id": "delegated-authority",
+      "label": "Authority",
+      "claim": "The current agent or delegation chain possesses no more authority than the verified issuer or predecessor conveyed.",
+      "principal_binding_claim_ids": [
+        "C-003",
+        "C-012"
+      ],
+      "principal_binding_role": "direct-mapping",
+      "mapping_scope": "Covers attenuation from the origin agent's signed document grant through every hop to the request. Whether the origin grant was lawfully given by its principal stays outside this row (Section 9.5).",
+      "issued_baseline_scope": "The signed Agent Identity Document sets the origin grant; each Delegation-Chain hop must be a strict subset of its parent.",
+      "carrier": "Delegation-Chain header carrying one signed delegation token per hop, the origin agent's signed identity document scope, and the request Authority-Scope.",
+      "verifier": "The receiving server runs the five Section 9.3 checks on every hop from a fixed input set with no local policy: membership, parent re-verification, attenuation, freshness, and depth and cycles.",
+      "binding": "Each hop is signed under its parent's agent_public_key and names a strict subset of the parent's scope; the last hop's Agent-ID must equal the request Agent-ID, and the request claim must sit inside the effective scope.",
+      "failure": "Invalid chains are refused with 551, evaluation refused, a registered reason token, and failing_hop. A check that cannot run returns 551 with evaluation incomplete, input-unavailable, and missing_input, and relying parties deny by default.",
+      "result": "EXACT",
+      "permitted_conclusion": "A verified Delegation Sequence shows that no hop exceeds its parent and that the origin hop sits inside the origin agent's signed grant.",
+      "non_claims": [
+        "A verified chain proves that the origin principal lawfully held the authority it granted.",
+        "A chain verified on one request stays verified for later requests.",
+        "An indeterminate chain may be treated as valid."
+      ],
+      "source_refs": [
+        "agtp-10:sections-6.6,6.6.1,8.2.9,9.1,9.2,9.2.1,9.3,9.4,9.5,9.5.1,12.4.3",
+        "principal-binding-06:C-003,C-012"
+      ]
+    },
+    {
+      "id": "live-presenter",
+      "label": "Presenter",
+      "claim": "The live sender of the current request is the agent named by the Agent-ID header and signed identity document.",
+      "principal_binding_claim_ids": [
+        "C-001"
+      ],
+      "principal_binding_role": "direct-mapping",
+      "mapping_scope": "Covers possession of the key named in the document by the party sending this request. When several instances share one agent key, telling those instances apart stays outside this row.",
+      "carrier": "Request-Signature header: a JWS with EdDSA whose kid is the Agent-ID, covering method, path, Agent-ID, Authority-Scope, Delegation-Chain, body digest, issued-at time, and nonce.",
+      "verifier": "Every non-anonymous request is verified under the agent_public_key in the resolved identity document, inside a 300 second window, with replay checked on Agent-ID and nonce. The verifier re-resolves the document once before rejecting, to allow for rotation.",
+      "binding": "The signature binds the live request fields to the key the registrar-signed document names, so a sender without that private key cannot present the Agent-ID.",
+      "failure": "A missing, stale, replayed, or wrongly keyed signature is refused with 401 and reason possession-unproven, and the event is logged. A legacy document without agent_public_key verifies at Level 1 only and is recorded as possession-unproven.",
+      "result": "EXACT",
+      "permitted_conclusion": "The sender of this request held the private key that the trusted identity document names for the declared Agent-ID at the time of the request.",
+      "non_claims": [
+        "A shared agent key identifies which running instance sent the request.",
+        "Server-authenticated TLS is agent mutual authentication.",
+        "A legacy document without agent_public_key supports a presenter conclusion."
+      ],
+      "source_refs": [
+        "agtp-10:sections-6.5.3,6.5.4,12.2,12.4.1,12.4.7",
+        "identity-document-00:sections-3.3",
+        "principal-binding-06:C-001"
+      ]
+    },
+    {
+      "id": "request-scope",
+      "label": "Scope",
+      "claim": "The requested method and action fall within the authenticated agent scope applicable to the current request.",
+      "principal_binding_claim_ids": [
+        "C-003",
+        "C-012"
+      ],
+      "principal_binding_role": "direct-mapping",
+      "mapping_scope": "Covers comparison of the request with the signed document grant and endpoint required_scopes. Exact parameters and carried payload are graded in the Action row.",
+      "carrier": "Signed identity-document scopes, an optional narrowing Authority-Scope header covered by the Request-Signature, and endpoint required_scopes.",
+      "verifier": "The AGTP server validates the claimed scope as a subset of the signed grant and enforces endpoint requirements before dispatch.",
+      "binding": "One obtainability rule applies throughout: a request beyond what the signed document grants returns 455, and a scope the document grants but the claim omits returns 262.",
+      "failure": "455 with reason scope-claim-invalid, scope-exceeded, or scope-exceeds-parent; 262 when the missing authority is obtainable by the agent.",
+      "result": "EXACT",
+      "permitted_conclusion": "The request either sits inside the authenticated scope set or receives one defined failure code and reason.",
+      "non_claims": [
+        "A permitted method proves that its exact parameters were authorized.",
+        "Level 1 self-asserted scope is equivalent to Level 2 authenticated scope."
+      ],
+      "source_refs": [
+        "agtp-10:sections-2,6.5.3,6.6,7.3.8,8.2.8,12.3,12.4.2",
+        "principal-binding-06:C-003,C-012"
+      ]
+    },
+    {
+      "id": "cross-protocol-action",
+      "label": "Action",
+      "claim": "The exact A2A task, AGTP EXECUTE action, MCP tool, and canonical argument payload observed at execution are the action authorized by the Governance Token.",
+      "principal_binding_claim_ids": [
+        "C-005",
+        "C-006",
+        "C-010",
+        "C-012"
+      ],
+      "principal_binding_role": "direct-incomplete-mapping",
+      "carrier": "Task-ID, EXECUTE action, parameters, payload, and payload_type, Authority-Scope, and a Governance Token carrying action_digest.",
+      "verifier": "The server recomputes action_digest from the request as received and compares it with the token before dispatch.",
+      "binding": "action_digest is SHA-256 over the RFC 8785 form of method, path, action, parameters, payload_type, and payload_sha256. The originating task identifier sits outside that input, and tool or resource identity has no first-class binding in -10 (Section 10.4 lists it as under review).",
+      "failure": "A changed payload, including a tool name inside the payload, is refused with 262 and reason token-action-mismatch. A substituted task identifier has no defined failure result when the digest inputs are unchanged.",
+      "result": "AMBIGUOUS",
+      "permitted_conclusion": "The token-bound action shape and carried payload match what the token authorized; continuity from the originating A2A task to this request remains indeterminate.",
+      "non_claims": [
+        "A matching action_digest binds the request to a specific originating task.",
+        "Task-ID correlation is action authorization."
+      ],
+      "source_refs": [
+        "agtp-10:sections-2,6.5.3,7.3.8,8.2.8,9.5.1,10.2,10.4,appendix-D.3",
+        "principal-binding-06:C-005,C-006,C-010,C-012",
+        "border-crossing-cases:change_mcp_tool_or_payload,substitute_task_or_context_id",
+        "border-crossing-receipt:argument_digest"
+      ]
+    },
+    {
+      "id": "completion-provenance",
+      "label": "Provenance",
+      "claim": "A completion or attribution assertion is supported by identified, appraised evidence whose check outcome is distinguishable from rejection and unverifiability.",
+      "principal_binding_claim_ids": [
+        "C-005",
+        "C-007",
+        "C-011",
+        "C-012"
+      ],
+      "carrier": "Attribution-Record JWS on every response, linked by Audit-ID into a per-agent hash chain, plus optional RATS Attestation-Evidence.",
+      "verifier": "The relying party verifies the Attribution-Record signature, including signatures made under a since-rotated key through retained prior document versions, and may process RATS evidence. -10 defines no appraisal policy or three-valued evidence result.",
+      "binding": "The signed record binds attribution fields and result hash. Tamper evidence for the chain depends on AGTP-LOG, which this profile excludes, and the structured evaluation field covers request decisions only.",
+      "failure": "An alg:none fallback record is rejected by consumers that require attestation, but unavailable or uncheckable RATS evidence has no distinct completion outcome.",
+      "result": "AMBIGUOUS",
+      "permitted_conclusion": "A verified signer committed to the attribution fields and result hash; successful appraisal of the underlying execution evidence is a separate conclusion.",
+      "non_claims": [
+        "A signed attribution record proves that the represented action occurred correctly.",
+        "The presence of a RATS evidence URI proves that its evidence was retrieved and appraised."
+      ],
+      "source_refs": [
+        "agtp-10:sections-6.5.5,6.6.1,8.2.4,12.4.5,12.4.11",
+        "identity-document-00:sections-3.5",
+        "principal-binding-06:C-005,C-007,C-011,C-012",
+        "minority-prophet-claim-warrant:verify_outcome"
+      ]
+    },
+    {
+      "id": "credential-freshness",
+      "label": "Credential Freshness",
+      "claim": "The identity, authorization, lifecycle, and revocation inputs are current enough for the relying decision.",
+      "principal_binding_claim_ids": [
+        "C-008",
+        "C-009"
+      ],
+      "carrier": "Request-Signature issued-at time and nonce, Governance Token expiry and single use, delegation token expiry, identity-document issued_at and updated_at, and lifecycle state.",
+      "verifier": "The server enforces the 300 second request window, token expiry and reuse, and per-hop delegation freshness; identity-document freshness is left to the relying party.",
+      "binding": "-10 refers to the identity-document freshness rules, but identity-document-00 defines a 300 second threshold for the Namespace Document only and gives the Identity Document no window. Revocation continuity is marked planned.",
+      "failure": "Stale signatures, expired tokens, and expired hops are rejectable, but a stale identity document or missed revocation has no single defined result.",
+      "result": "AMBIGUOUS",
+      "permitted_conclusion": "Request, token, and hop freshness checks can pass; current identity-document and revocation state remain separately established.",
+      "non_claims": [
+        "A fresh Request-Signature makes the identity document it was checked against fresh.",
+        "An updated_at field alone defines the relying party's acceptable staleness."
+      ],
+      "source_refs": [
+        "agtp-10:sections-6.5.4,7.3.8,9.3,9.6,12.4.4",
+        "identity-document-00:sections-2.3,3.3",
+        "principal-binding-06:C-008,C-009"
+      ]
+    },
+    {
+      "id": "completion-evidence-freshness",
+      "label": "Evidence Freshness",
+      "claim": "The evidence underlying an attribution or completion claim is current enough for the relying decision.",
+      "principal_binding_claim_ids": [
+        "C-008",
+        "C-009",
+        "C-011"
+      ],
+      "carrier": "Attribution timestamp and optional RATS Attestation-Evidence token or reference URI.",
+      "verifier": "-10 does not identify the appraisal policy, evidence observation time, reference retrieval behavior, or freshness bound for optional RATS evidence.",
+      "binding": "The attribution signature covers its timestamp and result hash; a current appraisal of externally referenced evidence stays unbound.",
+      "failure": "Stale, unavailable, or semantically uncheckable evidence has no distinct evidence outcome.",
+      "result": "AMBIGUOUS",
+      "permitted_conclusion": "No evidence-freshness conclusion follows solely from a current token or valid Attribution-Record signature.",
+      "non_claims": [
+        "Credential freshness makes completion evidence fresh.",
+        "A RATS label defines an appraisal result without the selected appraisal policy."
+      ],
+      "source_refs": [
+        "agtp-10:sections-6.5.5,12.4.11",
+        "principal-binding-06:C-008,C-009,C-011",
+        "minority-prophet-claim-warrant:unverifiable"
+      ]
+    },
+    {
+      "id": "verifier-independence",
+      "label": "Independence",
+      "claim": "An external verifier or independent receipt confirmer is outside the control of every party whose conduct it evaluates.",
+      "principal_binding_claim_ids": [
+        "C-007",
+        "C-011"
+      ],
+      "carrier": "Attribution signer identity, optional RATS evidence, INSPECT access for external verifiers, and an independent-receipt recommendation for escalation handlers.",
+      "verifier": "The draft can authenticate records and evidence but defines no organizational control-domain predicate for verifier independence.",
+      "binding": "Keys and record identifiers are bound; control relationships between executor, governance platform, attester, evidence appraiser, and auditor are unbound.",
+      "failure": "Invalid signatures can fail, but same-control, unknown-control, and independently controlled verifiers have no distinct independence outcomes.",
+      "result": "AMBIGUOUS",
+      "permitted_conclusion": "A distinct verifier can retrieve or sign material; organizational independence remains unestablished.",
+      "non_claims": [
+        "A service described as external is outside the executor's control domain.",
+        "Hardware-rooted evidence makes its organizational appraiser independent."
+      ],
+      "source_refs": [
+        "agtp-10:sections-8.2.4,12.4.5,12.4.8,12.4.11",
+        "principal-binding-06:C-007,C-011"
+      ]
+    }
+  ]
+}
