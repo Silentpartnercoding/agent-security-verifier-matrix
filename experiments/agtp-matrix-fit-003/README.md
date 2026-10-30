@@ -125,14 +125,15 @@ differs from the frozen manifest.
 
 ## Text notes on -10
 
-Found while grading; none of them changes a grade.
+Gaps in the `-10` text that change how a checker behaves. None of them changes
+a grade in this round.
 
-- Section 7.3.8: "Holding a passport implies no particular any particular visa."
-- Section 10.1, item 3: "The framework's payload can omit re-implement audit logging".
-- Section 8.1.1 is headed "The Sixteen-Method Floor", in the body and the table
-  of contents, while its text and the abstract say eighteen.
-- Section 9.3 ends a sentence on a fragment: "the alternatives, admitting on
-  stale state or refusing as if the chain were broken."
+- Base `-10` gives no request header or field that carries the Governance
+  Token. The action vectors supply the token alongside the request.
+- Section 9.3 gives no precedence when one hop is invalid and another is
+  indeterminate. FIT-003 reports the invalid result (551 refused).
+- The 262 outcome for condition (b) in Section 6.6 has no reason token. The
+  `granted_scope_unclaimed` case expects no reason.
 - The 401 reason vocabulary in Section 6.6 omits `possession-unproven`, which
   Section 6.5.4 uses.
 - Section 12.4.1 (Agent Spoofing) does not mention Request-Signature.
@@ -140,3 +141,12 @@ Found while grading; none of them changes a grade.
   Section 6.6 lists only obtainable authorization.
 - The 403 row in Section 6.6 still reads "Agent lacks authority for requested
   action per Authority-Scope", which overlaps the 455 rule.
+- Section 7.3.8 lists `parameters` and `payload_sha256` as separate digest
+  members, while the Appendix D.3 example nests the payload inside
+  `parameters`. The vector keeps them separate.
+- Section 7.3.8 does not say how the payload bytes are canonicalized before
+  `payload_sha256` is taken.
+- Section 12.3 still says Level 2 servers SHOULD retrieve the manifest when the
+  declared scope exceeds read-only operations. FIT-003 treats retrieval of the
+  signed identity document as required, since the request signature in `-10`
+  depends on it.
